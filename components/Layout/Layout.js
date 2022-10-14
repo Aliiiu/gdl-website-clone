@@ -3,8 +3,8 @@ import Topbar from "../Topbar/Topbar";
 
 const Layout = ({ children, ...props }) => (
   <div>
+    <Topbar />
     <main>
-      <Topbar />
       <PageContainer>
         <div className="w-full h-full">{children}</div>
       </PageContainer>

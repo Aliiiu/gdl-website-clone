@@ -13,22 +13,26 @@ const Topbar = props => {
   const { theme, setTheme } = useTheme();
   const [open, setOpen] = useState(false);
 
-  useEffect(() => {
-    if (open == true) {
-      document.body.style.top = `-${window.scrollY}px`;
-      document.body.style.width = "100vw";
-      document.body.style.position = "fixed";
-    } else {
-      const scrollY = window.scrollY;
+  //   useEffect(() => {
+  //     if (open == true) {
+  //       document.body.style.position = "fixed";
+  //       document.body.style.top = `-${717}px`;
+  //       document.body.style.width = "100vw";
+  //     } else {
+  //       const scrollY = window.scrollY;
 
-      document.body.style.position = "";
-      document.body.style.top = "";
-      window.scrollTo(0, parseInt(scrollY || "0") * -1);
-    }
-  }, [open]);
+  //       document.body.style.position = "";
+  //       document.body.style.top = "";
+  //       window.scrollTo(0, parseInt(scrollY || "0") * -1);
+  //     }
+  //   }, [open]);
 
   return (
-    <>
+    <header
+      className={`z-30 sticky top-0 right-0 left-0 ${
+        open && "bg-white dark:bg-black"
+      } border-gray-200 dark:border-gray-600 justify-start items-center`}
+    >
       <Transition
         show={open}
         enter="transition ease-out duration-500"
@@ -39,21 +43,19 @@ const Topbar = props => {
         leaveTo="transform opacity-0"
       >
         <OverlayDiv
-          className="top-0 left-0 right-0 bottom-0 fixed Overlay h-[100vh] overflow-y-scroll"
+          className="top-0 left-0 mt-[60px] right-0 bottom-0 fixed Overlay h-[100vh] overflow-y-scroll"
           data-v-0ab2563a=""
           onClick={() => setOpen(!open)}
         ></OverlayDiv>
-        <nav className="bg-white dark:bg-black rounded-lg p-6 px-4 mx-[2rem] fixed top-0 left-0 mt-[68px] lg:w-[66.666667%] w-full animate-slide-down">
+        <nav className="bg-white dark:bg-gray-800 rounded-lg p-6 px-4 mx-[2rem] fixed top-0 left-0 mt-[68px] lg:w-[66.666667%] w-full animate-slide-down">
           wassa
         </nav>
       </Transition>
-      <TopContainer
-        className={`dark:bg-black bg-white w-full sticky top-0 border-b border-gray-200 dark:border-gray-600`}
-      >
+      <TopContainer className={`w-full`}>
         <div className="bg-transparent lg:w-4/6 w-full animate-fade-in">
           <nav className="py-2 z-20 top-0 left-0">
             <div className="container flex flex-wrap items-center mx-auto">
-              <div className="flex">
+              <div className="flex lg:flex-row flex-row-reverse lg:w-auto w-full items-center lg:justify-start justify-between">
                 <button
                   data-collapse-toggle="navbar-sticky"
                   type="button"
@@ -69,7 +71,7 @@ const Topbar = props => {
                   <a className="flex items-center mx-4 flex-col justify-center font-title-font">
                     <img
                       src="https://flowbite.com/docs/images/logo.svg"
-                      class="h-6 sm:h-9 sm:block hidden"
+                      className="h-6 sm:h-9 sm:block hidden"
                       alt="Flowbite Logo"
                     />
                   </a>
@@ -86,17 +88,10 @@ const Topbar = props => {
                   <LinkList name="blog" url="/blogs" />
                 </ul>
               </div>
-              <div className="flex-grow flex gap-x-6 justify-end items-center">
-                <Link href="/login">
-                  <a className="text-black dark:text-white font-light">Login</a>
-                </Link>
-                <AppButton
-                  name="Create an Account"
-                  icon={<AiOutlineArrowRight className="font-thin text-sm" />}
-                />
+              <div className="hidden flex-grow lg:flex gap-x-6 justify-end items-center">
                 <div className="flex justify-start items-center">
                   <label
-                    for="toggleB"
+                    htmlFor="toggleB"
                     className="flex w-full items-center cursor-pointer"
                   >
                     <div className="w-4/5 flex justify-end">
@@ -109,6 +104,7 @@ const Topbar = props => {
                       <input
                         type="checkbox"
                         checked={theme == "dark" ? true : false}
+                        onChange={() => null}
                         id="toggleB"
                         className="sr-only"
                         onClick={() => {
@@ -121,12 +117,19 @@ const Topbar = props => {
                     </div>
                   </label>
                 </div>
+                <Link href="/login">
+                  <a className="text-black dark:text-white font-light">Login</a>
+                </Link>
+                <AppButton
+                  name="Create an Account"
+                  icon={<AiOutlineArrowRight className="font-thin text-sm" />}
+                />
               </div>
             </div>
           </nav>
         </div>
       </TopContainer>
-    </>
+    </header>
   );
 };
 

@@ -1,11 +1,43 @@
+import { AppButton } from "../components/Widgets/Button/Button";
+import { AiOutlineArrowRight } from "react-icons/ai";
+import Link from "next/link";
+import BgImage from "../assets/images/bg.png";
+import Image from "next/image";
+
 const HomePage = () => {
   return (
-    <div className="flex flex-col">
-      {Array(10000)
-        .fill()
-        .map(content => (
-          <h1>Home Page</h1>
-        ))}
+    <div className="relative">
+      <div className="hidden absolute top-0 right-0 mt-[-8.8rem] mr-[-5rem] md:flex items-center justify-center rounded-[9999px] dark:border-gray-800 border-red-50 w-[220px] h-[220px] border-[32px]" />
+      <section className="flex flex-col items-start justify-center relative px-[1.5rem] mx-auto max-w-[1200px] md:min-h-[500px] min-h-[460px]">
+        <div className="absolute top-0 left-0 bottom-0 flex justify-center items-center -ml-52">
+          <div className="flex items-center justify-center rounded-[9999px] dark:border-gray-800 border-[#FFF1F4] w-[500px] h-[500px] border-[32px]">
+            <div className="flex items-center justify-center rounded-[9999px] dark:border-gray-900 border-[#FFF5F7] border-[32px] w-[445px] h-[445px]" />
+          </div>
+        </div>
+        <div className="relative w-full md:w-9/12 lg:w-3/5">
+          <h1 className="text-4xl md:text-5xl text-center md:text-left font-bold">
+            Build Wealth Comfortably
+          </h1>
+          <p className="visible dark:text-[#F9FAFB] opacity-[1] md:leading-[32px] leading-[24px] mx-0 md:w-[80%] w-full md:text-left text-center md:text-[1.25rem]  mt-[.25rem] font-extralight">
+            Your financial goals are our priority. We are committed to building
+            your wealth with different investment options, all tailored to suit
+            YOU.
+          </p>
+          <div className="flex flex-col md:flex-row justify-center md:justify-start items-center mt-6">
+            <AppButton
+              name="Invest Now"
+              className="py-[1rem] px-[1.5rem] text-white font-normal md:mr-6 mb-4 md:mb-0"
+              icon={<AiOutlineArrowRight className="font-thin text-sm" />}
+            />
+            <Link href="/about">
+              <a className="font-thin">Learn More</a>
+            </Link>
+          </div>
+        </div>
+        <div className="max-w-[100%] h-auto w-[520px] mr-[4rem] block absolute right-0 bottom-0 mb-[-8rem] animate-fade-in">
+          <Image src={BgImage} />
+        </div>
+      </section>
     </div>
   );
 };
