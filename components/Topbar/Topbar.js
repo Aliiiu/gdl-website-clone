@@ -50,7 +50,7 @@ const Topbar = props => {
       <TopContainer
         className={`dark:bg-black bg-white w-full sticky top-0 border-b border-gray-200 dark:border-gray-600`}
       >
-        <div className="bg-transparent lg:w-4/6 w-full animate-fade-in">
+        <div className="bg-transparent lg:w-4/6 xl:w-5/6 w-full animate-fade-in">
           <nav className="py-2 z-20 top-0 left-0">
             <div className="container flex flex-wrap items-center mx-auto">
               <div className="flex">
@@ -92,6 +92,8 @@ const Topbar = props => {
                 </Link>
                 <AppButton
                   name="Create an Account"
+                  href={"/"}
+                  className="bg-[#9A2333] text-white px-4 py-3"
                   icon={<AiOutlineArrowRight className="font-thin text-sm" />}
                 />
                 <div className="flex justify-start items-center">
