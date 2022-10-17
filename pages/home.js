@@ -3,6 +3,7 @@ import { AiOutlineArrowRight } from "react-icons/ai";
 import Link from "next/link";
 import BgImage from "../assets/images/bg.png";
 import Image from "next/image";
+import BlogLayout from "../components/Layout/BlogLayout";
 
 const HomePage = () => {
   return (
@@ -18,26 +19,63 @@ const HomePage = () => {
           <h1 className="text-4xl md:text-5xl text-center md:text-left font-bold">
             Build Wealth Comfortably
           </h1>
-          <p className="visible dark:text-[#F9FAFB] opacity-[1] md:leading-[32px] leading-[24px] mx-0 md:w-[80%] w-full md:text-left text-center md:text-[1.25rem]  mt-[.25rem] font-extralight">
+          <p className="visible dark:text-[#F9FAFB] opacity-[1] md:leading-[32px] leading-[24px] mx-0 md:w-[80%] w-full md:text-left text-center md:text-[1.25rem]  mt-[.25rem] font-light animate-glide-up">
             Your financial goals are our priority. We are committed to building
             your wealth with different investment options, all tailored to suit
             YOU.
           </p>
           <div className="flex flex-col md:flex-row justify-center md:justify-start items-center mt-6">
             <AppButton
-              name="Invest Now"
-              className="py-[1rem] px-[1.5rem] text-white font-normal md:mr-6 mb-4 md:mb-0"
-              icon={<AiOutlineArrowRight className="font-thin text-sm" />}
+              name="Invest Now →"
+              textSize="text-base"
+              className="py-[1rem] px-[1.5rem] text-white md:mr-6 mb-4 md:mb-0"
+              // icon={<AiOutlineArrowRight className="font-thin text-sm" />}
             />
             <Link href="/about">
-              <a className="font-thin">Learn More</a>
+              <a className="font-light">Learn More</a>
             </Link>
           </div>
         </div>
-        <div className="max-w-[100%] h-auto w-[520px] mr-[4rem] block absolute right-0 bottom-0 mb-[-8rem] animate-fade-in">
+        <div className="max-w-[100%] hidden h-auto w-[520px] mr-[4rem] md:block absolute right-0 bottom-0 mb-[-8rem] animate-fade-in">
           <Image src={BgImage} />
         </div>
       </section>
+      <section className="relative">
+        <div className="flex flex-wrap text-white bg-[#992333] mt-[60px]">
+          <div className="text-2xl flex justify-center items-center p-8 text-center w-full md:w-1/2">
+            <span className="capitalize font-light">We Are trusted by</span>
+          </div>
+          <div className="w-full md:w-1/4 flex flex-col items-center bg-[#942231] justify-center min-h-[9em]">
+            <div className="text-center md:text-left">
+              <h2 className="text-4xl md:text-3xl lg:text-4xl font-bold text-white">
+                <span>1,000</span>
+                <span>+</span>
+              </h2>
+              <h4 className="-mt-1 text-[#FF7389]">Customers</h4>
+              <Link href="">
+                <a className="text-sm mt-3 flex items-center gap-x-1 text-opacity-[1] text-[rgba(255,214,220,var(--tw-text-opacity))]">
+                  See Testimonials <AiOutlineArrowRight />
+                </a>
+              </Link>
+            </div>
+          </div>
+          <div className="w-full md:w-1/4 flex flex-col items-center justify-center min-h-[9em]">
+            <div className="text-center md:text-left">
+              <h2 className="text-4xl md:text-3xl lg:text-4xl font-bold text-white">
+                <span>830</span>
+                <span>+</span>
+              </h2>
+              <span className="-mt-1 text-[#FF7389]">Business</span>
+              <Link href="/">
+                <a className="text-sm mt-3 flex items-center gap-x-1 text-opacity-[1] text-[rgba(255,214,220,var(--tw-text-opacity))]">
+                  See Testimonials <AiOutlineArrowRight />
+                </a>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+      <BlogLayout />
     </div>
   );
 };

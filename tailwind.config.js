@@ -5,12 +5,20 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    fontFamily: {
+      "ibm-font": "IBM Plex Sans",
+      "title-font": "Helvetica, Arial, sans-serif",
+    },
     extend: {
+      backgroundColor: {
+        gdlGrey: "#FAFBFB",
+      },
       animation: {
         "fade-in": "fadeIn 1s ease-in-out",
         "slide-up": "slideUp 1s ease-in-out",
         "slide-down": "slideDown 0.5s ease-in-out",
         "zoom-out": "zoomOut 0.5s ease-in-out",
+        "glide-up": "glideUp 0.3s ease-in-out",
       },
       keyframes: {
         fadeIn: {
@@ -18,12 +26,16 @@ module.exports = {
           "100%": { opacity: "1" },
         },
         slideUp: {
-          "0%": { transform: "translateY(20px)", opacity: "0" },
-          "100%": { transform: "translateY(0px)", opacity: "1" },
+          "0%": { transform: "translateY(0px)", opacity: "1" },
+          "100%": { transform: "translateY(-10px)", opacity: "0" },
         },
         slideDown: {
           "100%": { transform: "translateY(0px)", opacity: "1" },
           "0%": { transform: "translateY(-10px)", opacity: "0" },
+        },
+        glideUp: {
+          "0%": { transform: "translateY(20px)", opacity: "0" },
+          "100%": { transform: "translateY(0px)", opacity: "1" },
         },
         zoomOut: {
           "0%": { transform: "scale(0)" },
