@@ -2,18 +2,72 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
+@import url("https://fonts.googleapis.com/css2?family=Neonderthaw&display=swap");
+
+html {
+  word-spacing: 1px;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  /* overflow-x: hidden; */
+  line-height: 1.5;
+  font-family: Gilroy, -apple-system, BlinkMacSystemFont, Segoe UI,
+    Helvetica Neue, Arial, sans-serif;
+}
 body {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+  --tw-text-opacity: 1;
+  color: rgba(31, 26, 23, var(--tw-text-opacity));
   padding: 0;
   margin: 0;
   font-family: "Raleway", sans-serif;
+  /* font-family: inherit; */
+  height: 100%;
+  overflow-x: hidden;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+  font-family: Gilroy, -apple-system, BlinkMacSystemFont, Segoe UI,
+    Helvetica Neue, Arial, sans-serif;
+}
+img,
+.img {
+  max-width: 100%;
+  height: auto;
 }
 
 * {
   box-sizing: border-box;
+}
+
+p {
+  margin: 0;
+  color: rgba(31, 26, 23, var(--tw-text-opacity));
+  --tw-text-opacity: 0.9;
+  font-weight: 300;
+  /* font-family: "IBM Plex Sans"; */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+  /* font-family: "IBM Plex Sans"; */
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    color: white;
+    background: black;
+  }
 }
