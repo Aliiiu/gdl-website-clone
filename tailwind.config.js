@@ -6,6 +6,11 @@ module.exports = {
   ],
   theme: {
     extend: {
+      textColor: {
+        primary: "#1F1A17",
+        second: "#9A2333",
+        nav: "#C1C0C0",
+      },
       animation: {
         "fade-in": "fadeIn 1s ease-in-out",
         "slide-up": "slideUp 1s ease-in-out",

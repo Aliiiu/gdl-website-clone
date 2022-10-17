@@ -5,9 +5,7 @@ const Layout = ({ children, ...props }) => (
   <div>
     <main>
       <Topbar />
-      <PageContainer>
-        <div className="w-full h-full">{children}</div>
-      </PageContainer>
+      <PageContainer className="w-full">{children}</PageContainer>
     </main>
   </div>
 );
