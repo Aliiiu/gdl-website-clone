@@ -5,6 +5,13 @@ import {
   IoLogoTwitter,
   IoLogoMedium,
   IoLogoWhatsapp,
+  IoCubeOutline,
+  IoHomeOutline,
+  IoStarOutline,
+  IoRocketOutline,
+  IoHeartHalfOutline,
+  IoBulbOutline,
+  IoFilmOutline,
 } from "react-icons/io5";
 
 export const footerLinkData = [
@@ -58,4 +65,30 @@ export const resourceLinks = [
   { url: "/research", name: "Research" },
   { url: "/faq", name: "FAQs" },
   { url: "/contact", name: "Contact" },
+];
+
+export const homeLinks = [
+  { name: "Home", subname: "GDL Home", icon: <IoHomeOutline /> },
+  {
+    name: "Products",
+    subname: "Some of our products",
+    icon: <IoCubeOutline />,
+  },
+  { name: "USP", subname: "Our Unique Selling Point", icon: <IoStarOutline /> },
+  {
+    name: "Get Started",
+    subname: "In Three Easy Steps",
+    icon: <IoRocketOutline />,
+  },
+  {
+    name: "Testimonials",
+    subname: "What people are saying",
+    icon: <IoHeartHalfOutline />,
+  },
+  { name: "Blog", subname: "Guides on Finance", icon: <IoBulbOutline /> },
+  {
+    name: "Media",
+    subname: "Our social participation",
+    icon: <IoFilmOutline />,
+  },
 ];

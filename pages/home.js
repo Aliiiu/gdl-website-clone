@@ -8,6 +8,7 @@ import Link from "next/link";
 import BgImage from "../assets/images/bg.png";
 import Image from "next/image";
 import BlogLayout from "../components/Layout/BlogLayout";
+import TestimonyLayout from "../components/Layout/TestimonyLayout";
 
 const HomePage = () => {
   return (
@@ -32,7 +33,7 @@ const HomePage = () => {
             <AppButton
               name="Invest Now →"
               textSize="text-base"
-              className="py-[1rem] px-[1.5rem] text-white md:mr-6 mb-4 md:mb-0"
+              className="py-[1rem] px-[1.5rem] text-white md:mr-6 mb-4 md:mb-0 bg-[#992333]"
               // icon={<AiOutlineArrowRight className="font-thin text-sm" />}
             />
             <Link href="/about">
@@ -79,10 +80,7 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-      <section
-        id="our-product"
-        className="lg:w-4/6 mx-auto py-16 md:py-36 w-full"
-      >
+      <section id="our-product" className="py-16 md:py-36">
         <Products />
       </section>
       <section
@@ -91,6 +89,7 @@ const HomePage = () => {
       >
         <GetStarted />
       </section>
+      <TestimonyLayout />
       <BlogLayout />
       <section
         id="faq"
@@ -98,10 +97,8 @@ const HomePage = () => {
       >
         <Faq />
       </section>
-      <section id="join-club" className="softGradient">
-        <div className="lg:px-6 lg:w-4/6 mx-auto py-12 md:py-24 w-full">
-          <JoinTheClub />
-        </div>
+      <section id="join-club" className="softGradient flex flex-wrap">
+        <JoinTheClub />
       </section>
     </div>
   );

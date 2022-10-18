@@ -8,12 +8,13 @@ import { AppButton } from "../Widgets/Button/Button";
 
 export const SectionWrapper = styled.div`
   .title {
-    font-size: 48px;
-    font-weight: 600;
+    font-size: 3rem;
+    line-height: 1.1 !important;
+    font-weight: 700;
   }
   .hint {
-    font-size: 18px;
-    font-weight: normal;
+    font-size: 1.125rem;
+    /* font-weight: normal; */
   }
   .card {
     border-radius: 0.5em;
@@ -27,7 +28,7 @@ export const SectionWrapper = styled.div`
   }
   .card-btn {
     border-radius: 0.5em;
-    padding: 1em 1.5em;
+    padding: 0.75rem 1.5em;
     font-size: 1rem;
   }
   .getstarted-card {
@@ -67,15 +68,15 @@ export const SectionWrapper = styled.div`
 
 const Products = () => {
   return (
-    <SectionWrapper className="flex flex-col gap-10">
-      <div className="text-center">
-        <h2 className="title text-primary">Our Products</h2>
-        <p className="hint text-primary text-opacity-90 lg:max-w-[470px] mx-auto">
+    <SectionWrapper className="px-[1.5rem] mx-auto max-w-[1200px]">
+      <div className="text-center md:text-center">
+        <h1 className="title mb-[.75rem]">Our Products</h1>
+        <p className="hint w-full md:w-1/2 lg:w-2/5 leading-[1.75rem] text-opacity-[0.9] text-[rgba(31,26,23,var(--tw-text-opacity))] dark:text-white mx-auto">
           We have various products which have been specifically designed for
           you. There is something for everyone at GDL.
         </p>
       </div>
-      <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-3">
+      <div className="mt-10 md:mt-24 grid md:grid-cols-2 lg:grid-cols-3 gap-3">
         {product.map(item => (
           <div
             key={item.title}
@@ -96,21 +97,21 @@ const Products = () => {
               className="flex p-6 h-full justify-end z-10 text-white flex-col items-start"
             >
               <h2 className="text-xl font-bold lg:text-2xl">{item.title}</h2>
-              <p className="text-lg">{item.hint}</p>
+              <p className="text-lg text-white">{item.hint}</p>
               <AppButton
                 name="Learn more"
                 href={"/"}
-                className="mt-4 text-primary uppercase card-btn bg-white"
+                className="mt-4 uppercase card-btn bg-white text-black"
               />
             </div>
           </div>
         ))}
       </div>
-      <div className="flex mt-10 justify-center">
+      <div className="flex mt-10 md:mt-20 justify-center items-center">
         <AppButton
           name="Explore More"
           href={"/"}
-          className="bg-[#9A2333] card-btn text-white"
+          className="bg-[#9A2333] py-[1rem] rounded-[0.5rem] px-[1.5rem] text-[1.5rem] text-white"
         />
       </div>
     </SectionWrapper>

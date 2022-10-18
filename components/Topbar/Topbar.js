@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Transition } from "@headlessui/react";
-import { TopContainer, OverlayDiv } from "./topbar.styles";
+import { TopContainer, OverlayDiv, NavDiv } from "./topbar.styles";
 import LinkList from "../Widgets/Link/Link";
 import Link from "next/link";
 import { useTheme } from "next-themes";
@@ -10,6 +10,32 @@ import { AiOutlineArrowRight } from "react-icons/ai";
 import { useRouter } from "next/router";
 import GDLlogo from "../../assets/images/gdllogo.svg.svg";
 import Image from "next/image";
+import { IoChevronForward } from "react-icons/io5";
+import { homeLinks } from "../../utils/helper";
+
+const NavLink = ({ url, name, className }) => (
+  <li>
+    <Link href="">
+      <a className={`${className}`}>
+        {name} <IoChevronForward className="text-[#ABA9A7]" />
+      </a>
+    </Link>
+  </li>
+);
+
+const HomeLink = ({ url, name, icon, subname }) => (
+  <Link href="">
+    <a className="sub-menu">
+      <div>
+        <div className="icon">{icon}</div>
+      </div>
+      <div className="ml-4">
+        <h3 className="font-semibold">{name}</h3>
+        <p className="text-xs md:block hidden">{subname}</p>
+      </div>
+    </a>
+  </Link>
+);
 
 const Topbar = props => {
   const [mode, setMode] = useState(false);
@@ -18,19 +44,15 @@ const Topbar = props => {
   const [color, setColor] = useState(false);
   const router = useRouter();
 
-  // useEffect(() => {
-  //   function checkifOpen() {
-  //     const body = document.querySelector("body");
-  //     if (open) {
-  //       body.style.overflowY = "hidden";
-  //     } else {
-  //       body.style.overflowY = "auto";
-  //     }
-  //   }
-  //   if (open) {
-  //     window.addEventListener("scroll", checkifOpen);
-  //   }
-  // }, [open]);
+  useEffect(() => {
+    const body = document.querySelector("body");
+    if (open) {
+      body.classList.add("overflow-hidden");
+    } else {
+      body.classList.remove("overflow-hidden");
+    }
+    checkScroll();
+  }, [open]);
 
   useEffect(() => {
     const header = document.querySelector("header");
@@ -42,23 +64,24 @@ const Topbar = props => {
     }
   }, []);
 
-  useEffect(() => {
+  const checkScroll = () => {
     const header = document.querySelector("header");
-    const nav = document.querySelector("nav");
-    function checkScroll() {
-      if (window.innerWidth <= 768) {
-        header.style.backgroundColor = "#fff";
-      }
-      if (window.scrollY > 30) {
-        header.classList.add("bg-white");
-        header.classList.add("dark:bg-gray-900");
-        header.classList.add("shadow-md");
-      } else {
-        header.classList.remove("bg-white");
-        header.classList.remove("dark:bg-gray-900");
-        header.classList.remove("shadow-md");
-      }
+
+    if (window.innerWidth <= 768) {
+      header.style.backgroundColor = "#fff";
     }
+    if (window.scrollY > 30 || open) {
+      header.classList.add("bg-white");
+      header.classList.add("dark:bg-gray-900");
+      header.classList.add("shadow-md");
+    } else {
+      header.classList.remove("bg-white");
+      header.classList.remove("dark:bg-gray-900");
+      header.classList.remove("shadow-md");
+    }
+  };
+
+  useEffect(() => {
     if (color) {
       window.addEventListener("scroll", checkScroll);
       // Remove event listener on cleanup
@@ -85,11 +108,26 @@ const Topbar = props => {
           onClick={() => setOpen(!open)}
         ></OverlayDiv>
         <nav
-          className={`bg-white dark:bg-gray-800 rounded-lg p-6 px-4 md:mx-[2rem] max-w-[1200px] mx-auto fixed top-0 left-0 mt-[68px] lg:w-[66.666667%] w-full ${
+          className={`md:mx-[2rem] max-w-[1200px] px-[.5rem] mx-auto fixed top-0 left-0 mt-[68px] lg:w-[66.666667%] w-full ${
             open ? "animate-slide-down" : "animate-slide-up"
           }`}
         >
-          wassa
+          <NavDiv className="flex bg-white dark:bg-gray-800 w-full rounded-lg">
+            <ul className="left-nav mt-[1rem] h-full border-r-[1px] border-opacity-[0.1] border-[rgba(194,207,214,var(--tw-border-opacity))]">
+              <NavLink name="Home" className="selected" />
+              <NavLink name="About" />
+              <NavLink name="Products" />
+              <NavLink name="Resources" />
+              <NavLink name="Contact" />
+            </ul>
+            <div className="right-nav transition-all duration-[.3s]">
+              <div className="flex flex-wrap md:-mx-2 -mx-4 transition">
+                {homeLinks.map(content => (
+                  <HomeLink {...content} />
+                ))}
+              </div>
+            </div>
+          </NavDiv>
         </nav>
       </Transition>
       <TopContainer className={`w-full`}>

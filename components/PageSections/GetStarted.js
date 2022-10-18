@@ -23,7 +23,7 @@ const GetStarted = () => {
               Get Started
             </h2>
             <h4 className="uppercase font-bold">in three easy steps</h4>
-            <p className="text-base mt-9 max-w-[300px]">
+            <p className="text-base text-white mt-9 max-w-[300px]">
               Begin your journey to financial freedom. Make your money work for
               you.
             </p>
