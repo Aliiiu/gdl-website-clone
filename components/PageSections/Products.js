@@ -1,10 +1,12 @@
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import product from "../../constant/product";
 import img from "../../assets/Images/cardOneImg.png";
 import Link from "next/link";
 import { AppButton } from "../Widgets/Button/Button";
+import { RightProductSection } from "./pagesec.style";
+import { useRouter } from "next/router";
 
 export const SectionWrapper = styled.div`
   .title {
@@ -66,7 +68,35 @@ export const SectionWrapper = styled.div`
   }
 `;
 
-const Products = () => {
+export const RightProduct = () => (
+  <div className="px-[1.25rem] md:px-[1.5rem] mx-auto max-w-[1200px]">
+    <RightProductSection>
+      <div className="p-6 text-center">
+        <h2>Which Product is right for me?</h2>
+        <p className="sectionhint">
+          Let's help you choose a product that will work specifically for you.
+        </p>
+      </div>
+      <div className="mt-8">
+        <Link href="">
+          <a className="text-opacity-[1] text-[rgba(153,35,51,var(--tw-text-opacity))] font-medium">
+            See Use Cases →
+          </a>
+        </Link>
+      </div>
+    </RightProductSection>
+  </div>
+);
+
+const Products = ({ nobutton }) => {
+  const router = useRouter();
+  const [appparams, setAppParams] = useState("");
+
+  const handleRedirection = item => () => {
+    const url = item.replace(/ /g, "-").toLowerCase();
+    router.push({ pathname: `/products/${url}` });
+  };
+
   return (
     <SectionWrapper className="px-[1.5rem] mx-auto max-w-[1200px]">
       <div className="text-center md:text-center">
@@ -100,20 +130,22 @@ const Products = () => {
               <p className="text-lg text-white">{item.hint}</p>
               <AppButton
                 name="Learn more"
-                href={"/"}
+                onPress={handleRedirection(item.title)}
                 className="mt-4 uppercase card-btn bg-white text-black"
               />
             </div>
           </div>
         ))}
       </div>
-      <div className="flex mt-10 md:mt-20 justify-center items-center">
-        <AppButton
-          name="Explore More"
-          href={"/"}
-          className="bg-[#9A2333] py-[1rem] rounded-[0.5rem] px-[1.5rem] text-[1.5rem] text-white"
-        />
-      </div>
+      {!nobutton && (
+        <div className="flex mt-10 md:mt-20 justify-center items-center">
+          <AppButton
+            name="Explore More"
+            href={"/"}
+            className="bg-[#9A2333] py-[1rem] rounded-[0.5rem] px-[1.5rem] text-[1.5rem] text-white"
+          />
+        </div>
+      )}
     </SectionWrapper>
   );
 };

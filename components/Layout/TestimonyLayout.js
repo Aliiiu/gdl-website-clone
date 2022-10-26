@@ -14,7 +14,7 @@ const TestimonyLayout = () => {
       );
     return (
       <a
-        className="relative flex justify-center items-center bg-opacity-[1] bg-[rgba(255,214,220,var(--tw-bg-opacity))] w-11 h-10 rounded-full cursor-pointer hover:shadow-md transition ease-in-out duration-500"
+        className="relative flex justify-center items-center bg-opacity-[1] bg-[rgba(255,214,220,var(--tw-bg-opacity))] w-11 h-10 rounded-full cursor-pointer hover:shadow-md my-auto transition ease-in-out duration-500"
         onClick={onClick}
       >
         {pointer}
@@ -62,17 +62,17 @@ const TestimonyLayout = () => {
           </div>
         </section>
       </div>
-      <section className="relative py-16 md:py-40 bg-opacity-[1] bg-[rgba(255,236,239,var(--tw-bg-opacity))]">
-        <div className="absolute bg-green-500 z-10 md:z-0 px-[1.5rem] md:mx-auto max-w-[1200px] left-0 right-0 top-0 bottom-0 flex justify-between items-center mx-4 -mt-32 md:mt-0">
+      <section className="relative py-16 md:py-40 bg-opacity-[1] min-h-[700px] bg-[rgba(255,236,239,var(--tw-bg-opacity))]">
+        <div className="absolute z-10 md:z-0 px-[1.5rem] md:mx-auto max-w-[1200px] left-0 right-0 top-0 bottom-0 flex justify-between items-center mx-4 -mt-32 md:mt-0">
           <Carousel
             renderArrow={carouselArrow}
             renderPagination={renderPagination}
           >
-            {/* <div className="relative mx-auto max-w-2xl flex flex-wrap md:flex-nowrap items-center justify-center md:justify-start px-5 md:px-0">
+            <div className="relative bg-blue-400 mx-auto max-w-2xl flex flex-wrap md:flex-nowrap items-center justify-center md:justify-start px-5 md:px-0">
               <div className="mb-8 relative">
-                <div className="border-[8px] absolute top-0 right-0 w-24 h-24 md:w-32 md:h-32 rounded-[9999px] border-opacity-[0.2] border-[rgba(255,115,137,var(--tw-border-opacity))]" />
-                <div className="border-[8px] absolute rounded-[9999px] border-opacity-[0.2] border-[rgba(255,115,137,var(--tw-border-opacity))] bottom-0 left-0 md:-ml-3 -mb-2 w-28 h-28 md:w-44 md:h-44" />
-                <MainImage className="main-image" />
+                <div className="top-0 right-0 w-24 h-24 md:w-32 md:h-32 border-[8px] rounded-[9999px] border-opacity-[0.2] md:border-opacity-[1] absolute" />
+                {/* <div className="bottom-0 left-0 md:-ml-3 -mb-2 w-28 h-28 md:w-44 md:h-44 border-[8px] rounded-[9999px] border-opacity-[0.2] md:border-opacity-[1] absolute" /> */}
+                {/* <MainImage className="main-image" /> */}
                 <div />
               </div>
               <div className="ml-0 md:ml-16">
@@ -93,7 +93,7 @@ const TestimonyLayout = () => {
                   </p>
                 </div>
               </div>
-            </div> */}
+            </div>
             <div className="bg-yellow-500 w-full h-full">wassa2</div>
             <div>wassa3</div>
           </Carousel>

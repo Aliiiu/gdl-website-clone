@@ -60,7 +60,7 @@ export const productLinks = [
 export const resourceLinks = [
   { url: "/blog", name: "Blog" },
   { url: "/career", name: "Career" },
-  { url: "/testmonials", name: "Testimonials" },
+  { url: "/testimonials", name: "Testimonials" },
   { url: "/media", name: "Media" },
   { url: "/research", name: "Research" },
   { url: "/faq", name: "FAQs" },

@@ -15,11 +15,9 @@ import { homeLinks } from "../../utils/helper";
 
 const NavLink = ({ url, name, className }) => (
   <li>
-    <Link href="">
-      <a className={`${className}`}>
-        {name} <IoChevronForward className="text-[#ABA9A7]" />
-      </a>
-    </Link>
+    <a className={`${className}`}>
+      {name} <IoChevronForward className="text-[#ABA9A7]" />
+    </a>
   </li>
 );
 
@@ -82,12 +80,10 @@ const Topbar = props => {
   };
 
   useEffect(() => {
-    if (color) {
-      window.addEventListener("scroll", checkScroll);
-      // Remove event listener on cleanup
-      return () => window.removeEventListener("resize", checkScroll);
-    }
-  }, [color]);
+    window.addEventListener("scroll", checkScroll);
+    // Remove event listener on cleanup
+    return () => window.removeEventListener("resize", checkScroll);
+  }, []);
 
   return (
     <header
@@ -162,7 +158,7 @@ const Topbar = props => {
               >
                 <ul className="flex flex-col p-4 py-2 mt-4 lg:mx-7 md:flex-row md:space-x-12 md:mt-0 lg:text-[15px] md:font-light md:border-0 text-gray-500 dark:text-gray-400 dark:border-gray-700">
                   <LinkList name="about" url="/about" />
-                  <LinkList name="product" url="/product" />
+                  <LinkList name="product" url="/products" />
                   <LinkList name="blog" url="/blogs" />
                 </ul>
               </div>

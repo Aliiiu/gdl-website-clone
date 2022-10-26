@@ -1,6 +1,5 @@
 import Faq from "../components/PageSections/Faq";
 import GetStarted from "../components/PageSections/GetStarted";
-import JoinTheClub from "../components/PageSections/JoinTheClub";
 import Products from "../components/PageSections/Products";
 import { AppButton } from "../components/Widgets/Button/Button";
 import { AiOutlineArrowRight } from "react-icons/ai";
@@ -97,9 +96,9 @@ const HomePage = () => {
       >
         <Faq />
       </section>
-      <section id="join-club" className="softGradient flex flex-wrap">
+      {/* <section id="join-club" className="softGradient flex flex-wrap">
         <JoinTheClub />
-      </section>
+      </section> */}
     </div>
   );
 };
