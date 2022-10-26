@@ -6,7 +6,7 @@ import { SectionWrapper } from "./Products";
 
 const JoinTheClub = () => {
   return (
-    <SectionWrapper className="flex ">
+    <SectionWrapper className="flex flex-col md:flex-row">
       <div className="flex-1">
         <Image src={"/svgs/profile.svg"} alt="" width={190} height={144} />
         <h2 className="text-4xl my-2 font-semibold leading-none">

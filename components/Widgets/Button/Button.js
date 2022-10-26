@@ -3,8 +3,8 @@ import { Button } from "./button.style";
 
 export const AppButton = ({ onPress, ...props }) => (
   <Button
-    className={`bg-[#992333] rounded-lg text-white transition ease-in-out duration-700 ${
-      props.className || "px-4 py-3"
+    className={` rounded-lg  transition ease-in-out duration-700 ${
+      props.className || "px-4 py-3 bg-[#992333] text-white"
     }`}
     onClick={onPress}
   >

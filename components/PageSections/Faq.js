@@ -5,7 +5,7 @@ import { SectionWrapper } from "./Products";
 
 const Faq = () => {
   return (
-    <SectionWrapper className="grid md:grid-cols-2 ">
+    <SectionWrapper className="grid gap-[60px] md:grid-cols-2 ">
       <div className="py-12 flex-1">
         <h4 className=" mb-2 text-lg uppercase font-bold">have questions?</h4>
         <h2 className="title mb-3 leading-none font-bold">Get Answers Here.</h2>
@@ -18,7 +18,7 @@ const Faq = () => {
           className="text-white bg-black px-5 py-4"
         />
       </div>
-      <div className="rounded-lg faq-card h-[400px] overflow-hidden flex-1">
+      <div className="rounded-lg faq-card h-[370px] overflow-hidden flex-1">
         {/* <Image
           src={"/Images/blog.jpeg"}
           alt=""

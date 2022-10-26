@@ -2,14 +2,13 @@ import Image from "next/image";
 import React from "react";
 import styled from "styled-components";
 import product from "../../constant/product";
-import img from "../../assets/Images/cardOneImg.png";
 import Link from "next/link";
 import { AppButton } from "../Widgets/Button/Button";
 
 export const SectionWrapper = styled.div`
   .title {
     font-size: 48px;
-    font-weight: 600;
+    font-weight: 700;
   }
   .hint {
     font-size: 18px;
@@ -70,7 +69,7 @@ const Products = () => {
     <SectionWrapper className="flex flex-col gap-10">
       <div className="text-center">
         <h2 className="title text-primary">Our Products</h2>
-        <p className="hint text-primary text-opacity-90 lg:max-w-[470px] mx-auto">
+        <p className="hint text-primary mt-5 text-opacity-90 lg:max-w-[470px] mx-auto">
           We have various products which have been specifically designed for
           you. There is something for everyone at GDL.
         </p>
@@ -96,7 +95,7 @@ const Products = () => {
               className="flex p-6 h-full justify-end z-10 text-white flex-col items-start"
             >
               <h2 className="text-xl font-bold lg:text-2xl">{item.title}</h2>
-              <p className="text-lg">{item.hint}</p>
+              <p className="text-lg text-white">{item.hint}</p>
               <AppButton
                 name="Learn more"
                 href={"/"}
