@@ -13,10 +13,10 @@ const Research = () => {
     <div>
       <CustomHeader content={<ResearchHeader />} />
 
-      <section id="faq" className="lg:w-4/6 mx-auto w-full">
+      <section className="lg:w-4/6 mx-auto w-full">
         <ResearchFeatures />
       </section>
-      <section id="faq" className="bg-[#F8F8F8] w-full">
+      <section id="research-papers" className="bg-[#F8F8F8] w-full">
         <div className="lg:w-4/6 flex justify-center py-20 mx-auto">
           <div className="flex flex-col items-center">
             <h2 className="font-bold text-4xl">Research</h2>

@@ -6,6 +6,7 @@ import {
   IoPieChart,
   IoTrendingUpOutline,
 } from "react-icons/io5";
+import { Link } from "react-scroll";
 
 const ResearchHeader = () => {
   return (
@@ -21,9 +22,17 @@ const ResearchHeader = () => {
             Our research team gives powerful insights into all the important
             happenings in the world of business.
           </p>
-          <p className="capitalize flex text-blue-400 items-center gap-2">
-            See research papers <BsArrowRight className="text-blue-400" />
-          </p>
+          <Link
+            to={"research-papers"}
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={1000}
+          >
+            <button className="capitalize flex text-blue-400 items-center gap-2">
+              See research papers <BsArrowRight className="text-blue-400" />
+            </button>
+          </Link>
         </div>
         <div className="relative flex-1">
           <div className="flex gap-2 absolute z-20 right-8 shadow-lg border -top-6 items-center rounded-lg py-2 px-3 bg-white text-[#1f1a1780]">
