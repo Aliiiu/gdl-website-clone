@@ -96,6 +96,7 @@ const CareerPage = () => {
                   <Image
                     src={Img}
                     className="right-0 left-0  mx-auto rounded-lg"
+                    alt=""
                   />
                 </div>
               </div>
