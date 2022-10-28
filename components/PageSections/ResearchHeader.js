@@ -10,8 +10,8 @@ import { Link } from "react-scroll";
 
 const ResearchHeader = () => {
   return (
-    <section id="faq" className="lg:px-6 mx-auto py-16 md:py-36 w-full">
-      <div className="flex">
+    <section className="lg:px-6 mx-auto py-16 md:py-36 w-full">
+      <div className="flex flex-col gap-[80px] md:gap-0 md:flex-row">
         <div className="flex-1">
           <h2 className="font-bold text-5xl">Research</h2>
           <h4 className="flex font-semibold text-lg items-center">

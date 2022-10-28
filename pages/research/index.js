@@ -13,11 +13,11 @@ const Research = () => {
     <div>
       <CustomHeader content={<ResearchHeader />} />
 
-      <section className="lg:w-4/6 mx-auto w-full">
+      <section className="max-w-[1200px] md:px-[1.5rem] px-[1.25rem] mx-auto w-full">
         <ResearchFeatures />
       </section>
       <section id="research-papers" className="bg-[#F8F8F8] w-full">
-        <div className="lg:w-4/6 flex justify-center py-20 mx-auto">
+        <div className="max-w-[1200px] md:px-[1.5rem] px-[1.25rem] flex justify-center py-20 mx-auto">
           <div className="flex flex-col items-center">
             <h2 className="font-bold text-4xl">Research</h2>
             <p className="text-base text-center mt-2 max-w-lg mb-3">
@@ -34,7 +34,7 @@ const Research = () => {
       </section>
       <section
         id="faq"
-        className="lg:px-6 lg:w-4/6 mx-auto py-16 md:py-36 w-full"
+        className="lg:px-6 lg:w-4/6 mx-auto md:px-[1.5rem] px-[1.25rem] py-16 md:py-36 w-full"
       >
         <Faq />
       </section>

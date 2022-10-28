@@ -10,7 +10,7 @@ const JoinTheClub = () => {
     <>
       <div className="lg:w-1/2 py-12 md:py-24 w-full">
         <div className="max-w-md mx-auto">
-          <div className="px-5 md:px-0">
+          <div className="">
             <div className="mb-3">
               <Image
                 src={"/svgs/profile.svg"}
@@ -47,7 +47,7 @@ const JoinTheClub = () => {
       </div>
       <div className="py-12 md:py-24 w-full lg:w-1/2">
         <div className="max-w-md mx-auto">
-          <div className="px-5 md:px-0">
+          <div className="">
             <div>
               <div className="mb-3">
                 <Image

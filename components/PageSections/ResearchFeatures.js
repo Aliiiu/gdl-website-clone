@@ -4,15 +4,15 @@ import features from "../../constant/features";
 
 const ResearchFeatures = () => {
   return (
-    <div>
+    <div className="pt-[50px] md:py-[50px] lg:py-0">
       {features.map((feature, index) => (
         <div
           key={feature.id}
-          className={`flex py-[120px]  ${
-            feature.key % 2 === 0 ? "flex-row-reverse" : "flex-row"
+          className={`flex flex-col py-4 md:py-[60px] lg:py-[120px]  ${
+            feature.key % 2 === 0 ? "md:flex-row-reverse" : "md:flex-row"
           }`}
         >
-          <div className={`flex flex-1 justify-center`}>
+          <div className={`md:flex flex-1 hidden justify-center`}>
             <Image
               src={feature.img}
               alt=""
@@ -26,7 +26,9 @@ const ResearchFeatures = () => {
               <h2 className="text-5xl mb-3 font-bold text-[#992333]">
                 {feature.id}
               </h2>
-              <h2 className="text-5xl font-bold ">{feature.title}</h2>
+              <h2 className="text-4xl md:text-5xl font-bold ">
+                {feature.title}
+              </h2>
               <p className="mt-5">{feature.content}</p>
             </div>
           </div>
