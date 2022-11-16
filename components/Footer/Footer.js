@@ -62,8 +62,8 @@ const Footer = () => {
             </div>
             <hr className="border-white border-opacity-10 mb-4 mt-6" />
             <div className="socials flex mt-6 justify-between items-center text-2xl">
-              {footerLinkData.map(content => (
-                <Socials {...content} />
+              {footerLinkData.map((content, index) => (
+                <Socials key={index} {...content} />
               ))}
             </div>
           </div>
@@ -72,8 +72,8 @@ const Footer = () => {
               Company
             </h2>
             <div className="text-black dark:text-white">
-              {companyLinks.map(content => (
-                <Companylink {...content} />
+              {companyLinks.map((content, index) => (
+                <Companylink key={index} {...content} />
               ))}
             </div>
           </div>
@@ -82,8 +82,8 @@ const Footer = () => {
               Products
             </h2>
             <div className="text-black dark:text-white">
-              {productLinks.map(content => (
-                <Companylink {...content} />
+              {productLinks.map((content, index) => (
+                <Companylink key={index} {...content} />
               ))}
             </div>
           </div>
@@ -92,8 +92,8 @@ const Footer = () => {
               Resources
             </h2>
             <div className="text-black dark:text-white">
-              {resourceLinks.map(content => (
-                <Companylink {...content} />
+              {resourceLinks.map((content, index) => (
+                <Companylink key={index} {...content} />
               ))}
             </div>
           </div>

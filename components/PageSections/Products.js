@@ -2,7 +2,6 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import product from "../../constant/product";
-import img from "../../assets/Images/cardOneImg.png";
 import Link from "next/link";
 import { AppButton } from "../Widgets/Button/Button";
 import { RightProductSection } from "./pagesec.style";
