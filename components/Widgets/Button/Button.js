@@ -8,7 +8,11 @@ export const AppButton = ({ onPress, ...props }) => (
     }`}
     onClick={onPress}
   >
-    <div className="flex items-center justify-between w-full font-light">
+    <div
+      className={`flex items-center ${
+        props.justify || "justify-between"
+      } w-full font-light`}
+    >
       <span className={`${props.textSize || "md:text-sm text-sm"}`}>
         {props.name}
       </span>

@@ -23,7 +23,8 @@ const ProductPage = () => {
     if (!"undefined".includes(params)) {
       // alert(params[0]);
       setContent(data[params[0]]);
-      if (params) alert("wassa");
+      setOpen(true);
+      // if (params) alert("wassa");
     } else {
       setOpen(false);
     }

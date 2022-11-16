@@ -47,11 +47,17 @@ export const ContentContainer = styled.div`
   min-height: 320px;
   max-width: 90vw;
   & section {
-    min-width: 1200px;
+    max-width: 1200px;
     padding-bottom: 0;
     display: flex;
     flex-wrap: wrap;
     overflow: auto;
     max-height: 90vh;
+  }
+  article {
+    & p {
+      font-size: 1rem;
+      line-height: 24px;
+    }
   }
 `;

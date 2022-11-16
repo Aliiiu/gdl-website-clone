@@ -22,8 +22,8 @@ const CareerTopContent = () => (
   </>
 );
 
-const JobContent = () => (
-  <Link href="">
+const JobContent = ({ id }) => (
+  <Link href={`/career/${id}/apply`}>
     <a className="relative rounded-[0.5rem] border-[1px] border-[rgba(162,166,168,var(--tw-border-opacity))] border-opacity-20 bg-opacity-100 bg-[rgba(255,255,255,var(--tw-bg-opacity))] p-[1.5rem] shadow">
       <h1 className="font-bold text-xl">Head Services</h1>
       <div className="mb-1 py-1 px-2 inline-flex rounded text-sm bg-opacity-100 bg-[rgba(255,236,239,var(--tw-bg-opacity))] text-opacity-100 text-[rgba(153,35,51,var(--tw-text-opacity))]">
@@ -139,8 +139,8 @@ const CareerPage = () => {
           </h1>
           <div className="mt-8">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <JobContent />
-              <JobContent />
+              <JobContent id="1" />
+              <JobContent id="2" />
             </div>
           </div>
         </div>

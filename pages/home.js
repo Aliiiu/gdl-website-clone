@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import Faq from "../components/PageSections/Faq";
 import GetStarted from "../components/PageSections/GetStarted";
 import Products from "../components/PageSections/Products";
@@ -10,6 +11,27 @@ import BlogLayout from "../components/Layout/BlogLayout";
 import TestimonyLayout from "../components/Layout/TestimonyLayout";
 
 const HomePage = () => {
+  const [counter, setCounter] = useState(0);
+  const [count, setCount] = useState(0);
+
+  const startCounter = () => {
+    setInterval(() => {
+      if (counter <= 1000) setCounter(counter++);
+      if (count <= 830) setCount(count++);
+    }, 0.1);
+  };
+  const stopCounter = () => {
+    if (counter >= 1000) {
+      clearInterval(counter);
+    }
+    if (count >= 830) clearInterval(count);
+  };
+
+  useEffect(() => {
+    window.addEventListener("load", startCounter());
+
+    return () => window.removeEventListener("load", stopCounter());
+  }, []);
   return (
     <div className="relative">
       <div className="hidden absolute top-0 right-0 mt-[-8.8rem] mr-[-5rem] md:flex items-center justify-center rounded-[9999px] dark:border-gray-800 border-red-50 w-[220px] h-[220px] border-[32px]" />
@@ -52,7 +74,7 @@ const HomePage = () => {
           <div className="w-full md:w-1/4 flex flex-col items-center bg-[#942231] justify-center min-h-[9em]">
             <div className="text-center md:text-left">
               <h2 className="text-4xl md:text-3xl lg:text-4xl font-bold text-white">
-                <span>1,000</span>
+                <span>{counter}</span>
                 <span>+</span>
               </h2>
               <h4 className="-mt-1 text-[#FF7389]">Customers</h4>
@@ -66,7 +88,7 @@ const HomePage = () => {
           <div className="w-full md:w-1/4 flex flex-col items-center justify-center min-h-[9em]">
             <div className="text-center md:text-left">
               <h2 className="text-4xl md:text-3xl lg:text-4xl font-bold text-white">
-                <span>830</span>
+                <span>{count}</span>
                 <span>+</span>
               </h2>
               <span className="-mt-1 text-[#FF7389]">Business</span>
