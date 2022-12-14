@@ -21,9 +21,9 @@ const NavLink = ({ url, name, className, ...props }) => (
   </li>
 );
 
-const HomeLink = ({ url, name, icon, subname }) => (
-  <Link href="">
-    <a className="sub-menu">
+const HomeLink = ({ url, name, icon, subname, ...props }) => (
+  <Link href={`${url}`}>
+    <a className="sub-menu" onClick={() => props.setOpen(false)}>
       <div>
         <div className="icon">{icon}</div>
       </div>
@@ -127,7 +127,7 @@ const Topbar = props => {
             <div className="right-nav transition-all duration-[.3s]">
               <div className="flex flex-wrap md:-mx-2 -mx-4 transition">
                 {homeLinks[value]?.map(content => (
-                  <HomeLink {...content} />
+                  <HomeLink {...content} setOpen={setOpen} />
                 ))}
               </div>
             </div>

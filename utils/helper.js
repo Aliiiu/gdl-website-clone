@@ -81,32 +81,41 @@ export const resourceLinks = [
 
 export const homeLinks = [
   [
-    { name: "Home", subname: "GDL Home", icon: <IoHomeOutline /> },
+    { name: "Home", subname: "GDL Home", icon: <IoHomeOutline />, url: "/" },
     {
       name: "Products",
       subname: "Some of our products",
       icon: <IoCubeOutline />,
+      url: "/products",
     },
     {
       name: "USP",
       subname: "Our Unique Selling Point",
       icon: <IoStarOutline />,
+      url: "/#usp",
     },
     {
       name: "Get Started",
       subname: "In Three Easy Steps",
       icon: <IoRocketOutline />,
+      url: "/#get-started",
     },
     {
       name: "Testimonials",
       subname: "What people are saying",
       icon: <IoHeartHalfOutline />,
     },
-    { name: "Blog", subname: "Guides on Finance", icon: <IoBulbOutline /> },
+    {
+      name: "Blog",
+      subname: "Guides on Finance",
+      icon: <IoBulbOutline />,
+      url: "/#blog",
+    },
     {
       name: "Media",
       subname: "Our social participation",
       icon: <IoFilmOutline />,
+      url: "/#media",
     },
   ],
   [
@@ -114,23 +123,27 @@ export const homeLinks = [
       name: "Corporate Information",
       subname: "What we stand for",
       icon: <IoPersonCircleOutline />,
+      url: "/about#corporate-information",
     },
 
     {
       name: "Core Values",
       subname: "In Three Easy Steps",
       icon: <IoShapesOutline />,
+      url: "/about#core-values",
     },
 
     {
       name: "Management Team",
       subname: "Guides on Finance",
       icon: <IoIdCardOutline />,
+      url: "/about#management-team",
     },
     {
       name: "Board of Directors",
       subname: "Our social participation",
       icon: <IoPeopleCircleOutline />,
+      url: "/about#board-of-directors",
     },
   ],
   [

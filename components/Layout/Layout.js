@@ -11,7 +11,10 @@ const Layout = ({ children, ...props }) => (
         <div className="w-full h-full">{children}</div>
       </PageContainer>
     </main>
-    <JoinClubContainer id="join-club" className="softGradient flex flex-wrap">
+    <JoinClubContainer
+      id="join-club"
+      className="softGradient  md:px-[1.5rem] px-[1.25rem] flex flex-col md:flex-row gap-6"
+    >
       <JoinTheClub />
     </JoinClubContainer>
     <Footer />

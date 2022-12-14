@@ -35,7 +35,10 @@ const HomePage = () => {
   return (
     <div className="relative">
       <div className="hidden absolute top-0 right-0 mt-[-8.8rem] mr-[-5rem] md:flex items-center justify-center rounded-[9999px] dark:border-gray-800 border-red-50 w-[220px] h-[220px] border-[32px]" />
-      <section className="flex flex-col items-start justify-center relative px-[1.5rem] mx-auto max-w-[1200px] md:min-h-[500px] min-h-[460px]">
+      <section
+        id="media"
+        className="flex flex-col items-start justify-center relative px-[1.5rem] mx-auto max-w-[1200px] md:min-h-[500px] min-h-[460px]"
+      >
         <div className="absolute top-0 left-0 bottom-0 flex justify-center items-center -ml-52">
           <div className="flex items-center justify-center rounded-[9999px] dark:border-gray-800 border-[#FFF1F4] w-[500px] h-[500px] border-[32px]">
             <div className="flex items-center justify-center rounded-[9999px] dark:border-gray-900 border-[#FFF5F7] border-[32px] w-[445px] h-[445px]" />
