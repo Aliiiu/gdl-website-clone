@@ -8,8 +8,12 @@ import BgImage from "../assets/images/bg.png";
 import Image from "next/image";
 import BlogLayout from "../components/Layout/BlogLayout";
 import TestimonyLayout from "../components/Layout/TestimonyLayout";
+import { useEffect } from "react";
 
-const HomePage = () => {
+const HomePage = props => {
+  useEffect(() => {
+    console.log(props.heroContent.data);
+  }, []);
   return (
     <div className="relative">
       <div className="hidden absolute top-0 right-0 mt-[-8.8rem] mr-[-5rem] md:flex items-center justify-center rounded-[9999px] dark:border-gray-800 border-red-50 w-[220px] h-[220px] border-[32px]" />
