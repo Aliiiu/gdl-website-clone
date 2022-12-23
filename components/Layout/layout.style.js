@@ -100,8 +100,7 @@ export const JoinClubContainer = styled.section`
 `;
 
 export const MainImage = styled.div`
-  /* background-image: url("https://res.cloudinary.com/gdlapp/image/upload/v1627286241/image/WhatsApp%20Image%202021-07-23%20at%208.13.54%20PM.jpg"); */
-  .main-image {
+  & .main-image {
     border-width: 12px;
     background-color: red;
     height: 15rem;

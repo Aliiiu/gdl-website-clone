@@ -3,7 +3,7 @@ import BlogList from "../Widgets/List/BlogList";
 
 const BlogLayout = () => {
   return (
-    <section className="pt-12 md:pt-24">
+    <section className="pt-12 md:pt-24" id="blog">
       <div className="px-[1.5rem] mx-auto max-w-[1200px]">
         <div className="text-center">
           <h1 className="md:leading-[1.1] leading-[2.5rem] md:text-[3rem] text-[2.25rem] mb-[.75rem] font-[700] visible opacity-[1]">

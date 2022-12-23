@@ -1,5 +1,6 @@
 import HomePage from "./home";
 import AboutPage from "./about";
+import { makeRequest } from "../apiCalls/requestHandler";
 
 const App = ({ heroContent }) => (
   <>
@@ -10,16 +11,18 @@ const App = ({ heroContent }) => (
 export default App;
 
 export async function getStaticProps() {
-  const response = await fetch(
-    "https://test-site.gdlapi.com.ng/pages/home/hero"
-  );
-  const data = await response.json();
+  // const data_one = await makeRequest("url")
+  // try {
+  //   const data = await makeRequest("/pages/home/hero", null, null);
+  // } catch (error) {
+  //   alert(error.message);
+  // }
 
-  console.log(data);
+  const userData = await makeRequest("/pages/home/hero", null, null);
 
   return {
     props: {
-      heroContent: data,
+      heroContent: userData.data,
     },
   };
 }

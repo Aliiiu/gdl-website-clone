@@ -72,7 +72,10 @@ const about = () => {
       <section className="lg:px-6 lg:w-4/6 mx-auto py-16 md:py-36 w-full">
         <WhatWeAre />
       </section>
-      <section className="lg:px-6 lg:w-4/6 mx-auto py-16 md:py-36 w-full">
+      <section
+        id="core-values"
+        className="lg:px-6 lg:w-4/6 mx-auto py-16 md:py-36 w-full"
+      >
         <div>
           <h2 className="title mb-4 text-center">Our Core Values</h2>
           <p className="text-center mx-auto max-w-lg">
@@ -91,10 +94,16 @@ const about = () => {
           </div>
         </div>
       </section>
-      <section className="lg:px-6 lg:w-4/6 mx-auto py-16 md:py-36 w-full">
+      <section
+        id="management-team"
+        className="lg:px-6 lg:w-4/6 mx-auto py-16 md:py-36 w-full"
+      >
         <Management />
       </section>
-      <section className="lg:px-6 lg:w-4/6 mx-auto py-16 md:py-36 w-full">
+      <section
+        id="board-of-directors"
+        className="lg:px-6 lg:w-4/6 mx-auto py-16 md:py-36 w-full"
+      >
         <Boards />
       </section>
       <section

@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Faq from "../components/PageSections/Faq";
 import CustomHeader from "../components/Widgets/CustomHeader/Header";
+import { useForm } from "react-hook-form";
+import { TextField } from "../components/Widgets/Form/Form";
 
 const ContactDetails = ({ name, details }) => (
   <div className="relative mt-[1rem] mb-[2rem]">
@@ -48,6 +50,11 @@ const EmailDetail = () => (
 );
 
 const ContactPage = () => {
+  const { handleSubmit, formState, register } = useForm({ mode: "onChange" });
+
+  const onSubmit = () => {
+    //
+  };
   return (
     <div>
       <CustomHeader
@@ -71,6 +78,38 @@ const ContactPage = () => {
               Avail us with the following information and we will get back to
               you in the least possible time.
             </p>
+            <div className="">
+              <form onSubmit={handleSubmit(onSubmit)}>
+                <TextField
+                  type="text"
+                  label="Your Name"
+                  name="name"
+                  error={formState.errors.name}
+                  {...register("name", { required: true })}
+                />
+                <TextField
+                  label="Your Email"
+                  name="email"
+                  type="email"
+                  error={formState.errors.email}
+                  {...register("email", { required: true })}
+                />
+                <TextField
+                  label="Your Phone (Optional)"
+                  name="phone"
+                  type="text"
+                  error={formState.errors.phone}
+                  {...register("phone", { required: false })}
+                />
+                <TextField
+                  label="Your Message"
+                  name="message"
+                  type="textarea"
+                  error={formState.errors.message}
+                  {...register("message", { required: true })}
+                />
+              </form>
+            </div>
           </div>
         </div>
       </section>

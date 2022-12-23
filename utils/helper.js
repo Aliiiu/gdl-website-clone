@@ -12,7 +12,19 @@ import {
   IoHeartHalfOutline,
   IoBulbOutline,
   IoFilmOutline,
+  IoPersonCircleOutline,
+  IoShapesOutline,
+  IoIdCardOutline,
+  IoPeopleCircleOutline,
+  IoStorefrontOutline,
+  IoBriefcaseOutline,
+  IoTelescopeOutline,
+  IoHelp,
+  IoChatboxOutline,
+  IoMailOpenOutline,
+  IoCallOutline,
 } from "react-icons/io5";
+import { FaHandHoldingUsd, FaMoneyBill } from "react-icons/fa";
 
 export const footerLinkData = [
   {
@@ -68,27 +80,202 @@ export const resourceLinks = [
 ];
 
 export const homeLinks = [
-  { name: "Home", subname: "GDL Home", icon: <IoHomeOutline /> },
-  {
-    name: "Products",
-    subname: "Some of our products",
-    icon: <IoCubeOutline />,
-  },
-  { name: "USP", subname: "Our Unique Selling Point", icon: <IoStarOutline /> },
-  {
-    name: "Get Started",
-    subname: "In Three Easy Steps",
-    icon: <IoRocketOutline />,
-  },
-  {
-    name: "Testimonials",
-    subname: "What people are saying",
-    icon: <IoHeartHalfOutline />,
-  },
-  { name: "Blog", subname: "Guides on Finance", icon: <IoBulbOutline /> },
-  {
-    name: "Media",
-    subname: "Our social participation",
-    icon: <IoFilmOutline />,
-  },
+  [
+    { name: "Home", subname: "GDL Home", icon: <IoHomeOutline />, url: "/" },
+    {
+      name: "Products",
+      subname: "Some of our products",
+      icon: <IoCubeOutline />,
+      url: "/products",
+    },
+    {
+      name: "USP",
+      subname: "Our Unique Selling Point",
+      icon: <IoStarOutline />,
+      url: "/#usp",
+    },
+    {
+      name: "Get Started",
+      subname: "In Three Easy Steps",
+      icon: <IoRocketOutline />,
+      url: "/#get-started",
+    },
+    {
+      name: "Testimonials",
+      subname: "What people are saying",
+      icon: <IoHeartHalfOutline />,
+    },
+    {
+      name: "Blog",
+      subname: "Guides on Finance",
+      icon: <IoBulbOutline />,
+      url: "/#blog",
+    },
+    {
+      name: "Media",
+      subname: "Our social participation",
+      icon: <IoFilmOutline />,
+      url: "/#media",
+    },
+  ],
+  [
+    {
+      name: "Corporate Information",
+      subname: "What we stand for",
+      icon: <IoPersonCircleOutline />,
+      url: "/about#corporate-information",
+    },
+
+    {
+      name: "Core Values",
+      subname: "In Three Easy Steps",
+      icon: <IoShapesOutline />,
+      url: "/about#core-values",
+    },
+
+    {
+      name: "Management Team",
+      subname: "Guides on Finance",
+      icon: <IoIdCardOutline />,
+      url: "/about#management-team",
+    },
+    {
+      name: "Board of Directors",
+      subname: "Our social participation",
+      icon: <IoPeopleCircleOutline />,
+      url: "/about#board-of-directors",
+    },
+  ],
+  [
+    {
+      name: "High Yield Note",
+      subname: "High Interest Rate + Low Risk = The Perfect Investment",
+      icon: <FaMoneyBill />,
+    },
+
+    {
+      name: "Finance",
+      subname: "Don’t take on that big project alone; get a loan.",
+      icon: <FaHandHoldingUsd />,
+    },
+
+    {
+      name: "Dollar Note",
+      subname: "What’s better than making money? Making it in dollars!",
+      icon: <FaMoneyBill />,
+    },
+    {
+      name: "Money Market Fund",
+      subname: "Cruise your way to financial freedom with as little as ₦10,000",
+      icon: <IoStorefrontOutline />,
+    },
+    {
+      name: "Stockbroking",
+      subname: "Member of the Nigerian Stock Exchange",
+      icon: <IoPeopleCircleOutline />,
+    },
+    {
+      name: "GDL Canary Fund",
+      subname: "Let your money speak for you.",
+      icon: <IoPeopleCircleOutline />,
+    },
+    {
+      name: "Long Term Note",
+      subname: "Play the long game, invest for the future",
+      icon: <IoPeopleCircleOutline />,
+    },
+    {
+      name: "GDL Income Fund",
+      subname: "There's no cap to your income growth",
+      icon: <IoPeopleCircleOutline />,
+    },
+  ],
+  [
+    {
+      name: "Blog",
+      subname: "Guides on Finance",
+      icon: <IoBulbOutline />,
+    },
+
+    {
+      name: "Career",
+      subname: "Join the tribe",
+      icon: <IoBriefcaseOutline />,
+    },
+
+    {
+      name: "Testimonials",
+      subname: "What people are saying",
+      icon: <IoHeartHalfOutline />,
+    },
+    {
+      name: "Media",
+      subname: "Our social participation",
+      icon: <IoFilmOutline />,
+    },
+    {
+      name: "Research",
+      subname: "Stay informed, Beat the odds",
+      icon: <IoTelescopeOutline />,
+    },
+    {
+      name: "FAQs",
+      subname: "Frequently Asked Questions",
+      icon: <IoHelp />,
+    },
+  ],
+  [
+    {
+      name: "Contact Us",
+      subname: "Our Contact Information",
+      icon: <IoChatboxOutline />,
+    },
+
+    {
+      name: "Write to Us",
+      subname: "Send us an email",
+      icon: <IoMailOpenOutline />,
+    },
+
+    {
+      name: "Call Us",
+      subname: "Give us a call",
+      icon: <IoCallOutline />,
+    },
+  ],
 ];
+
+export function getAllPostIds() {
+  const fileNames = fs.readdirSync(postsDirectory);
+
+  // Returns an array that looks like this:
+  // [
+  //   {
+  //     params: {
+  //       id: 'ssg-ssr'
+  //     }
+  //   },
+  //   {
+  //     params: {
+  //       id: 'pre-rendering'
+  //     }
+  //   }
+  // ]
+  return fileNames.map(fileName => {
+    return {
+      params: {
+        careerid: fileName.replace(/\.md$/, ""),
+      },
+    };
+  });
+}
+
+export function getBase64(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+
+    reader.readAsDataURL(file);
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = error => reject(error);
+  });
+}

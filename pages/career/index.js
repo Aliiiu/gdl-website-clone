@@ -5,6 +5,8 @@ import { IoPlayCircleOutline, IoLocationOutline } from "react-icons/io5";
 import Image from "next/image";
 import Img from "../../assets/Images/two-employees.jpg";
 import Link from "next/link";
+import { useEffect } from "react";
+import { makeRequest } from "../../apiCalls/requestHandler";
 
 const CareerTopContent = () => (
   <>
@@ -22,19 +24,19 @@ const CareerTopContent = () => (
   </>
 );
 
-const JobContent = () => (
-  <Link href="">
+const JobContent = ({ id, data }) => (
+  <Link href={`/career/${id}/apply`}>
     <a className="relative rounded-[0.5rem] border-[1px] border-[rgba(162,166,168,var(--tw-border-opacity))] border-opacity-20 bg-opacity-100 bg-[rgba(255,255,255,var(--tw-bg-opacity))] p-[1.5rem] shadow">
-      <h1 className="font-bold text-xl">Head Services</h1>
+      <h1 className="font-bold text-xl">{data?.position || "Job Title"}</h1>
       <div className="mb-1 py-1 px-2 inline-flex rounded text-sm bg-opacity-100 bg-[rgba(255,236,239,var(--tw-bg-opacity))] text-opacity-100 text-[rgba(153,35,51,var(--tw-text-opacity))]">
-        Full Time
+        {data?.type_of_employment || "Job Type"}
       </div>
       <h3 className="flex justify-start items-center font-normal">
         <IoLocationOutline className="mr-1" />
-        <span>Lagos</span>
+        <span>{data?.location || "Job Location"}</span>
       </h3>
       <div className="mt-1 text-sm text-opacity-100 text-[rgba(162,166,168,var(--tw-text-opacity))]">
-        Closes Aug 5, 2021
+        Closes {new Date(data?.lasts_till).toDateString()}
       </div>
       <div className="mt-4 flex items-center justify-end text-sm capitalize text-opacity-100 text-[rgba(162,166,168,var(--tw-text-opacity))]">
         <span>a year ago</span>
@@ -43,7 +45,10 @@ const JobContent = () => (
   </Link>
 );
 
-const CareerPage = () => {
+const CareerPage = ({ jobOpening }) => {
+  useEffect(() => {
+    console.log(jobOpening);
+  }, []);
   return (
     <div>
       <div className="bg-opacity-20 bg-[rgba(194,207,214,var(--tw-bg-opacity))]">
@@ -140,8 +145,8 @@ const CareerPage = () => {
           </h1>
           <div className="mt-8">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <JobContent />
-              <JobContent />
+              <JobContent id="1" data={jobOpening[0]} />
+              <JobContent id="2" data={jobOpening[1]} />
             </div>
           </div>
         </div>
@@ -155,5 +160,15 @@ const CareerPage = () => {
     </div>
   );
 };
+
+export async function getStaticProps() {
+  const jobData = await makeRequest("/jobs", null, null);
+
+  return {
+    props: {
+      jobOpening: jobData?.data?.data.filter(item => item?.published),
+    },
+  };
+}
 
 export default CareerPage;

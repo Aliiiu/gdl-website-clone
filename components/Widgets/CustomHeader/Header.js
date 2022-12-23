@@ -29,7 +29,9 @@ const CustomHeader = props => (
       className={`${
         props.hasBackImg
           ? "w-full flex flex-col items-center justify-center text-center min-h-[420px] bg-opacity-95 bg-[rgba(255,236,239,var(--tw-bg-opacity))]"
-          : "max-w-[1200px] md:px-[1.5rem] px-[1.25rem] mx-auto"
+          : `max-w-[1200px] md:px-[1.5rem] px-[1.25rem] mx-auto ${
+              props.floatLeft ? "w-full" : ""
+            }`
       }`}
     >
       <div className="flex flex-col items-center">
