@@ -28,16 +28,16 @@ const Papers = ({ heroContent }) => {
 
 export default Papers;
 
-export async function getStaticProps() {
-  const paperData = await makeRequest(
-    "/pages/resources/rp/research/papers",
-    null,
-    null
-  );
+// export async function getStaticProps() {
+//   const paperData = await makeRequest(
+//     "/pages/resources/rp/research/papers",
+//     null,
+//     null
+//   );
 
-  return {
-    props: {
-      heroContent: paperData?.data?.data,
-    },
-  };
-}
+//   return {
+//     props: {
+//       heroContent: paperData?.data?.data,
+//     },
+//   };
+// }

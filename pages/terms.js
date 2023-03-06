@@ -25,12 +25,12 @@ const TermsOfUse = ({ termsContent }) => {
 
 export default TermsOfUse;
 
-export async function getStaticProps() {
-  // const userData = await makeRequest("/pages/terms", null, null);
+// export async function getStaticProps() {
+//   // const userData = await makeRequest("/pages/terms", null, null);
 
-  return {
-    props: {
-      // termsContent: userData,
-    },
-  };
-}
+//   return {
+//     props: {
+//       // termsContent: userData,
+//     },
+//   };
+// }

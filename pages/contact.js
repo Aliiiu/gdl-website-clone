@@ -54,10 +54,10 @@ const EmailDetail = () => (
 const ContactPage = ({ heroContent, formContact }) => {
   const { handleSubmit, formState, register } = useForm({ mode: "onChange" });
 
-  useEffect(() => {
-    // console.log(formContact);
-    console.log(heroContent);
-  }, []);
+  // useEffect(() => {
+  //   // console.log(formContact);
+  //   console.log(heroContent);
+  // }, []);
   const onSubmit = () => {
     //
   };
@@ -131,14 +131,14 @@ const ContactPage = ({ heroContent, formContact }) => {
 
 export default ContactPage;
 
-export async function getStaticProps() {
-  const generalData = await makeRequest("/pages/contact", null, null);
-  // const formData = await makeRequest("/pages/contact/form", null, null);
+// export async function getStaticProps() {
+//   const generalData = await makeRequest("/pages/contact", null, null);
+//   // const formData = await makeRequest("/pages/contact/form", null, null);
 
-  return {
-    props: {
-      heroContent: generalData?.data?.data,
-      // formContent: formData?.data?.data,
-    },
-  };
-}
+//   return {
+//     props: {
+//       heroContent: generalData?.data?.data,
+//       // formContent: formData?.data?.data,
+//     },
+//   };
+// }
