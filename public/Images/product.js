@@ -27,7 +27,7 @@ const product = [
   {
     title: "Long Term Note",
     hint: "Play the long game, invest for the future",
-    img: "/Images/flat.jpg",
+    img: "/Images/flat.jpeg",
   },
   {
     title: "Dollar Note",

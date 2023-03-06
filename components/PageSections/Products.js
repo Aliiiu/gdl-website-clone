@@ -140,7 +140,7 @@ const Products = ({ nobutton, product }) => {
         <div className="flex mt-10 md:mt-20 justify-center items-center">
           <AppButton
             name="Explore More"
-            href={"/"}
+            onPress={() => router.push("/products")}
             className="bg-[#9A2333] py-[1rem] rounded-[0.5rem] px-[1.5rem] text-[1.5rem] text-white"
           />
         </div>

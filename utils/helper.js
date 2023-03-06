@@ -248,6 +248,7 @@ export const homeLinks = [
 export const data = {
   stockbroking: [
     {
+      img: "/Images/timely-market-intelligence.jpeg",
       title: "Stockbroking",
       description: (
         <div>
@@ -281,6 +282,7 @@ export const data = {
   ],
   "dollar-note": [
     {
+      img: "/Images/dollar.jpg",
       title: "Dollar Note",
       description: (
         <div>
@@ -343,6 +345,7 @@ export const data = {
   ],
   "long-term-note": [
     {
+      img: "/Images/flat.jpg",
       title: "Long Term Note",
       description: (
         <div>
@@ -375,6 +378,7 @@ export const data = {
   ],
   "financial-advisory": [
     {
+      img: "/Images/african-bis.jpg",
       title: "Financial Advisory",
       description: (
         <div>
@@ -423,6 +427,7 @@ export const data = {
   ],
   "gdl-canary-fund": [
     {
+      img: "/Images/cardOneImg.png",
       title: "GDL Canary Fund",
       description: (
         <div>
@@ -467,6 +472,7 @@ export const data = {
   ],
   "high-yield-note": [
     {
+      img: "/Images/high-yield-note.jpeg",
       title: "High Yield Note",
       description: (
         <div>
@@ -496,6 +502,7 @@ export const data = {
   ],
   "money-market-fund": [
     {
+      img: "/Images/money-market-fund.jpeg",
       title: "Money Market Fund",
       description: (
         <div>

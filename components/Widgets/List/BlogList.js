@@ -3,8 +3,11 @@ import Link from "next/link";
 import { ArticleDiv } from "./list.style";
 import { IoBookOutline } from "react-icons/io5";
 
-const BlogList = () => (
-  <ArticleDiv className="flex flex-wrap md:flex-nowrap rounded-lg bg-gdlGrey dark:bg-gray-900 hover:shadow-md mt-6 mb-12 shadow-none h-auto transition-all duration-[.3s]">
+const BlogList = ({ onPress }) => (
+  <ArticleDiv
+    className="flex flex-wrap md:flex-nowrap rounded-lg bg-gdlGrey dark:bg-gray-900 hover:shadow-md mt-6 mb-12 shadow-none h-auto transition-all duration-[.3s]"
+    onClick={onPress}
+  >
     <section className="w-full md:w-2/5">
       <div className="flex rounded-tr-[0] rounded-bl-[.5rem] relative overflow-hidden rounded-tl-[.5rem]">
         <Image src="" alt="img" />

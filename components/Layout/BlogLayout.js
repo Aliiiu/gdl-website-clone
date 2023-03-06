@@ -1,7 +1,20 @@
 import Link from "next/link";
 import BlogList from "../Widgets/List/BlogList";
 
+const blogData = [
+  {
+    id: 1,
+    category: "INVESTMENT",
+    title: "Identifying & Analyzing Sound Investments",
+    info: "Once you understand the basics of investment, a typical next step is identifying sound financial securities, investments which will yield the best returns, long or short term.",
+    time: "4 minutes",
+  },
+];
+
 const BlogLayout = () => {
+  const handleOnPress = id => {
+    alert(id);
+  };
   return (
     <section className="pt-12 md:pt-24" id="blog">
       <div className="px-[1.5rem] mx-auto max-w-[1200px]">
@@ -14,11 +27,16 @@ const BlogLayout = () => {
           </p>
         </div>
         <section className="mt-16 px-[1.5rem] mx-auto max-w-[56rem]">
-          <BlogList />
-          <BlogList />
+          {blogData.map(content => (
+            <BlogList
+              key={content.id}
+              onPress={() => handleOnPress(content.id)}
+              {...content}
+            />
+          ))}
         </section>
         <div className="mt-16 mb-5 md:mb-10 text-center">
-          <Link href="">
+          <Link href="/blog">
             <a className="font-medium text-[#992333] dark:text-white">
               Read On →
             </a>

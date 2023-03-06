@@ -7,7 +7,7 @@ export const ModalContent = ({ content, ...props }) => (
       <div
         className="bg-green-300 w-full md:w-4/12 flex justify-center items-start rounded-tl-[.5rem] rounded-bl-[.5rem]"
         style={{
-          backgroundImage: `url(${"https://res.cloudinary.com/gdlapp/image/upload/v1625840982/image/high-yield-note.jpg"})`,
+          backgroundImage: `url(${content[0].img})`,
           backgroundPosition: "39% 0%",
           backgroundSize: "cover",
           minHeight: "100%",

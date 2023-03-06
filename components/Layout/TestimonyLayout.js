@@ -3,16 +3,45 @@ import Carousel, { consts } from "react-elastic-carousel";
 import Link from "next/link";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { MainImage } from "./layout.style";
-import BackImg from "../../assets/Images/blogBackground.jpeg";
+import BackImg from "../../assets/Images/testimonial-one.jpg";
+import Testimony2 from "../../assets/Images/testimonial-two.jpg";
+import Testimony3 from "../../assets/Images/testimonial3.jpeg";
 
-const CarouselContent = () => (
-  <div className="relative mx-auto max-w-2xl flex flex-wrap md:flex-nowrap items-center justify-center md:justify-start px-5 md:px-0">
+const TestimonyData = [
+  {
+    image: BackImg,
+    name: "Seyi Asagun",
+    job: "Entrepreneur",
+    testimony:
+      "I am glad my money is managed by GDL. The professionalism is top-notch. Every day, I go to sleep knowing my money is working for me efficiently. Portfolio managers at their peak. You should try GDL today.",
+  },
+  {
+    image: Testimony2,
+    name: "Banke Olatunji",
+    job: "Banker",
+    testimony:
+      "I am glad my money is managed by GDL. The professionalism is top-notch. Every day, I go to sleep knowing my money is working for me efficiently. Portfolio managers at their peak. You should try GDL today.",
+  },
+  {
+    image: Testimony3,
+    name: "Salami Okiki",
+    job: "Real Estate",
+    testimony:
+      "I am glad my money is managed by GDL. The professionalism is top-notch. Every day, I go to sleep knowing my money is working for me efficiently. Portfolio managers at their peak. You should try GDL today.",
+  },
+];
+
+const CarouselContent = ({ image, name, job, testimony }) => (
+  <div
+    key={name}
+    className="relative mx-auto max-w-2xl flex flex-wrap md:flex-nowrap items-center justify-center md:justify-start px-5 md:px-0"
+  >
     <div className="mb-8 relative">
       <div className="top-0 right-0 w-24 h-24 md:w-32 md:h-32 border-[8px] rounded-[9999px] border-opacity-[0.2] md:border-opacity-20 absolute border-[rgba(255,115,137,var(--tw-border-opacity))]" />
       <div className="bottom-0 left-0 md:-ml-3 -mb-2 w-28 h-28 md:w-44 md:h-44 border-[8px] rounded-[9999px] border-opacity-[0.2] md:border-opacity-20 absolute border-[rgba(255,115,137,var(--tw-border-opacity))]" />
       <MainImage
         style={{
-          backgroundImage: `url(${BackImg.src})`,
+          backgroundImage: `url(${image.src})`,
           height: "15rem",
           width: "15rem",
           backgroundRepeat: "no-repeat",
@@ -27,18 +56,13 @@ const CarouselContent = () => (
       <div className="text-center md:text-left">
         <div className="mb-8">
           <h2 className="text-2xl font-medium">
-            <span>Seyi Asagun</span>
+            <span>{name}</span>
           </h2>
           <h5 className="text-opacity-[0.8] text-[rgba(31,26,23,var(--tw-text-opacity))] text-lg">
-            Entrepreneur
+            {job}
           </h5>
         </div>
-        <p className="text-xl font-bold mt-6 mb-16">
-          I am glad my money is managed by GDL. The professionalism is
-          top-notch. Every day, I go to sleep knowing my money is working for me
-          efficiently. Portfolio managers at their peak. You should try GDL
-          today.
-        </p>
+        <p className="text-xl font-bold mt-6 mb-16">{testimony}</p>
       </div>
     </div>
   </div>
@@ -80,7 +104,7 @@ const TestimonyLayout = () => {
           })}
         </div>
         <div className="text-center mt-12">
-          <Link href="">
+          <Link href="/testimonials">
             <a className="font-medium text-opacity-100 flex items-center text-[rgba(153,35,51,var(--tw-text-opacity))]">
               More Testimonials
               <AiOutlineArrowRight className="ml-1" />
@@ -108,9 +132,9 @@ const TestimonyLayout = () => {
             renderArrow={carouselArrow}
             renderPagination={renderPagination}
           >
-            <CarouselContent />
-            <CarouselContent />
-            <CarouselContent />
+            {TestimonyData.map(content => (
+              <CarouselContent {...content} />
+            ))}
           </Carousel>
         </div>
       </section>
