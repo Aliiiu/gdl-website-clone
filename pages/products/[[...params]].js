@@ -23,6 +23,7 @@ const ProductPage = ({ prodContent }) => {
   useEffect(() => {
     if (!"undefined".includes(params)) {
       // alert(params[0]);
+      console.log(params);
       setContent(data[params[0]]);
       setOpen(true);
       // if (params) alert("wassa");
@@ -30,10 +31,6 @@ const ProductPage = ({ prodContent }) => {
       setOpen(false);
     }
   }, [params]);
-
-  useEffect(() => {
-    console.log(prodContent);
-  }, []);
 
   return (
     <>
@@ -65,19 +62,4 @@ export default ProductPage;
 // export async function getServerSideProps(context) {
 //   const { careerid } = context.query;
 
-//   const prodData = await makeRequest("/pages/products", null, null);
-//   const prodGeneral = await makeRequest("/pages/products/general", null, null);
-//   // console.log(jobData);
-//   return {
-//     props: {
-//       prodContent: "hello",
-//       // jobId: careerid,
-//       prodGeneral: "hi",
-//     },
-//     // props: {
-//     //   prodContent: prodData?.data?.data,
-//     //   jobId: careerid,
-//     //   prodGeneral: prodGeneral?.data?.data,
-//     // },
-//   };
-// }
+//

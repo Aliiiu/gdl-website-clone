@@ -1,5 +1,4 @@
 import HomePage from "./home";
-import AboutPage from "./about";
 import { makeRequest } from "../apiCalls/requestHandler";
 
 const App = ({

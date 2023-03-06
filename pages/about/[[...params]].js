@@ -1,18 +1,13 @@
-import Image from "next/image";
-import Link from "next/link";
 import React, { useEffect } from "react";
 import styled from "styled-components";
-import { makeRequest } from "../apiCalls/requestHandler";
-import AboutHero from "../components/PageSections/AboutHero";
-import Boards from "../components/PageSections/Boards";
-import CoreValues from "../components/PageSections/CoreValues";
-import Faq from "../components/PageSections/Faq";
-import JoinTheClub from "../components/PageSections/JoinTheClub";
-import Management from "../components/PageSections/Management";
-import WhatWeAre from "../components/PageSections/WhatWeAre";
-import WhatWeDo from "../components/PageSections/WhatWeDo";
-import boardOfDirector from "../constant/boardsOfDirector";
-import coreValues from "../constant/coreValues";
+import AboutHero from "../../components/PageSections/AboutHero";
+import Boards from "../../components/PageSections/Boards";
+import CoreValues from "../../components/PageSections/CoreValues";
+import Faq from "../../components/PageSections/Faq";
+import Management from "../../components/PageSections/Management";
+import WhatWeAre from "../../components/PageSections/WhatWeAre";
+import WhatWeDo from "../../components/PageSections/WhatWeDo";
+import coreValues from "../../constant/coreValues";
 
 const AboutPageWrapper = styled.div`
   .aboutHeroBg {
@@ -77,7 +72,7 @@ const About = ({
       >
         <AboutHero header={heroContent} />
       </section>
-      <section className="relative overflow-hidden md:py-24">
+      <section className=" overflow-hidden md:py-24">
         <CoreValues vision={visionContent} mission={missionContent} />
       </section>
       <section className="lg:px-6 lg:w-4/6 mx-auto py-16 w-full">
@@ -131,29 +126,3 @@ const About = ({
 };
 
 export default About;
-
-// export async function getStaticProps() {
-//   const generalData = await makeRequest("/pages/about/general", null, null);
-//   const vision = await makeRequest("/pages/about/our/vision", null, null);
-//   const mission = await makeRequest("/pages/about/our/mission", null, null);
-//   const mangData = await makeRequest(
-//     "/pages/about/management/team",
-//     null,
-//     null
-//   );
-//   const bodData = await makeRequest(
-//     "/pages/about/board/of/directors",
-//     null,
-//     null
-//   );
-
-//   return {
-//     props: {
-//       heroContent: generalData?.data?.data,
-//       visionContent: vision?.data?.data,
-//       missionContent: mission?.data?.data,
-//       mangContent: mangData?.data?.data,
-//       bodContent: bodData?.data?.data,
-//     },
-//   };
-// }

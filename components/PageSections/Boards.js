@@ -1,11 +1,36 @@
 import Image from "next/image";
-import Link from "next/link";
-import React from "react";
-import boardOfDirector from "../../constant/boardsOfDirector";
+import React, { useEffect, useRef, useState } from "react";
+import boardOfDirector, { boardDetails } from "../../constant/boardsOfDirector";
+import AppModal from "../Widgets/Modal/Modal";
+import BodModal from "./ModalContent/BodModal";
+import { useRouter } from "next/router";
+import { managementDetails } from "../../constant/management";
 
 const Boards = () => {
+  const {
+    query: { params = [] },
+    push,
+  } = useRouter();
+  const [open, setOpen] = useState(false);
+  const [content, setContent] = useState();
+  const bodRef = useRef(null);
+
+  // useEffect(() => {
+  //   // console.log(params[1]);
+  //   if (!"undefined".includes(params)) {
+  //     // console.log(params);
+  //     setContent(managementDetails[params[1]]);
+  //     setOpen(true);
+  //   } else {
+  //     setOpen(false);
+  //   }
+  // }, [params]);
+  const handleRedirection = url => () => {
+    push({ pathname: `${url}` });
+    // bodRef.current.scrollIntoView();
+  };
   return (
-    <div>
+    <div ref={bodRef}>
       <h2 className="title mb-4 text-center">Board Of Directors</h2>
       <p className="text-center">Meet the people behind the wheel</p>
       <div className="grid mt-[100px] sm:grid-cols-2 lg:grid-cols-3 gap-y-[100px]">
@@ -20,14 +45,26 @@ const Boards = () => {
                 objectPosition={"top"}
               />
             </div>
-            <Link href={item.href}>
-              <h5 className="text-[#9A2333] font-medium mt-3 cursor-pointer text-center">
-                {item.name}
-              </h5>
-            </Link>
+            <h5
+              onClick={handleRedirection(item.href)}
+              className="text-[#9A2333] font-medium mt-3 cursor-pointer text-center"
+            >
+              {item.name}
+            </h5>
           </div>
         ))}
       </div>
+      {/* <AppModal
+        open={open}
+        onClose={() => {
+          // mangRef.current.scrollIntoView();
+          // let elem = document.getElementById("management");
+          // elem.scrollIntoView({ behavior: "smooth" });
+          setOpen(false);
+          push("/about");
+        }}
+        content={<BodModal content={content} />}
+      /> */}
     </div>
   );
 };
