@@ -1,7 +1,7 @@
 import { AppButton } from "../Widgets/Button/Button";
 import { ContentContainer } from "./pagesec.style";
 
-export const ModalContent = ({ content }) => (
+export const ModalContent = ({ content, ...props }) => (
   <ContentContainer className="content-container">
     <section>
       <div
@@ -26,50 +26,14 @@ export const ModalContent = ({ content }) => (
           </div>
           <div className="sm:ml-6">
             <h1 className="text-3xl md:text-4xl font-bold text-opacity-[1] text-[#992333]">
-              {content || "High Yield Note"}
+              {content[0].title || "High Yield Note"}
             </h1>
             <h3 className="font-medium text-black border-b-0 border-black pb-0 border-opacity-20">
               High Interest Rate + Low Risk = The Perfect Investment
             </h3>
           </div>
         </div>
-        <article className="mt-6 text-left">
-          <p>
-            With flexible interest rates higher than that of commercial banks,
-            no maintenance fees and other charges, investing in our high yield
-            note is the best thing you with your money.
-          </p>
-          <p>
-            <br />
-          </p>
-          <p>
-            You can make up to 15% per annum and your interest can be paid
-            monthly or at once.
-          </p>
-          <p>
-            <br />
-          </p>
-          <p>
-            Investment starts with a minimum of{" "}
-            <span
-              style={{
-                backgroundColor: "rgb(255, 255, 255)",
-                color: "rgb(32, 33, 34)",
-              }}
-            >
-              ₦
-            </span>
-            100,000.
-          </p>
-          <p>
-            <br />
-          </p>
-          <p>
-            We are regulated and approved by the Securities and Exchanges
-            Commission (SEC) to invest money. You can sleep with both eyes
-            closed knowing all your funds are safe with us.
-          </p>
-        </article>
+        <article className="mt-6 text-left">{content[0].description}</article>
         <div className="hidden md:block mt-16">
           <AppButton
             name="Invest Now →"

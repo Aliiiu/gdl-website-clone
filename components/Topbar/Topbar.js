@@ -171,7 +171,7 @@ const Topbar = props => {
                 </ul>
               </div>
               <div className="hidden flex-grow lg:flex gap-x-6 justify-end items-center">
-                <div className="flex justify-start items-center">
+                {/* <div className="flex justify-start items-center">
                   <label
                     htmlFor="toggleB"
                     className="flex w-full items-center cursor-pointer"
@@ -198,7 +198,7 @@ const Topbar = props => {
                       <div className="dot absolute left-0.5 top-0.5 bg-black dark:bg-white w-4 h-4 rounded-full transition"></div>
                     </div>
                   </label>
-                </div>
+                </div> */}
                 <Link href="/login">
                   <a className="text-black dark:text-white font-light">Login</a>
                 </Link>

@@ -5,11 +5,8 @@ import JoinTheClub from "../../components/PageSections/JoinTheClub";
 import { useRouter } from "next/router";
 import AppModal from "../../components/Widgets/Modal/Modal";
 import { ModalContent } from "../../components/PageSections/ProductContent";
-
-const data = {
-  "gdl-canary-fund": "GDL Canary Fund",
-  "high-yield-note": "High Yield Note",
-};
+import product from "../../constant/product";
+import { data } from "../../utils/helper";
 
 const ProductPage = () => {
   const [open, setOpen] = useState(false);
@@ -17,11 +14,11 @@ const ProductPage = () => {
   const {
     query: { params = [] },
     push,
+    pathname,
   } = useRouter();
 
   useEffect(() => {
     if (!"undefined".includes(params)) {
-      // alert(params[0]);
       setContent(data[params[0]]);
       setOpen(true);
       // if (params) alert("wassa");
@@ -34,7 +31,7 @@ const ProductPage = () => {
     <>
       <div>
         <section id="our-product" className="py-16 md:py-28">
-          <Products nobutton />
+          <Products nobutton product={product} />
         </section>
         <section className="mt-12 md:mt-26">
           <RightProduct />

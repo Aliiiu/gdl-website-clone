@@ -244,3 +244,284 @@ export const homeLinks = [
     },
   ],
 ];
+
+export const data = {
+  stockbroking: [
+    {
+      title: "Stockbroking",
+      description: (
+        <div>
+          <p>
+            Buy shares of profitable Nigerian companies and make money as they
+            grow.
+          </p>
+          <p>
+            <br />
+          </p>
+          <p>
+            We buy and sell equities of all companies listed in the Nigerian
+            Stock Exchange. We also recover lost shares and unclaimed dividends
+            no matter the length of time.
+          </p>
+          <p>
+            <br />
+          </p>
+          <p>
+            With our strong research base and remarkable stockbrokers, we have
+            mastered the act of analyzing, trading and advising on the stock
+            market and other related ventures.
+          </p>
+          <p>
+            <br />
+          </p>
+          <p>Buy Shares Now!</p>
+        </div>
+      ),
+    },
+  ],
+  "dollar-note": [
+    {
+      title: "Dollar Note",
+      description: (
+        <div>
+          <p>
+            Invest in our dollar note and earn all your dividends in dollars. We
+            put your money to work for an agreed amount of time and pay
+            dividends when due.
+          </p>
+          <p>
+            <br />
+          </p>
+          <p>
+            This is a great opportunity to invest money in another currency and
+            it is open to everyone irrespective of age and location.
+          </p>
+          <p>
+            <br />
+          </p>
+          <p>CTA: Invest Now</p>
+        </div>
+      ),
+    },
+  ],
+  finance: [
+    {
+      title: "Finance",
+      description: (
+        <div>
+          <p>
+            The biggest problem of most businesses is capital. Lack of access to
+            money has been the downfall of many commercial institutions.
+          </p>
+          <p>
+            <br />
+          </p>
+          <p>
+            Even banks and other financial institutions which offer loan
+            facilities cannot adequately cater to the financial needs of all the
+            small and medium scale enterprises as well as large organizations.
+          </p>
+          <p>
+            <br />
+          </p>
+          <p>
+            We help businesses to scale these hurdles by giving out loans to
+            established businesses and financing new businesses.
+          </p>
+          <br />
+          <p>
+            We also offer special credit facilities such as Fund Management,
+            Project Finance, Asset Finance, Trade Finance, Local and
+            International Trade: LPO Finance, Invoice Discounting Contract
+            Finance and Bank Guarantee.
+          </p>
+          <br />
+          <p>CTA: Contact Us Now</p>
+        </div>
+      ),
+    },
+  ],
+  "long-term-note": [
+    {
+      title: "Long Term Note",
+      description: (
+        <div>
+          <p>
+            If you intend to save money for a long term goal (minimum of 2
+            years) and make high returns, then this is exactly what you need.
+          </p>
+          <p>
+            <br />
+          </p>
+          <p>
+            Your money will be held and invested by us for at least two years in
+            which you can liquidate by giving us a month’s notice.
+          </p>
+          <p>
+            <br />
+          </p>
+          <p>
+            The minimum amount for this superb investment plan is N2,500,000
+            with a sky-high interest rate of up to 11% per annum which is paid
+            twice within the year.
+          </p>
+          <p>
+            <br />
+          </p>
+          <p>CTA: Invest Now!</p>
+        </div>
+      ),
+    },
+  ],
+  "financial-advisory": [
+    {
+      title: "Financial Advisory",
+      description: (
+        <div>
+          <p>
+            Making financial decisions without proper consultation is like
+            hunting in the dark, the results are bound to be unpleasant. Let us
+            be your light and help guide you in all your financial endeavours.
+          </p>
+          <p>
+            <br />
+          </p>
+          <p>
+            With us by your side, you are assured of success. Our world-class
+            team of finance experts will assist you to make only informed
+            decisions that will be beneficial to you and your business.
+          </p>
+          <p>
+            <br />
+          </p>
+          <p>
+            Our advisory services cater to a wide range of business dealings
+            including the purchase and sale of commercial papers, mergers and
+            acquisitions, scaling, business restructuring, takeovers and
+            divestments, valuations and IPOs
+          </p>
+          <p>
+            <br />
+          </p>
+          <p>
+            We also offer project advisory services in industries such as Power
+            & Utilities, Oil and Gas, Telecommunications, Education, Real Estate
+            and Construction.!
+          </p>
+          <p>
+            We also offer project advisory services in industries such as Power
+            & Utilities, Oil and Gas, Telecommunications, Education, Real Estate
+            and Construction.!
+          </p>
+          <br />
+          <p>Take our hand as we light up your way to prosperity.</p>
+          <br />
+          <p>CTA – Sign Up Today.</p>
+        </div>
+      ),
+    },
+  ],
+  "gdl-canary-fund": [
+    {
+      title: "GDL Canary Fund",
+      description: (
+        <div>
+          <p>
+            With flexible interest rates higher than that of commercial banks,
+            no maintenance fees and other charges, investing in our high yield
+            note is the best thing you with your money.
+          </p>
+          <p>
+            <br />
+          </p>
+          <p>
+            You can make up to 15% per annum and your interest can be paid
+            monthly or at once.
+          </p>
+          <p>
+            <br />
+          </p>
+          <p>
+            Investment starts with a minimum of{" "}
+            <span
+              style={{
+                backgroundColor: "rgb(255, 255, 255)",
+                color: "rgb(32, 33, 34)",
+              }}
+            >
+              ₦
+            </span>
+            100,000.
+          </p>
+          <p>
+            <br />
+          </p>
+          <p>
+            We are regulated and approved by the Securities and Exchanges
+            Commission (SEC) to invest money. You can sleep with both eyes
+            closed knowing all your funds are safe with us.
+          </p>
+        </div>
+      ),
+    },
+  ],
+  "high-yield-note": [
+    {
+      title: "High Yield Note",
+      description: (
+        <div>
+          <p>
+            With flexible interest rates higher than that of commercial banks,
+            no maintenance fees and other charges, investing in our high yield
+            note is the best thing you with your money.
+          </p>
+          <p>
+            <br />
+          </p>
+          <p>
+            You can make as high as 10% per annum and your interest can be paid
+            monthly or at once.
+          </p>
+          <p>
+            <br />
+          </p>
+          <p>
+            We are regulated and approved by the Securities and Exchanges
+            Commission (SEC) to invest money. You can sleep with both eyes
+            closed knowing all your funds are safe with us.
+          </p>
+        </div>
+      ),
+    },
+  ],
+  "money-market-fund": [
+    {
+      title: "Money Market Fund",
+      description: (
+        <div>
+          <p>
+            The GDL Money Market Fund is a special investment plan that allows
+            you to invest with as low as N10,000 for a minimum investment period
+            of 30 days.
+          </p>
+          <p>
+            <br />
+          </p>
+          <p>
+            It is a high-quality investment that provides more profit than your
+            regular bank account. You can keep funding your investment account
+            as much as you like and your money is available to you anytime, any
+            day, anywhere.
+          </p>
+          <p>
+            <br />
+          </p>
+          <p>
+            All investments are managed by our excellent team of asset managers
+            who invest in a wide range of short-term assets.
+          </p>
+        </div>
+      ),
+    },
+  ],
+};

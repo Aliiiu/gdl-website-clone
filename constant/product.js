@@ -14,6 +14,31 @@ const product = [
     hint: "High Interest Rate + Low Risk = The Perfect Investment",
     img: "/Images/high-yield-note.jpeg",
   },
+  {
+    title: "Stockbroking",
+    hint: "Stack your cash from stocks",
+    img: "/Images/high-yield-note.jpeg",
+  },
+  {
+    title: "Financial Advisory",
+    hint: "Get Good Advice, Invest Better.",
+    img: "/Images/high-yield-note.jpeg",
+  },
+  {
+    title: "Long Term Note",
+    hint: "Play the long game, invest for the future",
+    img: "/Images/high-yield-note.jpeg",
+  },
+  {
+    title: "Dollar Note",
+    hint: "What’s better than making money? Making it in dollars!",
+    img: "/Images/high-yield-note.jpeg",
+  },
+  {
+    title: "Finance",
+    hint: "Don’t do it alone, Get A Loan.",
+    img: "/Images/high-yield-note.jpeg",
+  },
 ];
 
 export default product;

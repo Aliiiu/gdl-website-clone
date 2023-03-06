@@ -9,6 +9,7 @@ import BgImage from "../assets/images/bg.png";
 import Image from "next/image";
 import BlogLayout from "../components/Layout/BlogLayout";
 import TestimonyLayout from "../components/Layout/TestimonyLayout";
+import product from "../constant/product";
 
 const HomePage = () => {
   const [counter, setCounter] = useState(0);
@@ -105,7 +106,7 @@ const HomePage = () => {
         </div>
       </section>
       <section id="our-product" className="py-16 md:py-36">
-        <Products />
+        <Products product={product.slice(0, 3)} />
       </section>
       <section
         id="get-started"
