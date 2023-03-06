@@ -3,7 +3,7 @@ import { InputField } from "./form.style";
 import { IoAlertCircleOutline } from "react-icons/io5";
 
 export const TextField = React.forwardRef(
-  ({ label, name, type, error }, ref) => {
+  ({ label, name, type, error, onChange }, ref) => {
     return (
       <InputField>
         <div className="mb-4">
@@ -11,12 +11,18 @@ export const TextField = React.forwardRef(
           {type == "textarea" ? (
             <textarea name={name} ref={ref} className="Input pt-2" rows="3" />
           ) : (
-            <input ref={ref} className="Input" name={name} type={type} />
+            <input
+              ref={ref}
+              className="Input"
+              onChange={onChange}
+              name={name}
+              type={type}
+            />
           )}
           {error && (
             <div className="mt-1 text-xs text-red-400 flex items-center">
               <IoAlertCircleOutline className="mr-1" />
-              {error || `Your ${name} is required`}
+              {`Your ${name} is required`}
             </div>
           )}
         </div>
@@ -24,3 +30,5 @@ export const TextField = React.forwardRef(
     );
   }
 );
+
+TextField.displayName = "CustomInput";

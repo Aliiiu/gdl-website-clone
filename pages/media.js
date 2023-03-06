@@ -1,6 +1,8 @@
 import CustomHeader from "../components/Widgets/CustomHeader/Header";
 import { IoFilmOutline, IoPlayCircleOutline } from "react-icons/io5";
 import Faq from "../components/PageSections/Faq";
+import { useEffect } from "react";
+import { makeRequest } from "../apiCalls/requestHandler";
 
 const MediaContent = () => (
   <div className="mb-[1rem] rounded-[0.5rem] bg-opacity-100 bg-[rgba(255,255,255,var(--tw-bg-opacity))] p-[0.5rem] shadow">
@@ -27,7 +29,11 @@ const MediaContent = () => (
   </div>
 );
 
-const MediaPage = () => {
+const MediaPage = ({ heroContent, genContent }) => {
+  useEffect(() => {
+    console.log(heroContent);
+    console.log(genContent);
+  }, []);
   return (
     <div>
       <CustomHeader
@@ -51,3 +57,19 @@ const MediaPage = () => {
 };
 
 export default MediaPage;
+
+export async function getStaticProps() {
+  const mediaData = await makeRequest(
+    "/pages/resources/mp/all/media",
+    null,
+    null
+  );
+  const genData = await makeRequest("/pages/resources/mp/general", null, null);
+
+  return {
+    props: {
+      heroContent: mediaData?.data?.data,
+      genContent: genData?.data?.data,
+    },
+  };
+}

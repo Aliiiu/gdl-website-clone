@@ -1,8 +1,10 @@
 import Link from "next/link";
+import Loader from "../Loader/Loader";
 import { Button } from "./button.style";
 
-export const AppButton = ({ onPress, ...props }) => (
+export const AppButton = ({ onPress, loading, ...props }) => (
   <Button
+    type={props.type}
     className={`rounded-lg transition ease-in-out duration-700 ${
       props.className || "bg-[#992333] px-4 py-3 text-white"
     }`}
@@ -14,7 +16,7 @@ export const AppButton = ({ onPress, ...props }) => (
       } w-full font-light`}
     >
       <span className={`${props.textSize || "md:text-sm text-sm"}`}>
-        {props.name}
+        {loading !== true ? props.name : <Loader loading={loading} />}
       </span>
       {props.icon && <div className="ml-2">{props.icon}</div>}
     </div>

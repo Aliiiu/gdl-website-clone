@@ -1,8 +1,14 @@
 import CustomHeader from "../components/Widgets/CustomHeader/Header";
 import Faq from "../components/PageSections/Faq";
 import { TestimonyCard } from "../components/Widgets/Cards/TestimonyCard";
+import { makeRequest } from "../apiCalls/requestHandler";
+import { useEffect } from "react";
 
-const Testimonials = () => {
+const Testimonials = ({ heroContent, genContent }) => {
+  useEffect(() => {
+    console.log(heroContent);
+    console.log(genContent);
+  });
   return (
     <div>
       <CustomHeader />
@@ -22,3 +28,15 @@ const Testimonials = () => {
 };
 
 export default Testimonials;
+
+export async function getStaticProps() {
+  const testData = await makeRequest("/pages/testimonials/s", null, null);
+  const genData = await makeRequest("/pages/testimonials/general", null, null);
+
+  return {
+    props: {
+      heroContent: testData?.data?.data,
+      genContent: genData?.data?.data,
+    },
+  };
+}

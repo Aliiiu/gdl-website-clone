@@ -72,7 +72,8 @@ export const RightProduct = () => (
       <div className="p-6 text-center">
         <h2>Which Product is right for me?</h2>
         <p className="sectionhint">
-          Let's help you choose a product that will work specifically for you.
+          Let&apos;s help you choose a product that will work specifically for
+          you.
         </p>
       </div>
       <div className="mt-8">

@@ -75,13 +75,13 @@ const Topbar = props => {
       header.style.backgroundColor = "#fff";
     }
     if (window.scrollY > 30 || open) {
-      header.classList.add("bg-white");
-      header.classList.add("dark:bg-gray-900");
-      header.classList.add("shadow-md");
+      header?.classList.add("bg-white");
+      header?.classList.add("dark:bg-gray-900");
+      header?.classList.add("shadow-md");
     } else {
-      header.classList.remove("bg-white");
-      header.classList.remove("dark:bg-gray-900");
-      header.classList.remove("shadow-md");
+      header?.classList.remove("bg-white");
+      header?.classList.remove("dark:bg-gray-900");
+      header?.classList.remove("shadow-md");
     }
   };
 
@@ -93,7 +93,7 @@ const Topbar = props => {
 
   return (
     <header
-      className={`z-30 sticky top-0 right-0 left-0 border-gray-200 dark:border-gray-600 transition ease-in-out duration-500 justify-start items-center`}
+      className={`z-30 sticky top-0 right-0 left-0 border-gray-200 dark:border-gray-600 transition ease-in-out duration-500`}
     >
       <Transition
         show={open}

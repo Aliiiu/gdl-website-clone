@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
+import { makeRequest } from "../apiCalls/requestHandler";
 import AboutHero from "../components/PageSections/AboutHero";
 import Boards from "../components/PageSections/Boards";
 import CoreValues from "../components/PageSections/CoreValues";
@@ -52,7 +53,20 @@ const AboutPageWrapper = styled.div`
   }
 `;
 
-const about = () => {
+const About = ({
+  heroContent,
+  visionContent,
+  missionContent,
+  mangContent,
+  bodContent,
+}) => {
+  // useEffect(() => {
+  //   console.log(heroContent);
+  //   console.log(visionContent);
+  //   console.log(missionContent);
+  //   console.log(mangContent);
+  //   console.log(bodContent);
+  // }, []);
   return (
     <AboutPageWrapper>
       <section
@@ -61,10 +75,10 @@ const about = () => {
         }}
         className="aboutHeroBg"
       >
-        <AboutHero />
+        <AboutHero header={heroContent} />
       </section>
       <section className="relative overflow-hidden md:py-24">
-        <CoreValues />
+        <CoreValues vision={visionContent} mission={missionContent} />
       </section>
       <section className="lg:px-6 lg:w-4/6 mx-auto py-16 w-full">
         <WhatWeDo />
@@ -98,13 +112,13 @@ const about = () => {
         id="management-team"
         className="lg:px-6 lg:w-4/6 mx-auto py-16 md:py-36 w-full"
       >
-        <Management />
+        <Management data={mangContent} />
       </section>
       <section
         id="board-of-directors"
         className="lg:px-6 lg:w-4/6 mx-auto py-16 md:py-36 w-full"
       >
-        <Boards />
+        <Boards data={bodContent} />
       </section>
       <section
         id="faq"
@@ -116,4 +130,30 @@ const about = () => {
   );
 };
 
-export default about;
+export default About;
+
+// export async function getStaticProps() {
+//   const generalData = await makeRequest("/pages/about/general", null, null);
+//   const vision = await makeRequest("/pages/about/our/vision", null, null);
+//   const mission = await makeRequest("/pages/about/our/mission", null, null);
+//   const mangData = await makeRequest(
+//     "/pages/about/management/team",
+//     null,
+//     null
+//   );
+//   const bodData = await makeRequest(
+//     "/pages/about/board/of/directors",
+//     null,
+//     null
+//   );
+
+//   return {
+//     props: {
+//       heroContent: generalData?.data?.data,
+//       visionContent: vision?.data?.data,
+//       missionContent: mission?.data?.data,
+//       mangContent: mangData?.data?.data,
+//       bodContent: bodData?.data?.data,
+//     },
+//   };
+// }

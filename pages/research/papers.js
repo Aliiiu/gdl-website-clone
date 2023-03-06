@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { makeRequest } from "../../apiCalls/requestHandler";
 import Faq from "../../components/PageSections/Faq";
 import CustomHeader from "../../components/Widgets/CustomHeader/Header";
 import { TopContent } from "../../components/Widgets/CustomHeader/HeaderContent";
 
-const Papers = () => {
+const Papers = ({ heroContent }) => {
   const desc =
     "Our research team organizes all they have learnt from the market into documents you can download at any time!";
+  useEffect(() => {
+    console.log(heroContent);
+  }, []);
   return (
     <div>
       <CustomHeader
@@ -23,3 +27,17 @@ const Papers = () => {
 };
 
 export default Papers;
+
+export async function getStaticProps() {
+  const paperData = await makeRequest(
+    "/pages/resources/rp/research/papers",
+    null,
+    null
+  );
+
+  return {
+    props: {
+      heroContent: paperData?.data?.data,
+    },
+  };
+}

@@ -15,6 +15,7 @@ module.exports = {
         primary: "#1F1A17",
         second: "#9A2333",
         nav: "#C1C0C0",
+        gdlGrey: "#FAFBFB",
       },
       backgroundColor: {
         gdlGrey: "#FAFBFB",

@@ -11,7 +11,7 @@ import BlogLayout from "../components/Layout/BlogLayout";
 import TestimonyLayout from "../components/Layout/TestimonyLayout";
 import product from "../constant/product";
 
-const HomePage = () => {
+const HomePage = props => {
   const [counter, setCounter] = useState(0);
   const [count, setCount] = useState(0);
 
@@ -30,6 +30,14 @@ const HomePage = () => {
 
   useEffect(() => {
     window.addEventListener("load", startCounter());
+    console.log(props.heroContent?.data);
+    console.log(props.statContent?.data);
+    console.log(props.prodContent?.data);
+    console.log(props.getStartedContent?.data);
+    console.log(props.UVPContent?.data);
+    console.log(props.testimonialContent?.data);
+    console.log(props.mediaContent?.data);
+    console.log(props.blogContent?.data);
 
     return () => window.removeEventListener("load", stopCounter());
   }, []);
@@ -122,9 +130,6 @@ const HomePage = () => {
       >
         <Faq />
       </section>
-      {/* <section id="join-club" className="softGradient flex flex-wrap">
-        <JoinTheClub />
-      </section> */}
     </div>
   );
 };
