@@ -3,6 +3,8 @@ import CustomHeader, {
 } from "../../components/Widgets/CustomHeader/Header";
 import Faq from "../../components/PageSections/Faq";
 import { TopContent } from "../../components/Widgets/CustomHeader/HeaderContent";
+import { useEffect } from "react";
+import { makeRequest } from "../../apiCalls/requestHandler";
 
 const tabNames = {
   All: "",
@@ -11,9 +13,12 @@ const tabNames = {
   Investments: "",
 };
 
-const Blogs = () => {
+const Blogs = ({ heroContent }) => {
+  useEffect(() => {
+    console.log(heroContent);
+  }, []);
   const desc =
-    "Everything you need to know about Finance and Investing in Africa.";
+    "Everything you need to know about finance and investing in Nigeria.";
   return (
     <div>
       <div>
@@ -34,3 +39,17 @@ const Blogs = () => {
 };
 
 export default Blogs;
+
+// export async function getStaticProps() {
+//   const generalData = await makeRequest(
+//     "/pages/resources/bp/general",
+//     null,
+//     null
+//   );
+
+//   return {
+//     props: {
+//       heroContent: generalData?.data?.data,
+//     },
+//   };
+// }

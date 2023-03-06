@@ -3,6 +3,8 @@ import Faq from "../components/PageSections/Faq";
 import CustomHeader from "../components/Widgets/CustomHeader/Header";
 import { useForm } from "react-hook-form";
 import { TextField } from "../components/Widgets/Form/Form";
+import { makeRequest } from "../apiCalls/requestHandler";
+import { useEffect } from "react";
 
 const ContactDetails = ({ name, details }) => (
   <div className="relative mt-[1rem] mb-[2rem]">
@@ -49,9 +51,13 @@ const EmailDetail = () => (
   </Link>
 );
 
-const ContactPage = () => {
+const ContactPage = ({ heroContent, formContact }) => {
   const { handleSubmit, formState, register } = useForm({ mode: "onChange" });
 
+  useEffect(() => {
+    // console.log(formContact);
+    console.log(heroContent);
+  }, []);
   const onSubmit = () => {
     //
   };
@@ -124,3 +130,15 @@ const ContactPage = () => {
 };
 
 export default ContactPage;
+
+export async function getStaticProps() {
+  const generalData = await makeRequest("/pages/contact", null, null);
+  // const formData = await makeRequest("/pages/contact/form", null, null);
+
+  return {
+    props: {
+      heroContent: generalData?.data?.data,
+      // formContent: formData?.data?.data,
+    },
+  };
+}

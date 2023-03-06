@@ -1,7 +1,11 @@
 import { AppButton } from "../../components/Widgets/Button/Button";
 import CustomHeader from "../../components/Widgets/CustomHeader/Header";
 import Faq from "../../components/PageSections/Faq";
-import { IoPlayCircleOutline, IoLocationOutline } from "react-icons/io5";
+import {
+  IoPlayCircleOutline,
+  IoLocationOutline,
+  IoWarning,
+} from "react-icons/io5";
 import Image from "next/image";
 import Img from "../../assets/Images/two-employees.jpg";
 import Link from "next/link";
@@ -36,7 +40,7 @@ const JobContent = ({ id, data }) => (
         <span>{data?.location || "Job Location"}</span>
       </h3>
       <div className="mt-1 text-sm text-opacity-100 text-[rgba(162,166,168,var(--tw-text-opacity))]">
-        Closes {new Date(data?.lasts_till).toDateString()}
+        Closes {new Date().toDateString()}
       </div>
       <div className="mt-4 flex items-center justify-end text-sm capitalize text-opacity-100 text-[rgba(162,166,168,var(--tw-text-opacity))]">
         <span>a year ago</span>
@@ -45,10 +49,20 @@ const JobContent = ({ id, data }) => (
   </Link>
 );
 
-const CareerPage = ({ jobOpening }) => {
-  useEffect(() => {
-    console.log(jobOpening);
-  }, []);
+const CareerPage = ({
+  jobOpening,
+  heroContent,
+  genContent,
+  pageContent,
+  jobContent,
+}) => {
+  // useEffect(() => {
+  //   console.log(jobOpening);
+  //   console.log(heroContent);
+  //   console.log(genContent);
+  //   console.log(pageContent);
+  //   console.log(jobContent);
+  // }, []);
   return (
     <div>
       <div className="bg-opacity-20 bg-[rgba(194,207,214,var(--tw-bg-opacity))]">
@@ -85,7 +99,7 @@ const CareerPage = ({ jobOpening }) => {
           </div>
           <div className="px-4">
             <div className="max-w-5xl mx-auto flex flex-wrap">
-              <div className="w-full md:w-1/2 py-6 md:py-24 mb-4 md:mb-0 text-center">
+              <div className="w-full md:w-1/2 py-6 md:py-24 mb-4 md:mb-0 text-left">
                 <h1 className="text-4xl md:text-5xl font-bold mb-5">
                   Excellence & Professionalism.
                 </h1>
@@ -119,11 +133,11 @@ const CareerPage = ({ jobOpening }) => {
               autoPlay={true}
             />
           </div>
-          <div className="w-full md:w-7/12 py-12 md:py-24 text-center md:pr-6">
+          <div className="w-full md:w-7/12 py-12 md:py-24 text-left md:pr-6">
             <h1 className="text-4xl md:text-5xl font-bold mb-5">
               A Creative Work Environment.
             </h1>
-            <p className="text-center leading-[36px] text-[1.125rem] text-[rgba(31,26,23,var(--tw-text-opacity))] text-opacity-90">
+            <p className="leading-[36px] text-[1.125rem] text-[rgba(31,26,23,var(--tw-text-opacity))] text-opacity-90">
               We have a creative work environment ensconced in a culture and
               value system of teamwork, audacity, integrity, result orientation
               and a strong social conscience. Together as a team of
@@ -144,9 +158,29 @@ const CareerPage = ({ jobOpening }) => {
             Job Openings
           </h1>
           <div className="mt-8">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <JobContent id="1" data={jobOpening[0]} />
-              <JobContent id="2" data={jobOpening[1]} />
+            {/* <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <JobContent
+                id="1"
+                data={{
+                  position: "Product Manager",
+                  type_of_employment: "remote",
+                  location: "Lagos",
+                }}
+              />
+              <JobContent
+                id="2"
+                data={{
+                  position: "UI/UX Developer",
+                  type_of_employment: "remote",
+                  location: "Lagos",
+                }}
+              />
+            </div> */}
+            <div className="flex justify-center items-center py-10 px-5">
+              <span className="md:text-sm text-sm px-5 py-3 flex items-center gap-2 leading-5 rounded-lg bg-gray-50 text-gray-500">
+                <IoWarning size={20} /> No career vacancy available at the
+                moment, please check back later
+              </span>
             </div>
           </div>
         </div>
@@ -161,14 +195,26 @@ const CareerPage = ({ jobOpening }) => {
   );
 };
 
-export async function getStaticProps() {
-  const jobData = await makeRequest("/jobs", null, null);
+// export async function getStaticProps() {
+//   const jobData = await makeRequest("/jobs", null, null);
+//   const heroData = await makeRequest("/pages/careers/intro", null, null);
+//   const genData = await makeRequest("/pages/careers/general", null, null);
+//   const pageData = await makeRequest("/pages/careers/page/content", null, null);
+//   const openingsData = await makeRequest(
+//     "/pages/careers/job/openings",
+//     null,
+//     null
+//   );
 
-  return {
-    props: {
-      jobOpening: jobData?.data?.data.filter(item => item?.published),
-    },
-  };
-}
+//   return {
+//     props: {
+//       jobOpening: jobData?.data?.data.filter(item => item?.published),
+//       heroContent: heroData?.data?.data,
+//       genContent: genData?.data?.data,
+//       pageContent: pageData?.data?.data,
+//       jobContent: openingsData?.data?.data,
+//     },
+//   };
+// }
 
 export default CareerPage;

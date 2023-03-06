@@ -240,28 +240,17 @@ const CareerDetailsPage = ({ jobOpening, jobId, position, ...props }) => {
   );
 };
 
-export async function getServerSideProps(context) {
-  const { careerid } = context.query;
+// export async function getServerSideProps(context) {
+//   const { careerid } = context.query;
 
-  const jobData = await makeRequest("/job/positions", null, null);
-  const jobOpeningData = await makeRequest("/jobs", null, null);
-  // console.log(jobData);
-  return {
-    props: {
-      jobOpening: jobData?.data?.data,
-      jobId: careerid,
-      position: jobOpeningData?.data?.data,
-    },
-  };
-}
-
-// export async function getStaticProps() {
-//   const jobData = await makeRequest("/jobs", null, null);
-
+//   const jobData = await makeRequest("/job/positions", null, null);
+//   const jobOpeningData = await makeRequest("/jobs", null, null);
+//   // console.log(jobData);
 //   return {
 //     props: {
-//       jobOpening: "wasssa",
-//       // jobOpening: jobData?.data?.data.filter(item => item?.published),
+//       jobOpening: jobData?.data?.data,
+//       jobId: careerid,
+//       position: jobOpeningData?.data?.data,
 //     },
 //   };
 // }

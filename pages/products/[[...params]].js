@@ -5,13 +5,14 @@ import JoinTheClub from "../../components/PageSections/JoinTheClub";
 import { useRouter } from "next/router";
 import AppModal from "../../components/Widgets/Modal/Modal";
 import { ModalContent } from "../../components/PageSections/ProductContent";
+import { makeRequest } from "../../apiCalls/requestHandler";
 
 const data = {
   "gdl-canary-fund": "GDL Canary Fund",
   "high-yield-note": "High Yield Note",
 };
 
-const ProductPage = () => {
+const ProductPage = ({ prodContent }) => {
   const [open, setOpen] = useState(false);
   const [content, setContent] = useState();
   const {
@@ -29,6 +30,10 @@ const ProductPage = () => {
       setOpen(false);
     }
   }, [params]);
+
+  useEffect(() => {
+    console.log(prodContent);
+  }, []);
 
   return (
     <>
@@ -56,3 +61,23 @@ const ProductPage = () => {
 };
 
 export default ProductPage;
+
+// export async function getServerSideProps(context) {
+//   const { careerid } = context.query;
+
+//   const prodData = await makeRequest("/pages/products", null, null);
+//   const prodGeneral = await makeRequest("/pages/products/general", null, null);
+//   // console.log(jobData);
+//   return {
+//     props: {
+//       prodContent: "hello",
+//       // jobId: careerid,
+//       prodGeneral: "hi",
+//     },
+//     // props: {
+//     //   prodContent: prodData?.data?.data,
+//     //   jobId: careerid,
+//     //   prodGeneral: prodGeneral?.data?.data,
+//     // },
+//   };
+// }

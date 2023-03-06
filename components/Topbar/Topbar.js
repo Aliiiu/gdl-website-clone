@@ -93,7 +93,7 @@ const Topbar = props => {
 
   return (
     <header
-      className={`z-30 sticky top-0 right-0 left-0 border-gray-200 dark:border-gray-600 transition ease-in-out duration-500 justify-start items-center`}
+      className={`z-30 sticky top-0 right-0 left-0 border-gray-200 dark:border-gray-600 transition ease-in-out duration-500`}
     >
       <Transition
         show={open}

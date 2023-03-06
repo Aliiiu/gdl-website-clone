@@ -29,7 +29,14 @@ const HomePage = props => {
 
   useEffect(() => {
     window.addEventListener("load", startCounter());
-    console.log(props.heroContent.data);
+    console.log(props.heroContent?.data);
+    console.log(props.statContent?.data);
+    console.log(props.prodContent?.data);
+    console.log(props.getStartedContent?.data);
+    console.log(props.UVPContent?.data);
+    console.log(props.testimonialContent?.data);
+    console.log(props.mediaContent?.data);
+    console.log(props.blogContent?.data);
 
     return () => window.removeEventListener("load", stopCounter());
   }, []);
@@ -122,9 +129,6 @@ const HomePage = props => {
       >
         <Faq />
       </section>
-      {/* <section id="join-club" className="softGradient flex flex-wrap">
-        <JoinTheClub />
-      </section> */}
     </div>
   );
 };

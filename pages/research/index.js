@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Faq from "../../components/PageSections/Faq";
 import CustomHeader from "../../components/Widgets/CustomHeader/Header";
 import Image from "next/image";
@@ -7,8 +7,13 @@ import ResearchHeader from "../../components/PageSections/ResearchHeader";
 import ResearchFeatures from "../../components/PageSections/ResearchFeatures";
 import { BsArrowRight } from "react-icons/bs";
 import Link from "next/link";
+import { makeRequest } from "../../apiCalls/requestHandler";
 
-const Research = () => {
+const Research = ({ heroContent, genContent }) => {
+  useEffect(() => {
+    console.log(heroContent);
+    console.log(genContent);
+  }, []);
   return (
     <div>
       <CustomHeader content={<ResearchHeader />} />
@@ -43,3 +48,19 @@ const Research = () => {
 };
 
 export default Research;
+
+export async function getStaticProps() {
+  const researchData = await makeRequest(
+    "/pages/resources/rp/research/papers/section",
+    null,
+    null
+  );
+  const genData = await makeRequest("/pages/resources/rp/general", null, null);
+
+  return {
+    props: {
+      heroContent: researchData?.data?.data,
+      genContent: genData?.data?.data,
+    },
+  };
+}

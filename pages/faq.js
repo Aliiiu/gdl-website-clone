@@ -4,6 +4,8 @@ import CustomHeader, {
 import faqImage from "../assets/Images/faq.jpeg";
 import { TopContent } from "../components/Widgets/CustomHeader/HeaderContent";
 import AppAccordion from "../components/Widgets/Accordion/Accordion";
+import { makeRequest } from "../apiCalls/requestHandler";
+import { useEffect } from "react";
 
 const faqArray = [
   {
@@ -42,9 +44,15 @@ const tabNames = {
   Investments: "",
 };
 
-const FAQPage = () => {
+const FAQPage = ({ heroContent, genContent, pageContent }) => {
   const desc =
     "A compilation of answers to questions that will help you understand our products even better.";
+
+  useEffect(() => {
+    console.log(heroContent);
+    console.log(genContent);
+    console.log(pageContent);
+  });
   return (
     <div>
       <div>
@@ -65,3 +73,17 @@ const FAQPage = () => {
 };
 
 export default FAQPage;
+
+export async function getStaticProps() {
+  const heroData = await makeRequest("/pages/faqs/s", null, null);
+  const genData = await makeRequest("/pages/faqs/general", null, null);
+  const catData = await makeRequest("/pages/faqs/categories", null, null);
+
+  return {
+    props: {
+      heroContent: heroData?.data?.data,
+      genContent: genData?.data?.data,
+      pageContent: catData?.data?.data,
+    },
+  };
+}
