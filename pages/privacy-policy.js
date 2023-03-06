@@ -25,12 +25,12 @@ const Privacypolicy = ({ privacyContent }) => {
 
 export default Privacypolicy;
 
-export async function getStaticProps() {
-  const userData = await makeRequest("/pages/privacy/policy", null, null);
+// export async function getStaticProps() {
+//   const userData = await makeRequest("/pages/privacy/policy", null, null);
 
-  return {
-    props: {
-      privacyContent: userData?.data?.data,
-    },
-  };
-}
+//   return {
+//     props: {
+//       privacyContent: userData?.data?.data,
+//     },
+//   };
+// }

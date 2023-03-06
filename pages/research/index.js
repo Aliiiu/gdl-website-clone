@@ -49,18 +49,18 @@ const Research = ({ heroContent, genContent }) => {
 
 export default Research;
 
-export async function getStaticProps() {
-  const researchData = await makeRequest(
-    "/pages/resources/rp/research/papers/section",
-    null,
-    null
-  );
-  const genData = await makeRequest("/pages/resources/rp/general", null, null);
+// export async function getStaticProps() {
+//   const researchData = await makeRequest(
+//     "/pages/resources/rp/research/papers/section",
+//     null,
+//     null
+//   );
+//   const genData = await makeRequest("/pages/resources/rp/general", null, null);
 
-  return {
-    props: {
-      heroContent: researchData?.data?.data,
-      genContent: genData?.data?.data,
-    },
-  };
-}
+//   return {
+//     props: {
+//       heroContent: researchData?.data?.data,
+//       genContent: genData?.data?.data,
+//     },
+//   };
+// }

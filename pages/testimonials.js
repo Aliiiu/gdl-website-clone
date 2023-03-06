@@ -29,14 +29,14 @@ const Testimonials = ({ heroContent, genContent }) => {
 
 export default Testimonials;
 
-export async function getStaticProps() {
-  const testData = await makeRequest("/pages/testimonials/s", null, null);
-  const genData = await makeRequest("/pages/testimonials/general", null, null);
+// export async function getStaticProps() {
+//   const testData = await makeRequest("/pages/testimonials/s", null, null);
+//   const genData = await makeRequest("/pages/testimonials/general", null, null);
 
-  return {
-    props: {
-      heroContent: testData?.data?.data,
-      genContent: genData?.data?.data,
-    },
-  };
-}
+//   return {
+//     props: {
+//       heroContent: testData?.data?.data,
+//       genContent: genData?.data?.data,
+//     },
+//   };
+// }

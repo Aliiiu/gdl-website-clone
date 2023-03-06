@@ -74,16 +74,16 @@ const FAQPage = ({ heroContent, genContent, pageContent }) => {
 
 export default FAQPage;
 
-export async function getStaticProps() {
-  const heroData = await makeRequest("/pages/faqs/s", null, null);
-  const genData = await makeRequest("/pages/faqs/general", null, null);
-  const catData = await makeRequest("/pages/faqs/categories", null, null);
+// export async function getStaticProps() {
+//   const heroData = await makeRequest("/pages/faqs/s", null, null);
+//   const genData = await makeRequest("/pages/faqs/general", null, null);
+//   const catData = await makeRequest("/pages/faqs/categories", null, null);
 
-  return {
-    props: {
-      heroContent: heroData?.data?.data,
-      genContent: genData?.data?.data,
-      pageContent: catData?.data?.data,
-    },
-  };
-}
+//   return {
+//     props: {
+//       heroContent: heroData?.data?.data,
+//       genContent: genData?.data?.data,
+//       pageContent: catData?.data?.data,
+//     },
+//   };
+// }

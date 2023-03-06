@@ -58,18 +58,18 @@ const MediaPage = ({ heroContent, genContent }) => {
 
 export default MediaPage;
 
-export async function getStaticProps() {
-  const mediaData = await makeRequest(
-    "/pages/resources/mp/all/media",
-    null,
-    null
-  );
-  const genData = await makeRequest("/pages/resources/mp/general", null, null);
+// export async function getStaticProps() {
+//   const mediaData = await makeRequest(
+//     "/pages/resources/mp/all/media",
+//     null,
+//     null
+//   );
+//   const genData = await makeRequest("/pages/resources/mp/general", null, null);
 
-  return {
-    props: {
-      heroContent: mediaData?.data?.data,
-      genContent: genData?.data?.data,
-    },
-  };
-}
+//   return {
+//     props: {
+//       heroContent: mediaData?.data?.data,
+//       genContent: genData?.data?.data,
+//     },
+//   };
+// }
