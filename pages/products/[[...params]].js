@@ -28,10 +28,6 @@ const ProductPage = ({ prodContent }) => {
     }
   }, [params]);
 
-  useEffect(() => {
-    console.log(prodContent);
-  }, []);
-
   return (
     <>
       <div>
@@ -62,19 +58,4 @@ export default ProductPage;
 // export async function getServerSideProps(context) {
 //   const { careerid } = context.query;
 
-//   const prodData = await makeRequest("/pages/products", null, null);
-//   const prodGeneral = await makeRequest("/pages/products/general", null, null);
-//   // console.log(jobData);
-//   return {
-//     props: {
-//       prodContent: "hello",
-//       // jobId: careerid,
-//       prodGeneral: "hi",
-//     },
-//     // props: {
-//     //   prodContent: prodData?.data?.data,
-//     //   jobId: careerid,
-//     //   prodGeneral: prodGeneral?.data?.data,
-//     // },
-//   };
-// }
+//
