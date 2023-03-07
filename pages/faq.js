@@ -64,8 +64,8 @@ const FAQPage = ({ heroContent, genContent, pageContent }) => {
         <HeaderTabBar tabs={tabNames} />
       </div>
       <div className="my-10 md:px-[1.5rem] px-[1.25rem] mx-auto max-w-[56rem]">
-        {faqArray.map(content => (
-          <AppAccordion {...content} />
+        {faqArray.map((content, idx) => (
+          <AppAccordion key={idx} {...content} />
         ))}
       </div>
     </div>
