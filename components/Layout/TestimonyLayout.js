@@ -133,7 +133,7 @@ const TestimonyLayout = () => {
             renderPagination={renderPagination}
           >
             {TestimonyData.map(content => (
-              <CarouselContent {...content} />
+              <CarouselContent key={content.name} {...content} />
             ))}
           </Carousel>
         </div>

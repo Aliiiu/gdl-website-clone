@@ -118,6 +118,7 @@ const Topbar = props => {
             <ul className="left-nav mt-[1rem] h-full border-r-[1px] border-opacity-[0.1] border-[rgba(194,207,214,var(--tw-border-opacity))]">
               {Object.keys(urlstate).map((content, index) => (
                 <NavLink
+                  key={index}
                   name={content}
                   className={`${index == value ? "selected " : ""} capitalize`}
                   onClick={() => setValue(index)}
@@ -127,7 +128,7 @@ const Topbar = props => {
             <div className="right-nav transition-all duration-[.3s]">
               <div className="flex flex-wrap md:-mx-2 -mx-4 transition">
                 {homeLinks[value]?.map(content => (
-                  <HomeLink {...content} setOpen={setOpen} />
+                  <HomeLink key={content.name} {...content} setOpen={setOpen} />
                 ))}
               </div>
             </div>
