@@ -5,7 +5,7 @@ import App from "next/app";
 
 const MyApp = ({ Component, pageProps }) => {
   return (
-    <ThemeProvider attribute="class">
+    <ThemeProvider attribute="class" enableSystem={false}>
       <Layout>
         <Component {...pageProps} />
       </Layout>
