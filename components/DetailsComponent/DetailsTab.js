@@ -63,6 +63,7 @@ export const DetailTabs = ({ tabs, onPress, ...props }) => {
           {Object.keys(tabs).map((content, index) => (
             <CustomTab
               {...props}
+              key={index}
               label={content}
               {...a11yProps(index)}
               // onClick={() => onPress(index)}
@@ -71,7 +72,7 @@ export const DetailTabs = ({ tabs, onPress, ...props }) => {
         </CustomTabs>
       </Box>
       {Object.keys(tabs).map((content, index) => (
-        <TabPanel value={value} index={index}>
+        <TabPanel key={index} value={value} index={index}>
           {tabs[content]}
         </TabPanel>
       ))}
