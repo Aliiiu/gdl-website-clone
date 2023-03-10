@@ -5,6 +5,8 @@ import { useForm } from "react-hook-form";
 import { TextField } from "../components/Widgets/Form/Form";
 import { makeRequest } from "../apiCalls/requestHandler";
 import { useEffect } from "react";
+import { AppButton } from "../components/Widgets/Button/Button";
+import Head from "next/head";
 
 const ContactDetails = ({ name, details }) => (
   <div className="relative mt-[1rem] mb-[2rem]">
@@ -63,6 +65,9 @@ const ContactPage = ({ heroContent, formContact }) => {
   };
   return (
     <div>
+      <Head>
+        <title>Contact-Us | GDL</title>
+      </Head>
       <CustomHeader
         name="Contact Us"
         bg="#FFFFFF"
@@ -114,6 +119,7 @@ const ContactPage = ({ heroContent, formContact }) => {
                   error={formState.errors.message}
                   {...register("message", { required: true })}
                 />
+                <AppButton name="Contact us" />
               </form>
             </div>
           </div>

@@ -1,5 +1,6 @@
 import HomePage from "./home";
 import { makeRequest } from "../apiCalls/requestHandler";
+import Head from "next/head";
 
 const App = ({
   heroContent,
@@ -12,16 +13,10 @@ const App = ({
   blogContent,
 }) => (
   <>
-    <HomePage
-      heroContent={heroContent}
-      statContent={statContent}
-      prodContent={prodContent}
-      getStartedContent={getStartedContent}
-      UVPContent={UVPContent}
-      testimonialContent={testimonialContent}
-      mediaContent={mediaContent}
-      blogContent={blogContent}
-    />
+    <Head>
+      <title>Home | GDL</title>
+    </Head>
+    <HomePage />
   </>
 );
 

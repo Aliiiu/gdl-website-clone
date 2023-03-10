@@ -3,6 +3,7 @@ import { IoFilmOutline, IoPlayCircleOutline } from "react-icons/io5";
 import Faq from "../components/PageSections/Faq";
 import { useEffect } from "react";
 import { makeRequest } from "../apiCalls/requestHandler";
+import Head from "next/head";
 
 const MediaContent = () => (
   <div className="mb-[1rem] rounded-[0.5rem] bg-opacity-100 bg-[rgba(255,255,255,var(--tw-bg-opacity))] p-[0.5rem] shadow">
@@ -36,19 +37,22 @@ const MediaPage = ({ heroContent, genContent }) => {
   }, []);
   return (
     <div>
+      <Head>
+        <title>Media | GDL</title>
+      </Head>
       <CustomHeader
         name="Media"
         sub="A Catalog of our contributions to the Media space!"
         icon={<IoFilmOutline />}
       />
       <div className="-mt-16">
-        <div className="px-[1.5rem] mx-auto max-w-[1200px] grid lg:grid-cols-3 gap-6">
+        <div className="container px-4 xl:px-28 mx-auto grid lg:grid-cols-3 gap-6">
           <MediaContent />
         </div>
       </div>
       <section
         id="faq"
-        className="lg:px-6 lg:w-4/6 mx-auto py-16 md:py-36 w-full"
+        className="container px-4 xl:px-28 mx-auto py-16 md:py-36 w-full"
       >
         <Faq />
       </section>

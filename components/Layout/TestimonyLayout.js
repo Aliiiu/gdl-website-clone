@@ -88,7 +88,7 @@ const TestimonyLayout = () => {
 
   const renderPagination = ({ pages, activePage, onClick }) => {
     return (
-      <div className="px-[1.5rem] mx-auto max-w-[1200px] relative z-20">
+      <div className="px-4 lg:px-6 mx-auto max-w-[1200px] relative z-20">
         <div className="mt-6 flex justify-center items-center">
           {pages.map(page => {
             const isActivePage = activePage === page;
@@ -116,7 +116,7 @@ const TestimonyLayout = () => {
   };
   return (
     <section id="usp">
-      <div className="pt-52 pb-16 bg-opacity-[1] bg-[rgba(255,236,239,var(--tw-bg-opacity))]">
+      <div className="pt-40 md:pt-52 pb-40 md:pb-10 bg-opacity-[1] bg-[rgba(255,236,239,var(--tw-bg-opacity))]">
         <section className="flex flex-col justify-center items-center px-[1.5rem] mx-auto max-w-[1200px]">
           <h3 className="uppercase font-medium text-opacity-[1] text-[rgba(153,35,51,var(--tw-text-opacity))] text-lg">
             Why GDL?
@@ -126,8 +126,8 @@ const TestimonyLayout = () => {
           </div>
         </section>
       </div>
-      <section className="relative py-16 md:py-40 bg-opacity-[1] min-h-[700px] bg-[rgba(255,236,239,var(--tw-bg-opacity))]">
-        <div className="absolute z-10 md:z-0 px-[1.5rem] md:mx-auto max-w-[1200px] left-0 right-0 top-0 bottom-0 flex justify-between items-center mx-4 -mt-32 md:mt-0">
+      <section className="relative py-16 md:py-40 bg-opacity-[1] min-h-[700px] md:min-h-[500px] bg-[rgba(255,236,239,var(--tw-bg-opacity))]">
+        <div className="absolute z-10 md:z-0 md:mx-auto max-w-[1200px] left-0 right-0 top-0 bottom-0 flex justify-between items-center mx-4 -mt-32 md:mt-0">
           <Carousel
             renderArrow={carouselArrow}
             renderPagination={renderPagination}

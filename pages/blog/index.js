@@ -5,6 +5,7 @@ import Faq from "../../components/PageSections/Faq";
 import { TopContent } from "../../components/Widgets/CustomHeader/HeaderContent";
 import { useEffect } from "react";
 import { makeRequest } from "../../apiCalls/requestHandler";
+import Head from "next/head";
 
 const tabNames = {
   All: "",
@@ -21,6 +22,9 @@ const Blogs = ({ heroContent }) => {
     "Everything you need to know about finance and investing in Nigeria.";
   return (
     <div>
+      <Head>
+        <title>Blog | GDL</title>
+      </Head>
       <div>
         <CustomHeader
           hasBackImg
@@ -30,7 +34,7 @@ const Blogs = ({ heroContent }) => {
       </div>
       <section
         id="faq"
-        className="lg:px-6 lg:w-4/6 mx-auto py-16 md:py-36 w-full"
+        className="container px-4 xl:px-28 mx-auto py-16 md:py-36 w-full"
       >
         <Faq />
       </section>

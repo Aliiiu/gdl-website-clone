@@ -6,6 +6,7 @@ import { TopContent } from "../components/Widgets/CustomHeader/HeaderContent";
 import AppAccordion from "../components/Widgets/Accordion/Accordion";
 import { makeRequest } from "../apiCalls/requestHandler";
 import { useEffect } from "react";
+import Head from "next/head";
 
 const faqArray = [
   {
@@ -55,6 +56,9 @@ const FAQPage = ({ heroContent, genContent, pageContent }) => {
   });
   return (
     <div>
+      <Head>
+        <title>FAQ | GDL</title>
+      </Head>
       <div>
         <CustomHeader
           hasBackImg

@@ -8,6 +8,7 @@ import { ModalContent } from "../../components/PageSections/ProductContent";
 import product from "../../constant/product";
 import { data } from "../../utils/helper";
 import { makeRequest } from "../../apiCalls/requestHandler";
+import Head from "next/head";
 
 const ProductPage = ({ prodContent }) => {
   const [open, setOpen] = useState(false);
@@ -30,6 +31,9 @@ const ProductPage = ({ prodContent }) => {
 
   return (
     <>
+      <Head>
+        <title>Products | GDL</title>
+      </Head>
       <div>
         <section id="our-product" className="py-16 md:py-28">
           <Products nobutton product={product} />
@@ -39,7 +43,7 @@ const ProductPage = ({ prodContent }) => {
         </section>
         <section
           id="faq"
-          className="lg:px-6 lg:w-4/6 mx-auto py-16 md:py-36 w-full"
+          className="container px-4 xl:px-28 mx-auto py-16 md:py-36 w-full"
         >
           <Faq />
         </section>

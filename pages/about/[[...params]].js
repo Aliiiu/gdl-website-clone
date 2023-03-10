@@ -1,3 +1,4 @@
+import Head from "next/head";
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import AboutHero from "../../components/PageSections/AboutHero";
@@ -64,6 +65,9 @@ const About = ({
   // }, []);
   return (
     <AboutPageWrapper>
+      <Head>
+        <title>About | GDL</title>
+      </Head>
       <section
         style={{
           backgroundImage: `url('Images/gdlOffice.png')`,
@@ -72,18 +76,18 @@ const About = ({
       >
         <AboutHero header={heroContent} />
       </section>
-      <section className=" overflow-hidden md:py-24">
+      <section className="overflow-hidden md:py-24">
         <CoreValues vision={visionContent} mission={missionContent} />
       </section>
-      <section className="lg:px-6 lg:w-4/6 mx-auto py-16 w-full">
+      <section className="container px-4 xl:px-28 mx-auto py-16 w-full">
         <WhatWeDo />
       </section>
-      <section className="lg:px-6 lg:w-4/6 mx-auto py-16 md:py-36 w-full">
+      <section className="container px-4 xl:px-28 mx-auto py-16 md:py-36 w-full">
         <WhatWeAre />
       </section>
       <section
         id="core-values"
-        className="lg:px-6 lg:w-4/6 mx-auto py-16 md:py-36 w-full"
+        className="lg:px-6 md:w-5/6 lg:w-4/6 mx-auto py-16 md:py-36 w-full"
       >
         <div>
           <h2 className="title mb-4 text-center">Our Core Values</h2>
@@ -105,19 +109,19 @@ const About = ({
       </section>
       <section
         id="management-team"
-        className="lg:px-6 lg:w-4/6 mx-auto py-16 md:py-36 w-full"
+        className="lg:px-6 md:w-5/6 lg:w-4/6 mx-auto py-16 md:py-36 w-full"
       >
         <Management data={mangContent} />
       </section>
       <section
         id="board-of-directors"
-        className="lg:px-6 lg:w-4/6 mx-auto py-16 md:py-36 w-full"
+        className="lg:px-6 md:w-5/6 lg:w-4/6 mx-auto py-16 md:py-36 w-full"
       >
         <Boards data={bodContent} />
       </section>
       <section
         id="faq"
-        className="lg:px-6 lg:w-4/6 mx-auto py-16 md:py-36 w-full"
+        className="container px-4 xl:px-28 mx-auto py-16 md:py-36 w-full"
       >
         <Faq />
       </section>

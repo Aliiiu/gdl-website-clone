@@ -25,6 +25,7 @@ body {
   font-family: "Raleway", sans-serif;
   /* font-family: inherit; */
   height: 100%;
+  width: 100%;
   overflow-x: hidden;
 }
 
@@ -39,7 +40,11 @@ img {
   height: auto;
 }
 
-* {
+*,
+::after,
+::before {
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
 

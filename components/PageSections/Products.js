@@ -8,7 +8,7 @@ import { useRouter } from "next/router";
 
 export const SectionWrapper = styled.div`
   .title {
-    font-size: 3rem;
+    font-size: 2.5rem;
     line-height: 1.1 !important;
     font-weight: 700;
   }
@@ -59,6 +59,11 @@ export const SectionWrapper = styled.div`
   }
 
   @media screen(min-width: 500px) {
+    .title {
+      font-size: 3rem;
+      line-height: 1.1 !important;
+      font-weight: 700;
+    }
     .getstarted-card {
       background-position: left;
       background-size: cover;
@@ -97,7 +102,7 @@ const Products = ({ nobutton, product }) => {
   };
 
   return (
-    <SectionWrapper className="px-[1.5rem] mx-auto max-w-[1200px]">
+    <SectionWrapper className="container px-4 xl:px-28 mx-auto">
       <div className="text-center md:text-center">
         <h1 className="title mb-[.75rem]">Our Products</h1>
         <p className="hint w-full md:w-1/2 lg:w-2/5 leading-[1.75rem] text-opacity-[0.9] text-[rgba(31,26,23,var(--tw-text-opacity))] dark:text-white mx-auto">

@@ -12,14 +12,14 @@ const Testimonials = ({ heroContent, genContent }) => {
   return (
     <div>
       <CustomHeader />
-      <div className="-mt-10 grid md:grid-cols-2 lg:grid-cols-3 md:gap-6 mx-auto max-w-[1200px] md:px-[1.5rem] px-[1.25rem]">
+      <div className="-mt-10 grid md:grid-cols-2 lg:grid-cols-3 md:gap-6 container px-4 xl:px-28 mx-auto">
         <TestimonyCard />
         <TestimonyCard />
         <TestimonyCard />
       </div>
       <section
         id="faq"
-        className="lg:px-6 lg:w-4/6 mx-auto py-16 md:py-36 w-full"
+        className="container px-4 xl:px-28 mx-auto py-16 md:py-36 w-full"
       >
         <Faq />
       </section>

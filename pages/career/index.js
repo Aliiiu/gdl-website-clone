@@ -11,6 +11,7 @@ import Img from "../../assets/Images/two-employees.jpg";
 import Link from "next/link";
 import { useEffect } from "react";
 import { makeRequest } from "../../apiCalls/requestHandler";
+import Head from "next/head";
 
 const CareerTopContent = () => (
   <>
@@ -65,10 +66,13 @@ const CareerPage = ({
   // }, []);
   return (
     <div>
+      <Head>
+        <title>Career | GDL</title>
+      </Head>
       <div className="bg-opacity-20 bg-[rgba(194,207,214,var(--tw-bg-opacity))]">
         <CustomHeader bg="#FEECEF" content={<CareerTopContent />} />
         <section className="-mt-12">
-          <div className="px-[1.5rem] mx-auto max-w-[1200px] mb-16">
+          <div className="container px-4 xl:px-28 mx-auto mb-16">
             <div className="max-w-5xl mx-auto rounded-lg bg-white shadow-xl p-3 md:p-10 lg:py-0 flex flex-wrap">
               <div className="w-full lg:w-1/2 md:pr-6 flex justify-center items-center">
                 <div>
@@ -97,8 +101,8 @@ const CareerPage = ({
               </div>
             </div>
           </div>
-          <div className="px-4">
-            <div className="max-w-5xl mx-auto flex flex-wrap">
+          <div className="">
+            <div className="container px-4 xl:px-28 mx-auto flex flex-wrap">
               <div className="w-full md:w-1/2 py-6 md:py-24 mb-4 md:mb-0 text-left">
                 <h1 className="text-4xl md:text-5xl font-bold mb-5">
                   Excellence & Professionalism.
@@ -124,16 +128,16 @@ const CareerPage = ({
         </section>
       </div>
       <div className="bg-white py-12 md:py-24">
-        <div className="px-[1.5rem] mx-auto max-w-[1200px] flex flex-wrap">
+        <div className="container px-4 xl:px-28 mx-auto flex items-center">
           <div className="happy-img relative w-full md:w-5/12">
             <video
-              className="mx-auto rounded-lg shadow-2xl h-[580px]"
+              className="mx-auto rounded-lg shadow-2xl lg:h-[580px]"
               src={require("../../assets/Images/work-environment.mp4")}
               loop={true}
               autoPlay={true}
             />
           </div>
-          <div className="w-full md:w-7/12 py-12 md:py-24 text-left md:pr-6">
+          <div className="w-full md:w-7/12 py-12 md:py-24 text-left md:px-6">
             <h1 className="text-4xl md:text-5xl font-bold mb-5">
               A Creative Work Environment.
             </h1>
@@ -153,7 +157,7 @@ const CareerPage = ({
         </div>
       </div>
       <div className="py-12 md:py-24 md:bg-opacity-10 md:bg-white bg-[rgba(162,166,168,var(--tw-bg-opacity))] bg-opacity-100">
-        <div className="max-w-[1200px] mx-auto px-[1.5rem]">
+        <div className="container px-4 xl:px-28 mx-auto">
           <h1 className="leading-[1.1] text-[3rem] mb-[0.75rem] font-[700]">
             Job Openings
           </h1>
@@ -187,7 +191,7 @@ const CareerPage = ({
       </div>
       <section
         id="faq"
-        className="lg:px-6 lg:w-4/6 mx-auto py-16 md:py-36 w-full"
+        className="container px-4 xl:px-28 mx-auto py-16 md:py-36 w-full"
       >
         <Faq />
       </section>

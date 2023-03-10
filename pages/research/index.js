@@ -8,6 +8,7 @@ import ResearchFeatures from "../../components/PageSections/ResearchFeatures";
 import { BsArrowRight } from "react-icons/bs";
 import Link from "next/link";
 import { makeRequest } from "../../apiCalls/requestHandler";
+import Head from "next/head";
 
 const Research = ({ heroContent, genContent }) => {
   useEffect(() => {
@@ -16,9 +17,12 @@ const Research = ({ heroContent, genContent }) => {
   }, []);
   return (
     <div>
+      <Head>
+        <title>Research | GDL</title>
+      </Head>
       <CustomHeader content={<ResearchHeader />} />
 
-      <section className="max-w-[1200px] md:px-[1.5rem] px-[1.25rem] mx-auto w-full">
+      <section className="container px-4 xl:px-28 mx-auto w-full">
         <ResearchFeatures />
       </section>
       <section id="research-papers" className="bg-[#F8F8F8] w-full">
@@ -39,7 +43,7 @@ const Research = ({ heroContent, genContent }) => {
       </section>
       <section
         id="faq"
-        className="lg:px-6 lg:w-4/6 mx-auto md:px-[1.5rem] px-[1.25rem] py-16 md:py-36 w-full"
+        className="container px-4 xl:px-28 mx-auto py-16 md:py-36 w-full"
       >
         <Faq />
       </section>

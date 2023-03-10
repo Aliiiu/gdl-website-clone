@@ -9,7 +9,7 @@ import BgImage from "../assets/images/bg.png";
 import Image from "next/image";
 import BlogLayout from "../components/Layout/BlogLayout";
 import TestimonyLayout from "../components/Layout/TestimonyLayout";
-import product from "../constant/product";
+import product from "./products/constant/product";
 
 const HomePage = props => {
   const [counter, setCounter] = useState(0);
@@ -42,12 +42,14 @@ const HomePage = props => {
     return () => window.removeEventListener("load", stopCounter());
   }, []);
   return (
-    <div className="relative">
-      <div className="hidden absolute top-0 right-0 mt-[-8.8rem] mr-[-5rem] md:flex items-center justify-center rounded-[9999px] dark:border-gray-800 border-red-50 w-[220px] h-[220px] border-[32px]" />
+    <div className="">
       <section
         id="media"
-        className="flex flex-col items-start justify-center relative px-[1.5rem] mx-auto max-w-[1200px] md:min-h-[500px] min-h-[460px]"
+        className="flex flex-col items-start justify-center relative container px-4 xl:px-28 mx-auto md:min-h-[500px] min-h-[460px]"
       >
+        <div className="absolute top-0 right-0 mt-[-8.8rem] mr-[-5rem]">
+          <div className="hidden 2xl:flex items-center justify-center rounded-full dark:border-gray-800 border-red-50 w-[220px] h-[220px] border-[32px]"></div>
+        </div>
         <div className="absolute top-0 left-0 bottom-0 flex justify-center items-center -ml-52">
           <div className="flex items-center justify-center rounded-[9999px] dark:border-gray-800 border-[#FFF1F4] w-[500px] h-[500px] border-[32px]">
             <div className="flex items-center justify-center rounded-[9999px] dark:border-gray-900 border-[#FFF5F7] border-[32px] w-[445px] h-[445px]" />
@@ -70,7 +72,7 @@ const HomePage = props => {
               // icon={<AiOutlineArrowRight className="font-thin text-sm" />}
             />
             <Link href="/about">
-              <a className="font-light">Learn More</a>
+              <a className="font-light z-10">Learn More</a>
             </Link>
           </div>
         </div>
@@ -126,7 +128,7 @@ const HomePage = props => {
       <BlogLayout />
       <section
         id="faq"
-        className="lg:px-6 lg:w-4/6 mx-auto py-16 md:py-36 w-full"
+        className="container px-4 xl:px-28 mx-auto py-16 md:py-36 w-full"
       >
         <Faq />
       </section>

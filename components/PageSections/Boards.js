@@ -1,8 +1,6 @@
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 import boardOfDirector, { boardDetails } from "../../constant/boardsOfDirector";
-import AppModal from "../Widgets/Modal/Modal";
-import BodModal from "./ModalContent/BodModal";
 import { useRouter } from "next/router";
 import { managementDetails } from "../../constant/management";
 
