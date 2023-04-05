@@ -16,6 +16,7 @@ import cloudinaryServiceApi from "../../../../services/cloudinaryServicesApi";
 import axios from "axios";
 import useLoading from "../../../../hooks/useLoading";
 import { useEffect } from "react";
+import Head from "next/head";
 
 const HeaderComponent = ({ positionData }) => (
   <div className="flex flex-wrap justify-center md:justify-start items-center w-full">
@@ -64,13 +65,23 @@ const CareerDetailsPage = ({ jobOpening, jobId, position, ...props }) => {
     mode: "onChange",
   });
   const router = useRouter();
-  const index = Number(jobId) - 1;
+  const index = Number(jobId);
   // console.log(position[index]);
+  console.log(jobId);
+  console.log(jobOpening);
+  console.log(position);
+  // console.log();
 
   const side_content = [
     { name: "Overview", desc: "You can make more money for all" },
-    { name: "Job Description", desc: jobOpening[index]?.job_description },
-    { name: "Responsibilities", desc: jobOpening[index]?.job_responsibilities },
+    {
+      name: "Job Description",
+      desc: jobOpening[index]?.job_description || "description",
+    },
+    {
+      name: "Responsibilities",
+      desc: jobOpening[index]?.job_responsibilities || "responsibilities",
+    },
   ];
   const fileRef = useRef();
   const [image, setImage] = useState("");
@@ -121,27 +132,37 @@ const CareerDetailsPage = ({ jobOpening, jobId, position, ...props }) => {
       .finally(() => {
         stopLoading();
         setValue("");
+        setTimeout(() => setShowSuccess(false), 5000);
       });
   };
 
   useEffect(() => {
     reset();
   }, [showSuccess]);
+
+  // console.log(position.filter(item => item.id === index));
   return (
     <div>
+      <Head>
+        <title>Apply | Career</title>
+      </Head>
       <CustomHeader
         floatLeft
         bg="#FEECEF"
-        content={<HeaderComponent positionData={position[index]} />}
+        content={
+          <HeaderComponent
+            positionData={position.filter(item => item.id === index)[0]}
+          />
+        }
       />
-      <section className="py-12 md:-mt-24">
-        <div className="px-[1.5rem] mx-auto max-w-[1200px] flex flex-wrap">
-          <div className="w-full lg:w-3/5 md:px-6 md:pt-24">
+      <section className="container px-4 xl:px-28 mx-auto py-12 md:-mt-24">
+        <div className="flex flex-col md:flex-row gap-6">
+          <div className="w-full md:px-6 md:pt-24">
             {side_content.map(content => (
               <InnerContent key={content.name} {...content} />
             ))}
           </div>
-          <div className="w-full lg:w-2/5 md:px-6">
+          <div className="w-full">
             <div className="bg-white dark:bg-gray-800 shadow-lg border border-opacity-5 rounded-lg p-6 border-[rgba(162,166,168,var(--tw-border-opacity))]">
               <h3 className="text-xl font-bold text-[rgba(153,35,51,var(--tw-text-opacity))] text-opacity-100 mb-6">
                 Apply for Job
@@ -232,7 +253,7 @@ const CareerDetailsPage = ({ jobOpening, jobId, position, ...props }) => {
       </section>
       <section
         id="faq"
-        className="lg:px-6 lg:w-4/6 mx-auto py-16 md:py-36 w-full"
+        className="container px-4 xl:px-28 mx-auto py-16 md:py-36 w-full"
       >
         <Faq />
       </section>
@@ -240,19 +261,19 @@ const CareerDetailsPage = ({ jobOpening, jobId, position, ...props }) => {
   );
 };
 
-// export async function getServerSideProps(context) {
-//   const { careerid } = context.query;
+export async function getServerSideProps(context) {
+  const { careerid } = context.query;
 
-//   const jobData = await makeRequest("/job/positions", null, null);
-//   const jobOpeningData = await makeRequest("/jobs", null, null);
-//   // console.log(jobData);
-//   return {
-//     props: {
-//       jobOpening: jobData?.data?.data,
-//       jobId: careerid,
-//       position: jobOpeningData?.data?.data,
-//     },
-//   };
-// }
+  const jobData = await makeRequest("/job/positions", null, null);
+  const jobOpeningData = await makeRequest("/jobs", null, null);
+  // console.log(jobData);
+  return {
+    props: {
+      jobOpening: jobData?.data?.data,
+      jobId: careerid,
+      position: jobOpeningData?.data?.data,
+    },
+  };
+}
 
 export default CareerDetailsPage;

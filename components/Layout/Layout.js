@@ -4,17 +4,14 @@ import Footer from "../Footer/Footer";
 import JoinTheClub from "../PageSections/JoinTheClub";
 
 const Layout = ({ children, ...props }) => (
-  <div>
+  <div className="">
     <Topbar />
     <main>
       <PageContainer>
         <div className="w-full h-full">{children}</div>
       </PageContainer>
     </main>
-    <JoinClubContainer
-      id="join-club"
-      className="softGradient  md:px-[1.5rem] px-[1.25rem] flex flex-col md:flex-row gap-6"
-    >
+    <JoinClubContainer id="join-club" className="softGradient">
       <JoinTheClub />
     </JoinClubContainer>
     <Footer />

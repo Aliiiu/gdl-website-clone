@@ -8,17 +8,36 @@ import ResearchFeatures from "../../components/PageSections/ResearchFeatures";
 import { BsArrowRight } from "react-icons/bs";
 import Link from "next/link";
 import { makeRequest } from "../../apiCalls/requestHandler";
+import Head from "next/head";
+import { useRequest } from "../../hooks/useRequest";
+import MethodType from "../../constant/methodType";
 
-const Research = ({ heroContent, genContent }) => {
+const Research = ({ researchContent, genContent }) => {
+  const { makeRequest, data } = useRequest({
+    url: "/pages/resources/rp/research/papers/section",
+    method: MethodType.GET,
+  });
+  const { makeRequest: fetchGeneral, data: generalData } = useRequest({
+    url: "/pages/resources/rp/general",
+    method: MethodType.GET,
+  });
+
+  // useEffect(() => {
+  //   fetchGeneral();
+  //   makeRequest();
+  // }, []);
+
   useEffect(() => {
-    console.log(heroContent);
-    console.log(genContent);
-  }, []);
+    console.log(researchContent);
+  }, [researchContent]);
   return (
     <div>
+      <Head>
+        <title>Research | GDL</title>
+      </Head>
       <CustomHeader content={<ResearchHeader />} />
 
-      <section className="max-w-[1200px] md:px-[1.5rem] px-[1.25rem] mx-auto w-full">
+      <section className="container px-4 xl:px-28 mx-auto w-full">
         <ResearchFeatures />
       </section>
       <section id="research-papers" className="bg-[#F8F8F8] w-full">
@@ -39,7 +58,7 @@ const Research = ({ heroContent, genContent }) => {
       </section>
       <section
         id="faq"
-        className="lg:px-6 lg:w-4/6 mx-auto md:px-[1.5rem] px-[1.25rem] py-16 md:py-36 w-full"
+        className="container px-4 xl:px-28 mx-auto py-16 md:py-36 w-full"
       >
         <Faq />
       </section>
@@ -49,18 +68,18 @@ const Research = ({ heroContent, genContent }) => {
 
 export default Research;
 
-// export async function getStaticProps() {
-//   const researchData = await makeRequest(
-//     "/pages/resources/rp/research/papers/section",
-//     null,
-//     null
-//   );
-//   const genData = await makeRequest("/pages/resources/rp/general", null, null);
+export async function getStaticProps() {
+  const researchData = await makeRequest(
+    "/pages/resources/rp/research/papers/section",
+    null,
+    null
+  );
+  const genData = await makeRequest("/pages/resources/rp/general", null, null);
 
-//   return {
-//     props: {
-//       heroContent: researchData?.data?.data,
-//       genContent: genData?.data?.data,
-//     },
-//   };
-// }
+  return {
+    props: {
+      researchContent: researchData?.data?.data,
+      genContent: genData?.data?.data,
+    },
+  };
+}

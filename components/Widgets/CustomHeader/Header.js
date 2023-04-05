@@ -1,15 +1,6 @@
 import { PageHeader } from "./header.style";
 import { IoChatboxEllipsesOutline } from "react-icons/io5";
 import BackImg from "../../../assets/Images/blogBackground.jpeg";
-import { DetailTabs } from "../../DetailsComponent/DetailsTab";
-
-export const HeaderTabBar = props => (
-  <div className="border-b-[1px] border-[rgba(194,207,214,var(--tw-border-opacity))] border-opacity-[0.3] h-[60px]">
-    <div className="flex justify-start md:justify-center h-full items-center overflow-x-auto px-[1.5rem] max-w-[1200px] mx-auto">
-      <DetailTabs tabs={props.tabs} onPress={() => alert("nothing for now")} />
-    </div>
-  </div>
-);
 
 const CustomHeader = props => (
   <PageHeader
@@ -29,9 +20,7 @@ const CustomHeader = props => (
       className={`${
         props.hasBackImg
           ? "w-full flex flex-col items-center justify-center text-center min-h-[420px] bg-opacity-95 bg-[rgba(255,236,239,var(--tw-bg-opacity))]"
-          : `max-w-[1200px] md:px-[1.5rem] px-[1.25rem] mx-auto ${
-              props.floatLeft ? "w-full" : ""
-            }`
+          : `container px-4 xl:px-28 ${props.floatLeft ? "w-full" : ""}`
       }`}
     >
       <div className="flex flex-col items-center">

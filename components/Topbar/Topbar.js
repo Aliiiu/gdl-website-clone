@@ -8,8 +8,6 @@ import Menu, { MenuClose } from "../Widgets/Icons/Menu";
 import { AppButton } from "../Widgets/Button/Button";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { useRouter } from "next/router";
-import GDLlogo from "../../assets/images/gdllogo.svg.svg";
-import Image from "next/image";
 import { IoChevronForward } from "react-icons/io5";
 import { homeLinks } from "../../utils/helper";
 
@@ -93,7 +91,7 @@ const Topbar = props => {
 
   return (
     <header
-      className={`z-30 sticky top-0 right-0 left-0 border-gray-200 dark:border-gray-600 transition ease-in-out duration-500`}
+      className={`z-30 sticky top-0 right-0 left-0 border-gray-200 w-full dark:border-gray-600 transition ease-in-out duration-500`}
     >
       <Transition
         show={open}
@@ -110,7 +108,7 @@ const Topbar = props => {
           onClick={() => setOpen(!open)}
         ></OverlayDiv>
         <nav
-          className={`md:mx-[2rem] max-w-[1200px] px-[.5rem] mx-auto fixed top-0 left-0 mt-[68px] lg:w-[66.666667%] w-full ${
+          className={`container px-4 xl:px-28 mx-auto fixed top-0 left-0 mt-[68px] md:w-[66.666667%] w-full ${
             open ? "animate-slide-down" : "animate-slide-up"
           }`}
         >
@@ -135,43 +133,48 @@ const Topbar = props => {
           </NavDiv>
         </nav>
       </Transition>
-      <TopContainer className={`w-full`}>
-        <div className="bg-transparent lg:w-4/6 w-full animate-fade-in">
+      <TopContainer className={`container bg-white px-4 xl:px-28 mx-auto`}>
+        <div className="bg-white w-full animate-fade-in">
           <nav className="py-2 z-20 top-0 left-0">
-            <div className="container flex flex-wrap items-center mx-auto">
-              <div className="flex lg:flex-row flex-row-reverse lg:w-auto w-full items-center lg:justify-start justify-between">
-                <button
-                  data-collapse-toggle="navbar-sticky"
-                  type="button"
-                  className="inline-flex items-center lg:p-2 lg:px-0 p-0 text-sm text-black rounded-lg focus:outline-none focus:ring-0 focus:ring-gray-200 dark:text-white dark:focus:ring-gray-600"
-                  aria-controls="navbar-sticky"
-                  aria-expanded="false"
-                  onClick={() => setOpen(!open)}
+            <div className="w-full flex justify-between items-center mx-auto">
+              <div className="flex items-center">
+                <div className="flex lg:w-auto w-full items-center gap-4 lg:justify-start justify-between">
+                  <button
+                    data-collapse-toggle="navbar-sticky"
+                    type="button"
+                    className="hidden lg:inline-flex items-center lg:p-2 lg:px-0 p-0 text-sm text-black rounded-lg focus:outline-none focus:ring-0 focus:ring-gray-200 dark:text-white dark:focus:ring-gray-600"
+                    aria-controls="navbar-sticky"
+                    aria-expanded="false"
+                    onClick={() => setOpen(!open)}
+                  >
+                    <span className="sr-only">Open main menu</span>
+                    {!open ? (
+                      <Menu theme={theme} />
+                    ) : (
+                      <MenuClose theme={theme} />
+                    )}
+                  </button>
+                  <Link href="/">
+                    <a className="flex items-center flex-col justify-center font-title-font">
+                      <img
+                        className="h-10"
+                        src="https://res.cloudinary.com/gdlapp/image/upload/v1625500547/image/gdllogo.svg.svg"
+                      />
+                    </a>
+                  </Link>
+                </div>
+                <div
+                  className="hidden justify-between items-center md:flex"
+                  id="navbar-sticky"
                 >
-                  <span className="sr-only">Open main menu</span>
-                  {!open ? <Menu theme={theme} /> : <MenuClose theme={theme} />}
-                </button>
-                <Link href="/">
-                  <a className="flex items-center mx-4 flex-col justify-center font-title-font">
-                    <img
-                      className="h-10"
-                      src="https://res.cloudinary.com/gdlapp/image/upload/v1625500547/image/gdllogo.svg.svg"
-                    />
-                  </a>
-                </Link>
+                  <ul className="flex flex-col p-4 py-2 mt-4 lg:mx-7 md:flex-row md:space-x-12 md:mt-0 lg:text-[15px] md:font-light md:border-0 text-gray-500 dark:text-gray-400 dark:border-gray-700">
+                    <LinkList name="about" url="/about" />
+                    <LinkList name="product" url="/products" />
+                    <LinkList name="blog" url="/blog" />
+                  </ul>
+                </div>
               </div>
-
-              <div
-                className="hidden flex-grow justify-between items-center md:flex md:order"
-                id="navbar-sticky"
-              >
-                <ul className="flex flex-col p-4 py-2 mt-4 lg:mx-7 md:flex-row md:space-x-12 md:mt-0 lg:text-[15px] md:font-light md:border-0 text-gray-500 dark:text-gray-400 dark:border-gray-700">
-                  <LinkList name="about" url="/about" />
-                  <LinkList name="product" url="/products" />
-                  <LinkList name="blog" url="/blog" />
-                </ul>
-              </div>
-              <div className="hidden flex-grow lg:flex gap-x-6 justify-end items-center">
+              <div className="hidden lg:flex gap-x-6 justify-end items-center">
                 {/* <div className="flex justify-start items-center">
                   <label
                     htmlFor="toggleB"
@@ -208,6 +211,17 @@ const Topbar = props => {
                   icon={<AiOutlineArrowRight className="font-thin text-sm" />}
                 />
               </div>
+              <button
+                data-collapse-toggle="navbar-sticky"
+                type="button"
+                className="lg:hidden inline-flex items-center lg:p-2 lg:px-0 p-0 text-sm text-black rounded-lg focus:outline-none focus:ring-0 focus:ring-gray-200 dark:text-white dark:focus:ring-gray-600"
+                aria-controls="navbar-sticky"
+                aria-expanded="false"
+                onClick={() => setOpen(!open)}
+              >
+                <span className="sr-only">Open main menu</span>
+                {!open ? <Menu theme={theme} /> : <MenuClose theme={theme} />}
+              </button>
             </div>
           </nav>
         </div>
