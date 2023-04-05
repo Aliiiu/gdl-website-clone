@@ -1,7 +1,7 @@
 import React from "react";
 import { IoBulbOutline } from "react-icons/io5";
 
-const CoreValues = () => {
+const CoreValues = ({ vision, mission }) => {
   return (
     <div>
       <div className="flex -z-10 justify-center w-full">
@@ -18,11 +18,12 @@ const CoreValues = () => {
           </div>
           <div className="text-white h-[45%] card-content p-6">
             <h2 className="font-bold uppercase text-center text-lg mb-3">
-              Our Vision
+              {vision.title || `Our Vision`}
             </h2>
             <p className="text-white text-center">
-              A leading diversified financial institution creating wealth and
-              transforming society
+              {vision.description ||
+                `A leading diversified financial institution creating wealth and
+              transforming society`}
             </p>
           </div>
         </div>
@@ -32,11 +33,12 @@ const CoreValues = () => {
           </div>
           <div className="text-white card-content p-6">
             <h2 className="font-bold uppercase text-center text-lg mb-3">
-              Our mission
+              {mission.title || `Our mission`}
             </h2>
             <p className="text-white text-center">
-              Providing unique financial solutions to strengthen and expand the
-              middle class
+              {mission.description ||
+                `Providing unique financial solutions to strengthen and expand the
+              middle class`}
             </p>
           </div>
         </div>

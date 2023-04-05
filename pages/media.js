@@ -4,6 +4,8 @@ import Faq from "../components/PageSections/Faq";
 import { useEffect } from "react";
 import { makeRequest } from "../apiCalls/requestHandler";
 import Head from "next/head";
+import MethodType from "../constant/methodType";
+import { useRequest } from "../hooks/useRequest";
 
 const MediaContent = () => (
   <div className="mb-[1rem] rounded-[0.5rem] bg-opacity-100 bg-[rgba(255,255,255,var(--tw-bg-opacity))] p-[0.5rem] shadow">
@@ -30,19 +32,37 @@ const MediaContent = () => (
   </div>
 );
 
-const MediaPage = ({ heroContent, genContent }) => {
+const MediaPage = ({ mediaContent, generalContent }) => {
+  const { makeRequest, data } = useRequest({
+    url: "/pages/resources/mp/all/media",
+    method: MethodType.GET,
+  });
+
+  const { makeRequest: fetchGeneral, data: generalData } = useRequest({
+    url: "/pages/resources/mp/general",
+    method: MethodType.GET,
+  });
+
+  // useEffect(() => {
+  //   fetchGeneral();
+  //   makeRequest();
+  // }, []);
+
   useEffect(() => {
-    console.log(heroContent);
-    console.log(genContent);
-  }, []);
+    console.log(mediaContent);
+  }, [mediaContent]);
+
   return (
     <div>
       <Head>
         <title>Media | GDL</title>
       </Head>
       <CustomHeader
-        name="Media"
-        sub="A Catalog of our contributions to the Media space!"
+        name={generalContent.title}
+        sub={
+          generalContent.description ||
+          "A Catalog of our contributions to the Media space!"
+        }
         icon={<IoFilmOutline />}
       />
       <div className="-mt-16">
@@ -62,18 +82,13 @@ const MediaPage = ({ heroContent, genContent }) => {
 
 export default MediaPage;
 
-// export async function getStaticProps() {
-//   const mediaData = await makeRequest(
-//     "/pages/resources/mp/all/media",
-//     null,
-//     null
-//   );
-//   const genData = await makeRequest("/pages/resources/mp/general", null, null);
-
-//   return {
-//     props: {
-//       heroContent: mediaData?.data?.data,
-//       genContent: genData?.data?.data,
-//     },
-//   };
-// }
+export async function getStaticProps() {
+  const mediaData = await makeRequest("/pages/resources/mp/all/media");
+  const generalData = await makeRequest("/pages/resources/mp/general");
+  return {
+    props: {
+      mediaContent: mediaData.data.data,
+      generalContent: generalData.data.data,
+    },
+  };
+}

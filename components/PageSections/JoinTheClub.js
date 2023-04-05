@@ -2,7 +2,6 @@ import Image from "next/image";
 import React from "react";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { AppButton } from "../Widgets/Button/Button";
-import { SectionWrapper } from "./Products";
 import Link from "next/link";
 
 const JoinTheClub = () => {

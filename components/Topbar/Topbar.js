@@ -8,8 +8,6 @@ import Menu, { MenuClose } from "../Widgets/Icons/Menu";
 import { AppButton } from "../Widgets/Button/Button";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { useRouter } from "next/router";
-import GDLlogo from "../../assets/images/gdllogo.svg.svg";
-import Image from "next/image";
 import { IoChevronForward } from "react-icons/io5";
 import { homeLinks } from "../../utils/helper";
 

@@ -1,5 +1,5 @@
 import React from "react";
-
+import parse from "html-react-parser";
 const ManagementModal = ({ content }) => {
   // console.log(content);
   return (
@@ -7,7 +7,7 @@ const ManagementModal = ({ content }) => {
       <h2 className="text-center font-semibold mb-3 text-2xl">
         {content?.header}
       </h2>
-      {content?.content}
+      <div className="text-left w-full">{parse(content.content)}</div>
     </div>
   );
 };

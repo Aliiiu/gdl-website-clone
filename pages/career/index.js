@@ -12,12 +12,15 @@ import Link from "next/link";
 import { useEffect } from "react";
 import { makeRequest } from "../../apiCalls/requestHandler";
 import Head from "next/head";
+import { useRequest } from "../../hooks/useRequest";
+import MethodType from "../../constant/methodType";
+import { formatDate } from "../../utils/helper";
 
-const CareerTopContent = () => (
+const CareerTopContent = ({ content }) => (
   <>
-    <h1 className="section-header">Career</h1>
+    <h1 className="section-header">{content?.title || "Career"}</h1>
     <p className="section-hint text-[rgba(31,26,23,var(--tw-text-opacity))] text-opacity-[0.9]">
-      Join The Tribe! Come work with us.
+      {content?.description || "Join The Tribe! Come work with us."}
     </p>
     <div className="mt-16">
       <AppButton
@@ -31,7 +34,7 @@ const CareerTopContent = () => (
 
 const JobContent = ({ id, data }) => (
   <Link href={`/career/${id}/apply`}>
-    <a className="relative rounded-[0.5rem] border-[1px] border-[rgba(162,166,168,var(--tw-border-opacity))] border-opacity-20 bg-opacity-100 bg-[rgba(255,255,255,var(--tw-bg-opacity))] p-[1.5rem] shadow">
+    <a className="relative flex-1 max-w-[300px] rounded-[0.5rem] border-[1px] border-[rgba(162,166,168,var(--tw-border-opacity))] border-opacity-20 bg-opacity-100 bg-[rgba(255,255,255,var(--tw-bg-opacity))] p-[1.5rem] shadow">
       <h1 className="font-bold text-xl">{data?.position || "Job Title"}</h1>
       <div className="mb-1 py-1 px-2 inline-flex rounded text-sm bg-opacity-100 bg-[rgba(255,236,239,var(--tw-bg-opacity))] text-opacity-100 text-[rgba(153,35,51,var(--tw-text-opacity))]">
         {data?.type_of_employment || "Job Type"}
@@ -41,7 +44,7 @@ const JobContent = ({ id, data }) => (
         <span>{data?.location || "Job Location"}</span>
       </h3>
       <div className="mt-1 text-sm text-opacity-100 text-[rgba(162,166,168,var(--tw-text-opacity))]">
-        Closes {new Date().toDateString()}
+        Closes {formatDate(data?.lasts_till)}
       </div>
       <div className="mt-4 flex items-center justify-end text-sm capitalize text-opacity-100 text-[rgba(162,166,168,var(--tw-text-opacity))]">
         <span>a year ago</span>
@@ -57,20 +60,54 @@ const CareerPage = ({
   pageContent,
   jobContent,
 }) => {
+  const { makeRequest, data } = useRequest({
+    url: "/jobs",
+    method: MethodType.GET,
+  });
+  const { makeRequest: fetchCareerHero, data: careerHeroData } = useRequest({
+    url: "/pages/careers/intro",
+    method: MethodType.GET,
+  });
+  const { makeRequest: fetchCareerGeneral, data: careerGeneralData } =
+    useRequest({
+      url: "/pages/careers/general",
+      method: MethodType.GET,
+    });
+  const { makeRequest: fetchCareerContent, data: careerContentData } =
+    useRequest({
+      url: "/pages/careers/page/content",
+      method: MethodType.GET,
+    });
+  const { makeRequest: fetchJobOpenings, data: jobOpeningsData } = useRequest({
+    url: "/pages/careers/job/openings",
+    method: MethodType.GET,
+  });
   // useEffect(() => {
-  //   console.log(jobOpening);
-  //   console.log(heroContent);
-  //   console.log(genContent);
-  //   console.log(pageContent);
-  //   console.log(jobContent);
+  //   makeRequest();
+  //   fetchCareerHero();
+  //   fetchCareerGeneral();
+  //   fetchCareerContent();
+  //   fetchJobOpenings();
   // }, []);
+
+  useEffect(() => {
+    console.log(jobOpening);
+    // console.log(heroContent);
+    // console.log(genContent);
+    // console.log(pageContent);
+    // console.log(jobContent);
+  }, []);
+
   return (
     <div>
       <Head>
         <title>Career | GDL</title>
       </Head>
       <div className="bg-opacity-20 bg-[rgba(194,207,214,var(--tw-bg-opacity))]">
-        <CustomHeader bg="#FEECEF" content={<CareerTopContent />} />
+        <CustomHeader
+          bg="#FEECEF"
+          content={<CareerTopContent content={genContent} />}
+        />
         <section className="-mt-12">
           <div className="container px-4 xl:px-28 mx-auto mb-16">
             <div className="max-w-5xl mx-auto rounded-lg bg-white shadow-xl p-3 md:p-10 lg:py-0 flex flex-wrap">
@@ -90,40 +127,44 @@ const CareerPage = ({
               </div>
               <div className="w-full lg:w-1/2 py-6 md:py-12 px-2 md:px-6">
                 <h2 className="text-4xl md:text-5xl font-bold mb-4 text-opacity-100 text-[rgba(162,166,168,var(--tw-text-opacity))]">
-                  See what working with us feels like!
+                  {heroContent?.title || "See what working with us feels like!"}
                 </h2>
                 <p className="leading-[36px] text-[1.125rem] text-opacity-90 text-[rgba(31,26,23,var(--tw-text-opacity))]">
-                  We take pride in the fact that our people are not at the
+                  {heroContent?.description ||
+                    `We take pride in the fact that our people are not at the
                   periphery but the core of our existence; thus, we provide them
                   with an enabling environment of open communication, teamwork,
-                  career fulfilment and continuous development.
+                  career fulfilment and continuous development.`}
                 </p>
               </div>
             </div>
           </div>
-          <div className="">
-            <div className="container px-4 xl:px-28 mx-auto flex flex-wrap">
-              <div className="w-full md:w-1/2 py-6 md:py-24 mb-4 md:mb-0 text-left">
-                <h1 className="text-4xl md:text-5xl font-bold mb-5">
-                  Excellence & Professionalism.
-                </h1>
-                <p className="visible opacity-100 mb-[1.5rem] leading-[36px] text-[1.125rem] text-opacity-90 text-[rgba(31,26,23,var(--tw-text-opacity))]">
-                  As a company with an unwavering commitment to excellence and
-                  the highest level of professionalism, we offer great career
-                  opportunities for enterprising and high performing
-                  individuals.
-                </p>
-              </div>
-              <div className="relative w-full md:w-1/2 flex justify-center items-center happy-img">
-                <div className="md:absolute md:-mb-20 bottom-0 shadow-2xl flex rounded-lg">
-                  <Image
-                    src={Img}
-                    className="right-0 left-0  mx-auto rounded-lg"
-                    alt=""
-                  />
+          <div className="container px-4 xl:px-28 mx-auto ">
+            {pageContent.map((content, idx) => (
+              <div key={content.id} className="flex flex-wrap">
+                <div className="w-full md:w-1/2 py-6 md:py-24 mb-4 md:mb-0 text-left">
+                  <h1 className="text-4xl md:text-5xl font-bold mb-5">
+                    {content?.title || "Excellence & Professionalism."}
+                  </h1>
+                  <p className="visible opacity-100 mb-[1.5rem] leading-[36px] text-[1.125rem] text-opacity-90 text-[rgba(31,26,23,var(--tw-text-opacity))]">
+                    {content?.description ||
+                      `As a company with an unwavering commitment to excellence and
+                    the highest level of professionalism, we offer great career
+                    opportunities for enterprising and high performing
+                    individuals.`}
+                  </p>
+                </div>
+                <div className="relative w-full md:w-1/2 flex justify-center items-center happy-img">
+                  <div className="md:absolute md:-mb-20 bottom-0 shadow-2xl flex rounded-lg">
+                    <Image
+                      src={Img}
+                      className="right-0 left-0  mx-auto rounded-lg"
+                      alt=""
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
+            ))}
           </div>
         </section>
       </div>
@@ -162,30 +203,31 @@ const CareerPage = ({
             Job Openings
           </h1>
           <div className="mt-8">
-            {/* <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <JobContent
-                id="1"
-                data={{
-                  position: "Product Manager",
-                  type_of_employment: "remote",
-                  location: "Lagos",
-                }}
-              />
-              <JobContent
-                id="2"
-                data={{
-                  position: "UI/UX Developer",
-                  type_of_employment: "remote",
-                  location: "Lagos",
-                }}
-              />
-            </div> */}
-            <div className="flex justify-center items-center py-10 px-5">
-              <span className="md:text-sm text-sm px-5 py-3 flex items-center gap-2 leading-5 rounded-lg bg-gray-50 text-gray-500">
-                <IoWarning size={20} /> No career vacancy available at the
-                moment, please check back later
-              </span>
-            </div>
+            {jobOpening.length > 0 ? (
+              <div className="flex flex-wrap gap-6">
+                {jobOpening.map(content => (
+                  <JobContent
+                    key={content.id}
+                    id={content.id}
+                    data={{
+                      position: content.position,
+                      type_of_employment: content.type_of_employment,
+                      location: content.location,
+                      lasts_till: content.lasts_till,
+                    }}
+                  />
+                ))}
+              </div>
+            ) : (
+              <div className="flex justify-center items-center py-10 px-5">
+                <span className="md:text-sm text-sm px-5 py-3 flex items-center gap-2 leading-5 rounded-lg bg-gray-50 text-gray-500">
+                  <IoWarning size={20} />{" "}
+                  {jobContent?.no_vacancy_message ||
+                    `No career vacancy available at the
+                  moment, please check back later`}
+                </span>
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -199,26 +241,26 @@ const CareerPage = ({
   );
 };
 
-// export async function getStaticProps() {
-//   const jobData = await makeRequest("/jobs", null, null);
-//   const heroData = await makeRequest("/pages/careers/intro", null, null);
-//   const genData = await makeRequest("/pages/careers/general", null, null);
-//   const pageData = await makeRequest("/pages/careers/page/content", null, null);
-//   const openingsData = await makeRequest(
-//     "/pages/careers/job/openings",
-//     null,
-//     null
-//   );
+export async function getStaticProps() {
+  const jobData = await makeRequest("/jobs", null, null);
+  const heroData = await makeRequest("/pages/careers/intro", null, null);
+  const genData = await makeRequest("/pages/careers/general", null, null);
+  const pageData = await makeRequest("/pages/careers/page/content", null, null);
+  const openingsData = await makeRequest(
+    "/pages/careers/job/openings",
+    null,
+    null
+  );
 
-//   return {
-//     props: {
-//       jobOpening: jobData?.data?.data.filter(item => item?.published),
-//       heroContent: heroData?.data?.data,
-//       genContent: genData?.data?.data,
-//       pageContent: pageData?.data?.data,
-//       jobContent: openingsData?.data?.data,
-//     },
-//   };
-// }
+  return {
+    props: {
+      jobOpening: jobData?.data?.data.filter(item => item?.published),
+      heroContent: heroData?.data?.data.shift(),
+      genContent: genData?.data?.data.shift(),
+      pageContent: pageData?.data?.data,
+      jobContent: openingsData?.data?.data.shift(),
+    },
+  };
+}
 
 export default CareerPage;

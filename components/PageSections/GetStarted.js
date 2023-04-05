@@ -1,5 +1,5 @@
 import React from "react";
-import { SectionWrapper } from "./Products";
+import { SectionWrapper } from "./product.style";
 import getStarted from "../../assets/Images/get-started.jpg";
 import getstarted from "../../pages/products/constant/getstarted";
 import Image from "next/image";

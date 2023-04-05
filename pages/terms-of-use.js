@@ -6,8 +6,8 @@ import Head from "next/head";
 
 const TermsOfUse = ({ termsContent }) => {
   useEffect(() => {
-    // console.log(termsContent);
-  }, []);
+    console.log(termsContent);
+  }, [termsContent]);
   return (
     <div className="relative">
       <Head>
@@ -29,12 +29,12 @@ const TermsOfUse = ({ termsContent }) => {
 
 export default TermsOfUse;
 
-// export async function getStaticProps() {
-//   // const userData = await makeRequest("/pages/terms", null, null);
+export async function getStaticProps() {
+  const userData = await makeRequest("/pages/terms", null, null);
 
-//   return {
-//     props: {
-//       // termsContent: userData,
-//     },
-//   };
-// }
+  return {
+    props: {
+      termsContent: userData,
+    },
+  };
+}

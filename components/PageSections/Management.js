@@ -11,44 +11,40 @@ const data = {
   "oyekemi-ayeye": "High Yield Note",
 };
 
-const Management = () => {
+const Management = ({ data }) => {
   const {
     query: { params = [] },
     push,
   } = useRouter();
   const [open, setOpen] = useState(false);
   const [content, setContent] = useState();
-  const mangRef = useRef(null);
 
-  useEffect(() => {
-    // console.log(params[1]);
-    if (!"undefined".includes(params)) {
-      // console.log(params);
-      setContent(managementDetails[params[1]]);
-      setOpen(true);
-    } else {
-      setOpen(false);
-    }
-  }, [params]);
-  const handleRedirection = url => () => {
-    push({ pathname: `${url}` });
-    // mangRef.current.scrollIntoView();
+  const handleRedirection = item => {
+    // console.log(item);
+    setContent(item);
+    setOpen(true);
   };
+
   return (
-    <div ref={mangRef}>
+    <div>
       <h2 className="title mb-4 text-center">Management Team</h2>
       <p className="text-center">Meet the people behind the wheel</p>
       <div className="grid mt-[100px] sm:grid-cols-2 md:grid-cols-3 gap-y-[100px]">
-        {management.map(item => (
+        {data.map(item => (
           <div key={item.id} className="">
             <div className="relative rounded-lg overflow-hidden mx-auto w-[191px] h-[256px]">
-              <Image src={item.image} alt="" layout="fill" />
+              <Image unoptimized src={item.image_url} alt="" layout="fill" />
             </div>
             <h5
-              onClick={handleRedirection(item.href)}
+              onClick={() =>
+                handleRedirection({
+                  header: item.staff_name,
+                  content: item.profile,
+                })
+              }
               className="text-[#9A2333] font-medium mt-3 cursor-pointer text-center"
             >
-              {item.name}
+              {item.staff_name}
             </h5>
           </div>
         ))}
@@ -56,11 +52,7 @@ const Management = () => {
       <AppModal
         open={open}
         onClose={() => {
-          // mangRef.current.scrollIntoView();
-          // let elem = document.getElementById("management");
-          // elem.scrollIntoView({ behavior: "smooth" });
           setOpen(false);
-          push("/about#management-team");
         }}
         content={<ManagementModal content={content} />}
       />

@@ -1,6 +1,7 @@
 import Head from "next/head";
 import React, { useEffect } from "react";
 import styled from "styled-components";
+import { makeRequest } from "../../apiCalls/requestHandler";
 import AboutHero from "../../components/PageSections/AboutHero";
 import Boards from "../../components/PageSections/Boards";
 import CoreValues from "../../components/PageSections/CoreValues";
@@ -9,60 +10,50 @@ import Management from "../../components/PageSections/Management";
 import WhatWeAre from "../../components/PageSections/WhatWeAre";
 import WhatWeDo from "../../components/PageSections/WhatWeDo";
 import coreValues from "../../constant/coreValues";
-
-const AboutPageWrapper = styled.div`
-  .aboutHeroBg {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    background-size: 120%;
-    background-repeat: no-repeat;
-    min-height: 450px;
-    background-position: 50% 100%;
-    padding-top: 3em;
-
-    @media only screen and (min-width: 768px) {
-      min-height: 640px;
-      justify-content: center;
-      padding-top: 0;
-    }
-    @media only screen and (min-width: 1024px) {
-      background-position: 50% 48%;
-    }
-    .blackContainer {
-      border-radius: 0.5rem;
-      @media only screen and (min-width: 768px) {
-        background-color: rgba(31, 26, 23, 0.2);
-      }
-    }
-  }
-  .title {
-    font-size: 36px;
-    font-weight: 700;
-    @media only screen and (min-width: 1024px) {
-      font-size: 48px;
-    }
-  }
-  .card-content {
-    background-color: rgba(31, 26, 23, 0.2);
-  }
-`;
+import MethodType from "../../constant/methodType";
+import { useRequest } from "../../hooks/useRequest";
+import { AboutPageWrapper } from "./about.style";
 
 const About = ({
   heroContent,
   visionContent,
   missionContent,
-  mangContent,
+  managementContent,
   bodContent,
 }) => {
+  const { makeRequest, data } = useRequest({
+    url: "/pages/about/general",
+    method: MethodType.GET,
+  });
+  // const { makeRequest: fetchVision, data: visionContent } = useRequest({
+  //   url: "/pages/about/our/vision",
+  //   method: MethodType.GET,
+  // });
+  // const { makeRequest: fetchMision, data: missionContent } = useRequest({
+  //   url: "/pages/about/our/mission",
+  //   method: MethodType.GET,
+  // });
+  // const { makeRequest: fetchManagement, data: managementContent } = useRequest({
+  //   url: "/pages/about/management/team",
+  //   method: MethodType.GET,
+  // });
+
+  // const { makeRequest: fetchBoardOfDirectors, data: bodContent } = useRequest({
+  //   url: "/pages/about/board/of/directors",
+  //   method: MethodType.GET,
+  // });
+
   // useEffect(() => {
-  //   console.log(heroContent);
-  //   console.log(visionContent);
-  //   console.log(missionContent);
-  //   console.log(mangContent);
-  //   console.log(bodContent);
+  //   makeRequest();
+  //   fetchVision();
+  //   fetchMision();
+  //   fetchManagement();
+  //   fetchBoardOfDirectors();
   // }, []);
+
+  useEffect(() => {
+    console.log(bodContent);
+  }, [bodContent]);
   return (
     <AboutPageWrapper>
       <Head>
@@ -70,7 +61,7 @@ const About = ({
       </Head>
       <section
         style={{
-          backgroundImage: `url('Images/gdlOffice.png')`,
+          backgroundImage: `url(${heroContent.bg_image_url})`,
         }}
         className="aboutHeroBg"
       >
@@ -111,7 +102,7 @@ const About = ({
         id="management-team"
         className="lg:px-6 md:w-5/6 lg:w-4/6 mx-auto py-16 md:py-36 w-full"
       >
-        <Management data={mangContent} />
+        <Management data={managementContent} />
       </section>
       <section
         id="board-of-directors"
@@ -130,3 +121,21 @@ const About = ({
 };
 
 export default About;
+
+export async function getStaticProps() {
+  const heroData = await makeRequest("/pages/about/general");
+  const visionData = await makeRequest("/pages/about/our/vision");
+  const missionData = await makeRequest("/pages/about/our/mission");
+  const managementData = await makeRequest("/pages/about/management/team");
+  const bodData = await makeRequest("/pages/about/board/of/directors");
+  // console.log(heroData);
+  return {
+    props: {
+      heroContent: heroData.data.data[0],
+      visionContent: visionData.data.data[0],
+      missionContent: missionData.data.data[0],
+      managementContent: managementData.data.data.reverse(),
+      bodContent: bodData.data.data.reverse(),
+    },
+  };
+}

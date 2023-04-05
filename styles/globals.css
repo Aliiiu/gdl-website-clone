@@ -65,13 +65,3 @@ h6 {
   font-weight: 400;
   /* font-family: "IBM Plex Sans"; */
 }
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
-}

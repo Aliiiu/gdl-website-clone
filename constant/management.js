@@ -4,30 +4,123 @@ const management = [
     image: "/Images/Kolawole-Ayeye.jpeg",
     name: "Kolawole Ayeye",
     href: "/about/Management/kolawole-ayeye",
+    content: (
+      <p className="text-left">
+        Kola is a seasoned professional with over thirty years’ experience in
+        Banking, Financial Services, Audit and Advisory Services. <br />
+        Before returning to the Board of GDL, he served as Executive Director of
+        Asset Management Corporation of Nigeria (AMCON) with responsibility for
+        recoveries and resolutions, a role central to the Corporation’s mandate
+        of recovering bad loans acquired from banks. In addition to
+        significantly improving recoveries through various initiatives, his team
+        made significant contributions to the restructure and deployment of
+        major assets and entities in the aviation and oil service sectors.{" "}
+        <br />
+        Prior to that, he was appointed by the banking regulators to the Board
+        of Mainstreet Bank. Mainstreet Bank was one of three banks acquired by
+        regulators in 2011 consequent to solvency and liquidity problems. The
+        Board and Management succeeded in its mandate to turn the bank around
+        and sell to new owner. Much earlier, he was a key member of the team
+        that recapitalized and turned around National Bank of Nigeria, hitherto
+        deemed terminally and irredeemably distressed. He joined the bank as
+        General Manager after its recapitalization in 2000, and became Chief
+        Executive in 2003. He resigned in the course of the merger of the bank
+        with two other banks as part of the consolidation of the Nigerian
+        banking industry. In 2014, Mr. Ayeye arranged the recapitalisation of
+        Express Discount Asset Management (EDAM) and led the recommencement of
+        business with a new strategic direction before his appointment to the
+        Board of AMCON by the President of the Federal Republic of Nigeria in
+        2015. <br />
+        He returned in February 2018 to serve as Group Managing Director/Chief
+        Executive of GDL (formerly EDAM) to champion delivery of our intent to
+        strengthen and expand the middle class. Kola is a chartered accountant
+        with a first degree in Accountancy and a Masters degree in Finance, and
+        is an alumnus of Lagos Business School, Institute of Management
+        Development Lausanne Switzerland, and Harvard Business School. He is
+        committed to the highest ethical standards and brings a network of
+        skills, contacts and resources to GDL.
+      </p>
+    ),
   },
   {
     id: 2,
     image: "/Images/Oyekemi-Ayeye.jpeg",
     name: "Oyekemi Ayeye",
     href: "/about/Management/oyekemi-ayeye",
+    content: (
+      <p className="text-left">
+        Oyekemi holds an MBA from the prestigious Lagos Business School (Pan
+        African University) and B.Pharm from the University of Ife. She is also
+        a trained Oracle Certified Application Developer. Her experience spans
+        twenty years in various fields including Pharmacy, Software Development
+        and Business Management. She is a well experienced and an astitute
+        business administrator. She brings on board her skills in the areas of
+        strategic planning, operations and project management.
+      </p>
+    ),
   },
   {
     id: 3,
     image: "/Images/Ofonama-Joshua.jpeg",
     name: "Ofonama Joshua",
     href: "/about/Management/ofonama-joshua",
+    content: (
+      <p className="text-left">
+        Ofonama’s career in finance began in Accenture (formerly Anderson
+        Consulting), before moving to National Bank of Nigeria, where she rose
+        to Banking officer. She left National Bank to Fidelity Bank where she
+        rose to be a deputy branch manager. She joined the GDL team from
+        Keystone Bank Limited where she was the Branch Manager (Oregun Branch).
+        Ofonama has a Masters in Business Administration (MBA) from the
+        University of Calabar and has attended numerous trainings covering
+        customer service, credit risk management & debt recovery strategy,
+        understanding financial markets, asset and liability management amongst
+        others over the course of her career. With over fifteen years of
+        experience, she brings on board her skills in the areas of strategic
+        planning and treasury management.
+      </p>
+    ),
   },
   {
     id: 4,
     image: "/Images/Oluyemi-Adekoya.jpeg",
     name: "Oluyemi Adekoya",
     href: "/about/Management/oluyemi-adekoya",
+    content: (
+      <p className="text-left">
+        Yemi is an Information Systems Architect with tertiary degrees in
+        Chemical Engineering, Computing and Information Systems. His working
+        experience spans across Manufacturing, Telecoms, Oil & Gas and Finance
+        sectors of the Nigerian Economy. He currently is the Head, Strategy and
+        Information Systems in EDAM Nigeria. Apart from possessing several
+        vendor specific certifications which include Microsoft & Cisco, he is
+        also a member of ISACA (Information Security Audit and Control
+        Association) as a Certified Information Systems Auditor (CISA). He is
+        certified by the Balanced Scorecard Institute USA as a Balanced
+        Scorecard Professional (BSP).
+      </p>
+    ),
   },
   {
     id: 5,
     image: "/Images/Josephine-Ernest-Ikechukwu.jpeg",
     name: "Josephine Ernest Ikechukwu",
     href: "/about/Management/josephine-ernest-ikechukwu",
+    content: (
+      <p className="text-left">
+        Josephine joined GDL with over 10 years experience from Ecobank
+        Development Securities EDC, where she served in various department from
+        Client service to Retail marketing and Institutional marketing from 2006
+        to 2018 November. Josephine is a graduate of Nnamdi Azikwe University
+        from the French department and speaks fluently, she joins GDL with vast
+        knowledge both in Money Market and Capital market dynamics and client
+        winning strategies. Josephine is a student member of the Chartered
+        Institute of Stockbrokers where she has concluded her 1st level to
+        become a Chartered Stockbroker. She has attended various trainings both
+        within the country and outside Nigeria, from Lagos Business School(LBS)
+        and Euromoney Consultant
+      </p>
+    ),
   },
   // {
   //   id: 6,

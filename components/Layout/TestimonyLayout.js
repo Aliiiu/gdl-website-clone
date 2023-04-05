@@ -6,6 +6,7 @@ import { MainImage } from "./layout.style";
 import BackImg from "../../assets/Images/testimonial-one.jpg";
 import Testimony2 from "../../assets/Images/testimonial-two.jpg";
 import Testimony3 from "../../assets/Images/testimonial3.jpeg";
+import { useEffect } from "react";
 
 const TestimonyData = [
   {
@@ -31,7 +32,7 @@ const TestimonyData = [
   },
 ];
 
-const CarouselContent = ({ image, name, job, testimony }) => (
+const CarouselContent = ({ image_url, name, porfolio, testimonial }) => (
   <div
     key={name}
     className="relative mx-auto max-w-2xl flex flex-wrap md:flex-nowrap items-center justify-center md:justify-start px-5 md:px-0"
@@ -41,7 +42,7 @@ const CarouselContent = ({ image, name, job, testimony }) => (
       <div className="bottom-0 left-0 md:-ml-3 -mb-2 w-28 h-28 md:w-44 md:h-44 border-[8px] rounded-[9999px] border-opacity-[0.2] md:border-opacity-20 absolute border-[rgba(255,115,137,var(--tw-border-opacity))]" />
       <MainImage
         style={{
-          backgroundImage: `url(${image.src})`,
+          backgroundImage: `url(${image_url})`,
           height: "15rem",
           width: "15rem",
           backgroundRepeat: "no-repeat",
@@ -59,16 +60,21 @@ const CarouselContent = ({ image, name, job, testimony }) => (
             <span>{name}</span>
           </h2>
           <h5 className="text-opacity-[0.8] text-[rgba(31,26,23,var(--tw-text-opacity))] text-lg">
-            {job}
+            {porfolio}
           </h5>
         </div>
-        <p className="text-xl font-bold mt-6 mb-16">{testimony}</p>
+        <p className="text-xl font-bold mt-6 mb-16">{testimonial}</p>
       </div>
     </div>
   </div>
 );
 
-const TestimonyLayout = () => {
+const TestimonyLayout = ({ testimonial }) => {
+  // console.log(testimonial);
+
+  useEffect(() => {
+    console.log(testimonial);
+  }, [testimonial]);
   const carouselArrow = ({ type, onClick }) => {
     const pointer =
       type == consts.PREV ? (
@@ -132,7 +138,7 @@ const TestimonyLayout = () => {
             renderArrow={carouselArrow}
             renderPagination={renderPagination}
           >
-            {TestimonyData.map(content => (
+            {testimonial.map(content => (
               <CarouselContent key={content.name} {...content} />
             ))}
           </Carousel>
