@@ -1,8 +1,8 @@
 import React from "react";
 import { SectionWrapper } from "./product.style";
-import getStarted from "../../assets/Images/get-started.jpg";
-import getstarted from "../../pages/products/constant/getstarted";
+// import getStarted from "../../assets/Images/get-started.jpg";
 import Image from "next/image";
+import getstarted from "../../constant/getstarted";
 
 const GetStarted = () => {
   return (

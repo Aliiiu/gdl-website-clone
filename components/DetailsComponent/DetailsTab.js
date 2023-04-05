@@ -55,7 +55,7 @@ export const DetailTabs = ({ tabs, onPress, ...props }) => {
               key={content.id}
               label={content.category}
               {...a11yProps(content.id)}
-              // onClick={() => onPress(index)}
+              onClick={() => onPress(content.id)}
             />
           ))}
         </CustomTabs>

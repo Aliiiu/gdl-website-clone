@@ -1,6 +1,5 @@
 import Head from "next/head";
 import React, { useEffect } from "react";
-import styled from "styled-components";
 import { makeRequest } from "../../apiCalls/requestHandler";
 import AboutHero from "../../components/PageSections/AboutHero";
 import Boards from "../../components/PageSections/Boards";
@@ -12,7 +11,7 @@ import WhatWeDo from "../../components/PageSections/WhatWeDo";
 import coreValues from "../../constant/coreValues";
 import MethodType from "../../constant/methodType";
 import { useRequest } from "../../hooks/useRequest";
-import { AboutPageWrapper } from "./about.style";
+import { AboutPageWrapper } from "../../styles/about.style";
 
 const About = ({
   heroContent,
