@@ -8,6 +8,7 @@ const blogData = [
     title: "Identifying & Analyzing Sound Investments",
     info: "Once you understand the basics of investment, a typical next step is identifying sound financial securities, investments which will yield the best returns, long or short term.",
     time: "4 minutes",
+    srcImg: "/Images/grow-your-income.png",
   },
 ];
 
@@ -26,7 +27,7 @@ const BlogLayout = () => {
             Everything you need to know about Finance and Investing in Nigeria.
           </p>
         </div>
-        <section className="mt-16 px-[1.5rem] mx-auto max-w-[56rem]">
+        <section className="mt-16 md:px-[1.5rem] mx-auto max-w-[56rem]">
           {blogData.map(content => (
             <BlogList
               key={content.id}

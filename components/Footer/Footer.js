@@ -23,8 +23,8 @@ const Companylink = ({ url, name }) => (
 const Footer = () => {
   return (
     <FooterBox className="bg-white dark:bg-gray-900">
-      <section className="constraintlayout pb-5 mx-auto max-w-[1200px]">
-        <div className="flex flex-wrap -mx-6">
+      <section className="pb-5 container px-4 xl:px-28 mx-auto">
+        <div className="flex flex-wrap xl:-mx-6">
           <div className="w-full lg:w-1/4 mb-6 px-6">
             <div className="flex items-center justify-start mb-6">
               <img
@@ -99,7 +99,7 @@ const Footer = () => {
           </div>
         </div>
       </section>
-      <section className="constraintlayout mx-auto max-w-[1200px]">
+      <section className=" container px-4 xl:px-28 mx-auto">
         <hr className="border-grey border-opacity-30 mt-4" />
         <div className="text-black dark:text-white text-opacity-50 my-8 text-base">
           <div>
@@ -115,7 +115,7 @@ const Footer = () => {
         <hr className="border-grey border-opacity-30 mb-4" />
       </section>
       <section className="bg-black bg-opacity-0">
-        <div className="constraintlayout mx-auto max-w-[1200px] text-sm py-5 md:py-12 flex flex-col md:flex-row justify-between items-center">
+        <div className=" container px-4 xl:px-28 mx-auto text-sm py-5 md:py-12 flex flex-col md:flex-row justify-between items-center">
           <div className="text-black dark:text-white text-opacity-50 mb-5 md:mb-0">
             Copyright © 2022 GDL. All Rights Reserved.
           </div>
@@ -123,7 +123,6 @@ const Footer = () => {
             <Link href="/terms-of-use">
               <a className="mr-3">Terms of Use</a>
             </Link>
-            .
             <Link href="/privacy-policy">
               <a className="ml-3">Privacy Policy</a>
             </Link>

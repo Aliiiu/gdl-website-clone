@@ -25,6 +25,18 @@ import {
   IoCallOutline,
 } from "react-icons/io5";
 import { FaHandHoldingUsd, FaMoneyBill } from "react-icons/fa";
+import dayjs from "dayjs";
+
+export const isValidDate = date => {
+  console.log(date);
+  return Boolean(new Date(date).toString() !== "Invalid Date");
+};
+
+export const formatDate = (date, format = "MMM DD, YYYY") => {
+  console.log(date);
+  if (date && isValidDate(date)) return dayjs(date).format(format);
+  return date;
+};
 
 export const footerLinkData = [
   {

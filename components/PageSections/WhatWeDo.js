@@ -3,9 +3,9 @@ import React from "react";
 
 const WhatWeDo = () => {
   return (
-    <div className="flex flex-col gap-[50px] md:flex-row">
-      <div className="flex-1 w-full hidden lg:block lg:w-1/2">
-        <div className="relative w-full h-[600px]">
+    <div className="flex flex-col-reverse items-center lg:gap-[50px] md:flex-row">
+      <div className="flex-1 w-full lg:w-1/2">
+        <div className="relative w-full h-[400px] lg:h-[500px] xl:h-[600px]">
           <Image src={"/Images/society-nigeria.png"} alt="" layout="fill" />
         </div>
       </div>

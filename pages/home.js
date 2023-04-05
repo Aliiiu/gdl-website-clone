@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useLayoutEffect } from "react";
 import Faq from "../components/PageSections/Faq";
 import GetStarted from "../components/PageSections/GetStarted";
 import Products from "../components/PageSections/Products";
@@ -9,45 +9,100 @@ import BgImage from "../assets/images/bg.png";
 import Image from "next/image";
 import BlogLayout from "../components/Layout/BlogLayout";
 import TestimonyLayout from "../components/Layout/TestimonyLayout";
-import product from "../constant/product";
+import product from "./products/constant/product";
+import methodType from "../constant/methodType";
+import { useRequest } from "../hooks/useRequest";
+import CloudinaryImage from "../components/Widgets/CloudinaryImage";
 
-const HomePage = props => {
+const HomePage = ({
+  hero,
+  stat,
+  products,
+  testimonial,
+  media,
+  blog,
+  getStarted,
+}) => {
   const [counter, setCounter] = useState(0);
   const [count, setCount] = useState(0);
 
   const startCounter = () => {
     setInterval(() => {
-      if (counter <= 1000) setCounter(counter++);
-      if (count <= 830) setCount(count++);
+      if (counter <= stat.customers) setCounter(counter++);
+      if (count <= stat.businesses) setCount(count++);
     }, 0.1);
   };
   const stopCounter = () => {
-    if (counter >= 1000) {
+    if (counter >= stat.customers) {
       clearInterval(counter);
     }
-    if (count >= 830) clearInterval(count);
+    if (count >= stat.businesses) clearInterval(count);
   };
+
+  const { makeRequest, data } = useRequest({
+    url: "/pages/home/hero",
+    method: methodType.GET,
+  });
+  const { makeRequest: fetchStatistics, data: statData } = useRequest({
+    url: "/pages/home/statistics",
+    method: methodType.GET,
+  });
+  const { makeRequest: fetchProducts, data: productData } = useRequest({
+    url: "/pages/home/products",
+    method: methodType.GET,
+  });
+
+  const { makeRequest: fetchTestimony, data: testimonyData } = useRequest({
+    url: "/pages/home/testimonials",
+    method: methodType.GET,
+  });
+
+  const { makeRequest: fetchMedia, data: mediaData } = useRequest({
+    url: "/pages/home/media",
+    method: methodType.GET,
+  });
+
+  const { makeRequest: fetchBlog, data: blogData } = useRequest({
+    url: "/pages/home/blog",
+    method: methodType.GET,
+  });
+
+  const { makeRequest: fetchGetstarted, data: getStartedData } = useRequest({
+    url: "/pages/home/get/started",
+    method: methodType.GET,
+  });
 
   useEffect(() => {
     window.addEventListener("load", startCounter());
-    console.log(props.heroContent?.data);
-    console.log(props.statContent?.data);
-    console.log(props.prodContent?.data);
-    console.log(props.getStartedContent?.data);
-    console.log(props.UVPContent?.data);
-    console.log(props.testimonialContent?.data);
-    console.log(props.mediaContent?.data);
-    console.log(props.blogContent?.data);
 
     return () => window.removeEventListener("load", stopCounter());
   }, []);
+
+  // console.log("Working");
+  useEffect(() => {
+    makeRequest();
+    fetchTestimony();
+    fetchBlog();
+    fetchStatistics();
+    fetchProducts();
+    fetchMedia();
+    fetchGetstarted();
+  }, []);
+
+  // useEffect(() => {
+  //   console.log(blog);
+  // }, [blog]);
+  let arr = hero?.image_url?.split("/");
+  let bgUrl = arr[arr.length - 1];
   return (
-    <div className="relative">
-      <div className="hidden absolute top-0 right-0 mt-[-8.8rem] mr-[-5rem] md:flex items-center justify-center rounded-[9999px] dark:border-gray-800 border-red-50 w-[220px] h-[220px] border-[32px]" />
+    <div className="">
       <section
         id="media"
-        className="flex flex-col items-start justify-center relative px-[1.5rem] mx-auto max-w-[1200px] md:min-h-[500px] min-h-[460px]"
+        className="flex flex-col items-start justify-center relative container px-4 xl:px-28 mx-auto md:min-h-[500px] min-h-[460px]"
       >
+        <div className="absolute top-0 right-0 mt-[-8.8rem] mr-[-5rem]">
+          <div className="hidden 2xl:flex items-center justify-center rounded-full dark:border-gray-800 border-red-50 w-[220px] h-[220px] border-[32px]"></div>
+        </div>
         <div className="absolute top-0 left-0 bottom-0 flex justify-center items-center -ml-52">
           <div className="flex items-center justify-center rounded-[9999px] dark:border-gray-800 border-[#FFF1F4] w-[500px] h-[500px] border-[32px]">
             <div className="flex items-center justify-center rounded-[9999px] dark:border-gray-900 border-[#FFF5F7] border-[32px] w-[445px] h-[445px]" />
@@ -55,33 +110,42 @@ const HomePage = props => {
         </div>
         <div className="relative w-full md:w-9/12 lg:w-3/5">
           <h1 className="text-4xl md:text-5xl text-center md:text-left font-bold">
-            Build Wealth Comfortably
+            {hero.title || "Build Wealth Comfortably"}
           </h1>
           <p className="visible dark:text-[#F9FAFB] opacity-[1] md:leading-[32px] leading-[24px] mx-0 md:w-[80%] w-full md:text-left text-center md:text-[1.25rem]  mt-[.25rem] font-light animate-glide-up">
-            Your financial goals are our priority. We are committed to building
+            {hero.description ||
+              `Your financial goals are our priority. We are committed to building
             your wealth with different investment options, all tailored to suit
-            YOU.
+            YOU.`}
           </p>
           <div className="flex flex-col md:flex-row justify-center md:justify-start items-center mt-6">
             <AppButton
-              name="Invest Now →"
+              name={`${hero.call_to_action_title} →`}
               textSize="text-base"
               className="py-[1rem] px-[1.5rem] text-white md:mr-6 mb-4 md:mb-0 bg-[#992333]"
               // icon={<AiOutlineArrowRight className="font-thin text-sm" />}
             />
-            <Link href="/about">
-              <a className="font-light">Learn More</a>
+            <Link href={hero.call_to_action_link}>
+              <a className="font-light z-10">Learn More</a>
             </Link>
           </div>
         </div>
         <div className="max-w-[100%] hidden h-auto w-[520px] mr-[4rem] md:block absolute right-0 bottom-0 mb-[-8rem] animate-fade-in">
-          <Image src={BgImage} />
+          <Image
+            src={BgImage}
+            // layout="fill"
+            alt=""
+            // width="520px"
+            // height={"100%"}
+          />
         </div>
       </section>
       <section className="relative">
         <div className="flex flex-wrap text-white bg-[#992333] mt-[60px]">
           <div className="text-2xl flex justify-center items-center p-8 text-center w-full md:w-1/2">
-            <span className="capitalize font-light">We Are trusted by</span>
+            <span className="capitalize font-light">
+              {stat.caption || `We Are trusted by`}
+            </span>
           </div>
           <div className="w-full md:w-1/4 flex flex-col items-center bg-[#942231] justify-center min-h-[9em]">
             <div className="text-center md:text-left">
@@ -114,7 +178,7 @@ const HomePage = props => {
         </div>
       </section>
       <section id="our-product" className="py-16 md:py-36">
-        <Products product={product.slice(0, 3)} />
+        <Products product={products} />
       </section>
       <section
         id="get-started"
@@ -122,11 +186,11 @@ const HomePage = props => {
       >
         <GetStarted />
       </section>
-      <TestimonyLayout />
+      <TestimonyLayout testimonial={testimonial} />
       <BlogLayout />
       <section
         id="faq"
-        className="lg:px-6 lg:w-4/6 mx-auto py-16 md:py-36 w-full"
+        className="container px-4 xl:px-28 mx-auto py-16 md:py-36 w-full"
       >
         <Faq />
       </section>

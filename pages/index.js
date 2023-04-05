@@ -1,64 +1,55 @@
 import HomePage from "./home";
+import Head from "next/head";
 import { makeRequest } from "../apiCalls/requestHandler";
 
 const App = ({
   heroContent,
   statContent,
   prodContent,
-  getStartedContent,
-  UVPContent,
   testimonialContent,
   mediaContent,
   blogContent,
-}) => (
-  <>
-    <HomePage
-      heroContent={heroContent}
-      statContent={statContent}
-      prodContent={prodContent}
-      getStartedContent={getStartedContent}
-      UVPContent={UVPContent}
-      testimonialContent={testimonialContent}
-      mediaContent={mediaContent}
-      blogContent={blogContent}
-    />
-  </>
-);
+  getStartedContent,
+}) => {
+  console.log(prodContent);
+  return (
+    <>
+      <Head>
+        <title>Home | GDL</title>
+      </Head>
+      <HomePage
+        hero={heroContent[0]}
+        stat={statContent[0]}
+        products={prodContent.filter(item => item?.publish_product === true)}
+        testimonial={testimonialContent}
+        media={mediaContent}
+        blog={blogContent}
+        getStarted={getStartedContent}
+      />
+    </>
+  );
+};
 
 export default App;
 
-// export async function getStaticProps() {
-//   const userData = await makeRequest("/pages/home/hero", null, null);
-//   const statData = await makeRequest("/pages/home/statistics", null, null);
-//   const prodData = await makeRequest("/pages/home/products", null, null);
-//   const testimonialData = await makeRequest(
-//     "/pages/home/testimonials",
-//     null,
-//     null
-//   );
-//   const mediaData = await makeRequest("/pages/home/media", null, null);
-//   const blogData = await makeRequest("/pages/home/blog", null, null);
-//   const getStartedData = await makeRequest(
-//     "/pages/home/get/started",
-//     null,
-//     null
-//   );
-//   const UVPData = await makeRequest(
-//     "/pages/home/unique/selling/proposition",
-//     null,
-//     null
-//   );
-
-//   return {
-//     props: {
-//       heroContent: userData?.data,
-//       statContent: statData?.data,
-//       prodContent: prodData?.data,
-//       getStartedContent: getStartedData?.data,
-//       UVPContent: UVPData?.data,
-//       testimonialContent: testimonialData?.data,
-//       mediaContent: mediaData?.data,
-//       blogContent: blogData?.data,
-//     },
-//   };
-// }
+export async function getStaticProps() {
+  const heroData = await makeRequest("/pages/home/hero");
+  const statData = await makeRequest("/pages/home/statistics");
+  const prodData = await makeRequest("/pages/products/s");
+  const testimonialData = await makeRequest("/pages/testimonials/s");
+  const mediaData = await makeRequest("/pages/home/media");
+  const blogData = await makeRequest("/pages/home/blog");
+  const getStartedData = await makeRequest("/pages/home/get/started");
+  // console.log(heroData);
+  return {
+    props: {
+      heroContent: heroData?.data?.data,
+      statContent: statData?.data?.data,
+      prodContent: prodData?.data?.data.reverse(),
+      testimonialContent: testimonialData?.data?.data,
+      mediaContent: mediaData?.data?.data,
+      blogContent: blogData?.data?.data,
+      getStartedContent: getStartedData?.data?.data,
+    },
+  };
+}
