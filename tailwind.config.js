@@ -11,7 +11,7 @@ module.exports = {
       "title-font": "Helvetica, Arial, sans-serif",
     },
     extend: {
-      textColor: {
+      colors: {
         primary: "#1F1A17",
         second: "#9A2333",
         nav: "#C1C0C0",
