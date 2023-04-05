@@ -38,6 +38,26 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap"
             rel="stylesheet"
           ></link>
+          <meta name="description" content="Financial Freedom For Everyone" />
+          <link rel="icon" type="image/svg" href="svgs/gdllogo.svg" />
+          <meta
+            name="description"
+            content="A leading diversified financial institution creating wealth and transforming society"
+          />
+          <meta
+            name="keywords"
+            content="gdl, finance, asset management, investment, financial advisory, money, wealth, financial institution, transforming society, gdl canary fund, gdl high yield note, gdl income fund, money market fund, stockbrocking, long term note, leasing, lending, securities trading"
+          />
+          <meta property="og:url" content="https://gdl.com.ng/" />
+          <meta
+            property="og:description"
+            content="A leading diversified financial institution creating wealth and transforming society"
+          />
+          <meta
+            property="og:image"
+            content="https://gdl.com.ng/svgs/gdllogo.svg"
+          />
+          <meta name="theme-color" content="#992323" />
         </Head>
         <body className="dark:bg-black bg-white dark:text-white text-black">
           <Main />

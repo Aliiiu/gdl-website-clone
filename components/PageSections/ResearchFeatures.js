@@ -16,7 +16,7 @@ const ResearchFeatures = () => {
             <Image
               src={feature.img}
               alt=""
-              width={280}
+              width={300}
               height={497}
               className="rounded-lg"
             />

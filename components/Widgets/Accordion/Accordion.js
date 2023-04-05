@@ -5,8 +5,15 @@ import {
   AccordionDetails,
 } from "./accordion.style";
 import Typography from "@mui/material/Typography";
+import parse from "html-react-parser";
 
-const AppAccordion = props => {
+function categoryMapper(category_id, categoryArr) {
+  const category = categoryArr.filter(item => item.id === category_id)[0]
+    .category;
+  console.log(category);
+  return category === "All" ? "General" : category;
+}
+const AppAccordion = ({ category, ...props }) => {
   const [expanded, setExpanded] = React.useState("panel1");
 
   const handleChange = panel => (event, newExpanded) => {
@@ -24,15 +31,13 @@ const AppAccordion = props => {
               {props.question}
             </Typography>
             <div className="text-[rgba(31,26,23,var(--tw-text-opacity))] text-opacity-80">
-              Investments
+              {categoryMapper(props.category_id, category)}
             </div>
           </div>
         </AccordionSummary>
         <AccordionDetails>
           <hr className="border-[rgba(194,207,214,var(--tw-border-opacity))] border-opacity-30 mb-6" />
-          <Typography className="text-lg leading-[32px] font-[300]">
-            {props.answer}
-          </Typography>
+          {parse(props.answer)}
         </AccordionDetails>
       </Accordion>
     </div>

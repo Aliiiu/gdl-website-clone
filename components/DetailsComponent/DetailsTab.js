@@ -34,17 +34,6 @@ function a11yProps(index) {
 export const DetailTabs = ({ tabs, onPress, ...props }) => {
   const [value, setValue] = React.useState(0);
 
-  useEffect(() => {
-    if (
-      props.sub_data &&
-      props.sub_data.product_version?.product_code == "HAA"
-    ) {
-      setValue(1);
-    } else {
-      setValue(0);
-    }
-  }, [props.sub_data]);
-
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -60,21 +49,22 @@ export const DetailTabs = ({ tabs, onPress, ...props }) => {
           scrollButtons={false}
           // allowScrollButtonsMobile
         >
-          {Object.keys(tabs).map((content, index) => (
+          {tabs.map((content, index) => (
             <CustomTab
               {...props}
-              label={content}
-              {...a11yProps(index)}
+              key={content.id}
+              label={content.category}
+              {...a11yProps(content.id)}
               // onClick={() => onPress(index)}
             />
           ))}
         </CustomTabs>
       </Box>
-      {Object.keys(tabs).map((content, index) => (
-        <TabPanel value={value} index={index}>
+      {/* {Object.keys(tabs).map((content, index) => (
+        <TabPanel key={index} value={value} index={index}>
           {tabs[content]}
         </TabPanel>
-      ))}
+      ))} */}
     </>
   );
 };
