@@ -90,7 +90,7 @@ const TermsCondition = () => {
             Definitions and Interpretation
           </h3>
           <div className="flex flex-col gap-y-3">
-            <p>
+            {/* <p>
               In this document: <br />
               `We`, `Us` and `Our` `GDL` means any company in the GDL group
               consisting of GDL Finance and Leasing Company Limited, Growth &
@@ -155,7 +155,7 @@ const TermsCondition = () => {
               any Payment. <br /> `Transfer` can be in the form of an internal
               transfer of funds between your accounts, or to other beneficiaries
               with other banks.
-            </p>
+            </p> */}
           </div>
         </section>
         <section className="my-5">
