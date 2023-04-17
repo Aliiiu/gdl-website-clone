@@ -6,6 +6,12 @@ import { TextField } from "../components/Widgets/Form/Form";
 import { makeRequest } from "../apiCalls/requestHandler";
 import { useEffect } from "react";
 import { AppButton } from "../components/Widgets/Button/Button";
+<<<<<<< HEAD
+=======
+import Head from "next/head";
+import { useRequest } from "../hooks/useRequest";
+import MethodType from "../constant/methodType";
+>>>>>>> c3482eccaeff012182c21aea5786c50e677ec77a
 
 const ContactDetails = ({ name, details }) => (
   <div className="relative mt-[1rem] mb-[2rem]">
@@ -52,18 +58,34 @@ const EmailDetail = () => (
   </Link>
 );
 
-const ContactPage = ({ heroContent, formContact }) => {
+const ContactPage = () => {
   const { handleSubmit, formState, register } = useForm({ mode: "onChange" });
+  const { makeRequest, data } = useRequest({
+    url: "/pages/contact",
+    method: MethodType.GET,
+  });
+  const { makeRequest: fetchForm, data: formData } = useRequest({
+    url: "/pages/contact/form",
+    method: MethodType.GET,
+  });
 
-  // useEffect(() => {
-  //   // console.log(formContact);
-  //   console.log(heroContent);
-  // }, []);
+  useEffect(() => {
+    makeRequest();
+    fetchForm();
+  }, []);
+
+  useEffect(() => {
+    console.log(formData);
+  }, [formData]);
+
   const onSubmit = () => {
     //
   };
   return (
     <div>
+      <Head>
+        <title>Contact-Us | GDL</title>
+      </Head>
       <CustomHeader
         name="Contact Us"
         bg="#FFFFFF"
@@ -115,7 +137,11 @@ const ContactPage = ({ heroContent, formContact }) => {
                   error={formState.errors.message}
                   {...register("message", { required: true })}
                 />
+<<<<<<< HEAD
                 <AppButton name="Contact Us" />
+=======
+                <AppButton name="Contact us" />
+>>>>>>> c3482eccaeff012182c21aea5786c50e677ec77a
               </form>
             </div>
           </div>
@@ -132,15 +158,3 @@ const ContactPage = ({ heroContent, formContact }) => {
 };
 
 export default ContactPage;
-
-// export async function getStaticProps() {
-//   const generalData = await makeRequest("/pages/contact", null, null);
-//   // const formData = await makeRequest("/pages/contact/form", null, null);
-
-//   return {
-//     props: {
-//       heroContent: generalData?.data?.data,
-//       // formContent: formData?.data?.data,
-//     },
-//   };
-// }

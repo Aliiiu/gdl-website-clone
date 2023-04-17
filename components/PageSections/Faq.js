@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { AppButton } from "../Widgets/Button/Button";
-import { SectionWrapper } from "./Products";
+import { SectionWrapper } from "./product.style";
 import { useRouter } from "next/router";
 
 const Faq = () => {

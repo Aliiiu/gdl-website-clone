@@ -1,7 +1,8 @@
 import React from "react";
 import { IoLockClosed } from "react-icons/io5";
+import parse from "html-react-parser";
 
-const Privacy = () => {
+const Privacy = ({ data }) => {
   return (
     <div>
       <div className="mt-32">
@@ -16,7 +17,8 @@ const Privacy = () => {
         </div>
         <hr className="border-gdlGrey border-opacity-30 w-full mt-5" />
       </div>
-      <div className="py-6 px-6">
+      {parse(data?.privacy_policy || "")}
+      {/* <div className="py-6 px-6">
         <section className="mt-5 mb-10">
           <p>
             Your privacy is important to us. We respect your privacy and are
@@ -246,7 +248,7 @@ const Privacy = () => {
             change is made.
           </p>
         </section>
-      </div>
+      </div> */}
     </div>
   );
 };

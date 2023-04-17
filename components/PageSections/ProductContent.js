@@ -1,5 +1,6 @@
 import { AppButton } from "../Widgets/Button/Button";
 import { ContentContainer } from "./pagesec.style";
+import parse from "html-react-parser";
 
 export const ModalContent = ({ content, ...props }) => (
   <ContentContainer className="content-container">
@@ -7,7 +8,7 @@ export const ModalContent = ({ content, ...props }) => (
       <div
         className="bg-green-300 w-full md:w-4/12 flex justify-center items-start rounded-tl-[.5rem] rounded-bl-[.5rem]"
         style={{
-          backgroundImage: `url(${content[0].img})`,
+          backgroundImage: `url(${content?.img})`,
           backgroundPosition: "39% 0%",
           backgroundSize: "cover",
           minHeight: "100%",
@@ -19,21 +20,21 @@ export const ModalContent = ({ content, ...props }) => (
             <div className="opacity-20">
               <img
                 className="mx-auto"
-                src="https://res.cloudinary.com/gdlapp/image/upload/v1625840983/image/high-yield-note.svg.svg"
+                src={content?.icon}
                 style={{ height: "50px" }}
               />
             </div>
           </div>
           <div className="sm:ml-6">
             <h1 className="text-3xl md:text-4xl font-bold text-opacity-[1] text-[#992333]">
-              {content[0].title || "High Yield Note"}
+              {content?.header || "High Yield Note"}
             </h1>
             <h3 className="font-medium text-black border-b-0 border-black pb-0 border-opacity-20">
-              High Interest Rate + Low Risk = The Perfect Investment
+              {content?.desc}
             </h3>
           </div>
         </div>
-        <article className="mt-6 text-left">{content[0].description}</article>
+        <article className="mt-6 text-left">{parse(content?.content)}</article>
         <div className="hidden md:block mt-16">
           <AppButton
             name="Invest Now →"

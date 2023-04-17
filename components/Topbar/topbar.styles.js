@@ -96,7 +96,7 @@ export const NavDiv = styled.div`
 
 export const TopContainer = styled.div`
   display: flex;
-  padding: 0 2em;
+  ${"" /* padding: 0 2em; */}
   justify-content: center;
   & input:checked ~ .dot {
     transform: translateX(100%);
@@ -109,10 +109,11 @@ export const TopContainer = styled.div`
     background-color: rgba(31, 26, 23, var(--tw-bg-opacity));
     --tw-bg-opacity: 0.8;
   }
-  @media only screen and (max-width: 768px) {
+  ${
+    "" /* @media only screen and (max-width: 768px) {
     padding: 0.5em 0.8em;
-  }
-  /* @media only screen and (max-width: 1024px) {
+  } */
+  }/* @media only screen and (max-width: 1024px) {
     padding: 0;
   } */
 `;

@@ -2,14 +2,13 @@ import Image from "next/image";
 import React from "react";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { AppButton } from "../Widgets/Button/Button";
-import { SectionWrapper } from "./Products";
 import Link from "next/link";
 
 const JoinTheClub = () => {
   return (
-    <>
-      <div className="lg:w-1/2 py-12 md:py-24 w-full">
-        <div className="max-w-md mx-auto">
+    <div className="container px-4 xl:px-28 mx-auto flex flex-col justify-center items-center md:flex-row gap-6">
+      <div className="py-12 md:py-24 flex-1">
+        <div className=" mx-auto">
           <div className="">
             <div className="mb-3">
               <Image
@@ -45,8 +44,8 @@ const JoinTheClub = () => {
           </div>
         </div>
       </div>
-      <div className="py-12 md:py-24 w-full lg:w-1/2">
-        <div className="max-w-md mx-auto">
+      <div className="py-12 md:py-24 w-full flex-1">
+        <div className="mx-auto">
           <div className="">
             <div>
               <div className="mb-3">
@@ -100,7 +99,7 @@ const JoinTheClub = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
