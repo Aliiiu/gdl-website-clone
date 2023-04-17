@@ -92,67 +92,67 @@ const TermsCondition = () => {
           <div className="flex flex-col gap-y-3">
             <p>
               In this document: <br />
-              "We", "Us" and "Our " “GDL” means any company in the GDL group
+              `We`, `Us` and `Our` `GDL` means any company in the GDL group
               consisting of GDL Finance and Leasing Company Limited, Growth &
               Development Asset Management Limited, Growth and Development
               Limited and any other such sister or associated company that may
               be added to the GDL group.
             </p>
             <p>
-              "You”, “Your”, “Yours” or “User " means the person that has
+              `You`, `Your`, `Yours` or `User` means the person that has
               downloaded the mobile application or opened the web page and
               subscribed to any of the products contained therein.
             </p>
             <p>
-              “Agreement” means this agreement which contains the Terms and
+              `Agreement` means this agreement which contains the Terms and
               Conditions.
             </p>
-            <p>“App: refers to the Mobile App and web page</p>
+            <p>`App`: refers to the Mobile App and web page</p>
             <p>
-              “Mobile App” “App” refers to the mobile application of GDL to
+              `Mobile App` `App` refers to the mobile application of GDL to
               which these terms and conditions refer. Where Mobile App is used
               solely in these terms and conditions and where the contexts so
               permit, the mobile app shall also be deemed to include the web
               page of the app.
             </p>
             <p>
-              "Card" means a virtual, Credit or Debit card issued to you by us
+              `Card` means a virtual, Credit or Debit card issued to you by us
               which is linked to an account and can be used to undertake payment
               transactions.
             </p>
             <p>
-              "Account/Wallet" means a GDL personal account/wallet that can be
+              `Account/Wallet` means a GDL personal account/wallet that can be
               accessed on the mobile app.
             </p>
             <p>
-              "CBN" means Central Bank of Nigeria
-              <br />. “SEC” means the Securities & Exchange Commission
+              `CBN` means Central Bank of Nigeria
+              <br />. `SEC` means the Securities & Exchange Commission
               <br />
-              "Electronic Access Device" means a personal computer, telephone,
+              `Electronic Access Device` means a personal computer, telephone,
               mobile phone, personal digital assistant, or any other electronic
               device, including wireless devices that will allow you to access
               the Mobile App or the online application. <br />
-              "Fees" You may pay fees when you make transactions/transfers,
+              `Fees` You may pay fees when you make transactions/transfers,
               these fees are displayed on the Mobile App or the online web page
               before any transaction is authenticated. You can also reach our
-              call center for details. <br /> "Insufficient Funds" If there are
+              call center for details. <br /> `Insufficient Funds` If there are
               insufficient funds in an account, we will not act on your Payment
-              instruction. <br /> "Mobile number" means the mobile phone number
+              instruction. <br /> `Mobile number` means the mobile phone number
               you have nominated to use on or with the device or devices you use
               to access the Mobile App or web page.
-              <br /> "PIN/Password" means the confidential personal
+              <br /> `PIN/Password` means the confidential personal
               identification number you select to identify yourself and to
               confirm Transactions on the Mobile App or web page in conjunction
-              with a card. <br /> "Prohibitions on Use" Activities that are not
+              with a card. <br /> `Prohibitions on Use` Activities that are not
               permitted on the Mobile App or online page such as the use of your
               account/wallet for an illegal, fraudulent, malicious, or
-              defamatory purpose. <br /> "Password and PIN Security" Your
+              defamatory purpose. <br /> `Password and PIN Security` Your
               Password, PIN, and Identification Question must be unique and not
               easily guessed. You must always keep your Password, PIN, and
               Identification Questions strictly confidential. <br />
-              "Transaction" means any loading of funds from a Funding Source to
+              `Transaction` means any loading of funds from a Funding Source to
               an account/wallet, any offloading of funds from an Account, and
-              any Payment. <br /> "Transfer" can be in the form of an internal
+              any Payment. <br /> `Transfer` can be in the form of an internal
               transfer of funds between your accounts, or to other beneficiaries
               with other banks.
             </p>
