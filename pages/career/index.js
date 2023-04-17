@@ -115,7 +115,10 @@ const CareerPage = ({
                 <div>
                   <div className="relative overflow-hidden w-auto">
                     <div className="max-w-[640px] max-h-[360px] mx-auto w-full rounded-[0.5rem] bg-opacity-[1] bg-[rgba(248,248,248,var(--tw-bg-opacity))] shadow relative overflow-hidden">
-                      <img src="https://res.cloudinary.com/gdlapp/image/upload/v1626694372/image/GDL%20Group.jpg" />
+                      <img
+                        src="https://res.cloudinary.com/gdlapp/image/upload/v1626694372/image/GDL%20Group.jpg"
+                        alt=""
+                      />
                       <div className="absolute top-0 right-0 bottom-0 left-0 flex items-center justify-center bg-[rgba(31,26,23,var(--tw-bg-opacity))] bg-opacity-[0.2]">
                         <a className="flex cursor-pointer items-center justify-center md:text-[3.75rem] leading-[1] text-opacity-100 text-[rgba(255,255,255,var(--tw-text-opacity))]">
                           <IoPlayCircleOutline />
