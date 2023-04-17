@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { TextField } from "../components/Widgets/Form/Form";
 import { makeRequest } from "../apiCalls/requestHandler";
 import { useEffect } from "react";
+import { AppButton } from "../components/Widgets/Button/Button";
 
 const ContactDetails = ({ name, details }) => (
   <div className="relative mt-[1rem] mb-[2rem]">
@@ -114,6 +115,7 @@ const ContactPage = ({ heroContent, formContact }) => {
                   error={formState.errors.message}
                   {...register("message", { required: true })}
                 />
+                <AppButton name="Contact Us" />
               </form>
             </div>
           </div>

@@ -38,6 +38,7 @@ export const ModalContent = ({ content, ...props }) => (
           <AppButton
             name="Invest Now →"
             className="py-[.8rem] px-[1.5rem] text-white md:mr-6 mb-4 md:mb-0 bg-[#992333]"
+            onPress={() => window.location("www.app.gdl.com.ng?product=canary")}
           />
         </div>
       </div>
