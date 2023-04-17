@@ -6,9 +6,12 @@ import { TextField } from "../components/Widgets/Form/Form";
 import { makeRequest } from "../apiCalls/requestHandler";
 import { useEffect } from "react";
 import { AppButton } from "../components/Widgets/Button/Button";
+<<<<<<< HEAD
+=======
 import Head from "next/head";
 import { useRequest } from "../hooks/useRequest";
 import MethodType from "../constant/methodType";
+>>>>>>> c3482eccaeff012182c21aea5786c50e677ec77a
 
 const ContactDetails = ({ name, details }) => (
   <div className="relative mt-[1rem] mb-[2rem]">
@@ -134,7 +137,11 @@ const ContactPage = () => {
                   error={formState.errors.message}
                   {...register("message", { required: true })}
                 />
+<<<<<<< HEAD
+                <AppButton name="Contact Us" />
+=======
                 <AppButton name="Contact us" />
+>>>>>>> c3482eccaeff012182c21aea5786c50e677ec77a
               </form>
             </div>
           </div>
