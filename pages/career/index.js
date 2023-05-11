@@ -34,7 +34,7 @@ const CareerTopContent = ({ content }) => (
 
 const JobContent = ({ id, data }) => (
   <Link href={`/career/${id}/apply`}>
-    <a className="relative flex-1 max-w-[300px] rounded-[0.5rem] border-[1px] border-[rgba(162,166,168,var(--tw-border-opacity))] border-opacity-20 bg-opacity-100 bg-[rgba(255,255,255,var(--tw-bg-opacity))] p-[1.5rem] shadow">
+    <div className="cursor-pointer relative flex-1 max-w-[300px] rounded-[0.5rem] border-[1px] border-[rgba(162,166,168,var(--tw-border-opacity))] border-opacity-20 bg-opacity-100 bg-[rgba(255,255,255,var(--tw-bg-opacity))] p-[1.5rem] shadow">
       <h1 className="font-bold text-xl">{data?.position || "Job Title"}</h1>
       <div className="mb-1 py-1 px-2 inline-flex rounded text-sm bg-opacity-100 bg-[rgba(255,236,239,var(--tw-bg-opacity))] text-opacity-100 text-[rgba(153,35,51,var(--tw-text-opacity))]">
         {data?.type_of_employment || "Job Type"}
@@ -49,7 +49,7 @@ const JobContent = ({ id, data }) => (
       <div className="mt-4 flex items-center justify-end text-sm capitalize text-opacity-100 text-[rgba(162,166,168,var(--tw-text-opacity))]">
         <span>a year ago</span>
       </div>
-    </a>
+    </div>
   </Link>
 );
 
@@ -60,38 +60,8 @@ const CareerPage = ({
   pageContent,
   jobContent,
 }) => {
-  const { makeRequest, data } = useRequest({
-    url: "/jobs",
-    method: MethodType.GET,
-  });
-  const { makeRequest: fetchCareerHero, data: careerHeroData } = useRequest({
-    url: "/pages/careers/intro",
-    method: MethodType.GET,
-  });
-  const { makeRequest: fetchCareerGeneral, data: careerGeneralData } =
-    useRequest({
-      url: "/pages/careers/general",
-      method: MethodType.GET,
-    });
-  const { makeRequest: fetchCareerContent, data: careerContentData } =
-    useRequest({
-      url: "/pages/careers/page/content",
-      method: MethodType.GET,
-    });
-  const { makeRequest: fetchJobOpenings, data: jobOpeningsData } = useRequest({
-    url: "/pages/careers/job/openings",
-    method: MethodType.GET,
-  });
-  // useEffect(() => {
-  //   makeRequest();
-  //   fetchCareerHero();
-  //   fetchCareerGeneral();
-  //   fetchCareerContent();
-  //   fetchJobOpenings();
-  // }, []);
-
   useEffect(() => {
-    console.log(jobOpening);
+    // console.log(jobOpening);
     // console.log(heroContent);
     // console.log(genContent);
     // console.log(pageContent);
@@ -120,9 +90,9 @@ const CareerPage = ({
                         alt=""
                       />
                       <div className="absolute top-0 right-0 bottom-0 left-0 flex items-center justify-center bg-[rgba(31,26,23,var(--tw-bg-opacity))] bg-opacity-[0.2]">
-                        <a className="flex cursor-pointer items-center justify-center md:text-[3.75rem] leading-[1] text-opacity-100 text-[rgba(255,255,255,var(--tw-text-opacity))]">
+                        <div className="flex cursor-pointer items-center justify-center md:text-[3.75rem] leading-[1] text-opacity-100 text-[rgba(255,255,255,var(--tw-text-opacity))]">
                           <IoPlayCircleOutline />
-                        </a>
+                        </div>
                       </div>
                     </div>
                   </div>

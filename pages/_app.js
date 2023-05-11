@@ -5,11 +5,9 @@ import App from "next/app";
 
 const MyApp = ({ Component, pageProps }) => {
   return (
-    <ThemeProvider attribute="class" enableSystem={false}>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </ThemeProvider>
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
   );
 };
 

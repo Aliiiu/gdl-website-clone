@@ -1,5 +1,6 @@
 import Link from "next/link";
 import BlogList from "../Widgets/List/BlogList";
+import { useRouter } from "next/router";
 
 const blogData = [
   {
@@ -12,9 +13,12 @@ const blogData = [
   },
 ];
 
-const BlogLayout = () => {
-  const handleOnPress = id => {
-    alert(id);
+const BlogLayout = ({ blogPost }) => {
+  const router = useRouter();
+  const handleOnPress = title => {
+    const url = title.replace(/ /g, "-").toLowerCase();
+    router.push(`/blog/${url}`);
+    // console.log(url);
   };
   return (
     <section className="pt-12 md:pt-24" id="blog">
@@ -28,13 +32,17 @@ const BlogLayout = () => {
           </p>
         </div>
         <section className="mt-16 md:px-[1.5rem] mx-auto max-w-[56rem]">
-          {blogData.map(content => (
+          {/* {blogData.map(content => (
             <BlogList
               key={content.id}
               onPress={() => handleOnPress(content.id)}
               {...content}
             />
-          ))}
+          ))} */}
+          <BlogList
+            // onPress={() => handleOnPress(blogPost.title)}
+            {...blogPost}
+          />
         </section>
         <div className="mt-16 mb-5 md:mb-10 text-center">
           <Link href="/blog">
