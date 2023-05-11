@@ -21,9 +21,10 @@ const HomePage = ({
   media,
   blog,
   getStarted,
+  blogPost,
 }) => {
-  const [counter, setCounter] = useState(0);
-  const [count, setCount] = useState(0);
+  let [counter, setCounter] = useState(0);
+  let [count, setCount] = useState(0);
 
   const startCounter = () => {
     setInterval(() => {
@@ -38,39 +39,6 @@ const HomePage = ({
     if (count >= stat.businesses) clearInterval(count);
   };
 
-  const { makeRequest, data } = useRequest({
-    url: "/pages/home/hero",
-    method: methodType.GET,
-  });
-  const { makeRequest: fetchStatistics, data: statData } = useRequest({
-    url: "/pages/home/statistics",
-    method: methodType.GET,
-  });
-  const { makeRequest: fetchProducts, data: productData } = useRequest({
-    url: "/pages/home/products",
-    method: methodType.GET,
-  });
-
-  const { makeRequest: fetchTestimony, data: testimonyData } = useRequest({
-    url: "/pages/home/testimonials",
-    method: methodType.GET,
-  });
-
-  const { makeRequest: fetchMedia, data: mediaData } = useRequest({
-    url: "/pages/home/media",
-    method: methodType.GET,
-  });
-
-  const { makeRequest: fetchBlog, data: blogData } = useRequest({
-    url: "/pages/home/blog",
-    method: methodType.GET,
-  });
-
-  const { makeRequest: fetchGetstarted, data: getStartedData } = useRequest({
-    url: "/pages/home/get/started",
-    method: methodType.GET,
-  });
-
   useEffect(() => {
     window.addEventListener("load", startCounter());
 
@@ -78,21 +46,12 @@ const HomePage = ({
   }, []);
 
   // console.log("Working");
-  useEffect(() => {
-    makeRequest();
-    fetchTestimony();
-    fetchBlog();
-    fetchStatistics();
-    fetchProducts();
-    fetchMedia();
-    fetchGetstarted();
-  }, []);
 
   // useEffect(() => {
   //   console.log(blog);
   // }, [blog]);
-  let arr = hero?.image_url?.split("/");
-  let bgUrl = arr[arr.length - 1];
+  const arr = hero?.image_url?.split("/");
+  const bgUrl = arr[arr.length - 1];
   return (
     <div className="">
       <section
@@ -100,7 +59,7 @@ const HomePage = ({
         className="flex flex-col items-start justify-center relative container px-4 xl:px-28 mx-auto md:min-h-[500px] min-h-[460px]"
       >
         <div className="absolute top-0 right-0 mt-[-8.8rem] mr-[-5rem]">
-          <div className="hidden 2xl:flex items-center justify-center rounded-full dark:border-gray-800 border-red-50 w-[220px] h-[220px] border-[32px]"></div>
+          <div className="hidden 2xl:flex items-center justify-center rounded-full dark:border-gray-800 border-red-50 w-[220px] h-[220px] border-[32px]" />
         </div>
         <div className="absolute top-0 left-0 bottom-0 flex justify-center items-center -ml-52">
           <div className="flex items-center justify-center rounded-[9999px] dark:border-gray-800 border-[#FFF1F4] w-[500px] h-[500px] border-[32px]">
@@ -124,8 +83,8 @@ const HomePage = ({
               className="py-[1rem] px-[1.5rem] text-white md:mr-6 mb-4 md:mb-0 bg-[#992333]"
               // icon={<AiOutlineArrowRight className="font-thin text-sm" />}
             />
-            <Link href={hero.call_to_action_link}>
-              <a className="font-light z-10">Learn More</a>
+            <Link href={hero.call_to_action_link} legacyBehavior>
+              <h5 className="font-light z-10">Learn More</h5>
             </Link>
           </div>
         </div>
@@ -139,11 +98,11 @@ const HomePage = ({
           />
         </div>
       </section>
-      <section className="relative">
+      <section id="usp" className="relative">
         <div className="flex flex-wrap text-white bg-[#992333] mt-[60px]">
           <div className="text-2xl flex justify-center items-center p-8 text-center w-full md:w-1/2">
             <span className="capitalize font-light">
-              {stat.caption || `We Are trusted by`}
+              {stat.caption || "We Are trusted by"}
             </span>
           </div>
           <div className="w-full md:w-1/4 flex flex-col items-center bg-[#942231] justify-center min-h-[9em]">
@@ -153,10 +112,10 @@ const HomePage = ({
                 <span>+</span>
               </h2>
               <h4 className="-mt-1 text-[#FF7389]">Customers</h4>
-              <Link href="">
-                <a className="text-sm mt-3 flex items-center gap-x-1 text-opacity-[1] text-[rgba(255,214,220,var(--tw-text-opacity))]">
+              <Link href="/testimonials" legacyBehavior>
+                <h5 className="text-sm mt-3 flex items-center gap-x-1 text-opacity-[1] text-[rgba(255,214,220,var(--tw-text-opacity))]">
                   See Testimonials <AiOutlineArrowRight />
-                </a>
+                </h5>
               </Link>
             </div>
           </div>
@@ -167,10 +126,10 @@ const HomePage = ({
                 <span>+</span>
               </h2>
               <span className="-mt-1 text-[#FF7389]">Business</span>
-              <Link href="/">
-                <a className="text-sm mt-3 flex items-center gap-x-1 text-opacity-[1] text-[rgba(255,214,220,var(--tw-text-opacity))]">
+              <Link href="/testimonials" legacyBehavior>
+                <h5 className="text-sm mt-3 flex items-center gap-x-1 text-opacity-[1] text-[rgba(255,214,220,var(--tw-text-opacity))]">
                   See Testimonials <AiOutlineArrowRight />
-                </a>
+                </h5>
               </Link>
             </div>
           </div>
@@ -186,7 +145,7 @@ const HomePage = ({
         <GetStarted />
       </section>
       <TestimonyLayout testimonial={testimonial} />
-      <BlogLayout />
+      <BlogLayout blogPost={blogPost} />
       <section
         id="faq"
         className="container px-4 xl:px-28 mx-auto py-16 md:py-36 w-full"

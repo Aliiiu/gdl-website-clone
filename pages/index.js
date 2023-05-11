@@ -10,8 +10,8 @@ const App = ({
   mediaContent,
   blogContent,
   getStartedContent,
+  postContent,
 }) => {
-  console.log(prodContent);
   return (
     <>
       <Head>
@@ -25,6 +25,7 @@ const App = ({
         media={mediaContent}
         blog={blogContent}
         getStarted={getStartedContent}
+        blogPost={postContent}
       />
     </>
   );
@@ -39,8 +40,8 @@ export async function getStaticProps() {
   const testimonialData = await makeRequest("/pages/testimonials/s");
   const mediaData = await makeRequest("/pages/home/media");
   const blogData = await makeRequest("/pages/home/blog");
+  const blogPosts = await makeRequest("/posts/s");
   const getStartedData = await makeRequest("/pages/home/get/started");
-  // console.log(heroData);
   return {
     props: {
       heroContent: heroData?.data?.data,
@@ -49,6 +50,7 @@ export async function getStaticProps() {
       testimonialContent: testimonialData?.data?.data,
       mediaContent: mediaData?.data?.data,
       blogContent: blogData?.data?.data,
+      postContent: blogPosts?.data?.data?.pop(),
       getStartedContent: getStartedData?.data?.data,
     },
   };

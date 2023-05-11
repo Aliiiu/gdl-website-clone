@@ -19,18 +19,6 @@ const ProductPage = ({ prodContent, genContent, useCaseContent }) => {
     push,
     pathname,
   } = useRouter();
-  const { makeRequest, data: productsData } = useRequest({
-    url: "/pages/products",
-    method: MethodType.GET,
-  });
-  const { makeRequest: fetchGeneral, data: generalData } = useRequest({
-    url: "/pages/products/general",
-    method: MethodType.GET,
-  });
-  const { makeRequest: fetchUsecase, data: usecaseData } = useRequest({
-    url: "/pages/products/product/usecases",
-    method: MethodType.GET,
-  });
 
   // useEffect(() => {
   //   makeRequest();
@@ -41,8 +29,8 @@ const ProductPage = ({ prodContent, genContent, useCaseContent }) => {
   useEffect(() => {
     console.log(
       prodContent.map(item => {
-        let arr = item.product_image_url.split("/");
-        console.log(arr[arr.length - 1]);
+        const arr = item.product_image_url.split("/");
+        // console.log(arr[arr.length - 1]);
       })
       // prodContent.map(item => {
       //   console.log(item);

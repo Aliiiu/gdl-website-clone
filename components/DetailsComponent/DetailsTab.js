@@ -53,7 +53,7 @@ export const DetailTabs = ({ tabs, onPress, ...props }) => {
             <CustomTab
               {...props}
               key={content.id}
-              label={content.category}
+              label={content.category || content.category_name}
               {...a11yProps(content.id)}
               onClick={() => onPress(content.id)}
             />
