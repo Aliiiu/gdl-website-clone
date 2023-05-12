@@ -1,17 +1,13 @@
-import { useState, useEffect, useLayoutEffect } from "react";
+import { useState, useEffect } from "react";
 import Faq from "../components/PageSections/Faq";
 import GetStarted from "../components/PageSections/GetStarted";
 import Products from "../components/PageSections/Products";
 import { AppButton } from "../components/Widgets/Button/Button";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import Link from "next/link";
-import BgImage from "../assets/images/bg.png";
 import Image from "next/image";
 import BlogLayout from "../components/Layout/BlogLayout";
 import TestimonyLayout from "../components/Layout/TestimonyLayout";
-import methodType from "../constant/methodType";
-import { useRequest } from "../hooks/useRequest";
-import CloudinaryImage from "../components/Widgets/CloudinaryImage";
 
 const HomePage = ({
   hero,
@@ -88,14 +84,8 @@ const HomePage = ({
             </Link>
           </div>
         </div>
-        <div className="max-w-[100%] hidden h-auto w-[520px] mr-[4rem] md:block absolute right-0 bottom-0 mb-[-8rem] animate-fade-in">
-          <Image
-            src={BgImage}
-            // layout="fill"
-            alt=""
-            // width="520px"
-            // height={"100%"}
-          />
+        <div className="max-w-[100%] hidden w-[450px] h-[500px] lg:h-[620px] lg:w-[520px] lg:mr-[4rem] md:block absolute right-0 bottom-0 mb-[-5em] lg:mb-[-8rem] animate-fade-in">
+          <Image src={"/Images/bg.png"} layout="fill" alt="" />
         </div>
       </section>
       <section id="usp" className="relative">
