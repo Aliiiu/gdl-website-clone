@@ -1,13 +1,16 @@
 import Layout from "../components/Layout/Layout";
 import "../styles/globals.css";
-import { ThemeProvider } from "next-themes";
 import App from "next/app";
+import NextNProgress from "nextjs-progressbar";
 
 const MyApp = ({ Component, pageProps }) => {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <>
+      <NextNProgress color="#9A2333" />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </>
   );
 };
 

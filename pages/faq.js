@@ -9,6 +9,7 @@ import { useRequest } from "../hooks/useRequest";
 import MethodType from "../constant/methodType";
 import { DetailTabs } from "../components/DetailsComponent/DetailsTab";
 import { useState } from "react";
+import { IoWarning } from "react-icons/io5";
 
 export const HeaderTabBar = props => (
   <div className="border-b-[1px] border-[rgba(194,207,214,var(--tw-border-opacity))] border-opacity-[0.3] h-[60px]">
@@ -58,9 +59,18 @@ const FAQPage = ({ heroContent, faqContent, catContent }) => {
         <HeaderTabBar tabs={catContent} onPress={faqFiltering} />
       </div>
       <div className="my-10 md:px-[1.5rem] px-[1.25rem] mx-auto max-w-[56rem]">
-        {faqData.map((content, idx) => (
-          <AppAccordion key={idx} {...content} category={catContent} />
-        ))}
+        {faqData.length > 0 ? (
+          faqData.map((content, idx) => (
+            <AppAccordion key={idx} {...content} category={catContent} />
+          ))
+        ) : (
+          <div className="flex justify-center items-center py-10 px-5">
+            <span className="md:text-sm text-sm px-5 py-3 flex items-center leading-5 rounded-lg bg-gray-50 text-gray-500">
+              <IoWarning size={20} /> There are currently no available data for
+              this service
+            </span>
+          </div>
+        )}
       </div>
     </div>
   );
