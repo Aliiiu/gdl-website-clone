@@ -203,13 +203,29 @@ const Topbar = props => {
                     </div>
                   </label>
                 </div> */}
-                <Link href="/login">
-                  <a className="text-black dark:text-white font-light">Login</a>
+                <Link href="https://www.app.gdl.com.ng/auth/login">
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-black dark:text-white font-light"
+                  >
+                    Login
+                  </a>
                 </Link>
-                <AppButton
-                  name="Create an Account"
-                  icon={<AiOutlineArrowRight className="font-thin text-sm" />}
-                />
+                <Link
+                  href="https://www.app.gdl.com.ng/auth/signup"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <a target="_blank" rel="noopener noreferrer">
+                    <AppButton
+                      name="Create an Account"
+                      icon={
+                        <AiOutlineArrowRight className="font-thin text-sm" />
+                      }
+                    />
+                  </a>
+                </Link>
               </div>
               <button
                 data-collapse-toggle="navbar-sticky"
