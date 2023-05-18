@@ -1,17 +1,18 @@
 import Layout from "../components/Layout/Layout";
 import "../styles/globals.css";
-import { ThemeProvider } from "next-themes";
 import App from "next/app";
 import { ToastContainer } from "react-toastify";
+import NextNProgress from "nextjs-progressbar";
 
 const MyApp = ({ Component, pageProps }) => {
   return (
-    <ThemeProvider attribute="class" enableSystem={false}>
+    <>
+      <NextNProgress color="#9A2333" />
       <Layout>
         <Component {...pageProps} />
         <ToastContainer hideProgressBar={true} />
       </Layout>
-    </ThemeProvider>
+    </>
   );
 };
 

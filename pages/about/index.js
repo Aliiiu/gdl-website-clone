@@ -20,39 +20,6 @@ const About = ({
   managementContent,
   bodContent,
 }) => {
-  const { makeRequest, data } = useRequest({
-    url: "/pages/about/general",
-    method: MethodType.GET,
-  });
-  // const { makeRequest: fetchVision, data: visionContent } = useRequest({
-  //   url: "/pages/about/our/vision",
-  //   method: MethodType.GET,
-  // });
-  // const { makeRequest: fetchMision, data: missionContent } = useRequest({
-  //   url: "/pages/about/our/mission",
-  //   method: MethodType.GET,
-  // });
-  // const { makeRequest: fetchManagement, data: managementContent } = useRequest({
-  //   url: "/pages/about/management/team",
-  //   method: MethodType.GET,
-  // });
-
-  // const { makeRequest: fetchBoardOfDirectors, data: bodContent } = useRequest({
-  //   url: "/pages/about/board/of/directors",
-  //   method: MethodType.GET,
-  // });
-
-  // useEffect(() => {
-  //   makeRequest();
-  //   fetchVision();
-  //   fetchMision();
-  //   fetchManagement();
-  //   fetchBoardOfDirectors();
-  // }, []);
-
-  useEffect(() => {
-    console.log(bodContent);
-  }, [bodContent]);
   return (
     <AboutPageWrapper>
       <Head>
@@ -69,7 +36,10 @@ const About = ({
       <section className="overflow-hidden md:py-24">
         <CoreValues vision={visionContent} mission={missionContent} />
       </section>
-      <section className="container px-4 xl:px-28 mx-auto py-16 w-full">
+      <section
+        id="corporate-information"
+        className="container px-4 xl:px-28 mx-auto py-16 w-full"
+      >
         <WhatWeDo />
       </section>
       <section className="container px-4 xl:px-28 mx-auto py-16 md:py-36 w-full">

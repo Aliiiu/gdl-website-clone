@@ -28,57 +28,61 @@ import { FaHandHoldingUsd, FaMoneyBill } from "react-icons/fa";
 import dayjs from "dayjs";
 
 export const isValidDate = date => {
-  console.log(date);
   return Boolean(new Date(date).toString() !== "Invalid Date");
 };
 
 export const formatDate = (date, format = "MMM DD, YYYY") => {
-  console.log(date);
   if (date && isValidDate(date)) return dayjs(date).format(format);
   return date;
 };
 
 export const footerLinkData = [
   {
+    id: 1,
     url: "https://www.facebook.com/GDLAssetManagement/",
     icon: <IoLogoFacebook />,
   },
   {
+    id: 2,
     url: "https://www.facebook.com/GDLAssetManagement/",
     icon: <IoLogoLinkedin />,
   },
   {
+    id: 3,
     url: "https://www.facebook.com/GDLAssetManagement/",
     icon: <IoLogoInstagram />,
   },
   {
+    id: 4,
     url: "https://www.facebook.com/GDLAssetManagement/",
     icon: <IoLogoTwitter />,
   },
   {
+    id: 5,
     url: "https://www.facebook.com/GDLAssetManagement/",
     icon: <IoLogoMedium />,
   },
   {
+    id: 6,
     url: "https://www.facebook.com/GDLAssetManagement/",
     icon: <IoLogoWhatsapp />,
   },
 ];
 export const companyLinks = [
-  { url: "/about#core-values", name: "Core Values" },
-  { url: "/about#corporate-information", name: "Corporate Information" },
-  { url: "/about#board-of-directors", name: "Board of Directors" },
-  { url: "/about#management-team", name: "Management Team" },
+  { id: 1, url: "/about#core-values", name: "Core Values" },
+  { id: 2, url: "/about#corporate-information", name: "Corporate Information" },
+  { id: 3, url: "/about#board-of-directors", name: "Board of Directors" },
+  { id: 4, url: "/about#management-team", name: "Management Team" },
 ];
 export const productLinks = [
-  { url: "/products/high-yeild-note", name: "High Yield Note" },
-  { url: "/products/finance", name: "Finance" },
-  { url: "/products/dollar-note", name: "Dollar Note" },
-  { url: "/products/money-market-fund", name: "Money Market Fund" },
-  { url: "/products/stockbroking", name: "Stockbroking" },
-  { url: "/products/gdl-canary-fund", name: "GDL Canary Fund" },
-  { url: "/products/long-term-note", name: "Long Term Note" },
-  { url: "/products/gdl-income-fund", name: "GDL Income Fund" },
+  { url: "/products", name: "High Yield Note" },
+  { url: "/products", name: "Finance" },
+  { url: "/products", name: "Dollar Note" },
+  { url: "/products", name: "Money Market Fund" },
+  { url: "/products", name: "Stockbroking" },
+  { url: "/products", name: "GDL Canary Fund" },
+  { url: "/products", name: "Long Term Note" },
+  { url: "/products", name: "GDL Income Fund" },
 ];
 
 export const resourceLinks = [
@@ -116,18 +120,19 @@ export const homeLinks = [
       name: "Testimonials",
       subname: "What people are saying",
       icon: <IoHeartHalfOutline />,
+      url: "/testimonials",
     },
     {
       name: "Blog",
       subname: "Guides on Finance",
       icon: <IoBulbOutline />,
-      url: "/#blog",
+      url: "/blog",
     },
     {
       name: "Media",
       subname: "Our social participation",
       icon: <IoFilmOutline />,
-      url: "/#media",
+      url: "/media",
     },
   ],
   [
@@ -163,43 +168,51 @@ export const homeLinks = [
       name: "High Yield Note",
       subname: "High Interest Rate + Low Risk = The Perfect Investment",
       icon: <FaMoneyBill />,
+      url: "/products",
     },
 
     {
       name: "Finance",
       subname: "Don’t take on that big project alone; get a loan.",
       icon: <FaHandHoldingUsd />,
+      url: "/products",
     },
 
     {
       name: "Dollar Note",
       subname: "What’s better than making money? Making it in dollars!",
       icon: <FaMoneyBill />,
+      url: "/products",
     },
     {
       name: "Money Market Fund",
       subname: "Cruise your way to financial freedom with as little as ₦10,000",
       icon: <IoStorefrontOutline />,
+      url: "/products",
     },
     {
       name: "Stockbroking",
       subname: "Member of the Nigerian Stock Exchange",
       icon: <IoPeopleCircleOutline />,
+      url: "/products",
     },
     {
       name: "GDL Canary Fund",
       subname: "Let your money speak for you.",
       icon: <IoPeopleCircleOutline />,
+      url: "/products",
     },
     {
       name: "Long Term Note",
       subname: "Play the long game, invest for the future",
       icon: <IoPeopleCircleOutline />,
+      url: "/products",
     },
     {
       name: "GDL Income Fund",
       subname: "There's no cap to your income growth",
       icon: <IoPeopleCircleOutline />,
+      url: "/products",
     },
   ],
   [
@@ -207,33 +220,39 @@ export const homeLinks = [
       name: "Blog",
       subname: "Guides on Finance",
       icon: <IoBulbOutline />,
+      url: "/products",
     },
 
     {
       name: "Career",
       subname: "Join the tribe",
       icon: <IoBriefcaseOutline />,
+      url: "/career",
     },
 
     {
       name: "Testimonials",
       subname: "What people are saying",
       icon: <IoHeartHalfOutline />,
+      url: "/testimonial",
     },
     {
       name: "Media",
       subname: "Our social participation",
       icon: <IoFilmOutline />,
+      url: "/media",
     },
     {
       name: "Research",
       subname: "Stay informed, Beat the odds",
       icon: <IoTelescopeOutline />,
+      url: "/research",
     },
     {
       name: "FAQs",
       subname: "Frequently Asked Questions",
       icon: <IoHelp />,
+      url: "/faq",
     },
   ],
   [
@@ -241,18 +260,21 @@ export const homeLinks = [
       name: "Contact Us",
       subname: "Our Contact Information",
       icon: <IoChatboxOutline />,
+      url: "/contact",
     },
 
     {
       name: "Write to Us",
       subname: "Send us an email",
       icon: <IoMailOpenOutline />,
+      url: "/contact",
     },
 
     {
       name: "Call Us",
       subname: "Give us a call",
       icon: <IoCallOutline />,
+      url: "/contact",
     },
   ],
 ];

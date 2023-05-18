@@ -11,11 +11,14 @@ const MediaContent = () => (
   <div className="mb-[1rem] rounded-[0.5rem] bg-opacity-100 bg-[rgba(255,255,255,var(--tw-bg-opacity))] p-[0.5rem] shadow">
     <div className="relative overflow-hidden w-auto">
       <div className="max-w-[360px] max-h-[360px] mx-auto w-full rounded-[0.5rem] bg-opacity-100 bg-[rgba(248,248,248,var(--tw-bg-opacity))] shadow">
-        <img src="https://res.cloudinary.com/gdlapp/image/upload/v1632128592/image/media.PNG.png" />
+        <img
+          src="https://res.cloudinary.com/gdlapp/image/upload/v1632128592/image/media.PNG.png"
+          alt=""
+        />
         <div className="absolute top-0 right-0 bottom-0 left-0 flex items-center justify-center bg-[rgba(31,26,23,var(--tw-bg-opacity))] bg-opacity-[0.2]">
-          <a className="flex cursor-pointer items-center justify-center md:text-[3.75rem] leading-[1] text-opacity-100 text-[rgba(255,255,255,var(--tw-text-opacity))]">
+          <div className="flex cursor-pointer items-center justify-center md:text-[3.75rem] leading-[1] text-opacity-100 text-[rgba(255,255,255,var(--tw-text-opacity))]">
             <IoPlayCircleOutline />
-          </a>
+          </div>
         </div>
       </div>
     </div>
@@ -48,9 +51,9 @@ const MediaPage = ({ mediaContent, generalContent }) => {
   //   makeRequest();
   // }, []);
 
-  useEffect(() => {
-    console.log(mediaContent);
-  }, [mediaContent]);
+  // useEffect(() => {
+  //   console.log(mediaContent);
+  // }, [mediaContent]);
 
   return (
     <div>
