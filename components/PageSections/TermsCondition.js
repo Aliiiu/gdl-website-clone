@@ -563,7 +563,7 @@ const TermsCondition = () => {
               You agree that all agreements, notices, disclosures, records, and
               other communications for all services provided to you under these
               Terms and in connection with your relationship with us
-              (collectively, "Communications") that we provide to you
+              (collectively, `Communications`) that we provide to you
               electronically satisfy any legal requirement that such
               communications be in writing.
             </li>
