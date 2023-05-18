@@ -71,7 +71,7 @@ const ComplaintPage = () => {
   });
 
   const { makeRequest: sendComplaint, data: response } = useRequest({
-    url: `/user/requests/${querystr}`,
+    url: `/user/requests`,
     method: MethodType.POST,
   });
 
