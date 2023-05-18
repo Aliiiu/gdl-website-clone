@@ -70,9 +70,14 @@ const ComplaintPage = () => {
     method: MethodType.GET,
   });
 
-  const { makeRequest: sendComplaint, data: response } = useRequest({
-    url: `/user/requests`,
+  const {
+    makeRequest: sendComplaint,
+    data: response,
+    loading,
+  } = useRequest({
+    url: `/user/requests/${querystr}`,
     method: MethodType.POST,
+    onSuccess: data => toast("Successfully submited complaints"),
   });
 
   useEffect(() => {
@@ -96,9 +101,9 @@ const ComplaintPage = () => {
     sendComplaint(data);
   };
 
-  useEffect(() => {
-    if (response.length > 0) toast("Successfully submited complaints");
-  }, [response]);
+  //   useEffect(() => {
+  //     if (response.length > 0) toast("Successfully submited complaints");
+  //   }, [response]);
   return (
     <div>
       <Head>
@@ -149,7 +154,7 @@ const ComplaintPage = () => {
                   error={formState.errors.message}
                   {...register("message", { required: true })}
                 />
-                <AppButton name="Contact us" />
+                <AppButton name="Contact us" loading={loading} />
               </form>
             </div>
           </div>
