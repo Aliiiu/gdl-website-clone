@@ -3,6 +3,7 @@ import "../styles/globals.css";
 import App from "next/app";
 import { ToastContainer } from "react-toastify";
 import NextNProgress from "nextjs-progressbar";
+import "react-toastify/ReactToastify.min.css";
 
 const MyApp = ({ Component, pageProps }) => {
   return (
