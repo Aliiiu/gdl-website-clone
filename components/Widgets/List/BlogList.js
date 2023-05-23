@@ -19,7 +19,7 @@ const BlogList = ({
   return (
     <div>
       {/* rome-ignore lint/a11y/useValidAnchor: <explanation> */}
-      <div className="flex flex-wrap md:flex-nowrap rounded-lg bg-gdlGrey h-[350px] dark:bg-gray-900 hover:shadow-md mt-6 mb-12 shadow-none transition-all duration-[.3s]">
+      <div className="flex flex-wrap md:flex-nowrap rounded-lg bg-gdlGrey dark:bg-gray-900 hover:shadow-md mt-6 mb-12 shadow-none transition-all duration-[.3s]">
         <section className="w-full md:w-2/5">
           <div className="flex w-full h-full rounded-tr-[0] rounded-bl-[.5rem] relative overflow-hidden rounded-tl-[.5rem]">
             <Image
@@ -30,7 +30,7 @@ const BlogList = ({
             />
           </div>
         </section>
-        <div className="p-4 md:py-8 lg:py-6 flex flex-col justify-between w-full md:w-3/5">
+        <div className="p-4 md:py-8 lg:py-4 2xl:py-10 flex flex-col justify-between gap-4 w-full md:w-3/5">
           <div className="md:mx-2 ">
             <div className="flex justify-between text-black dark:text-white items-center mb-4">
               <span className="font-medium uppercase font-ibm-font">
@@ -46,7 +46,7 @@ const BlogList = ({
                 {title}
               </a>
             </Link>
-            <article className="md:text-[1.125rem] text-[16px] md:leading-[1.75rem] dark:text-white leading-[24px] subject w-full font-[300]">
+            <article className="md:text-[1.125rem] 2xl:mt-8 text-[16px] md:leading-[1.75rem] dark:text-white leading-[24px] subject w-full font-[300]">
               {excerpt}
             </article>
           </div>
