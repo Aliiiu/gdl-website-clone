@@ -9,7 +9,13 @@ export const TextField = React.forwardRef(
         <div className="mb-4">
           <label className="text-black text-opacity-80">{label}</label>
           {type == "textarea" ? (
-            <textarea name={name} ref={ref} className="Input pt-2" rows="3" />
+            <textarea
+              name={name}
+              onChange={onChange}
+              ref={ref}
+              className="Input pt-2"
+              rows="3"
+            />
           ) : (
             <input
               ref={ref}

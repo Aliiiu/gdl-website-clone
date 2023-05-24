@@ -1,7 +1,9 @@
 import Layout from "../components/Layout/Layout";
 import "../styles/globals.css";
 import App from "next/app";
+import { ToastContainer } from "react-toastify";
 import NextNProgress from "nextjs-progressbar";
+import "react-toastify/ReactToastify.min.css";
 
 const MyApp = ({ Component, pageProps }) => {
   return (
@@ -9,6 +11,7 @@ const MyApp = ({ Component, pageProps }) => {
       <NextNProgress color="#9A2333" />
       <Layout>
         <Component {...pageProps} />
+        <ToastContainer hideProgressBar={true} />
       </Layout>
     </>
   );
