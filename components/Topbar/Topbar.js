@@ -203,7 +203,7 @@ const Topbar = props => {
                     </div>
                   </label>
                 </div> */}
-                <Link href="https://www.app.gdl.com.ng/auth/login">
+                <Link href="https://app.gdl.com.ng/auth/login">
                   <a
                     target="_blank"
                     rel="noopener noreferrer"
@@ -213,7 +213,7 @@ const Topbar = props => {
                   </a>
                 </Link>
                 <Link
-                  href="https://www.app.gdl.com.ng/auth/signup"
+                  href="https://app.gdl.com.ng/auth/signup"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
