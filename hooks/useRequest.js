@@ -17,7 +17,7 @@ export const useRequest = ({ url, method, onSuccess }) => {
       setLoading(false);
       if (onSuccess) onSuccess(response.data.data);
       // console.log(response.data);
-      setData(response.data.data);
+      setData(response.data.data || response.data);
       return response.data;
     } catch (err) {
       setLoading(false);

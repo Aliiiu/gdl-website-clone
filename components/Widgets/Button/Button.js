@@ -5,7 +5,7 @@ import { Button } from "./button.style";
 export const AppButton = ({ onPress, loading, ...props }) => (
   <Button
     type={props.type}
-    className={`rounded-lg transition ease-in-out duration-700 ${
+    className={`rounded-lg cursor-pointer transition ease-in-out duration-700 ${
       props.className || "bg-[#992333] px-4 py-3 text-white"
     }`}
     onClick={onPress}

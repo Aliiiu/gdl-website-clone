@@ -22,9 +22,10 @@ const Testimonials = ({ heroContent, generalContent }) => {
   //   fetchGeneral();
   // }, []);
 
-  useEffect(() => {
-    console.log(heroContent);
-  }, [heroContent]);
+  // useEffect(() => {
+  //   console.log(heroContent);
+  // }, [heroContent]);
+
   return (
     <div>
       <Head>
@@ -54,7 +55,6 @@ export default Testimonials;
 export async function getStaticProps() {
   const heroData = await makeRequest("/pages/testimonials/s");
   const generalData = await makeRequest("/pages/testimonials/general");
-  // console.log(heroData);
   return {
     props: {
       heroContent: heroData.data.data,

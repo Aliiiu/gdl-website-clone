@@ -11,12 +11,16 @@ import {
 
 const Socials = ({ url, icon }) => (
   <Link href={url} target="_blank">
-    <a className="mr-4 dark:text-white">{icon}</a>
+    <a href={url} className="mr-4 dark:text-white">
+      {icon}
+    </a>
   </Link>
 );
 const Companylink = ({ url, name }) => (
   <Link href={url} title={name}>
-    <a className="leading-[32px] block text-sm">{name}</a>
+    <a href={url} className="leading-[32px] block text-sm">
+      {name}
+    </a>
   </Link>
 );
 
@@ -30,6 +34,7 @@ const Footer = () => {
               <img
                 className="h-10"
                 src="https://res.cloudinary.com/gdlapp/image/upload/v1625500547/image/gdllogo.svg.svg"
+                alt=""
               />
               <div className="ml-3">
                 <h1 className="md:text-lg font-bold text-base">GDL</h1>
@@ -47,23 +52,25 @@ const Footer = () => {
             </div>
             <div className="flex justify-start items-center my-3 text-sm text-opacity-70">
               <Link href="tel:2348077946785">
-                <a>+2347054435000</a>
+                <a href="tel:2348077946785">+2347054435000</a>
               </Link>
               <Link href="tel:2348077946785">
-                <a>
+                <a href="tel:2348077946785">
                   <span>,</span>+2347054435000
                 </a>
               </Link>
             </div>
             <div className="flex justify-start items-center my-3 text-sm text-opacity-70">
               <Link href="mailto:customerservice@gdl.com.ng">
-                <a>customerservice@gdl.com.ng</a>
+                <a href="mailto:customerservice@gdl.com.ng">
+                  customerservice@gdl.com.ng
+                </a>
               </Link>
             </div>
             <hr className="border-white border-opacity-10 mb-4 mt-6" />
             <div className="socials flex mt-6 justify-between items-center text-2xl">
-              {footerLinkData.map((content, index) => (
-                <Socials key={index} {...content} />
+              {footerLinkData.map(content => (
+                <Socials key={content.id} {...content} />
               ))}
             </div>
           </div>
@@ -73,7 +80,7 @@ const Footer = () => {
             </h2>
             <div className="text-black dark:text-white">
               {companyLinks.map((content, index) => (
-                <Companylink key={index} {...content} />
+                <Companylink key={content.id} {...content} />
               ))}
             </div>
           </div>
@@ -83,7 +90,7 @@ const Footer = () => {
             </h2>
             <div className="text-black dark:text-white">
               {productLinks.map((content, index) => (
-                <Companylink key={index} {...content} />
+                <Companylink key={content.name} {...content} />
               ))}
             </div>
           </div>
@@ -92,8 +99,8 @@ const Footer = () => {
               Resources
             </h2>
             <div className="text-black dark:text-white">
-              {resourceLinks.map((content, index) => (
-                <Companylink key={index} {...content} />
+              {resourceLinks.map(content => (
+                <Companylink key={content.name} {...content} />
               ))}
             </div>
           </div>
@@ -121,10 +128,10 @@ const Footer = () => {
           </div>
           <div className="flex items-center justify-end">
             <Link href="/terms-of-use">
-              <a className="mr-3">Terms of Use</a>
+              <h5 className="mr-3">Terms of Use</h5>
             </Link>
             <Link href="/privacy-policy">
-              <a className="ml-3">Privacy Policy</a>
+              <h5 className="ml-3">Privacy Policy</h5>
             </Link>
           </div>
         </div>

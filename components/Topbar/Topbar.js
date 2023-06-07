@@ -106,7 +106,7 @@ const Topbar = props => {
           className="top-0 left-0 mt-[60px] right-0 bottom-0 fixed Overlay h-[100vh] overflow-y-scroll"
           data-v-0ab2563a=""
           onClick={() => setOpen(!open)}
-        ></OverlayDiv>
+        />
         <nav
           className={`container px-4 xl:px-28 mx-auto fixed top-0 left-0 mt-[68px] md:w-[66.666667%] w-full ${
             open ? "animate-slide-down" : "animate-slide-up"
@@ -133,7 +133,7 @@ const Topbar = props => {
           </NavDiv>
         </nav>
       </Transition>
-      <TopContainer className={`container bg-white px-4 xl:px-28 mx-auto`}>
+      <TopContainer className={"container bg-white px-4 xl:px-28 mx-auto"}>
         <div className="bg-white w-full animate-fade-in">
           <nav className="py-2 z-20 top-0 left-0">
             <div className="w-full flex justify-between items-center mx-auto">
@@ -203,13 +203,29 @@ const Topbar = props => {
                     </div>
                   </label>
                 </div> */}
-                <Link href="/login">
-                  <a className="text-black dark:text-white font-light">Login</a>
+                <Link href="https://app.gdl.com.ng/auth/login">
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-black dark:text-white font-light"
+                  >
+                    Login
+                  </a>
                 </Link>
-                <AppButton
-                  name="Create an Account"
-                  icon={<AiOutlineArrowRight className="font-thin text-sm" />}
-                />
+                <Link
+                  href="https://app.gdl.com.ng/auth/signup"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <a target="_blank" rel="noopener noreferrer">
+                    <AppButton
+                      name="Create an Account"
+                      icon={
+                        <AiOutlineArrowRight className="font-thin text-sm" />
+                      }
+                    />
+                  </a>
+                </Link>
               </div>
               <button
                 data-collapse-toggle="navbar-sticky"

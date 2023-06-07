@@ -117,7 +117,7 @@ const Products = ({ nobutton, product }) => {
       </div>
       <div className="mt-10 md:mt-24 grid md:grid-cols-2 lg:grid-cols-3 gap-3">
         {product.map(item => {
-          let arr = item?.product_image_url?.split("/");
+          const arr = item?.product_image_url?.split("/");
           return (
             <div
               key={item.product_name}
@@ -131,7 +131,7 @@ const Products = ({ nobutton, product }) => {
                 objectPosition={"center"}
               /> */}
               <CloudinaryImage
-                src={arr && arr[arr?.length - 1]}
+                src={arr?.[arr?.length - 1]}
                 alt={item.product_name}
                 layout="fill"
                 objectFit="cover"
