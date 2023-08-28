@@ -30,7 +30,7 @@ const Footer = () => {
       <section className="pb-5 container px-4 xl:px-28 mx-auto">
         <div className="flex flex-wrap xl:-mx-6">
           <div className="w-full lg:w-1/4 mb-6 px-6">
-            <div className="flex items-center justify-start mb-6">
+            <div className="flex items-center justify-start mb-2">
               <img
                 className="h-10"
                 src="https://res.cloudinary.com/gdlapp/image/upload/v1625500547/image/gdllogo.svg.svg"
@@ -42,15 +42,20 @@ const Footer = () => {
               </div>
             </div>
             <h2 className="text-sm">Growth & Development Limited</h2>
-            <hr className="border-grey border-opacity-50 mt-4 mb-6" />
-            <div className="flex justify-start items-center my-3 text-sm text-black dark:text-white text-opacity-70">
+            <hr className="border-grey border-opacity-50 mt-2 mb-4" />
+            <div className="flex justify-start items-center text-sm text-black dark:text-white text-opacity-70">
               <h3>
-                Lagos Office : No 1, Afolabi Lesi Street, Ilupeju, Lagos | Abuja
-                Office : St James House (2nd floor), Plot 1109/No. 167 Cadastral
-                Zone A08 Ademola Adetokunbo Crescent, Wuse ll, Abuja- Nigeria
+                <strong>Lagos Office :</strong> No 1, Afolabi Lesi Street,
+                Ilupeju, Lagos
+                <br />
+                <strong>Ibadan Office :</strong> 103, MKO Abiola Way, Ibadan{" "}
+                <br />
+                <strong>Abuja Office :</strong> St James House (2nd floor), Plot
+                1109/No. 167 Cadastral Zone A08 Ademola Adetokunbo Crescent,
+                Wuse ll, Abuja- Nigeria
               </h3>
             </div>
-            <div className="flex justify-start items-center my-3 text-sm text-opacity-70">
+            <div className="flex justify-start items-center my-2 text-sm text-opacity-70">
               <Link href="tel:2348077946785">
                 <a href="tel:2348077946785">+2347054435000</a>
               </Link>
@@ -60,7 +65,7 @@ const Footer = () => {
                 </a>
               </Link>
             </div>
-            <div className="flex justify-start items-center my-3 text-sm text-opacity-70">
+            <div className="flex justify-start items-center my-2 text-sm text-opacity-70">
               <Link href="mailto:customerservice@gdl.com.ng">
                 <a href="mailto:customerservice@gdl.com.ng">
                   customerservice@gdl.com.ng
