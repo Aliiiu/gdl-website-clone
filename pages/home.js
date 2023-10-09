@@ -56,10 +56,9 @@ const HomePage = ({ hero, stat, products, testimonial, blogPost }) => {
             {hero.title || "Build Wealth Comfortably"}
           </h1>
           <p className="visible dark:text-[#F9FAFB] opacity-[1] md:leading-[32px] leading-[24px] mx-0 md:w-[80%] w-full md:text-left text-center md:text-[1.25rem]  mt-[.25rem] font-light animate-glide-up">
-            {hero.description ||
-              `Your financial goals are our priority. We are committed to building
+            {`Your financial goals are our priority. We are committed to building
             your wealth with different investment options, all tailored to suit
-            YOU.`}
+            you.`}
           </p>
           <div className="flex flex-col md:flex-row justify-center md:justify-start items-center mt-6">
             <a
