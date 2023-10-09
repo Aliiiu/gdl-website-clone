@@ -66,11 +66,6 @@ const CareerDetailsPage = ({ jobOpening, jobId, position, ...props }) => {
   });
   const router = useRouter();
   const index = Number(jobId);
-  // console.log(position[index]);
-  console.log(jobId);
-  console.log(jobOpening);
-  console.log(position);
-  // console.log();
 
   const side_content = [
     { name: "Overview", desc: "You can make more money for all" },
@@ -121,11 +116,9 @@ const CareerDetailsPage = ({ jobOpening, jobId, position, ...props }) => {
   const onSubmit = data => {
     startLoading();
     data.application_date = new Date().toISOString();
-    console.log(data);
     axios
       .post("https://test-site.gdlapi.com.ng/job/applications", data)
       .then(res => {
-        console.log(res.data);
         setShowSuccess(true);
       })
       .catch(err => console.log(err))
@@ -140,7 +133,6 @@ const CareerDetailsPage = ({ jobOpening, jobId, position, ...props }) => {
     reset();
   }, [showSuccess]);
 
-  // console.log(position.filter(item => item.id === index));
   return (
     <div>
       <Head>
@@ -266,7 +258,6 @@ export async function getServerSideProps(context) {
 
   const jobData = await makeRequest("/job/positions", null, null);
   const jobOpeningData = await makeRequest("/jobs", null, null);
-  // console.log(jobData);
   return {
     props: {
       jobOpening: jobData?.data?.data,

@@ -16,13 +16,11 @@ export const useRequest = ({ url, method, onSuccess }) => {
       const response = await axios[method](baseURL + url, body);
       setLoading(false);
       if (onSuccess) onSuccess(response.data.data);
-      // console.log(response.data);
       setData(response.data.data || response.data);
       return response.data;
     } catch (err) {
       setLoading(false);
       setErrors(err.response);
-      console.log(err.response);
     }
   };
 

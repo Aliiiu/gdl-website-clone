@@ -60,14 +60,6 @@ const CareerPage = ({
   pageContent,
   jobContent,
 }) => {
-  useEffect(() => {
-    // console.log(jobOpening);
-    // console.log(heroContent);
-    // console.log(genContent);
-    // console.log(pageContent);
-    // console.log(jobContent);
-  }, []);
-
   return (
     <div>
       <Head>

@@ -10,7 +10,6 @@ import parse from "html-react-parser";
 function categoryMapper(category_id, categoryArr) {
   const category = categoryArr.filter(item => item.id === category_id)[0]
     .category;
-  console.log(category);
   return category === "All" ? "General" : category;
 }
 const AppAccordion = ({ category, ...props }) => {

@@ -8,9 +8,7 @@ import { TopContent } from "../../components/Widgets/CustomHeader/HeaderContent"
 const Papers = ({ heroContent, genContent }) => {
   const desc =
     "Our research team organizes all they have learnt from the market into documents you can download at any time!";
-  useEffect(() => {
-    console.log(genContent);
-  }, []);
+
   return (
     <div>
       <Head>

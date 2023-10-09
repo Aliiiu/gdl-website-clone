@@ -8,19 +8,12 @@ import Link from "next/link";
 import Image from "next/image";
 import BlogLayout from "../components/Layout/BlogLayout";
 import TestimonyLayout from "../components/Layout/TestimonyLayout";
+import { useRouter } from "next/router";
 
-const HomePage = ({
-  hero,
-  stat,
-  products,
-  testimonial,
-  media,
-  blog,
-  getStarted,
-  blogPost,
-}) => {
+const HomePage = ({ hero, stat, products, testimonial, blogPost }) => {
   let [counter, setCounter] = useState(0);
   let [count, setCount] = useState(0);
+  const router = useRouter();
 
   const startCounter = () => {
     setInterval(() => {
@@ -40,14 +33,10 @@ const HomePage = ({
 
     return () => window.removeEventListener("load", stopCounter());
   }, []);
-
-  // console.log("Working");
-
-  // useEffect(() => {
-  //   console.log(blog);
-  // }, [blog]);
   const arr = hero?.image_url?.split("/");
   const bgUrl = arr[arr.length - 1];
+
+  console.log({ learn_more: hero.call_to_action_link });
   return (
     <div className="">
       <section
@@ -67,20 +56,19 @@ const HomePage = ({
             {hero.title || "Build Wealth Comfortably"}
           </h1>
           <p className="visible dark:text-[#F9FAFB] opacity-[1] md:leading-[32px] leading-[24px] mx-0 md:w-[80%] w-full md:text-left text-center md:text-[1.25rem]  mt-[.25rem] font-light animate-glide-up">
-            {hero.description ||
-              `Your financial goals are our priority. We are committed to building
+            {`Your financial goals are our priority. We are committed to building
             your wealth with different investment options, all tailored to suit
-            YOU.`}
+            you.`}
           </p>
           <div className="flex flex-col md:flex-row justify-center md:justify-start items-center mt-6">
-            <AppButton
-              name={`${hero.call_to_action_title} →`}
-              textSize="text-base"
-              className="py-[1rem] px-[1.5rem] text-white md:mr-6 mb-4 md:mb-0 bg-[#992333]"
-              // icon={<AiOutlineArrowRight className="font-thin text-sm" />}
-            />
-            <Link href={hero.call_to_action_link} legacyBehavior>
-              <h5 className="font-light z-10">Learn More</h5>
+            <a
+              href={hero.call_to_action_link}
+              target="_blank"
+              rel="noreferrer"
+              className="py-3 px-[1.5rem] rounded-lg cursor-pointer text-white md:mr-6 mb-4 md:mb-0 bg-[#992333]"
+            >{`${hero.call_to_action_title} →`}</a>
+            <Link href="/products">
+              <h5 className="font-light z-10 cursor-pointer">Learn More</h5>
             </Link>
           </div>
         </div>

@@ -10,11 +10,8 @@ const Article = ({ article, blogData }) => {
   const { query } = useRouter();
 
   useEffect(() => {
-    console.log(query.id);
     const title = query.id.replace(/-/g, " ");
-    // console.log(article.find(item => item.title.toLowerCase() === title));
-    console.log(article);
-  }, [article]);
+  }, []);
   return (
     <div>
       <Head>
@@ -48,8 +45,6 @@ const Article = ({ article, blogData }) => {
 export async function getServerSideProps(context) {
   const { id } = context.query;
   const title = id.replace(/-/g, " ");
-  // const id = params.pop();
-  console.log(id);
   const blogPost = await makeRequest("/posts/s", null, null);
 
   return {

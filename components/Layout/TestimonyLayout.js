@@ -70,11 +70,6 @@ const CarouselContent = ({ image_url, name, porfolio, testimonial }) => (
 );
 
 const TestimonyLayout = ({ testimonial }) => {
-  // console.log(testimonial);
-
-  useEffect(() => {
-    console.log(testimonial);
-  }, [testimonial]);
   const carouselArrow = ({ type, onClick }) => {
     const pointer =
       type == consts.PREV ? (

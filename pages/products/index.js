@@ -21,24 +21,6 @@ const ProductPage = ({ prodContent, genContent, useCaseContent }) => {
   } = useRouter();
 
   // useEffect(() => {
-  //   makeRequest();
-  //   // fetchGeneral();
-  //   fetchUsecase();
-  // }, []);
-
-  useEffect(() => {
-    console.log(
-      prodContent.map(item => {
-        const arr = item.product_image_url.split("/");
-        // console.log(arr[arr.length - 1]);
-      })
-      // prodContent.map(item => {
-      //   console.log(item);
-      // })
-    );
-  }, [prodContent]);
-
-  // useEffect(() => {
   //   if (!"undefined".includes(params)) {
   //     setContent(data[params[0]]);
   //     setOpen(true);
@@ -88,7 +70,6 @@ export async function getStaticProps() {
     null,
     null
   );
-  // console.log(jobData);
   return {
     props: {
       prodContent: prodData?.data?.data.reverse(),

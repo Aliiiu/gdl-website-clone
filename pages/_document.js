@@ -1,5 +1,4 @@
 import Document, { Head, Html, Main, NextScript } from "next/document";
-import { connect } from "react-redux";
 import { ServerStyleSheet } from "styled-components";
 
 class MyDocument extends Document {
