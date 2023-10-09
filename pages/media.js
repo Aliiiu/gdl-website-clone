@@ -46,15 +46,6 @@ const MediaPage = ({ mediaContent, generalContent }) => {
     method: MethodType.GET,
   });
 
-  // useEffect(() => {
-  //   fetchGeneral();
-  //   makeRequest();
-  // }, []);
-
-  // useEffect(() => {
-  //   console.log(mediaContent);
-  // }, [mediaContent]);
-
   return (
     <div>
       <Head>

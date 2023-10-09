@@ -12,19 +12,6 @@ const Testimonials = ({ heroContent, generalContent }) => {
     url: "/pages/testimonials/s",
     method: MethodType.GET,
   });
-  // const { makeRequest: fetchGeneral, data: generalData } = useRequest({
-  //   url: "/pages/testimonials/s",
-  //   method: MethodType.GET,
-  // });
-
-  // useEffect(() => {
-  //   makeRequest();
-  //   fetchGeneral();
-  // }, []);
-
-  // useEffect(() => {
-  //   console.log(heroContent);
-  // }, [heroContent]);
 
   return (
     <div>

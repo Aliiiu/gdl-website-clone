@@ -97,7 +97,6 @@ export async function getStaticProps() {
   const missionData = await makeRequest("/pages/about/our/mission");
   const managementData = await makeRequest("/pages/about/management/team");
   const bodData = await makeRequest("/pages/about/board/of/directors");
-  // console.log(heroData);
   return {
     props: {
       heroContent: heroData.data.data[0],

@@ -5,9 +5,6 @@ import Faq from "../components/PageSections/Faq";
 import Privacy from "../components/PageSections/Privacy";
 
 const Privacypolicy = ({ privacyContent }) => {
-  useEffect(() => {
-    console.log(privacyContent);
-  }, [privacyContent]);
   return (
     <div className="relative">
       <Head>

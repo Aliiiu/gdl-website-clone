@@ -37,7 +37,6 @@ const Blogs = ({ heroContent, blogContent, blogCat }) => {
     "Everything you need to know about finance and investing in Nigeria.";
 
   const blogFiltering = tag => {
-    // console.log(tag);
     if (tag === 2) {
       setBlogData(() => blogContent);
     } else {

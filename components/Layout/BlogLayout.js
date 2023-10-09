@@ -18,7 +18,6 @@ const BlogLayout = ({ blogPost }) => {
   const handleOnPress = title => {
     const url = title.replace(/ /g, "-").toLowerCase();
     router.push(`/blog/${url}`);
-    // console.log(url);
   };
   return (
     <section className="pt-12 md:pt-24" id="blog">

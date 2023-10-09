@@ -5,9 +5,6 @@ import { makeRequest } from "../apiCalls/requestHandler";
 import Head from "next/head";
 
 const TermsOfUse = ({ termsContent }) => {
-  useEffect(() => {
-    console.log(termsContent);
-  }, [termsContent]);
   return (
     <div className="relative">
       <Head>

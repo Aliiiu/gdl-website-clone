@@ -20,7 +20,6 @@ const Management = ({ data }) => {
   const [content, setContent] = useState();
 
   const handleRedirection = item => {
-    // console.log(item);
     setContent(item);
     setOpen(true);
   };

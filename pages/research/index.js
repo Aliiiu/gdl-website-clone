@@ -27,9 +27,6 @@ const Research = ({ researchContent, genContent }) => {
   //   makeRequest();
   // }, []);
 
-  useEffect(() => {
-    console.log(researchContent);
-  }, [researchContent]);
   return (
     <div>
       <Head>

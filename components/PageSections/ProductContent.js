@@ -35,12 +35,15 @@ export const ModalContent = ({ content, ...props }) => (
           </div>
         </div>
         <article className="mt-6 text-left">{parse(content?.content)}</article>
-        <div className="hidden md:block mt-16">
-          <AppButton
-            name="Invest Now →"
-            className="py-[.8rem] px-[1.5rem] text-white md:mr-6 mb-4 md:mb-0 bg-[#992333]"
-            onPress={() => window.location("www.app.gdl.com.ng?product=canary")}
-          />
+        <div className="hidden md:flex justify-start mt-16">
+          <a
+            href="https://clientportal.gdl.com.ng/ords/f?p=2801:300:7060232055540"
+            className="py-[.8rem] px-[1.5rem] rounded-lg text-white md:mr-6 mb-4 md:mb-0 bg-[#992333]"
+            target="_blank"
+            rel="noreferrer"
+          >
+            {"Invest Now →"}
+          </a>
         </div>
       </div>
     </section>
