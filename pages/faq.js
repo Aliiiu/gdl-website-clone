@@ -28,10 +28,6 @@ const FAQPage = ({ heroContent, faqContent, catContent }) => {
     method: MethodType.GET,
   });
 
-  // useEffect(() => {
-  //   console.log(faqData);
-  // }, [faqData]);
-
   const faqFiltering = tag => {
     if (tag === 4) {
       setFaqData(() => faqContent);

@@ -6,9 +6,6 @@ import Head from "next/head";
 import TermsCondition from "../components/PageSections/TermsCondition";
 
 const TermsandCondition = ({ termsContent }) => {
-  useEffect(() => {
-    console.log(termsContent);
-  }, [termsContent]);
   return (
     <div className="relative">
       <Head>

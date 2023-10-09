@@ -90,20 +90,12 @@ const ComplaintPage = () => {
     setQueryStr(query.request_type);
   }, []);
 
-  useEffect(() => {
-    console.log(formData);
-  }, [formData]);
-
   const onSubmit = data => {
     data.request_type = querystr;
     //
     // alert(JSON.stringify(querystr));
     sendComplaint(data);
   };
-
-  //   useEffect(() => {
-  //     if (response.length > 0) toast("Successfully submited complaints");
-  //   }, [response]);
   return (
     <div>
       <Head>

@@ -175,34 +175,6 @@ const Topbar = props => {
                 </div>
               </div>
               <div className="hidden lg:flex gap-x-6 justify-end items-center">
-                {/* <div className="flex justify-start items-center">
-                  <label
-                    htmlFor="toggleB"
-                    className="flex w-full items-center cursor-pointer"
-                  >
-                    <div className="w-4/5 flex justify-end">
-                      <span className="mr-3 lg:text-sm text-sm uppercase font-light text-gray-900 dark:text-gray-400">
-                        night
-                      </span>
-                    </div>
-
-                    <div class="relative">
-                      <input
-                        type="checkbox"
-                        checked={theme == "dark" ? true : false}
-                        onChange={() => null}
-                        id="toggleB"
-                        className="sr-only"
-                        onClick={() => {
-                          setMode(!mode);
-                          setTheme(theme == "dark" ? "light" : "dark");
-                        }}
-                      />
-                      <div className="drawer block bg-gray-200 w-9 h-5 rounded-full"></div>
-                      <div className="dot absolute left-0.5 top-0.5 bg-black dark:bg-white w-4 h-4 rounded-full transition"></div>
-                    </div>
-                  </label>
-                </div> */}
                 <Link href="https://app.gdl.com.ng/auth/login">
                   <a
                     target="_blank"
@@ -212,11 +184,7 @@ const Topbar = props => {
                     Login
                   </a>
                 </Link>
-                <Link
-                  href="https://app.gdl.com.ng/auth/signup"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <Link href="https://app.gdl.com.ng/auth/signup">
                   <a target="_blank" rel="noopener noreferrer">
                     <AppButton
                       name="Create an Account"

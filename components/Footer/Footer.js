@@ -116,11 +116,11 @@ const Footer = () => {
         <div className="text-black dark:text-white text-opacity-50 my-8 text-base">
           <div>
             <p className="dark:text-white">
-              Growth and Development Asset Management Limited (“GDL”) is a
-              Limited Liability company registered with the Corporate Affairs
-              Commission with RC Number: 623338. GDL and its subsidiary
-              companies are regulated by the Securities & Exchange Commission,
-              the Nigerian Stock Exchange and the Central Bank of Nigeria.
+              Growth and Development Asset Management Limited (GDL) is a Limited
+              Liability company registered with the Corporate Affairs Commission
+              with RC Number: 623338. GDL and its subsidiary companies are
+              regulated by the Securities & Exchange Commission, the Nigerian
+              Stock Exchange and the Central Bank of Nigeria.
             </p>
           </div>
         </div>
