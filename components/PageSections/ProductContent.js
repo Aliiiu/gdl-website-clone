@@ -34,8 +34,10 @@ export const ModalContent = ({ content, ...props }) => (
             </h3>
           </div>
         </div>
-        <article className="mt-6 text-left">{parse(content?.content)}</article>
-        <div className="hidden md:flex justify-start mt-16">
+        <article className="mt-6 text-left text-sm sm:text-base">
+          {parse(content?.content)}
+        </article>
+        <div className="flex justify-center sm:justify-start mt-16">
           <a
             href="https://clientportal.gdl.com.ng/ords/f?p=2801:300:7060232055540"
             className="py-[.8rem] px-[1.5rem] rounded-lg text-white md:mr-6 mb-4 md:mb-0 bg-[#992333]"

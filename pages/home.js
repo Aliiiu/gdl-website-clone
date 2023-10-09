@@ -36,7 +36,7 @@ const HomePage = ({ hero, stat, products, testimonial, blogPost }) => {
   const arr = hero?.image_url?.split("/");
   const bgUrl = arr[arr.length - 1];
 
-  console.log({ learn_more: hero.call_to_action_link });
+  // console.log({ learn_more: hero.call_to_action_link });
   return (
     <div className="">
       <section
