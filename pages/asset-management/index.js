@@ -17,7 +17,7 @@ const AssetManagement = () => {
       <Head>
         <title> Asset Management </title>
       </Head>
-      <div className="flex-1 flex flex-col mt-20 justify-center">
+      <div className="flex-1 flex flex-col mt-20 px-4 justify-center">
         <div id="corporate-information">
           <h5 className="mb-1 text-second text-center text-xs">
             Asset Management
@@ -37,22 +37,22 @@ const AssetManagement = () => {
       </div>
       <section
         id="management-team"
-        className="lg:px-6 md:w-5/6 lg:w-4/6 mx-auto py-16 md:py-36 w-full"
+        className="lg:px-6 md:w-5/6 lg:w-4/6 mx-auto py-16 2xl:py-36 w-full"
       >
         <Management data={assetManagement} />
       </section>
       <section
         id="board-of-directors"
-        className="lg:px-6 md:w-5/6 lg:w-4/6 mx-auto py-16 md:py-36 w-full"
+        className="lg:px-6 md:w-5/6 lg:w-4/6 mx-auto py-16 2xl:py-36 w-full"
       >
         <Boards data={assetBOD} />
       </section>
 
-      <section id="products" className="py-16 md:py-36">
+      <section id="products" className="py-16 2xl:py-36">
         <SectionWrapper className="container px-4 xl:px-28 mx-auto">
           <div className="text-center md:text-center">
             <h1 className="title mb-[.75rem]">Products</h1>
-            <p className="hint w-full md:w-1/2 lg:w-2/5 leading-[1.75rem] text-opacity-[0.9] text-[rgba(31,26,23,var(--tw-text-opacity))] dark:text-white mx-auto">
+            <p className="hint w-full md:w-4/5 xl:w-2/5 leading-[1.75rem] text-opacity-[0.9] text-[rgba(31,26,23,var(--tw-text-opacity))] dark:text-white mx-auto">
               We have various products which have been specifically designed for
               you. There is something for everyone at GDL.
             </p>

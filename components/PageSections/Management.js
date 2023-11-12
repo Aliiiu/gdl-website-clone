@@ -28,7 +28,7 @@ const Management = ({ data }) => {
     <div>
       <h2 className="title mb-4 text-center">Management Team</h2>
       <p className="text-center">Meet the people behind the wheel</p>
-      <div className="grid mt-[100px] sm:grid-cols-2 md:grid-cols-3 gap-y-[100px]">
+      <div className="grid mt-[50px] xl:mt-[100px] sm:grid-cols-2 md:grid-cols-3 gap-y-[100px]">
         {data.map(item => (
           <div key={item.id} className="">
             <div className="relative rounded-lg overflow-hidden mx-auto w-[191px] h-[256px]">
