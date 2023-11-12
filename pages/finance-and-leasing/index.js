@@ -19,7 +19,10 @@ const FinanceAndLeasing = () => {
       <Head>
         <title> Finance and Leasing </title>
       </Head>
-      <div className="flex-1 flex flex-col mt-20 justify-center">
+      <div
+        id="corporate-information"
+        className="flex-1 flex flex-col mt-20 justify-center"
+      >
         <div>
           <h5 className="mb-1 text-second text-center text-xs">
             Finance and Leasing
@@ -53,7 +56,7 @@ const FinanceAndLeasing = () => {
 
       <section className="py-16 md:py-36">
         <SectionWrapper className="container px-4 xl:px-28 mx-auto">
-          <div className="text-center md:text-center">
+          <div id="products" className="text-center md:text-center">
             <h1 className="title mb-[.75rem]">Products</h1>
             <p className="hint w-full md:w-1/2 lg:w-2/5 leading-[1.75rem] text-opacity-[0.9] text-[rgba(31,26,23,var(--tw-text-opacity))] dark:text-white mx-auto">
               We have various products which have been specifically designed for

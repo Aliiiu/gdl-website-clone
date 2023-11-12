@@ -165,8 +165,8 @@ export const homeLinks = [
   ],
   [
     {
-      name: "High Yield Note",
-      subname: "High Interest Rate + Low Risk = The Perfect Investment",
+      name: "GDL Value Note",
+      subname: "Get Better Value",
       icon: <FaMoneyBill />,
       url: "/products",
     },
@@ -179,40 +179,121 @@ export const homeLinks = [
     },
 
     {
-      name: "Dollar Note",
-      subname: "What’s better than making money? Making it in dollars!",
+      name: "GDL Dollar Note",
+      subname: "Earn Top Dollar",
       icon: <FaMoneyBill />,
       url: "/products",
     },
     {
-      name: "Money Market Fund",
-      subname: "Cruise your way to financial freedom with as little as ₦10,000",
+      name: "GDL Money Market Fund",
+      subname: "Your savings redefined",
       icon: <IoStorefrontOutline />,
       url: "/products",
     },
     {
-      name: "Stockbroking",
-      subname: "Member of the Nigerian Stock Exchange",
+      name: "GDL Stockbroking",
+      subname: "Stack your cash from stocks",
       icon: <IoPeopleCircleOutline />,
       url: "/products",
     },
     {
       name: "GDL Canary Fund",
-      subname: "Let your money speak for you.",
+      subname: "Find your balance",
       icon: <IoPeopleCircleOutline />,
       url: "/products",
     },
+    // {
+    //   name: "Long Term Note",
+    //   subname: "Play the long game, invest for the future",
+    //   icon: <IoPeopleCircleOutline />,
+    //   url: "/products",
+    // },
+    // {
+    //   name: "GDL Income Fund",
+    //   subname: "There's no cap to your income growth",
+    //   icon: <IoPeopleCircleOutline />,
+    //   url: "/products",
+    // },
+  ],
+  [
     {
-      name: "Long Term Note",
-      subname: "Play the long game, invest for the future",
-      icon: <IoPeopleCircleOutline />,
-      url: "/products",
+      name: "Corporate Information",
+      subname: "What we stand for",
+      icon: <IoPersonCircleOutline />,
+      url: "/finance-and-leasing#corporate-information",
+    },
+
+    {
+      name: "Management Team",
+      subname: "Guides on Finance",
+      icon: <IoIdCardOutline />,
+      url: "/finance-and-leasing#management-team",
     },
     {
-      name: "GDL Income Fund",
-      subname: "There's no cap to your income growth",
+      name: "Board of Directors",
+      subname: "Our social participation",
       icon: <IoPeopleCircleOutline />,
-      url: "/products",
+      url: "/finance-and-leasing#board-of-directors",
+    },
+    {
+      name: "Products",
+      subname: "Some of our products",
+      icon: <IoCubeOutline />,
+      url: "/finance-and-leasing#products",
+    },
+  ],
+  [
+    {
+      name: "Corporate Information",
+      subname: "What we stand for",
+      icon: <IoPersonCircleOutline />,
+      url: "/asset-management#corporate-information",
+    },
+
+    {
+      name: "Management Team",
+      subname: "Guides on Finance",
+      icon: <IoIdCardOutline />,
+      url: "/asset-management#management-team",
+    },
+    {
+      name: "Board of Directors",
+      subname: "Our social participation",
+      icon: <IoPeopleCircleOutline />,
+      url: "/asset-management#board-of-directors",
+    },
+    {
+      name: "Products",
+      subname: "Some of our products",
+      icon: <IoCubeOutline />,
+      url: "/asset-management#products",
+    },
+  ],
+  [
+    {
+      name: "Corporate Information",
+      subname: "What we stand for",
+      icon: <IoPersonCircleOutline />,
+      url: "/stockbrokers#corporate-information",
+    },
+
+    {
+      name: "Management Team",
+      subname: "Guides on Finance",
+      icon: <IoIdCardOutline />,
+      url: "/stockbrokers#management-team",
+    },
+    {
+      name: "Board of Directors",
+      subname: "Our social participation",
+      icon: <IoPeopleCircleOutline />,
+      url: "/stockbrokers#board-of-directors",
+    },
+    {
+      name: "Products",
+      subname: "Some of our products",
+      icon: <IoCubeOutline />,
+      url: "/stockbrokers#products",
     },
   ],
   [

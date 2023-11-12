@@ -43,6 +43,9 @@ const Topbar = props => {
     home: true,
     about: false,
     products: false,
+    "finance & Leasing": false,
+    "asset Mgmt": false,
+    stockbrokers: false,
     resources: false,
     contact: false,
   });
@@ -138,7 +141,7 @@ const Topbar = props => {
           <nav className="py-2 z-20 top-0 left-0">
             <div className="w-full flex justify-between items-center mx-auto">
               <div className="flex items-center">
-                <div className="flex lg:w-auto w-full items-center gap-4 lg:justify-start justify-between">
+                <div className="flex items-center gap-4 lg:justify-start justify-between">
                   <button
                     data-collapse-toggle="navbar-sticky"
                     type="button"
@@ -167,7 +170,7 @@ const Topbar = props => {
                   className="hidden justify-between items-center md:flex"
                   id="navbar-sticky"
                 >
-                  <ul className="flex flex-col p-4 py-2 mt-4 lg:mx-7 md:flex-row md:space-x-12 md:mt-0 lg:text-[15px] md:font-light md:border-0 text-gray-500 dark:text-gray-400 dark:border-gray-700">
+                  <ul className="flex flex-col p-4 py-2 mt-4 lg:mx-7 md:flex-row gap-x-6 md:gap-x-6 xl:gap-x-6 2xl:gap-x-12 md:mt-0 lg:text-[15px] md:font-light md:border-0 text-gray-500 dark:text-gray-400 dark:border-gray-700">
                     <LinkList name="about" url="/about" />
                     <LinkList name="product" url="/products" />
                     <LinkList

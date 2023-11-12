@@ -18,7 +18,7 @@ const Stockbrokers = () => {
         <title> Stockbrokers </title>
       </Head>
       <div className="flex-1 flex flex-col mt-20 justify-center">
-        <div>
+        <div id="corporate-information">
           <h5 className="mb-1 text-second text-center text-xs">Stockbroking</h5>
           <h1 className="title leading-tight text-center max-w-[700px] mx-auto mb-4">
             GDL ASSET MANAGEMENT LTD
@@ -55,7 +55,7 @@ const Stockbrokers = () => {
         <Boards data={stockbrokersBOD} />
       </section>
 
-      <section className="py-16 md:py-36">
+      <section id="products" className="py-16 md:py-36">
         <SectionWrapper className="container px-4 xl:px-28 mx-auto">
           <div className="text-center md:text-center">
             <h1 className="title mb-[.75rem]">Products</h1>
