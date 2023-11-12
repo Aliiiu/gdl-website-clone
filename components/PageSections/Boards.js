@@ -54,7 +54,7 @@ const Boards = ({ data }) => {
               }
               className="text-[#9A2333] font-medium mt-3 cursor-pointer text-center"
             >
-              {item.director_name}
+              {item?.director_name || item?.staff_name}
             </h5>
           </div>
         ))}
