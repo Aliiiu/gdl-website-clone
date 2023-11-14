@@ -1,13 +1,26 @@
 import React from "react";
 import CloudinaryImage from "../CloudinaryImage";
 import { AppButton } from "../Button/Button";
-import { title } from "process";
 
-const ProductList = ({ title, productData, handleRedirection }) => {
+const ProductList = ({
+  title,
+  productData,
+  handleRedirection,
+  description,
+}) => {
   return (
-    <div className="mt-10 md:mt-14">
-      <h1 className="text-3xl font-semibold mb-[.75rem]">{title}</h1>
-      <div className="mt-5 grid md:grid-cols-2 lg:grid-cols-3 mx-auto gap-6">
+    <div
+      className={`pb-16 md:pb-20 ${
+        title === "GDL Asset Management Products" ? "pt-16 md:pt-20" : ""
+      }`}
+    >
+      <h1 className="title text-center mb-[.75rem]">{title}</h1>
+      <p className="hint w-full md:w-1/2 lg:w-3/5 leading-[1.75rem] text-center text-opacity-[0.9] text-[rgba(31,26,23,var(--tw-text-opacity))] dark:text-white mx-auto">
+        {description}
+      </p>
+      <div
+        className={`mt-5 sm:mt-10 lg:mt-16 grid md:grid-cols-2 max-w-[800px] mx-auto gap-6`}
+      >
         {productData.map(item => {
           const arr = item?.product_image_url?.split("/");
           return (

@@ -22,9 +22,13 @@ export const RightProduct = () => (
         </p>
       </div>
       <div className="mt-8">
-        <Link href="">
-          <a className="text-opacity-[1] text-[rgba(153,35,51,var(--tw-text-opacity))] font-medium">
-            See Use Cases →
+        <Link href="https://app.gdl.com.ng/auth/signup">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-opacity-[1] text-[rgba(153,35,51,var(--tw-text-opacity))] font-medium"
+          >
+            Get Started →
           </a>
         </Link>
       </div>
@@ -42,31 +46,67 @@ const Products = ({ nobutton, product }) => {
     setContent(item);
     setOpen(true);
   };
-
-  console.log(product);
   return (
     <SectionWrapper className="container px-4 xl:px-28 mx-auto">
-      <div className="text-center md:text-center">
+      {/* <div className="text-center md:text-center">
         <h1 className="title mb-[.75rem]">Our Products</h1>
         <p className="hint w-full md:w-1/2 lg:w-3/5 leading-[1.75rem] text-opacity-[0.9] text-[rgba(31,26,23,var(--tw-text-opacity))] dark:text-white mx-auto">
           We have various products which have been specifically designed for
           you. There is something for everyone at GDL.
         </p>
-      </div>
+      </div> */}
       <ProductList
-        title={"GDL Finance and Leasing"}
+        title={"GDL Finance & Leasing Products"}
+        description={
+          <>
+            We have various products which have been specifically designed for
+            you. These products are{" "}
+            <strong className="font-semibold">
+              regulated by the Central Bank of Nigeria (CBN)
+            </strong>
+          </>
+        }
         handleRedirection={handleRedirection}
         productData={product.filter(
           item =>
             item?.product_name !== "GDL Canary Fund" &&
             item?.product_name !== "GDL Money Market Fund" &&
             item?.product_name !== "GDL Stockbroking" &&
-            item?.product_name !== "High Yield Note"
+            item?.product_name !== "High Yield Note" &&
+            item?.product_name !== "Finance"
         )}
       />
-      <div className="mt-10 md:mt-14">
-        <h1 className="text-3xl font-semibold mb-[.75rem]">GDL Stockbroking</h1>
-        <div className="mt-5 grid max-w-[400px]">
+      <ProductList
+        title={"GDL Asset Management Products"}
+        description={
+          <>
+            We have various products which have been specifically designed for
+            you. These product are{" "}
+            <strong className="font-semibold">
+              regulated by Securities & Exchange Commission (SEC)
+            </strong>
+          </>
+        }
+        handleRedirection={handleRedirection}
+        productData={product.filter(
+          item =>
+            item?.product_name === "GDL Canary Fund" ||
+            item?.product_name === "GDL Money Market Fund"
+        )}
+      />
+      <div className="py-16 md:py-20">
+        <h1 className="title text-center mb-[.75rem]">
+          GDL Stockbroking Products
+        </h1>
+        <p className="hint w-full md:w-1/2 lg:w-3/5 leading-[1.75rem] text-center text-opacity-[0.9] text-[rgba(31,26,23,var(--tw-text-opacity))] dark:text-white mx-auto">
+          We have various products which have been specifically designed for
+          you. These products are
+          <strong className="font-semibold">
+            {" "}
+            regulated by Securities & Exchange Commission (SEC)
+          </strong>
+        </p>
+        <div className="mt-5 sm:mt-10 lg:mt-16 grid max-w-[400px] mx-auto">
           {product
             .filter(item => item?.product_name === "GDL Stockbroking")
             .map(item => {
@@ -114,15 +154,6 @@ const Products = ({ nobutton, product }) => {
             })}
         </div>
       </div>
-      <ProductList
-        title={"GDL Asset Management"}
-        handleRedirection={handleRedirection}
-        productData={product.filter(
-          item =>
-            item?.product_name === "GDL Canary Fund" ||
-            item?.product_name === "GDL Money Market Fund"
-        )}
-      />
       {!nobutton && (
         <div className="flex mt-10 md:mt-20 justify-center items-center">
           <AppButton

@@ -16,7 +16,6 @@ import {
   IoShapesOutline,
   IoIdCardOutline,
   IoPeopleCircleOutline,
-  IoStorefrontOutline,
   IoBriefcaseOutline,
   IoTelescopeOutline,
   IoHelp,
@@ -25,8 +24,11 @@ import {
   IoCallOutline,
 } from "react-icons/io5";
 import { FaHandHoldingUsd, FaMoneyBill } from "react-icons/fa";
+import { FaMoneyBillTransfer } from "react-icons/fa6";
 import dayjs from "dayjs";
-
+import { AiOutlineStock } from "react-icons/ai";
+import { RiFundsBoxFill, RiMoneyDollarCircleLine } from "react-icons/ri";
+import { GiMoneyStack, GiTakeMyMoney } from "react-icons/gi";
 export const isValidDate = date => {
   return Boolean(new Date(date).toString() !== "Invalid Date");
 };
@@ -172,7 +174,7 @@ export const homeLinks = [
     },
 
     {
-      name: "Finance",
+      name: "Financial Advisory",
       subname: "Don’t take on that big project alone; get a loan.",
       icon: <FaHandHoldingUsd />,
       url: "/products",
@@ -181,39 +183,39 @@ export const homeLinks = [
     {
       name: "GDL Dollar Note",
       subname: "Earn Top Dollar",
-      icon: <FaMoneyBill />,
+      icon: <RiMoneyDollarCircleLine />,
       url: "/products",
     },
     {
       name: "GDL Money Market Fund",
       subname: "Your savings redefined",
-      icon: <IoStorefrontOutline />,
+      icon: <FaMoneyBillTransfer />,
       url: "/products",
     },
     {
       name: "GDL Stockbroking",
       subname: "Stack your cash from stocks",
-      icon: <IoPeopleCircleOutline />,
+      icon: <AiOutlineStock />,
       url: "/products",
     },
     {
       name: "GDL Canary Fund",
       subname: "Find your balance",
-      icon: <IoPeopleCircleOutline />,
+      icon: <GiMoneyStack />,
       url: "/products",
     },
-    // {
-    //   name: "Long Term Note",
-    //   subname: "Play the long game, invest for the future",
-    //   icon: <IoPeopleCircleOutline />,
-    //   url: "/products",
-    // },
-    // {
-    //   name: "GDL Income Fund",
-    //   subname: "There's no cap to your income growth",
-    //   icon: <IoPeopleCircleOutline />,
-    //   url: "/products",
-    // },
+    {
+      name: "GDL Long Term Note",
+      subname: "Play the long game",
+      icon: <RiFundsBoxFill />,
+      url: "/products",
+    },
+    {
+      name: "GDL Income Fund",
+      subname: "There's no cap to your income growth",
+      icon: <GiTakeMyMoney />,
+      url: "/products",
+    },
   ],
   [
     {

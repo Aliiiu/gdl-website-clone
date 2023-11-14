@@ -5,8 +5,8 @@ export const assetMgmt = [
     img: "/Images/cardOneImg.png",
   },
   {
-    title: "Money Market Fund",
-    hint: "Cruise your way to financial freedom with as little as ₦10,000",
+    title: "GDL Money Market Fund",
+    hint: "Your Savings Redefined",
     img: "/Images/money-market-fund.jpeg",
   },
 ];
@@ -22,18 +22,18 @@ export const financeAndLeasing = [
     img: "/Images/african-bis.jpg",
   },
   {
-    title: "Long Term Note",
-    hint: "Play the long game, invest for the future",
+    title: "GDL Long Term Note",
+    hint: "Play the long game",
     img: "/Images/flat.jpg",
   },
   {
-    title: "Dollar Note",
-    hint: "What’s better than making money? Making it in dollars!",
+    title: "GDL Dollar Note",
+    hint: " Earn Top Dollar",
     img: "/Images/dollar.jpg",
   },
   {
-    title: "Finance",
-    hint: "Don’t do it alone, Get A Loan.",
+    title: "GDL Value Note",
+    hint: "Get Better Value",
     img: "/Images/high-yield-note.jpeg",
   },
 ];
