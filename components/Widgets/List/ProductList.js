@@ -19,7 +19,11 @@ const ProductList = ({
         {description}
       </p>
       <div
-        className={`mt-5 sm:mt-10 lg:mt-16 grid md:grid-cols-2 max-w-[800px] mx-auto gap-6`}
+        className={`mt-5 sm:mt-10 lg:mt-16 grid md:grid-cols-2 ${
+          title === "GDL Asset Management Products"
+            ? "lg:grid-cols-3"
+            : " max-w-[800px]"
+        } mx-auto gap-6`}
       >
         {productData.map(item => {
           const arr = item?.product_image_url?.split("/");

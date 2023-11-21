@@ -6,7 +6,8 @@ export const stockbrokersBOD = [
   },
   {
     id: 2,
-    image_url: "/Images/Ofonama-Joshua.jpeg",
+    image_url: "",
+    staff_initials: "TAS",
     staff_name: "Taofiki Ayandele Sanusi – Managing Director",
   },
   {
@@ -21,7 +22,8 @@ export const stockbrokersBOD = [
   },
   {
     id: 5,
-    image_url: "/Images/Lanre-Olaoluwa.jpeg",
+    image_url: "",
+    staff_initials: "CBI",
     staff_name: "Cyril Baba-Oyathelemi Ikazoboh",
   },
 ];
@@ -29,17 +31,20 @@ export const stockbrokersBOD = [
 export const stockbrokersManagement = [
   {
     id: 2,
-    image_url: "/Images/Ofonama-Joshua.jpeg",
+    image_url: "",
+    staff_initials: "TAS",
     staff_name: "Taofiki Ayandele Sanusi – DMD",
   },
   {
     id: 4,
-    image_url: "/Images/Oluyemi-Adekoya.jpeg",
+    image_url: "",
+    staff_initials: "SF",
     staff_name: "Stephen Fidelis – Chief Financial Officer",
   },
   {
     id: 3,
-    image_url: "/Images/Oyekemi-Ayeye.jpeg",
+    image_url: "",
+    staff_initials: "SM",
     staff_name: "Samuel Makinde – Chief Research Officer",
   },
 ];

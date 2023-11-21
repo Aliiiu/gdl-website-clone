@@ -31,9 +31,17 @@ const Management = ({ data }) => {
       <div className="grid mt-[50px] xl:mt-[100px] sm:grid-cols-2 md:grid-cols-3 gap-y-[100px]">
         {data.map(item => (
           <div key={item.id} className="">
-            <div className="relative rounded-lg overflow-hidden mx-auto w-[191px] h-[256px]">
-              <Image unoptimized src={item.image_url} alt="" layout="fill" />
-            </div>
+            {item.image_url ? (
+              <div className="relative rounded-lg overflow-hidden mx-auto w-[191px] h-[256px]">
+                <Image unoptimized src={item.image_url} alt="" layout="fill" />
+              </div>
+            ) : (
+              <div className="bg-[#484848] w-[191px] h-[256px] mx-auto rounded-lg flex justify-center items-center">
+                <h2 className="text-white font-bold text-4xl">
+                  {item.staff_initials}
+                </h2>
+              </div>
+            )}
             <h5
               onClick={() =>
                 handleRedirection({

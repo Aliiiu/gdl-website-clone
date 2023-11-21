@@ -9,6 +9,11 @@ export const assetMgmt = [
     hint: "Your Savings Redefined",
     img: "/Images/money-market-fund.jpeg",
   },
+  {
+    title: "GDL Income Fund",
+    hint: "Consistent and safe income",
+    img: "/Images/income-fund.png",
+  },
 ];
 export const financeAndLeasing = [
   // {

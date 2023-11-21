@@ -54,13 +54,13 @@ const AssetManagement = () => {
             <h1 className="title mb-[.75rem]">Products</h1>
             <p className="hint w-full md:w-4/5 xl:w-3/5 leading-[1.75rem] text-opacity-[0.9] text-[rgba(31,26,23,var(--tw-text-opacity))] dark:text-white mx-auto">
               We have various products which have been specifically designed for
-              you. These product are{" "}
+              you. These products are{" "}
               <strong className="font-semibold">
                 regulated by Securities & Exchange Commission (SEC)
               </strong>
             </p>
           </div>
-          <div className="mt-10 md:mt-24 grid md:grid-cols-2 max-w-[800px] mx-auto gap-6">
+          <div className="mt-10 md:mt-24 grid md:grid-cols-2 lg:grid-cols-3 mx-auto gap-6">
             {assetMgmt.map(item => {
               return (
                 <div

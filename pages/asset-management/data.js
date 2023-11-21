@@ -39,12 +39,14 @@ export const assetManagement = [
   },
   {
     id: 2,
-    image_url: "/Images/Oluyemi-Adekoya.jpeg",
+    image_url: "",
+    staff_initials: "SF",
     staff_name: "Stephen Fidelis – Chief Financial Officer",
   },
   {
     id: 3,
-    image_url: "/Images/Oyekemi-Ayeye.jpeg",
+    image_url: "",
+    staff_initials: "SM",
     staff_name: "Samuel Makinde – Head of Research",
   },
 ];
