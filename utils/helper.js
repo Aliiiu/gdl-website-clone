@@ -16,7 +16,6 @@ import {
   IoShapesOutline,
   IoIdCardOutline,
   IoPeopleCircleOutline,
-  IoStorefrontOutline,
   IoBriefcaseOutline,
   IoTelescopeOutline,
   IoHelp,
@@ -25,8 +24,11 @@ import {
   IoCallOutline,
 } from "react-icons/io5";
 import { FaHandHoldingUsd, FaMoneyBill } from "react-icons/fa";
+import { FaMoneyBillTransfer } from "react-icons/fa6";
 import dayjs from "dayjs";
-
+import { AiOutlineStock } from "react-icons/ai";
+import { RiFundsBoxFill, RiMoneyDollarCircleLine } from "react-icons/ri";
+import { GiMoneyStack, GiTakeMyMoney } from "react-icons/gi";
 export const isValidDate = date => {
   return Boolean(new Date(date).toString() !== "Invalid Date");
 };
@@ -165,54 +167,135 @@ export const homeLinks = [
   ],
   [
     {
-      name: "High Yield Note",
-      subname: "High Interest Rate + Low Risk = The Perfect Investment",
+      name: "GDL Value Note",
+      subname: "Get Better Value",
       icon: <FaMoneyBill />,
       url: "/products",
     },
 
     {
-      name: "Finance",
+      name: "Financial Advisory",
       subname: "Don’t take on that big project alone; get a loan.",
       icon: <FaHandHoldingUsd />,
       url: "/products",
     },
 
     {
-      name: "Dollar Note",
-      subname: "What’s better than making money? Making it in dollars!",
-      icon: <FaMoneyBill />,
+      name: "GDL Dollar Note",
+      subname: "Earn Top Dollar",
+      icon: <RiMoneyDollarCircleLine />,
       url: "/products",
     },
     {
-      name: "Money Market Fund",
-      subname: "Cruise your way to financial freedom with as little as ₦10,000",
-      icon: <IoStorefrontOutline />,
+      name: "GDL Money Market Fund",
+      subname: "Your savings redefined",
+      icon: <FaMoneyBillTransfer />,
       url: "/products",
     },
     {
-      name: "Stockbroking",
-      subname: "Member of the Nigerian Stock Exchange",
-      icon: <IoPeopleCircleOutline />,
+      name: "GDL Stockbroking",
+      subname: "Stack your cash from stocks",
+      icon: <AiOutlineStock />,
       url: "/products",
     },
     {
       name: "GDL Canary Fund",
-      subname: "Let your money speak for you.",
-      icon: <IoPeopleCircleOutline />,
+      subname: "Find your balance",
+      icon: <GiMoneyStack />,
       url: "/products",
     },
     {
-      name: "Long Term Note",
-      subname: "Play the long game, invest for the future",
-      icon: <IoPeopleCircleOutline />,
+      name: "GDL Long Term Note",
+      subname: "Play the long game",
+      icon: <RiFundsBoxFill />,
       url: "/products",
     },
     {
       name: "GDL Income Fund",
       subname: "There's no cap to your income growth",
-      icon: <IoPeopleCircleOutline />,
+      icon: <GiTakeMyMoney />,
       url: "/products",
+    },
+  ],
+  [
+    {
+      name: "Corporate Information",
+      subname: "What we stand for",
+      icon: <IoPersonCircleOutline />,
+      url: "/finance-and-leasing#corporate-information",
+    },
+
+    {
+      name: "Management Team",
+      subname: "Guides on Finance",
+      icon: <IoIdCardOutline />,
+      url: "/finance-and-leasing#management-team",
+    },
+    {
+      name: "Board of Directors",
+      subname: "Our social participation",
+      icon: <IoPeopleCircleOutline />,
+      url: "/finance-and-leasing#board-of-directors",
+    },
+    {
+      name: "Products",
+      subname: "Some of our products",
+      icon: <IoCubeOutline />,
+      url: "/finance-and-leasing#products",
+    },
+  ],
+  [
+    {
+      name: "Corporate Information",
+      subname: "What we stand for",
+      icon: <IoPersonCircleOutline />,
+      url: "/asset-management#corporate-information",
+    },
+
+    {
+      name: "Management Team",
+      subname: "Guides on Finance",
+      icon: <IoIdCardOutline />,
+      url: "/asset-management#management-team",
+    },
+    {
+      name: "Board of Directors",
+      subname: "Our social participation",
+      icon: <IoPeopleCircleOutline />,
+      url: "/asset-management#board-of-directors",
+    },
+    {
+      name: "Products",
+      subname: "Some of our products",
+      icon: <IoCubeOutline />,
+      url: "/asset-management#products",
+    },
+  ],
+  [
+    {
+      name: "Corporate Information",
+      subname: "What we stand for",
+      icon: <IoPersonCircleOutline />,
+      url: "/stockbrokers#corporate-information",
+    },
+
+    {
+      name: "Management Team",
+      subname: "Guides on Finance",
+      icon: <IoIdCardOutline />,
+      url: "/stockbrokers#management-team",
+    },
+    {
+      name: "Board of Directors",
+      subname: "Our social participation",
+      icon: <IoPeopleCircleOutline />,
+      url: "/stockbrokers#board-of-directors",
+    },
+    {
+      name: "Products",
+      subname: "Some of our products",
+      icon: <IoCubeOutline />,
+      url: "/stockbrokers#products",
     },
   ],
   [
