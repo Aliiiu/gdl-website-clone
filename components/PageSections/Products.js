@@ -9,70 +9,7 @@ import { SectionWrapper } from "./product.style";
 import AppModal from "../Widgets/Modal/Modal";
 import { ModalContent } from "./ProductContent";
 import CloudinaryImage from "../Widgets/CloudinaryImage";
-// export const SectionWrapper = styled.div`
-//   .title {
-//     font-size: 2.5rem;
-//     line-height: 1.1 !important;
-//     font-weight: 700;
-//   }
-//   .hint {
-//     font-size: 1.125rem;
-//     /* font-weight: normal; */
-//   }
-//   .card {
-//     border-radius: 0.5em;
-//     overflow: hidden;
-//     width: 100%;
-//     height: 28em;
-//     --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-//       0 4px 6px -2px rgba(0, 0, 0, 0.05);
-//     box-shadow: var(--tw-ring-offset-shadow, 0 0 transparent),
-//       var(--tw-ring-shadow, 0 0 transparent), var(--tw-shadow);
-//   }
-//   .card-btn {
-//     border-radius: 0.5em;
-//     padding: 0.75rem 1.5em;
-//     font-size: 1rem;
-//   }
-//   .getstarted-card {
-//     background: url("/Images/get-started.jpg");
-//     background-position: center;
-//     background-size: cover;
-//     background-repeat: no-repeat;
-//     --tw-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-//     box-shadow: var(--tw-ring-offset-shadow, 0 0 transparent),
-//       var(--tw-ring-shadow, 0 0 transparent), var(--tw-shadow);
-//   }
-//   .getstarted-bg {
-//     --tw-bg-opacity: 0.5;
-//     background-color: rgba(31, 26, 23, var(--tw-bg-opacity));
-//   }
-
-//   .faq-card {
-//     background: url("/Images/blog.jpeg");
-//     background-size: cover;
-//     background-position: center;
-//     background-repeat: no-repeat;
-//   }
-
-//   .form-input {
-//     display: flex;
-//     flex-direction: column;
-//     gap: 10px;
-//   }
-
-//   @media screen(min-width: 500px) {
-//     .title {
-//       font-size: 3rem;
-//       line-height: 1.1 !important;
-//       font-weight: 700;
-//     }
-//     .getstarted-card {
-//       background-position: left;
-//       background-size: cover;
-//     }
-//   }
-// `;
+import ProductList from "../Widgets/List/ProductList";
 
 export const RightProduct = () => (
   <div className="px-[1.25rem] md:px-[1.5rem] mx-auto max-w-[1200px]">
@@ -85,9 +22,13 @@ export const RightProduct = () => (
         </p>
       </div>
       <div className="mt-8">
-        <Link href="">
-          <a className="text-opacity-[1] text-[rgba(153,35,51,var(--tw-text-opacity))] font-medium">
-            See Use Cases →
+        <Link href="https://app.gdl.com.ng/auth/signup">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-opacity-[1] text-[rgba(153,35,51,var(--tw-text-opacity))] font-medium"
+          >
+            Get Started →
           </a>
         </Link>
       </div>
@@ -105,68 +46,115 @@ const Products = ({ nobutton, product }) => {
     setContent(item);
     setOpen(true);
   };
-
   return (
     <SectionWrapper className="container px-4 xl:px-28 mx-auto">
-      <div className="text-center md:text-center">
+      {/* <div className="text-center md:text-center">
         <h1 className="title mb-[.75rem]">Our Products</h1>
-        <p className="hint w-full md:w-1/2 lg:w-2/5 leading-[1.75rem] text-opacity-[0.9] text-[rgba(31,26,23,var(--tw-text-opacity))] dark:text-white mx-auto">
+        <p className="hint w-full md:w-1/2 lg:w-3/5 leading-[1.75rem] text-opacity-[0.9] text-[rgba(31,26,23,var(--tw-text-opacity))] dark:text-white mx-auto">
           We have various products which have been specifically designed for
           you. There is something for everyone at GDL.
         </p>
-      </div>
-      <div className="mt-10 md:mt-24 grid md:grid-cols-2 lg:grid-cols-3 gap-3">
-        {product.map(item => {
-          const arr = item?.product_image_url?.split("/");
-          return (
-            <div
-              key={item.product_name}
-              className="card flex flex-col relative justify-end"
-            >
-              {/* <Image
-                src={arr[arr.length - 1]}
-                alt={item.product_name}
-                layout="fill"
-                objectFit="cover"
-                objectPosition={"center"}
-              /> */}
-              <CloudinaryImage
-                src={arr?.[arr?.length - 1]}
-                alt={item.product_name}
-                layout="fill"
-                objectFit="cover"
-                objectPosition={"center"}
-              />
-              <div
-                style={{
-                  background:
-                    "linear-gradient(180deg,transparent,rgba(153,35,51,.25),rgba(153,35,51,.85))",
-                }}
-                className="flex p-6 h-full justify-end z-10 text-white flex-col items-start"
-              >
-                <h2 className="text-xl font-bold lg:text-2xl">
-                  {item.product_name}
-                </h2>
-                <p className="text-lg break-words text-white">
-                  {item.product_snippet}
-
-                  {/* {item.product_image_url} */}
-                </p>
-                <AppButton
-                  name="Learn more"
-                  onPress={handleRedirection({
-                    header: item?.product_name,
-                    content: item?.product_description,
-                    desc: item?.product_snippet,
-                    icon: item?.product_icon_url,
-                    img: item?.product_image_url,
-                  })}
-                  className="mt-4 uppercase card-btn bg-white text-black"
-                />
-              </div>
-            </div>
-          );
-        })}
+      </div> */}
+      <ProductList
+        title={"GDL Finance & Leasing Products"}
+        description={
+          <>
+            We have various products which have been specifically designed for
+            you. These products are{" "}
+            <strong className="font-semibold">
+              regulated by the Central Bank of Nigeria (CBN)
+            </strong>
+          </>
+        }
+        handleRedirection={handleRedirection}
+        productData={product.filter(
+          item =>
+            item?.product_name !== "GDL Canary Fund" &&
+            item?.product_name !== "GDL Money Market Fund" &&
+            item?.product_name !== "GDL Stockbroking" &&
+            item?.product_name !== "High Yield Note" &&
+            item?.product_name !== "Finance" &&
+            item?.product_name !== "GDL Income Fund"
+        )}
+      />
+      <ProductList
+        title={"GDL Asset Management Products"}
+        description={
+          <>
+            We have various products which have been specifically designed for
+            you. These product are{" "}
+            <strong className="font-semibold">
+              regulated by Securities & Exchange Commission (SEC)
+            </strong>
+          </>
+        }
+        handleRedirection={handleRedirection}
+        productData={product.filter(
+          item =>
+            item?.product_name === "GDL Canary Fund" ||
+            item?.product_name === "GDL Money Market Fund" ||
+            item?.product_name === "GDL Income Fund"
+        )}
+      />
+      <div className="py-16 md:py-20">
+        <h1 className="title text-center mb-[.75rem]">
+          GDL Stockbroking Products
+        </h1>
+        <p className="hint w-full md:w-1/2 lg:w-3/5 leading-[1.75rem] text-center text-opacity-[0.9] text-[rgba(31,26,23,var(--tw-text-opacity))] dark:text-white mx-auto">
+          We have various products which have been specifically designed for
+          you. These products are
+          <strong className="font-semibold">
+            {" "}
+            regulated by Securities & Exchange Commission (SEC)
+          </strong>
+        </p>
+        <div className="mt-5 sm:mt-10 lg:mt-16 grid max-w-[400px] mx-auto">
+          {product
+            .filter(item => item?.product_name === "GDL Stockbroking")
+            .map(item => {
+              const arr = item?.product_image_url?.split("/");
+              return (
+                <div
+                  key={item.product_name}
+                  className="card flex flex-col relative justify-end"
+                >
+                  <CloudinaryImage
+                    src={arr?.[arr?.length - 1]}
+                    alt={item.product_name}
+                    layout="fill"
+                    objectFit="cover"
+                    objectPosition={"center"}
+                  />
+                  <div
+                    style={{
+                      background:
+                        "linear-gradient(180deg,transparent,rgba(153,35,51,.25),rgba(153,35,51,.85))",
+                    }}
+                    className="flex p-6 h-full justify-end z-10 text-white flex-col items-start"
+                  >
+                    <h2 className="text-xl font-bold lg:text-2xl">
+                      {item.product_name}
+                    </h2>
+                    <p className="text-lg break-words text-white">
+                      {item.product_snippet}
+                      {/* {item.product_image_url} */}
+                    </p>
+                    <AppButton
+                      name="Learn more"
+                      onPress={handleRedirection({
+                        header: item?.product_name,
+                        content: item?.product_description,
+                        desc: item?.product_snippet,
+                        icon: item?.product_icon_url,
+                        img: item?.product_image_url,
+                      })}
+                      className="mt-4 uppercase card-btn bg-white text-black"
+                    />
+                  </div>
+                </div>
+              );
+            })}
+        </div>
       </div>
       {!nobutton && (
         <div className="flex mt-10 md:mt-20 justify-center items-center">

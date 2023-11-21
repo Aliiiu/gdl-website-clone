@@ -32,19 +32,27 @@ const Boards = ({ data }) => {
     <div>
       <h2 className="title mb-4 text-center">Board Of Directors</h2>
       <p className="text-center">Meet the people behind the wheel</p>
-      <div className="grid mt-[100px] sm:grid-cols-2 lg:grid-cols-3 gap-y-[100px]">
+      <div className="grid mt-[50px] xl:mt-[100px] sm:grid-cols-2 lg:grid-cols-3 gap-y-[100px]">
         {data.map(item => (
           <div key={item.id} className="">
-            <div className="relative rounded-[50%] overflow-hidden mx-auto w-[160px] h-[160px]">
-              <Image
-                unoptimized
-                src={item.image_url}
-                alt=""
-                layout="fill"
-                objectFit="cover"
-                objectPosition={"top"}
-              />
-            </div>
+            {item.image_url ? (
+              <div className="relative rounded-[50%] overflow-hidden mx-auto w-[160px] h-[160px]">
+                <Image
+                  unoptimized
+                  src={item.image_url}
+                  alt=""
+                  layout="fill"
+                  objectFit="cover"
+                  objectPosition={"top"}
+                />
+              </div>
+            ) : (
+              <div className="bg-[#484848] w-[160px] h-[160px] mx-auto rounded-full flex justify-center items-center">
+                <h2 className="text-white font-bold text-4xl">
+                  {item.staff_initials}
+                </h2>
+              </div>
+            )}
             <h5
               onClick={() =>
                 handleRedirection({
@@ -54,7 +62,7 @@ const Boards = ({ data }) => {
               }
               className="text-[#9A2333] font-medium mt-3 cursor-pointer text-center"
             >
-              {item.director_name}
+              {item?.director_name || item?.staff_name}
             </h5>
           </div>
         ))}

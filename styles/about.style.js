@@ -28,9 +28,12 @@ export const AboutPageWrapper = styled.div`
     }
   }
   .title {
-    font-size: 36px;
+    font-size: 28px;
     font-weight: 700;
     @media only screen and (min-width: 1024px) {
+      font-size: 36px;
+    }
+    @media only screen and (min-width: 1280px) {
       font-size: 48px;
     }
   }
