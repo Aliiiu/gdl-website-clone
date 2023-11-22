@@ -7,8 +7,8 @@ import Management from "../../components/PageSections/Management";
 import Head from "next/head";
 import { AboutPageWrapper } from "../../styles/about.style";
 import { useRouter } from "next/router";
-import { assetBOD, assetManagement } from "./data";
 import { assetMgmt } from "../../constant/product";
+import { assetBOD, assetManagement } from "../../constant/asset-mgmt-data";
 
 const AssetManagement = () => {
   const router = useRouter();

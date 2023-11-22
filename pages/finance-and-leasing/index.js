@@ -1,16 +1,14 @@
 import React from "react";
 import Management from "../../components/PageSections/Management";
 import Boards from "../../components/PageSections/Boards";
-import { makeRequest } from "../../apiCalls/requestHandler";
 import Head from "next/head";
-import { financeBOD, management } from "./data";
 import { SectionWrapper } from "../../components/PageSections/product.style";
-import CloudinaryImage from "../../components/Widgets/CloudinaryImage";
 import { AppButton } from "../../components/Widgets/Button/Button";
-import product, { financeAndLeasing } from "../../constant/product";
+import { financeAndLeasing } from "../../constant/product";
 import { useRouter } from "next/router";
 import { AboutPageWrapper } from "../../styles/about.style";
 import Image from "next/image";
+import { financeBOD, management } from "../../constant/finance-leasing-data";
 
 const FinanceAndLeasing = () => {
   const router = useRouter();
