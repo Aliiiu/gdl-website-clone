@@ -187,7 +187,6 @@ const Products = ({ nobutton, product }) => {
                         </h2>
                         <p className="text-lg break-words text-white">
                           {item.product_snippet}
-                          {/* {item.product_image_url} */}
                         </p>
                         <AppButton
                           name="Learn more"
