@@ -6,7 +6,7 @@ export const assetBOD = [
   },
   {
     id: 4,
-    image_url: "/Images/Kolawole-Ayeye.jpeg",
+    image_url: "/Images/kolawole-Ayeye.jpeg",
     staff_name: "Kolawole Ayeye – Executive Vice Chairman",
   },
   {
