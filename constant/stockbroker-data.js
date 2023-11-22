@@ -1,7 +1,7 @@
 export const stockbrokersBOD = [
   {
     id: 1,
-    image_url: "/Images/Kolawole-Ayeye.jpeg",
+    image_url: "/Images/kolawole-Ayeye.jpeg",
     staff_name: "Kolawole Ayeye - Chairman",
   },
   {
