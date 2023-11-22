@@ -7,8 +7,11 @@ import Boards from "../../components/PageSections/Boards";
 import { SectionWrapper } from "../../components/PageSections/product.style";
 import Image from "next/image";
 import { AppButton } from "../../components/Widgets/Button/Button";
-import { stockbrokersBOD, stockbrokersManagement } from "./data";
 import { stockbrokers } from "../../constant/product";
+import {
+  stockbrokersBOD,
+  stockbrokersManagement,
+} from "../../constant/stockbroker-data";
 
 const Stockbrokers = () => {
   const router = useRouter();
