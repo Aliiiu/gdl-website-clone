@@ -178,7 +178,7 @@ const Topbar = props => {
                     />
                     <LinkList name="asset mgmt" url="/asset-management" />
                     <LinkList name="stockbrokers" url="/stockbrokers" />
-                    <LinkList name="product" url="/products" />
+                    <LinkList name="products" url="/products" />
                     <LinkList name="blog" url="/blog" />
                   </ul>
                 </div>
