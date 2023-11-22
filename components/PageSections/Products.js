@@ -48,70 +48,17 @@ const Products = ({ nobutton, product }) => {
   };
   return (
     <SectionWrapper className="container px-4 xl:px-28 mx-auto">
-      {/* <div className="text-center md:text-center">
-        <h1 className="title mb-[.75rem]">Our Products</h1>
-        <p className="hint w-full md:w-1/2 lg:w-3/5 leading-[1.75rem] text-opacity-[0.9] text-[rgba(31,26,23,var(--tw-text-opacity))] dark:text-white mx-auto">
-          We have various products which have been specifically designed for
-          you. There is something for everyone at GDL.
-        </p>
-      </div> */}
-      <ProductList
-        title={"GDL Finance & Leasing Products"}
-        description={
-          <>
-            We have various products which have been specifically designed for
-            you. These products are{" "}
-            <strong className="font-semibold">
-              regulated by the Central Bank of Nigeria (CBN)
-            </strong>
-          </>
-        }
-        handleRedirection={handleRedirection}
-        productData={product.filter(
-          item =>
-            item?.product_name !== "GDL Canary Fund" &&
-            item?.product_name !== "GDL Money Market Fund" &&
-            item?.product_name !== "GDL Stockbroking" &&
-            item?.product_name !== "High Yield Note" &&
-            item?.product_name !== "Finance" &&
-            item?.product_name !== "GDL Income Fund"
-        )}
-      />
-      <ProductList
-        title={"GDL Asset Management Products"}
-        description={
-          <>
-            We have various products which have been specifically designed for
-            you. These product are{" "}
-            <strong className="font-semibold">
-              regulated by Securities & Exchange Commission (SEC)
-            </strong>
-          </>
-        }
-        handleRedirection={handleRedirection}
-        productData={product.filter(
-          item =>
-            item?.product_name === "GDL Canary Fund" ||
-            item?.product_name === "GDL Money Market Fund" ||
-            item?.product_name === "GDL Income Fund"
-        )}
-      />
-      <div className="py-16 md:py-20">
-        <h1 className="title text-center mb-[.75rem]">
-          GDL Stockbroking Products
-        </h1>
-        <p className="hint w-full md:w-1/2 lg:w-3/5 leading-[1.75rem] text-center text-opacity-[0.9] text-[rgba(31,26,23,var(--tw-text-opacity))] dark:text-white mx-auto">
-          We have various products which have been specifically designed for
-          you. These products are
-          <strong className="font-semibold">
-            {" "}
-            regulated by Securities & Exchange Commission (SEC)
-          </strong>
-        </p>
-        <div className="mt-5 sm:mt-10 lg:mt-16 grid max-w-[400px] mx-auto">
-          {product
-            .filter(item => item?.product_name === "GDL Stockbroking")
-            .map(item => {
+      {router.pathname === "/" ? (
+        <>
+          <div className="text-center md:text-center">
+            <h1 className="title mb-[.75rem]">Our Products</h1>
+            <p className="hint w-full md:w-1/2 lg:w-2/5 leading-[1.75rem] text-opacity-[0.9] text-[rgba(31,26,23,var(--tw-text-opacity))] dark:text-white mx-auto">
+              We have various products which have been specifically designed for
+              you. There is something for everyone at GDL.
+            </p>
+          </div>
+          <div className="mt-10 md:mt-24 grid md:grid-cols-2 lg:grid-cols-3 gap-3">
+            {product.map(item => {
               const arr = item?.product_image_url?.split("/");
               return (
                 <div
@@ -154,15 +101,119 @@ const Products = ({ nobutton, product }) => {
                 </div>
               );
             })}
-        </div>
-      </div>
+          </div>
+        </>
+      ) : (
+        <>
+          <ProductList
+            title={"GDL Finance & Leasing Products"}
+            description={
+              <>
+                We have various products which have been specifically designed
+                for you. These products are{" "}
+                <strong className="font-semibold">
+                  regulated by the Central Bank of Nigeria (CBN)
+                </strong>
+              </>
+            }
+            handleRedirection={handleRedirection}
+            productData={product.filter(
+              item =>
+                item?.product_name !== "GDL Canary Fund" &&
+                item?.product_name !== "GDL Money Market Fund" &&
+                item?.product_name !== "GDL Stockbroking" &&
+                item?.product_name !== "High Yield Note" &&
+                item?.product_name !== "Finance" &&
+                item?.product_name !== "GDL Income Fund"
+            )}
+          />
+          <ProductList
+            title={"GDL Asset Management Products"}
+            description={
+              <>
+                We have various products which have been specifically designed
+                for you. These product are{" "}
+                <strong className="font-semibold">
+                  regulated by Securities & Exchange Commission (SEC)
+                </strong>
+              </>
+            }
+            handleRedirection={handleRedirection}
+            productData={product.filter(
+              item =>
+                item?.product_name === "GDL Canary Fund" ||
+                item?.product_name === "GDL Money Market Fund" ||
+                item?.product_name === "GDL Income Fund"
+            )}
+          />
+          <div className="py-16 md:py-20">
+            <h1 className="title text-center mb-[.75rem]">
+              GDL Stockbroking Products
+            </h1>
+            <p className="hint w-full md:w-1/2 lg:w-3/5 leading-[1.75rem] text-center text-opacity-[0.9] text-[rgba(31,26,23,var(--tw-text-opacity))] dark:text-white mx-auto">
+              We have various products which have been specifically designed for
+              you. These products are
+              <strong className="font-semibold">
+                {" "}
+                regulated by Securities & Exchange Commission (SEC)
+              </strong>
+            </p>
+            <div className="mt-5 sm:mt-10 lg:mt-16 grid max-w-[400px] mx-auto">
+              {product
+                .filter(item => item?.product_name === "GDL Stockbroking")
+                .map(item => {
+                  const arr = item?.product_image_url?.split("/");
+                  return (
+                    <div
+                      key={item.product_name}
+                      className="card flex flex-col relative justify-end"
+                    >
+                      <CloudinaryImage
+                        src={arr?.[arr?.length - 1]}
+                        alt={item.product_name}
+                        layout="fill"
+                        objectFit="cover"
+                        objectPosition={"center"}
+                      />
+                      <div
+                        style={{
+                          background:
+                            "linear-gradient(180deg,transparent,rgba(153,35,51,.25),rgba(153,35,51,.85))",
+                        }}
+                        className="flex p-6 h-full justify-end z-10 text-white flex-col items-start"
+                      >
+                        <h2 className="text-xl font-bold lg:text-2xl">
+                          {item.product_name}
+                        </h2>
+                        <p className="text-lg break-words text-white">
+                          {item.product_snippet}
+                          {/* {item.product_image_url} */}
+                        </p>
+                        <AppButton
+                          name="Learn more"
+                          onPress={handleRedirection({
+                            header: item?.product_name,
+                            content: item?.product_description,
+                            desc: item?.product_snippet,
+                            icon: item?.product_icon_url,
+                            img: item?.product_image_url,
+                          })}
+                          className="mt-4 uppercase card-btn bg-white text-black"
+                        />
+                      </div>
+                    </div>
+                  );
+                })}
+            </div>
+          </div>
+        </>
+      )}
+
       {!nobutton && (
         <div className="flex mt-10 md:mt-20 justify-center items-center">
-          <AppButton
-            name="Explore More"
-            onPress={() => router.push("/products")}
-            className="bg-[#9A2333] py-[1rem] rounded-[0.5rem] px-[1.5rem] text-[1.5rem] text-white"
-          />
+          <span className="bg-[#9A2333] px-4 py-3 md:py-[1rem] rounded-[0.5rem] md:px-[1.5rem] uppercase text-white">
+            <Link href={"/products"}>Explore More</Link>
+          </span>
         </div>
       )}
       <AppModal
