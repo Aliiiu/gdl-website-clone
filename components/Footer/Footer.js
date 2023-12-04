@@ -133,10 +133,10 @@ const Footer = () => {
           </div>
           <div className="flex items-center justify-end">
             <Link href="/terms-of-use">
-              <h5 className="mr-3">Terms of Use</h5>
+              <a className="mr-3">Terms of Use</a>
             </Link>
             <Link href="/privacy-policy">
-              <h5 className="ml-3">Privacy Policy</h5>
+              <a className="ml-3 cursor-pointer">Privacy Policy</a>
             </Link>
           </div>
         </div>
