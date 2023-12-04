@@ -16,18 +16,11 @@ const Faq = () => {
         </p>
         <AppButton
           name="Check our FAQ"
-          onPress={() => router.push("/faq")}
+          href="/faq"
           className="text-white bg-black px-5 py-4"
         />
       </div>
-      <div className="rounded-lg faq-card h-[370px] overflow-hidden flex-1">
-        {/* <Image
-          src={"/Images/blog.jpeg"}
-          alt=""
-          layout="fill"
-          objectFit="cover"
-        /> */}
-      </div>
+      <div className="rounded-lg faq-card h-[370px] overflow-hidden flex-1"></div>
     </SectionWrapper>
   );
 };
