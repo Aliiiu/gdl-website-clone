@@ -11,7 +11,7 @@ export const AppButton = ({ onPress, loading, ...props }) => {
             props.className || "bg-[#992333] px-4 py-3 text-white"
           } w-fit flex items-center ${
             props.justify || "justify-between"
-          } w-full font-light`}
+          } font-light`}
         >
           <span className={`${props.textSize || "md:text-sm text-sm"}`}>
             {loading !== true ? props.name : <Loader loading={loading} />}
