@@ -10,13 +10,12 @@ const Privacypolicy = ({ privacyContent }) => {
       <Head>
         <title>Privacy-Policy | GDL</title>
       </Head>
-      {/* <div className="hidden absolute top-0 right-0 mt-[-8.8rem] mr-[-5rem] md:flex items-center justify-center rounded-[9999px] dark:border-gray-800 border-red-50 w-[220px] h-[220px] border-[32px]" /> */}
-      <section className="container lg:w-4/6 px-20 mx-auto">
+      <section className="xl:max-w-[1000px] px-4 md:px-10 xl:px-20 mx-auto">
         <Privacy data={privacyContent} />
       </section>
       <section
         id="faq"
-        className="lg:px-6 lg:w-4/6 mx-auto py-16 md:py-36 w-full"
+        className="xl:max-w-[1000px] px-4 md:px-10 xl:px-20 mx-auto py-16 md:py-36 w-full"
       >
         <Faq />
       </section>
