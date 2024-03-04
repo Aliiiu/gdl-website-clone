@@ -56,13 +56,8 @@ const Footer = () => {
               </h3>
             </div>
             <div className="flex justify-start items-center my-2 text-sm text-opacity-70">
-              <Link href="tel:2348077946785">
-                <a href="tel:2348077946785">+2347054435000</a>
-              </Link>
-              <Link href="tel:2348077946785">
-                <a href="tel:2348077946785">
-                  <span>,</span>+2347054435000
-                </a>
+              <Link href="tel:2347054435000">
+                <a href="tel:2347054435000">+2347054435000</a>
               </Link>
             </div>
             <div className="flex justify-start items-center my-2 text-sm text-opacity-70">
