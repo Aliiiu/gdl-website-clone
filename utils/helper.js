@@ -590,7 +590,7 @@ export const data = {
   "high-yield-note": [
     {
       img: "/Images/high-yield-note.jpeg",
-      title: "High Yield Note",
+      title: "Value Note",
       description: (
         <div>
           <p>

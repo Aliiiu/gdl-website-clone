@@ -16,11 +16,6 @@ export const assetMgmt = [
   },
 ];
 export const financeAndLeasing = [
-  // {
-  //   title: "High Yield Note",
-  //   hint: "High Interest Rate + Low Risk = The Perfect Investment",
-  //   img: "/Images/high-yield-note.jpeg",
-  // },
   {
     title: "Financial Advisory",
     hint: "Get Good Advice, Invest Better.",
@@ -63,7 +58,7 @@ export const product = [
     img: "/Images/money-market-fund.jpeg",
   },
   {
-    title: "High Yield Note",
+    title: "Value Note",
     hint: "High Interest Rate + Low Risk = The Perfect Investment",
     img: "/Images/high-yield-note.jpeg",
   },

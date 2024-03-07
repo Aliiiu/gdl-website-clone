@@ -124,7 +124,7 @@ const Footer = () => {
       <section className="bg-black bg-opacity-0">
         <div className=" container px-4 xl:px-28 mx-auto text-sm py-5 md:py-12 flex flex-col md:flex-row justify-between items-center">
           <div className="text-black dark:text-white text-opacity-50 mb-5 md:mb-0">
-            Copyright © 2022 GDL. All Rights Reserved.
+            Copyright © {new Date().getFullYear()} GDL. All Rights Reserved.
           </div>
           <div className="flex items-center justify-end">
             <Link href="/terms-of-use">

@@ -1,16 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Products, { RightProduct } from "../../components/PageSections/Products";
 import Faq from "../../components/PageSections/Faq";
-import JoinTheClub from "../../components/PageSections/JoinTheClub";
 import { useRouter } from "next/router";
-import AppModal from "../../components/Widgets/Modal/Modal";
-import { ModalContent } from "../../components/PageSections/ProductContent";
-import product from "../../constant/product";
 import { data } from "../../utils/helper";
 import { makeRequest } from "../../apiCalls/requestHandler";
 import Head from "next/head";
-import { useRequest } from "../../hooks/useRequest";
-import MethodType from "../../constant/methodType";
 
 const ProductPage = ({ prodContent, genContent, useCaseContent }) => {
   const [content, setContent] = useState();

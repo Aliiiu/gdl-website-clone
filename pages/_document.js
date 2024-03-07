@@ -45,7 +45,7 @@ class MyDocument extends Document {
           />
           <meta
             name="keywords"
-            content="gdl, finance, asset management, investment, financial advisory, money, wealth, financial institution, transforming society, gdl canary fund, gdl high yield note, gdl income fund, money market fund, stockbrocking, long term note, leasing, lending, securities trading"
+            content="gdl, finance, asset management, investment, financial advisory, money, wealth, financial institution, transforming society, gdl canary fund, gdl Value Note, gdl income fund, money market fund, stockbrocking, long term note, leasing, lending, securities trading"
           />
           <meta property="og:url" content="https://gdl.com.ng/" />
           <meta

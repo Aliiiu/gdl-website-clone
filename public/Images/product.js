@@ -10,7 +10,7 @@ const product = [
     img: "/Images/money-market-fund.jpeg",
   },
   {
-    title: "High Yield Note",
+    title: "Value Note",
     hint: "High Interest Rate + Low Risk = The Perfect Investment",
     img: "/Images/high-yield-note.jpeg",
   },
