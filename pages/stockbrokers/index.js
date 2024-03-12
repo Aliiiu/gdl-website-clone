@@ -24,7 +24,7 @@ const Stockbrokers = () => {
         <div id="corporate-information">
           <h5 className="mb-1 text-second text-center text-xs">Stockbroking</h5>
           <h1 className="title leading-tight text-center max-w-[700px] mx-auto mb-4">
-            GDL STOCKBROKER
+            GDL STOCKBROKERS
           </h1>
           <p className="mb-3 leading-loose text-center max-w-[1200px] mx-auto">
             <strong>GDL STOCKBROKERS LIMITED</strong> (“GDL Stockbrokers”) was

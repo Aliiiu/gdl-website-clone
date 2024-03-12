@@ -28,7 +28,7 @@ export const ModalContent = ({ content, ...props }) => {
             </div>
             <div className="sm:ml-6">
               <h1 className="text-3xl md:text-4xl font-bold text-opacity-[1] text-[#992333]">
-                {content?.header || "High Yield Note"}
+                {content?.header || "Value Note"}
               </h1>
               <h3 className="font-medium text-black border-b-0 border-black pb-0 border-opacity-20">
                 {content?.desc}

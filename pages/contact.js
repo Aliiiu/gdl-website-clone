@@ -3,7 +3,6 @@ import Faq from "../components/PageSections/Faq";
 import CustomHeader from "../components/Widgets/CustomHeader/Header";
 import { useForm } from "react-hook-form";
 import { TextField } from "../components/Widgets/Form/Form";
-import { makeRequest } from "../apiCalls/requestHandler";
 import { useEffect } from "react";
 import { AppButton } from "../components/Widgets/Button/Button";
 import Head from "next/head";
@@ -17,16 +16,34 @@ const ContactDetails = ({ name, details }) => (
     </label>
     <div className="text-[1.125rem] leading-[1.75rem] text-opacity-100 text-[rgba(255,115,137,var(--tw-text-opacity))]">
       {details || (
-        <Link
-          href="https://www.google.com/maps/place/1+Afolabi+Lesi+St,+Ilupeju,+Lagos/@6.5579637,3.364944,20z/data=!4m13!1m7!3m6!1s0x103b8d8e6cec0a79:0x9067273ce8922c66!2s1+Afolabi+Lesi+St,+Ilupeju,+Lagos!3b1!8m2!3d6.5578744!4d3.3649306!3m4!1s0x103b8d8e6cec0a79:0x9067273ce8922c66!8m2!3d6.5578744!4d3.3649306"
-          target="_blank"
-        >
-          <a className="" target="_blank">
-            ➤ Lagos Office : No 1, Afolabi Lesi Street, Ilupeju, Lagos | Abuja
-            Office : St James House (2nd floor), Plot 1109/No. 167 Cadastral
-            Zone A08 Ademola Adetokunbo Crescent, Wuse ll, Abuja- Nigeria
-          </a>
-        </Link>
+        <div className="flex flex-col">
+          <Link
+            href="https://www.google.com/maps/place/1+Afolabi+Lesi+St,+Ilupeju,+Lagos/@6.5579637,3.364944,20z/data=!4m13!1m7!3m6!1s0x103b8d8e6cec0a79:0x9067273ce8922c66!2s1+Afolabi+Lesi+St,+Ilupeju,+Lagos!3b1!8m2!3d6.5578744!4d3.3649306!3m4!1s0x103b8d8e6cec0a79:0x9067273ce8922c66!8m2!3d6.5578744!4d3.3649306"
+            target="_blank"
+          >
+            <a className="hover:text-white/80" target="_blank">
+              Lagos Office : No 1, Afolabi Lesi Street, Ilupeju, Lagos
+            </a>
+          </Link>
+          <Link
+            href="https://www.google.com/maps/place/1+Afolabi+Lesi+St,+Ilupeju,+Lagos/@6.5579637,3.364944,20z/data=!4m13!1m7!3m6!1s0x103b8d8e6cec0a79:0x9067273ce8922c66!2s1+Afolabi+Lesi+St,+Ilupeju,+Lagos!3b1!8m2!3d6.5578744!4d3.3649306!3m4!1s0x103b8d8e6cec0a79:0x9067273ce8922c66!8m2!3d6.5578744!4d3.3649306"
+            target="_blank"
+          >
+            <a className="hover:text-white/80" target="_blank">
+              Abuja Office : St James House (2nd floor), Plot 1109/No. 167
+              Cadastral Zone A08 Ademola Adetokunbo Crescent, Wuse ll, Abuja-
+              Nigeria
+            </a>
+          </Link>
+          <Link
+            href="https://www.google.com/maps/place/1+Afolabi+Lesi+St,+Ilupeju,+Lagos/@6.5579637,3.364944,20z/data=!4m13!1m7!3m6!1s0x103b8d8e6cec0a79:0x9067273ce8922c66!2s1+Afolabi+Lesi+St,+Ilupeju,+Lagos!3b1!8m2!3d6.5578744!4d3.3649306!3m4!1s0x103b8d8e6cec0a79:0x9067273ce8922c66!8m2!3d6.5578744!4d3.3649306"
+            target="_blank"
+          >
+            <a className="hover:text-white/80" target="_blank">
+              Ibadan Office : No 103, MKO Abiola Way, Ibadan
+            </a>
+          </Link>
+        </div>
       )}
     </div>
   </div>

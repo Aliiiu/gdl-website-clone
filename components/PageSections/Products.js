@@ -122,7 +122,7 @@ const Products = ({ nobutton, product }) => {
                 item?.product_name !== "GDL Canary Fund" &&
                 item?.product_name !== "GDL Money Market Fund" &&
                 item?.product_name !== "GDL Stockbroking" &&
-                item?.product_name !== "High Yield Note" &&
+                item?.product_name !== "Value Note" &&
                 item?.product_name !== "Finance" &&
                 item?.product_name !== "GDL Income Fund"
             )}

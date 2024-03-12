@@ -1,15 +1,8 @@
 import Image from "next/image";
-import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { useEffect, useRef, useState } from "react";
-import management, { managementDetails } from "../../constant/management";
+import React, { useState } from "react";
 import AppModal from "../Widgets/Modal/Modal";
 import ManagementModal from "./ModalContent/ManagementModal";
-
-const data = {
-  "gdl-canary-fund": "GDL Canary Fund",
-  "oyekemi-ayeye": "High Yield Note",
-};
 
 const Management = ({ data }) => {
   const {
