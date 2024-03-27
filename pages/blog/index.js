@@ -84,7 +84,7 @@ const Blogs = ({ heroContent, blogContent, blogCat }) => {
 
 export default Blogs;
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const generalData = await makeRequest(
     "/pages/resources/bp/general",
     null,
