@@ -27,6 +27,7 @@ const BlogList = ({
               src={featured_image_url}
               alt="img"
               layout="fill"
+              className=" object-cover"
             />
           </div>
         </section>
@@ -42,11 +43,11 @@ const BlogList = ({
             </div>
             <Link href={`/blog/${title?.replace(/ /g, "-").toLowerCase()}`}>
               {/* rome-ignore lint/a11y/useValidAnchor: <explanation> */}
-              <a className="text-2xl md:text-3xl inline-block font-bold text-[#992333]">
+              <a className="text-2xl md:text-3xl inline-block line-clamp-1 font-bold text-[#992333]">
                 {title}
               </a>
             </Link>
-            <article className="md:text-[1.125rem] 2xl:mt-8 text-[16px] md:leading-[1.75rem] dark:text-white leading-[24px] subject w-full font-[300]">
+            <article className="md:text-[1.125rem] 2xl:mt-4 text-[16px] line-clamp-4 md:leading-[1.75rem] dark:text-white leading-[24px] subject w-full font-[300]">
               {excerpt}
             </article>
           </div>
