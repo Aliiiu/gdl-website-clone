@@ -12,7 +12,6 @@ const App = ({
   getStartedContent,
   postContent,
 }) => {
-  console.log({ postContent });
   return (
     <>
       <Head>
