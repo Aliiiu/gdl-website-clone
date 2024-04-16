@@ -12,6 +12,7 @@ const App = ({
   getStartedContent,
   postContent,
 }) => {
+  console.log({ postContent });
   return (
     <>
       <Head>
@@ -50,7 +51,7 @@ export async function getStaticProps() {
       testimonialContent: testimonialData?.data?.data,
       mediaContent: mediaData?.data?.data,
       blogContent: blogData?.data?.data,
-      postContent: blogPosts?.data?.data?.pop(),
+      postContent: blogPosts?.data?.data?.shift(),
       getStartedContent: getStartedData?.data?.data,
     },
   };

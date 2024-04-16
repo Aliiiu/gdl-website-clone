@@ -31,17 +31,7 @@ const BlogLayout = ({ blogPost }) => {
           </p>
         </div>
         <section className="mt-16 md:px-[1.5rem] mx-auto max-w-[56rem]">
-          {/* {blogData.map(content => (
-            <BlogList
-              key={content.id}
-              onPress={() => handleOnPress(content.id)}
-              {...content}
-            />
-          ))} */}
-          <BlogList
-            // onPress={() => handleOnPress(blogPost.title)}
-            {...blogPost}
-          />
+          <BlogList {...blogPost} />
         </section>
         <div className="mt-16 mb-5 md:mb-10 text-center">
           <Link href="/blog">
