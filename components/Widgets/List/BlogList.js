@@ -38,7 +38,7 @@ const BlogList = ({
                 {category?.category_name}
               </span>
               <span className="opacity-50 font-normal uppercase">
-                {formatDate(createdAt) || "sep 22, 2022"}
+                {formatDate(createdAt) || ""}
               </span>
             </div>
             <Link href={`/blog/${title?.replace(/ /g, "-").toLowerCase()}`}>
