@@ -3,10 +3,12 @@ import "../styles/globals.css";
 import { ToastContainer } from "react-toastify";
 import NextNProgress from "nextjs-progressbar";
 import "react-toastify/ReactToastify.min.css";
+import GoogleAnalytics from "../components/Layout/GoogleAnalytics";
 
 const MyApp = ({ Component, pageProps }) => {
   return (
     <>
+      <GoogleAnalytics />
       <NextNProgress color="#9A2333" />
       <Layout>
         <Component {...pageProps} />
