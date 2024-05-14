@@ -1,24 +1,21 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArticleDiv } from "./list.style";
 import { IoBookOutline } from "react-icons/io5";
 import { formatDate } from "../../../utils/helper";
+import { useRouter } from "next/router";
 
 const BlogList = ({
-  onPress,
   category,
   title,
-  info,
   read_time,
-  srcImg,
   featured_image_url,
   excerpt,
   createdAt,
-  id,
 }) => {
+  const url = encodeURIComponent(title?.replace(/ /g, "-").toLowerCase());
+
   return (
     <div>
-      {/* rome-ignore lint/a11y/useValidAnchor: <explanation> */}
       <div className="flex flex-wrap md:flex-nowrap rounded-lg bg-gdlGrey dark:bg-gray-900 hover:shadow-md mt-6 mb-12 shadow-none transition-all duration-[.3s]">
         <section className="w-full md:w-2/5">
           <div className="flex w-full h-full rounded-tr-[0] rounded-bl-[.5rem] relative overflow-hidden rounded-tl-[.5rem]">
@@ -41,8 +38,7 @@ const BlogList = ({
                 {formatDate(createdAt) || ""}
               </span>
             </div>
-            <Link href={`/blog/${title?.replace(/ /g, "-").toLowerCase()}`}>
-              {/* rome-ignore lint/a11y/useValidAnchor: <explanation> */}
+            <Link href={`/blog/${url}`}>
               <a className="text-2xl md:text-3xl inline-block line-clamp-1 font-bold text-[#992333]">
                 {title}
               </a>

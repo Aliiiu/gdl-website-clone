@@ -1,8 +1,5 @@
-import { useRouter } from "next/router";
 import React from "react";
-import { useEffect } from "react";
 import { makeRequest } from "../../apiCalls/requestHandler";
-import Image from "next/image";
 import Head from "next/head";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -15,9 +12,7 @@ const MarkdownRender = React.memo(({ content }) => {
   return <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>;
 });
 
-const Article = ({ article, blogData }) => {
-  // const { query } = useRouter();
-
+const Article = ({ article }) => {
   const content = article?.body.replace(/<br( )*\/?>/g, "\n") || "";
   return (
     <div>
@@ -44,19 +39,48 @@ const Article = ({ article, blogData }) => {
   );
 };
 
-export async function getServerSideProps(context) {
+export const getServerSideProps = async context => {
   const { id } = context.query;
-  const title = id.replace(/(?<!-)-(?!-)/g, " ").replace(/-{3}/g, " - ");
-  const blogPost = await makeRequest("/posts/s", null, null);
 
-  return {
-    props: {
-      article: blogPost?.data?.data.find(
-        item => item.title.toLowerCase() === title
-      ),
-      blogData: blogPost.data?.data,
-    },
-  };
-}
+  if (!id) {
+    return {
+      notFound: true,
+    };
+  }
+
+  let title = id.replace(/(?<!-)-(?!-)/g, " ").replace(/-{3}/g, " - ");
+
+  try {
+    const blogPost = await makeRequest("/posts/s", null, null);
+
+    if (!blogPost || !blogPost.data || !blogPost.data.data) {
+      return {
+        notFound: true,
+      };
+    }
+
+    const article = blogPost.data.data.find(
+      item => item.title.toLowerCase() === title
+    );
+
+    if (!article) {
+      return {
+        notFound: true,
+      };
+    }
+
+    return {
+      props: {
+        article,
+        blogData: blogPost.data.data,
+      },
+    };
+  } catch (error) {
+    console.error("Failed to fetch data:", error);
+    return {
+      notFound: true,
+    };
+  }
+};
 
 export default Article;

@@ -33,7 +33,7 @@ const App = ({
 
 export default App;
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const heroData = await makeRequest("/pages/home/hero");
   const statData = await makeRequest("/pages/home/statistics");
   const prodData = await makeRequest("/pages/products/s");
