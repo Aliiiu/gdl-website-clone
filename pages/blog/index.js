@@ -92,6 +92,7 @@ export async function getServerSideProps() {
   );
 
   const blogData = await makeRequest("/posts/s", null, null);
+  // console.log({ blogData });
   const catData = await makeRequest("/post/categories", null, null);
 
   return {
