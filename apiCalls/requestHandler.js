@@ -1,7 +1,7 @@
 // const response = await fetch("https://test-site.gdlapi.com.ng/pages/home/hero");
 // const data = await response.json();
 
-const baseURL = "https://test-site.gdlapi.com.ng"; // suppose to come from the env file
+const baseURL = process.env.NEXT_PUBLIC_API_BASE_URL; // suppose to come from the env file
 
 // const baseURL = "http://165.22.115.227";
 
