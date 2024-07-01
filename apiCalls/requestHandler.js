@@ -1,9 +1,7 @@
 // const response = await fetch("https://test-site.gdlapi.com.ng/pages/home/hero");
 // const data = await response.json();
 
-const baseURL = "http://62.173.45.205:30013"; // suppose to come from the env file
-
-// const baseURL = "http://165.22.115.227";
+const baseURL = "https://site.housemoni.net"; // suppose to come from the env file
 
 export const makeRequest = async (
   url,
