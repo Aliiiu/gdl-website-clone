@@ -44,11 +44,11 @@ export const footerLinkData = [
     url: "https://www.facebook.com/GDLAssetManagement/",
     icon: <IoLogoFacebook />,
   },
-  // {
-  //   id: 2,
-  //   url: "https://www.facebook.com/GDLAssetManagement/",
-  //   icon: <IoLogoLinkedin />,
-  // },
+  {
+    id: 2,
+    url: "https://www.linkedin.com/company/gdl-nigeria/",
+    icon: <IoLogoLinkedin />,
+  },
   {
     id: 3,
     url: "https://www.instagram.com/gdl_nigeria/",
