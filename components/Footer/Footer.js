@@ -10,8 +10,13 @@ import {
 } from "../../utils/helper";
 
 const Socials = ({ url, icon }) => (
-  <Link href={url} target="_blank">
-    <a href={url} className="mr-4 dark:text-white">
+  <Link href={url}>
+    <a
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="mr-4 dark:text-white"
+    >
       {icon}
     </a>
   </Link>
@@ -68,7 +73,7 @@ const Footer = () => {
               </Link>
             </div>
             <hr className="border-white border-opacity-10 mb-4 mt-6" />
-            <div className="socials flex mt-6 justify-between items-center text-2xl">
+            <div className="socials flex mt-6 gap-5 items-center text-2xl">
               {footerLinkData.map(content => (
                 <Socials key={content.id} {...content} />
               ))}

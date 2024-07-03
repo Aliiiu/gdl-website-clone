@@ -44,30 +44,20 @@ export const footerLinkData = [
     url: "https://www.facebook.com/GDLAssetManagement/",
     icon: <IoLogoFacebook />,
   },
-  {
-    id: 2,
-    url: "https://www.facebook.com/GDLAssetManagement/",
-    icon: <IoLogoLinkedin />,
-  },
+  // {
+  //   id: 2,
+  //   url: "https://www.facebook.com/GDLAssetManagement/",
+  //   icon: <IoLogoLinkedin />,
+  // },
   {
     id: 3,
-    url: "https://www.facebook.com/GDLAssetManagement/",
+    url: "https://www.instagram.com/gdl_nigeria/",
     icon: <IoLogoInstagram />,
   },
   {
     id: 4,
-    url: "https://www.facebook.com/GDLAssetManagement/",
+    url: "https://twitter.com/gdl_nigeria",
     icon: <IoLogoTwitter />,
-  },
-  {
-    id: 5,
-    url: "https://www.facebook.com/GDLAssetManagement/",
-    icon: <IoLogoMedium />,
-  },
-  {
-    id: 6,
-    url: "https://www.facebook.com/GDLAssetManagement/",
-    icon: <IoLogoWhatsapp />,
   },
 ];
 export const companyLinks = [
