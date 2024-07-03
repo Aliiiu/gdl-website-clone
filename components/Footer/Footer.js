@@ -1,6 +1,4 @@
-import Image from "next/image";
 import { FooterBox } from "./footer.style";
-import GDLlogo from "../../assets/images/gdllogo.svg.svg";
 import Link from "next/link";
 import {
   footerLinkData,
