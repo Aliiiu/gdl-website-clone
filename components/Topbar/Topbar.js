@@ -34,7 +34,6 @@ const HomeLink = ({ url, name, icon, subname, ...props }) => (
 );
 
 const Topbar = props => {
-  const [mode, setMode] = useState(false);
   const { theme, setTheme } = useTheme();
   const [open, setOpen] = useState(false);
   const [color, setColor] = useState(false);
@@ -44,7 +43,7 @@ const Topbar = props => {
     about: false,
     products: false,
     "finance & Leasing": false,
-    "asset Mgmt": false,
+    "asset management": false,
     stockbrokers: false,
     resources: false,
     contact: false,
@@ -176,7 +175,7 @@ const Topbar = props => {
                       name="finance & leasing"
                       url="/finance-and-leasing"
                     />
-                    <LinkList name="asset mgmt" url="/asset-management" />
+                    <LinkList name="asset mgt" url="/asset-management" />
                     <LinkList name="stockbrokers" url="/stockbrokers" />
                     <LinkList name="products" url="/products" />
                     <LinkList name="blog" url="/blog" />

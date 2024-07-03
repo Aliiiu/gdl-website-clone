@@ -116,7 +116,7 @@ const TestimonyLayout = ({ testimonial }) => {
     );
   };
   return (
-    <section id="usp">
+    <section id="testimonial">
       <div className="pt-40 md:pt-52 pb-40 md:pb-10 bg-opacity-[1] bg-[rgba(255,236,239,var(--tw-bg-opacity))]">
         <section className="flex flex-col justify-center items-center px-[1.5rem] mx-auto max-w-[1200px]">
           <h3 className="uppercase font-medium text-opacity-[1] text-[rgba(153,35,51,var(--tw-text-opacity))] text-lg">

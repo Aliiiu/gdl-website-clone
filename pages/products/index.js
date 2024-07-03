@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Products, { RightProduct } from "../../components/PageSections/Products";
 import Faq from "../../components/PageSections/Faq";
 import { useRouter } from "next/router";
@@ -6,8 +5,7 @@ import { data } from "../../utils/helper";
 import { makeRequest } from "../../apiCalls/requestHandler";
 import Head from "next/head";
 
-const ProductPage = ({ prodContent, genContent, useCaseContent }) => {
-  const [content, setContent] = useState();
+const ProductPage = ({ prodContent, heroContent }) => {
   const {
     query: { params = [] },
     push,
@@ -24,6 +22,8 @@ const ProductPage = ({ prodContent, genContent, useCaseContent }) => {
   //   }
   // }, [params]);
 
+  console.log({ heroContent });
+
   return (
     <>
       <Head>
@@ -34,7 +34,7 @@ const ProductPage = ({ prodContent, genContent, useCaseContent }) => {
           <Products nobutton product={prodContent} />
         </section>
         <section className="mt-12 md:mt-26">
-          <RightProduct />
+          <RightProduct content={heroContent} />
         </section>
         <section
           id="faq"
@@ -56,6 +56,7 @@ export default ProductPage;
 
 export async function getStaticProps() {
   // const { careerid } = context.query;
+  const heroData = await makeRequest("/pages/home/hero");
 
   const prodData = await makeRequest("/pages/products/s", null, null);
   const genData = await makeRequest("/pages/products/general", null, null);
@@ -69,6 +70,7 @@ export async function getStaticProps() {
       prodContent: prodData?.data?.data.reverse(),
       genContent: genData?.data?.data,
       useCaseContent: useCaseData?.data?.data,
+      heroContent: heroData?.data?.data[0] || [],
     },
   };
 }

@@ -77,7 +77,7 @@ export const companyLinks = [
   { id: 4, url: "/about#management-team", name: "Management Team" },
 ];
 export const productLinks = [
-  { url: "/products", name: "High Yield Note" },
+  { url: "/products", name: "Value Note" },
   { url: "/products", name: "Finance" },
   { url: "/products", name: "Dollar Note" },
   { url: "/products", name: "Money Market Fund" },
@@ -106,12 +106,12 @@ export const homeLinks = [
       icon: <IoCubeOutline />,
       url: "/products",
     },
-    {
-      name: "USP",
-      subname: "Our Unique Selling Point",
-      icon: <IoStarOutline />,
-      url: "/#usp",
-    },
+    // {
+    //   name: "USP",
+    //   subname: "Our Unique Selling Point",
+    //   icon: <IoStarOutline />,
+    //   url: "/#usp",
+    // },
     {
       name: "Get Started",
       subname: "In Three Easy Steps",

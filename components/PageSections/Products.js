@@ -11,7 +11,7 @@ import { ModalContent } from "./ProductContent";
 import CloudinaryImage from "../Widgets/CloudinaryImage";
 import ProductList from "../Widgets/List/ProductList";
 
-export const RightProduct = () => (
+export const RightProduct = ({ content }) => (
   <div className="px-[1.25rem] md:px-[1.5rem] mx-auto max-w-[1200px]">
     <RightProductSection>
       <div className="p-6 text-center">
@@ -22,7 +22,7 @@ export const RightProduct = () => (
         </p>
       </div>
       <div className="mt-8">
-        <Link href="https://app.gdl.com.ng/auth/signup">
+        <Link href={content.call_to_action_link}>
           <a
             target="_blank"
             rel="noopener noreferrer"
@@ -40,7 +40,6 @@ const Products = ({ nobutton, product }) => {
   const [open, setOpen] = useState(false);
   const [content, setContent] = useState();
   const router = useRouter();
-  const [appparams, setAppParams] = useState("");
 
   const handleRedirection = item => () => {
     setContent(item);
@@ -132,7 +131,7 @@ const Products = ({ nobutton, product }) => {
             description={
               <>
                 We have various products which have been specifically designed
-                for you. These product are{" "}
+                for you. These products are{" "}
                 <strong className="font-semibold">
                   regulated by Securities & Exchange Commission (SEC)
                 </strong>

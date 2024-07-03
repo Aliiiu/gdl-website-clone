@@ -5,6 +5,7 @@ import Products from "../components/PageSections/Products";
 import { AppButton } from "../components/Widgets/Button/Button";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import Link from "next/link";
+import { Link as ScrollLink } from "react-scroll";
 import Image from "next/image";
 import BlogLayout from "../components/Layout/BlogLayout";
 import TestimonyLayout from "../components/Layout/TestimonyLayout";
@@ -75,7 +76,7 @@ const HomePage = ({ hero, stat, products, testimonial, blogPost }) => {
           <Image src={"/Images/bg.png"} layout="fill" alt="" />
         </div>
       </section>
-      <section id="usp" className="relative">
+      <section className="relative">
         <div className="flex flex-wrap text-white bg-[#992333] mt-[60px]">
           <div className="text-2xl flex justify-center items-center p-8 text-center w-full md:w-1/2">
             <span className="capitalize font-light">
@@ -89,11 +90,11 @@ const HomePage = ({ hero, stat, products, testimonial, blogPost }) => {
                 <span>+</span>
               </h2>
               <h4 className="-mt-1 text-[#FF7389]">Customers</h4>
-              <Link href="/testimonials" legacyBehavior>
-                <h5 className="text-sm mt-3 flex items-center gap-x-1 text-opacity-[1] text-[rgba(255,214,220,var(--tw-text-opacity))]">
+              <ScrollLink to="testimonial" smooth={true}>
+                <h5 className="text-sm cursor-pointer hover:underline mt-3 flex items-center gap-x-1 text-opacity-[1] text-[rgba(255,214,220,var(--tw-text-opacity))]">
                   See Testimonials <AiOutlineArrowRight />
                 </h5>
-              </Link>
+              </ScrollLink>
             </div>
           </div>
           <div className="w-full md:w-1/4 flex flex-col items-center justify-center min-h-[9em]">
@@ -103,11 +104,11 @@ const HomePage = ({ hero, stat, products, testimonial, blogPost }) => {
                 <span>+</span>
               </h2>
               <span className="-mt-1 text-[#FF7389]">Business</span>
-              <Link href="/testimonials" legacyBehavior>
-                <h5 className="text-sm mt-3 flex items-center gap-x-1 text-opacity-[1] text-[rgba(255,214,220,var(--tw-text-opacity))]">
+              <ScrollLink to="testimonial" smooth={true}>
+                <h5 className="text-sm cursor-pointer hover:underline mt-3 flex items-center gap-x-1 text-opacity-[1] text-[rgba(255,214,220,var(--tw-text-opacity))]">
                   See Testimonials <AiOutlineArrowRight />
                 </h5>
-              </Link>
+              </ScrollLink>
             </div>
           </div>
         </div>

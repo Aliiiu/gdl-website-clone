@@ -15,7 +15,7 @@ const Faq = () => {
           Answers to the questions we believe you might have in mind.
         </p>
         <AppButton
-          name="Check our FAQ"
+          name="Check FAQs"
           href="/faq"
           className="text-white bg-black px-5 py-4"
         />
