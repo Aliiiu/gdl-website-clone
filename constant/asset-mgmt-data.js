@@ -39,7 +39,7 @@ export const assetManagement = [
   },
   {
     id: 2,
-    image_url: "/Images/Stephen.webp",
+    image_url: "/Images/Stephen-new.webp",
     staff_initials: "SF",
     staff_name: "Stephen Fidelis – Chief Financial Officer",
   },

@@ -6,9 +6,9 @@ export const stockbrokersBOD = [
   },
   {
     id: 2,
-    image_url: "",
+    image_url: "/Images/Esther-new.webp",
     staff_initials: "TAS",
-    staff_name: "Taofiki Ayandele Sanusi – Managing Director",
+    staff_name: "Esther Ndife – Managing Director",
   },
   {
     id: 3,
@@ -31,13 +31,13 @@ export const stockbrokersBOD = [
 export const stockbrokersManagement = [
   {
     id: 2,
-    image_url: "/Images/Esther.webp",
+    image_url: "/Images/Esther-new.webp",
     staff_initials: "ED",
     staff_name: "Esther Ndife – DMD",
   },
   {
     id: 4,
-    image_url: "/Images/Stephen.webp",
+    image_url: "/Images/Stephen-new.webp",
     staff_initials: "SF",
     staff_name: "Stephen Fidelis – Chief Financial Officer",
   },

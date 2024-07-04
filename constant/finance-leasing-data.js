@@ -46,7 +46,7 @@ export const management = [
   },
   {
     id: 5,
-    image_url: "/Images/Stephen.webp",
+    image_url: "/Images/Stephen-new.webp",
     staff_initials: "SF",
     staff_name: "Stephen Fidelis – CFO",
   },
