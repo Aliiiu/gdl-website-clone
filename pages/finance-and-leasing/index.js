@@ -43,13 +43,13 @@ const FinanceAndLeasing = () => {
         id="management-team"
         className="lg:px-6 md:w-5/6 lg:w-4/6 mx-auto py-16 2xl:py-20 w-full"
       >
-        <Management data={management} />
+        <Management data={management} notClickable={true} />
       </section>
       <section
         id="board-of-directors"
         className="lg:px-6 md:w-5/6 lg:w-4/6 mx-auto py-16 2xl:py-20 w-full"
       >
-        <Boards data={financeBOD} />
+        <Boards data={financeBOD} notClickable={true} />
       </section>
 
       <section className="py-16 2xl:py-20">

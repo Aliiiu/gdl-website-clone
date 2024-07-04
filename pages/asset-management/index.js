@@ -39,13 +39,13 @@ const AssetManagement = () => {
         id="management-team"
         className="lg:px-6 md:w-5/6 lg:w-4/6 mx-auto py-16 2xl:py-20 w-full"
       >
-        <Management data={assetManagement} />
+        <Management data={assetManagement} notClickable={true} />
       </section>
       <section
         id="board-of-directors"
         className="lg:px-6 md:w-5/6 lg:w-4/6 mx-auto py-16 2xl:py-20 w-full"
       >
-        <Boards data={assetBOD} />
+        <Boards data={assetBOD} notClickable={true} />
       </section>
 
       <section id="products" className="py-16 2xl:py-20">

@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import AppModal from "../Widgets/Modal/Modal";
 import ManagementModal from "./ModalContent/ManagementModal";
 
-const Management = ({ data }) => {
+const Management = ({ data, notClickable }) => {
   const {
     query: { params = [] },
     push,
@@ -37,12 +37,15 @@ const Management = ({ data }) => {
             )}
             <h5
               onClick={() =>
+                !notClickable &&
                 handleRedirection({
                   header: item.staff_name,
                   content: item.profile,
                 })
               }
-              className="text-[#9A2333] font-medium mt-3 cursor-pointer hover:underline text-center"
+              className={`text-[#9A2333] font-medium mt-3 text-center ${
+                !notClickable && "cursor-pointer hover:underline"
+              }`}
             >
               {item.staff_name}
             </h5>

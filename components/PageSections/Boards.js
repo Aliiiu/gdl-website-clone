@@ -1,12 +1,10 @@
 import Image from "next/image";
-import React, { useEffect, useRef, useState } from "react";
-import boardOfDirector, { boardDetails } from "../../constant/boardsOfDirector";
+import React, { useState } from "react";
 import { useRouter } from "next/router";
-import { managementDetails } from "../../constant/management";
 import AppModal from "../Widgets/Modal/Modal";
 import BodModal from "./ModalContent/BodModal";
 
-const Boards = ({ data }) => {
+const Boards = ({ data, notClickable }) => {
   const {
     query: { params = [] },
     push,
@@ -55,12 +53,15 @@ const Boards = ({ data }) => {
             )}
             <h5
               onClick={() =>
+                !notClickable &&
                 handleRedirection({
                   header: item.director_name,
                   content: item.profile,
                 })
               }
-              className="text-[#9A2333] font-medium mt-3 cursor-pointer hover:underline text-center"
+              className={`text-[#9A2333] font-medium mt-3 text-center ${
+                !notClickable && "cursor-pointer hover:underline"
+              }`}
             >
               {item?.director_name || item?.staff_name}
             </h5>
