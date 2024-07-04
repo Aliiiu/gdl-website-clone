@@ -21,7 +21,7 @@ export const financeBOD = [
   },
   {
     id: 5,
-    image_url: "",
+    image_url: "/Images/Victoria.webp",
     staff_initials: "VA",
     staff_name: "Victoria Ajayi",
   },

@@ -22,7 +22,7 @@ export const stockbrokersBOD = [
   },
   {
     id: 5,
-    image_url: "",
+    image_url: "/Images/Cyril.webp",
     staff_initials: "CBI",
     staff_name: "Cyril Baba-Oyathelemi Ikazoboh",
   },
@@ -31,7 +31,7 @@ export const stockbrokersBOD = [
 export const stockbrokersManagement = [
   {
     id: 2,
-    image_url: "",
+    image_url: "/Images/Esther.webp",
     staff_initials: "ED",
     staff_name: "Esther Ndife – DMD",
   },
