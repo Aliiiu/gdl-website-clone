@@ -32,19 +32,19 @@ export const stockbrokersManagement = [
   {
     id: 2,
     image_url: "",
-    staff_initials: "TAS",
-    staff_name: "Taofiki Ayandele Sanusi – DMD",
+    staff_initials: "ED",
+    staff_name: "Esther Ndife – DMD",
   },
   {
     id: 4,
-    image_url: "",
+    image_url: "/Images/Stephen.webp",
     staff_initials: "SF",
     staff_name: "Stephen Fidelis – Chief Financial Officer",
   },
   {
     id: 3,
     image_url: "",
-    staff_initials: "SM",
-    staff_name: "Samuel Makinde – Chief Research Officer",
+    staff_initials: "OA",
+    staff_name: "Olufunmilola Adebowale – Chief Research Officer",
   },
 ];

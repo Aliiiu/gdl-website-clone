@@ -40,13 +40,13 @@ export const management = [
   },
   {
     id: 3,
-    image_url: "",
+    image_url: "/Images/Sola.webp",
     staff_initials: "OS",
     staff_name: "Olusola Sanni- Head of Credit",
   },
   {
     id: 5,
-    image_url: "",
+    image_url: "/Images/Stephen.webp",
     staff_initials: "SF",
     staff_name: "Stephen Fidelis – CFO",
   },
