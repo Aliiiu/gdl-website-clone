@@ -60,7 +60,7 @@ const Boards = ({ data }) => {
                   content: item.profile,
                 })
               }
-              className="text-[#9A2333] font-medium mt-3 cursor-pointer text-center"
+              className="text-[#9A2333] font-medium mt-3 cursor-pointer hover:underline text-center"
             >
               {item?.director_name || item?.staff_name}
             </h5>
