@@ -6,31 +6,6 @@ import { MainImage } from "./layout.style";
 import BackImg from "../../assets/Images/testimonial-one.jpg";
 import Testimony2 from "../../assets/Images/testimonial-two.jpg";
 import Testimony3 from "../../assets/Images/testimonial3.jpeg";
-import { useEffect } from "react";
-
-const TestimonyData = [
-  {
-    image: BackImg,
-    name: "Seyi Asagun",
-    job: "Entrepreneur",
-    testimony:
-      "I am glad my money is managed by GDL. The professionalism is top-notch. Every day, I go to sleep knowing my money is working for me efficiently. Portfolio managers at their peak. You should try GDL today.",
-  },
-  {
-    image: Testimony2,
-    name: "Banke Olatunji",
-    job: "Banker",
-    testimony:
-      "I am glad my money is managed by GDL. The professionalism is top-notch. Every day, I go to sleep knowing my money is working for me efficiently. Portfolio managers at their peak. You should try GDL today.",
-  },
-  {
-    image: Testimony3,
-    name: "Salami Okiki",
-    job: "Real Estate",
-    testimony:
-      "I am glad my money is managed by GDL. The professionalism is top-notch. Every day, I go to sleep knowing my money is working for me efficiently. Portfolio managers at their peak. You should try GDL today.",
-  },
-];
 
 const CarouselContent = ({ image_url, name, porfolio, testimonial }) => (
   <div
@@ -115,6 +90,7 @@ const TestimonyLayout = ({ testimonial }) => {
       </div>
     );
   };
+
   return (
     <section id="testimonial">
       <div className="pt-40 md:pt-52 pb-40 md:pb-10 bg-opacity-[1] bg-[rgba(255,236,239,var(--tw-bg-opacity))]">
@@ -133,9 +109,10 @@ const TestimonyLayout = ({ testimonial }) => {
             renderArrow={carouselArrow}
             renderPagination={renderPagination}
           >
-            {testimonial.map(content => (
-              <CarouselContent key={content.name} {...content} />
-            ))}
+            {testimonial.map(content => {
+              console.log({ content });
+              return <CarouselContent key={content.name} {...content} />;
+            })}
           </Carousel>
         </div>
       </section>

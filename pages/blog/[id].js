@@ -48,7 +48,10 @@ export const getServerSideProps = async context => {
     };
   }
 
-  let title = id.replace(/(?<!-)-(?!-)/g, " ").replace(/-{3}/g, " - ");
+  let title = id
+    .trim()
+    .replace(/(?<!-)-(?!-)/g, " ")
+    .replace(/-{3}/g, " - ");
 
   try {
     const blogPost = await makeRequest("/posts/s", null, null);
@@ -59,9 +62,9 @@ export const getServerSideProps = async context => {
       };
     }
 
-    const article = blogPost.data.data.find(
-      item => item.title.toLowerCase() === title
-    );
+    const article = blogPost.data.data.find(item => {
+      return item.title.toLowerCase() === title;
+    });
 
     if (!article) {
       return {
