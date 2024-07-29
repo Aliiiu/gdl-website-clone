@@ -29,9 +29,9 @@ const AppAccordion = ({ category, ...props }) => {
             <Typography className="font-bold text-lg md:text-lg flex items-center justify-start">
               {props.question}
             </Typography>
-            <div className="text-[rgba(31,26,23,var(--tw-text-opacity))] text-opacity-80">
+            {/* <div className="text-[rgba(31,26,23,var(--tw-text-opacity))] text-opacity-80">
               {categoryMapper(props.category_id, category)}
-            </div>
+            </div> */}
           </div>
         </AccordionSummary>
         <AccordionDetails>
