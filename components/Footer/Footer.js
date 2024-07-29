@@ -49,23 +49,36 @@ const Footer = () => {
             <div className="flex justify-start items-center text-sm text-black dark:text-white text-opacity-70">
               <h3>
                 <strong>Lagos Office :</strong> No 1, Afolabi Lesi Street,
-                Ilupeju, Lagos
+                Ilupeju, Lagos.
                 <br />
-                <strong>Ibadan Office :</strong> 103, MKO Abiola Way, Ibadan{" "}
+                <strong>Ibadan Office :</strong> 103, MKO Abiola Way, Ibadan.{" "}
+                <br />
+                <strong>Port Harcourt Office :</strong> 16 Woji road GRA Phase
+                2, Port-Harcourt.
                 <br />
                 <strong>Abuja Office :</strong> St James House (2nd floor), Plot
                 1109/No. 167 Cadastral Zone A08 Ademola Adetokunbo Crescent,
-                Wuse ll, Abuja- Nigeria
+                Wuse ll, Abuja- Nigeria.
               </h3>
             </div>
-            <div className="flex justify-start items-center my-2 text-sm text-opacity-70">
+            <div className="flex justify-start gap-1 items-center my-2 text-sm text-opacity-70">
               <Link href="tel:2347054435000">
-                <a href="tel:2347054435000">+2347054435000</a>
+                <a href="tel:2347054435000" className="hover:underline">
+                  +2347054435000,
+                </a>
+              </Link>
+              <Link href="tel:2347054435000">
+                <a href="tel:2347064144373" className="hover:underline">
+                  +2347064144373
+                </a>
               </Link>
             </div>
             <div className="flex justify-start items-center my-2 text-sm text-opacity-70">
               <Link href="mailto:customerservice@gdl.com.ng">
-                <a href="mailto:customerservice@gdl.com.ng">
+                <a
+                  href="mailto:customerservice@gdl.com.ng"
+                  className=" text-second hover:underline"
+                >
                   customerservice@gdl.com.ng
                 </a>
               </Link>
