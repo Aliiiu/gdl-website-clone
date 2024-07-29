@@ -17,7 +17,7 @@ export const financeBOD = [
   {
     id: 4,
     image_url: "/Images/Oluyemi-Adekoya.jpeg",
-    staff_name: "Oluyemi Adekoya",
+    staff_name: "Oluyemi Adekoya - Director",
   },
   {
     id: 5,
@@ -36,7 +36,7 @@ export const management = [
   {
     id: 4,
     image_url: "/Images/Oluyemi-Adekoya.jpeg",
-    staff_name: "Oluyemi Adekoya",
+    staff_name: "Oluyemi Adekoya - Director",
   },
   {
     id: 3,

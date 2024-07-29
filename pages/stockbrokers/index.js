@@ -29,19 +29,19 @@ const Stockbrokers = () => {
           <p className="mb-3 leading-loose text-center max-w-[1200px] mx-auto">
             <strong>GDL STOCKBROKERS LIMITED</strong> (“GDL Stockbrokers”) was
             incorporated on 27 May 2016, a subsidiary of Growth & Development
-            Asset Management Limited (‘GDL Asset) with At GDL Stockbrokers, we
-            are “investor-centric” in that the interest of the investor is
-            central to the overall objective of the organization. we constantly
-            aim to demonstrate the highest level of integrity and ensure it
-            reflects in all our dealings and services to our clients. We aim to
-            providing the best execution service to our clients ranging from
-            best price trade execution and advisory services. Providing them
-            with well-researched information to make a sound investment
-            decision. Our processes are structured to ensure timely and quality
-            service delivery to all our clients. As a client of GDL
-            Stockbrokers, you will receive the daily price list after each day
-            trade, gainers and losers list, corporate action information for the
-            listed companies, and real-time trading platform for our clients.
+            Management Limited. GDL Stockbrokers emphasizes that the interest of
+            the investor is central to the overall objective of the
+            organization. we constantly aim to demonstrate the highest level of
+            integrity and ensure it reflects in all our dealings and services to
+            our clients. We aim to providing the best execution service to our
+            clients ranging from best price trade execution and advisory
+            services. Providing them with well-researched information to make a
+            sound investment decision. Our processes are structured to ensure
+            timely and quality service delivery to all our clients. As a client
+            of GDL Stockbrokers, you will receive the daily price list after
+            each day trade, gainers and losers list, corporate action
+            information for the listed companies, and real-time trading platform
+            for our clients.
           </p>
         </div>
       </div>
