@@ -13,7 +13,7 @@ export const stockbrokersBOD = [
   {
     id: 3,
     image_url: "/Images/Oyekemi-Ayeye.jpeg",
-    staff_name: "Oyekemi Ayeye",
+    staff_name: "Oyekemi Ayeye - Executive Director",
   },
   {
     id: 4,
