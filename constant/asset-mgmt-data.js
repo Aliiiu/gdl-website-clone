@@ -35,7 +35,7 @@ export const assetManagement = [
   {
     id: 1,
     image_url: "/Images/Josephine-Ernest-Ikechukwu.jpeg",
-    staff_name: "Josephine Ernest Ikechukwu",
+    staff_name: "Josephine Ernest Ikechukwu - Managing Director",
   },
   {
     id: 2,
