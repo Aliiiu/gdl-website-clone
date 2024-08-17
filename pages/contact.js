@@ -88,9 +88,7 @@ const ContactPage = () => {
     fetchForm();
   }, []);
 
-  useEffect(() => {
-    console.log(formData);
-  }, [formData]);
+  useEffect(() => {}, [formData]);
 
   const onSubmit = () => {
     //

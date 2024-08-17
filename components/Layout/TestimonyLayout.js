@@ -110,7 +110,6 @@ const TestimonyLayout = ({ testimonial }) => {
             renderPagination={renderPagination}
           >
             {testimonial.map(content => {
-              console.log({ content });
               return <CarouselContent key={content.name} {...content} />;
             })}
           </Carousel>

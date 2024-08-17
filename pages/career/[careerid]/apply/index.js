@@ -92,7 +92,9 @@ const CareerDetailsPage = ({ jobOpening, jobId, position, ...props }) => {
     // props.postAction(UPLOAD_CLOUDINARY, null, formData, null, fileUpload);
     cloudinaryServiceApi
       .uploadImage(formData)
-      .then(res => console.log(res.data))
+      .then(res => {
+        // console.log(res.data)
+      })
       .catch(err => console.log(err));
   };
 

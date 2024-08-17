@@ -1,7 +1,6 @@
 import Products, { RightProduct } from "../../components/PageSections/Products";
 import Faq from "../../components/PageSections/Faq";
 import { useRouter } from "next/router";
-import { data } from "../../utils/helper";
 import { makeRequest } from "../../apiCalls/requestHandler";
 import Head from "next/head";
 
@@ -21,8 +20,6 @@ const ProductPage = ({ prodContent, heroContent }) => {
   //     setOpen(false);
   //   }
   // }, [params]);
-
-  console.log({ heroContent });
 
   return (
     <>
