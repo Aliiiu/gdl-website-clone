@@ -1,18 +1,12 @@
 import CustomHeader from "../components/Widgets/CustomHeader/Header";
 import Faq from "../components/PageSections/Faq";
 import { TestimonyCard } from "../components/Widgets/Cards/TestimonyCard";
-import { useEffect } from "react";
 import { useRequest } from "../hooks/useRequest";
 import MethodType from "../constant/methodType";
 import Head from "next/head";
 import { makeRequest } from "../apiCalls/requestHandler";
 
-const Testimonials = ({ heroContent, generalContent }) => {
-  const { makeRequest, data } = useRequest({
-    url: "/pages/testimonials/s",
-    method: MethodType.GET,
-  });
-
+const Testimonials = ({ heroContent }) => {
   return (
     <div>
       <Head>
@@ -23,9 +17,6 @@ const Testimonials = ({ heroContent, generalContent }) => {
         {heroContent.map(item => (
           <TestimonyCard key={item.id} {...item} />
         ))}
-        {/* <TestimonyCard />
-        <TestimonyCard />
-        <TestimonyCard /> */}
       </div>
       <section
         id="faq"
@@ -40,12 +31,10 @@ const Testimonials = ({ heroContent, generalContent }) => {
 export default Testimonials;
 
 export async function getStaticProps() {
-  const heroData = await makeRequest("/pages/testimonials/s");
-  const generalData = await makeRequest("/pages/testimonials/general");
+  const testimonialData = await makeRequest("/pages/testimonials/s");
   return {
     props: {
-      heroContent: heroData.data.data,
-      generalContent: generalData.data.data,
+      heroContent: testimonialData.data.data,
     },
   };
 }
