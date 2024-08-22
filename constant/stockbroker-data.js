@@ -8,23 +8,24 @@ export const stockbrokersBOD = [
     id: 2,
     image_url: "/Images/Esther-new.webp",
     staff_initials: "TAS",
-    staff_name: "Esther Ndife – Managing Director",
+    staff_name: "Chinyere Esther Ndife – Managing Director",
   },
   {
     id: 3,
     image_url: "/Images/Oyekemi-Ayeye.jpeg",
-    staff_name: "Oyekemi Ayeye - Executive Director",
+    staff_name: "Oyekemi Ayeye - Non-Executive Director",
   },
   {
     id: 4,
     image_url: "/Images/Josephine-Ernest-Ikechukwu.jpeg",
-    staff_name: "Josephine Ernest Ikechukwu",
+    staff_name: "Josephine Ernest Ikechukwu - Non-Executive Director",
   },
   {
     id: 5,
     image_url: "/Images/Cyril.webp",
     staff_initials: "CBI",
-    staff_name: "Cyril Baba-Oyathelemi Ikazoboh",
+    staff_name:
+      "Cyril Baba-Oyathelemi Ikazoboh - Non-Executive (Independent Director)",
   },
 ];
 

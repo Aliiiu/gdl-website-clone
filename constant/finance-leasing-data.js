@@ -12,18 +12,18 @@ export const financeBOD = [
   {
     id: 3,
     image_url: "/Images/Oyekemi-Ayeye.jpeg",
-    staff_name: "Oyekemi Ayeye - Executive Director",
+    staff_name: "Oyekemi Ayeye - Non-Executive Director",
   },
   {
     id: 4,
     image_url: "/Images/Oluyemi-Adekoya.jpeg",
-    staff_name: "Oluyemi Adekoya - Director",
+    staff_name: "Oluyemi Adekoya - Non-Executive Director",
   },
   {
     id: 5,
     image_url: "/Images/Victoria.webp",
     staff_initials: "VA",
-    staff_name: "Victoria Ajayi",
+    staff_name: "Victoria Abiola Ajayi - Non-Executive (Independent Director)",
   },
 ];
 

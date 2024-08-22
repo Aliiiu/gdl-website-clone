@@ -1,33 +1,29 @@
 export const assetBOD = [
   {
     id: 1,
-    image_url: "/Images/Dr-Nadu-Denloye.jpeg",
-    staff_name: "Dr Nadu Denloye - Chairman",
+    image_url: "/Images/kolawole-Ayeye.jpeg",
+    staff_name: "Kolawole Ayeye – Chairman",
   },
   {
-    id: 4,
-    image_url: "/Images/kolawole-Ayeye.jpeg",
-    staff_name: "Kolawole Ayeye – Executive Vice Chairman",
+    id: 2,
+    image_url: "/Images/Josephine-Ernest-Ikechukwu.jpeg",
+    staff_name: "Josephine Ernest Ikechukwu - Managing Director",
   },
   {
     id: 3,
     image_url: "/Images/Oyekemi-Ayeye.jpeg",
-    staff_name: "Oyekemi Ayeye - Executive Director",
+    staff_name: "Oyekemi Ayeye - Non-Executive Director",
   },
   {
-    id: 2,
+    id: 4,
     image_url: "/Images/christiana-bamidele-george.jpeg",
-    staff_name: "Christiana Bamidele George",
+    staff_name:
+      "Christiana Bamidele George - Non-Executive (Independent Director)",
   },
   {
     id: 5,
-    image_url: "/Images/senator-farouk-bello-bunza.jpeg",
-    staff_name: "Senator Farouk Bunza",
-  },
-  {
-    id: 6,
-    image_url: "/Images/Lanre-Olaoluwa.jpeg",
-    staff_name: "Olanrewaju Olaoluwa - Chairman",
+    image_url: "/Images/Ofonama-Joshua.jpeg",
+    staff_name: "Ofonama Joshua - Non-Executive Director",
   },
 ];
 
