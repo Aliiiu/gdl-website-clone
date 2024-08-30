@@ -16,6 +16,8 @@ module.exports = {
         second: "#9A2333",
         nav: "#C1C0C0",
         gdlGrey: "#FAFBFB",
+        "custom-brand-dark": "#63121D",
+        "custom-brand-light": "#9A2333",
       },
       backgroundColor: {
         gdlGrey: "#FAFBFB",
