@@ -37,18 +37,18 @@ const AssetManagement = () => {
       </div>
       <section
         id="management-team"
-        className="lg:px-6 md:w-5/6 lg:w-4/6 mx-auto py-16 2xl:py-20 w-full"
+        className="container lg:px-6 md:w-5/6 lg:w-4/6 mx-auto pt-16 md:pt-24 xl:pt-36 w-full"
       >
         <Management data={assetManagement} notClickable={true} />
       </section>
       <section
         id="board-of-directors"
-        className="lg:px-6 md:w-5/6 lg:w-4/6 mx-auto py-16 2xl:py-20 w-full"
+        className="container lg:px-6 md:w-5/6 lg:w-4/6 mx-auto pt-16 md:pt-24 xl:pt-36 w-full"
       >
         <Boards data={assetBOD} notClickable={true} />
       </section>
 
-      <section id="products" className="py-16 2xl:py-20">
+      <section id="products" className="py-16 md:py-24 xl:py-36">
         <SectionWrapper className="container px-4 xl:px-28 mx-auto">
           <div className="text-center md:text-center">
             <h1 className="title mb-[.75rem]">Products</h1>
