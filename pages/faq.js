@@ -3,7 +3,6 @@ import faqImage from "../assets/Images/faq.jpeg";
 import { TopContent } from "../components/Widgets/CustomHeader/HeaderContent";
 import AppAccordion from "../components/Widgets/Accordion/Accordion";
 import { makeRequest } from "../apiCalls/requestHandler";
-import { useEffect } from "react";
 import Head from "next/head";
 import { useRequest } from "../hooks/useRequest";
 import MethodType from "../constant/methodType";
