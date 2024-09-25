@@ -43,7 +43,7 @@ const Management = ({ data, notClickable }) => {
                   content: item.profile,
                 })
               }
-              className={`text-[#9A2333] font-medium mt-3 text-center ${
+              className={`text-[#9A2333] font-medium mt-3 mx-auto max-w-[300px] text-center ${
                 !notClickable && "cursor-pointer hover:underline"
               }`}
             >

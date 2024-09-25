@@ -59,7 +59,7 @@ const Boards = ({ data, notClickable }) => {
                   content: item.profile,
                 })
               }
-              className={`text-[#9A2333] font-medium mt-3 text-center ${
+              className={`text-[#9A2333] max-w-[300px] mx-auto font-medium mt-3 text-center ${
                 !notClickable && "cursor-pointer hover:underline"
               }`}
             >
