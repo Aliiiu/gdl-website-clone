@@ -19,7 +19,7 @@ const FinanceAndLeasing = () => {
       </Head>
       <div
         id="corporate-information"
-        className="flex-1 flex flex-col mt-20 px-4 justify-center"
+        className="flex-1 flex flex-col pt-10 md:mt-20 px-4 justify-center"
       >
         <div>
           <h5 className="mb-1 text-second text-center text-xs">

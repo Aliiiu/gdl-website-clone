@@ -56,7 +56,7 @@ const Products = ({ nobutton, product }) => {
               you. There is something for everyone at GDL.
             </p>
           </div>
-          <div className="mt-10 md:mt-24 grid md:grid-cols-2 lg:grid-cols-3 gap-3">
+          <div className="mt-10 md:mt-20 grid md:grid-cols-2 lg:grid-cols-3 gap-3">
             {product.map(item => {
               const arr = item?.product_image_url?.split("/");
               return (
@@ -145,7 +145,7 @@ const Products = ({ nobutton, product }) => {
                 item?.product_name === "GDL Income Fund"
             )}
           />
-          <div className="py-16 md:py-20">
+          <div className="pt-16 md:pt-24 xl:pt-36">
             <h1 className="title text-center mb-[.75rem]">
               GDL Stockbroking Products
             </h1>

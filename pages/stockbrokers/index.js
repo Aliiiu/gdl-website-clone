@@ -20,7 +20,7 @@ const Stockbrokers = () => {
       <Head>
         <title> Stockbrokers </title>
       </Head>
-      <div className="flex-1 flex flex-col mt-20 px-4 justify-center">
+      <div className="flex-1 flex flex-col mt-10 md:mt-20 px-4 justify-center">
         <div id="corporate-information">
           <h5 className="mb-1 text-second text-center text-xs">Stockbroking</h5>
           <h1 className="title leading-tight text-center max-w-[700px] mx-auto mb-4">

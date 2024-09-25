@@ -17,7 +17,7 @@ const AssetManagement = () => {
       <Head>
         <title> Asset Management </title>
       </Head>
-      <div className="flex-1 flex flex-col mt-20 px-4 justify-center">
+      <div className="flex-1 flex flex-col mt-10 md:pt-20 px-4 justify-center">
         <div id="corporate-information">
           <h5 className="mb-1 text-second text-center text-xs">
             Asset Management

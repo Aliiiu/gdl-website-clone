@@ -27,10 +27,10 @@ const ProductPage = ({ prodContent, heroContent }) => {
         <title>Products | GDL</title>
       </Head>
       <div>
-        <section id="our-product" className="py-16 md:py-28">
+        <section id="our-product" className="mt-10 md:mt-20">
           <Products nobutton product={prodContent} />
         </section>
-        <section className="mt-12 md:mt-26">
+        <section className="pt-16 md:pt-24 xl:pt-36">
           <RightProduct content={heroContent} />
         </section>
         <section

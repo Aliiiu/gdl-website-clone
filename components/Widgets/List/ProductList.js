@@ -10,8 +10,10 @@ const ProductList = ({
 }) => {
   return (
     <div
-      className={`pb-16 md:pb-20 ${
-        title === "GDL Asset Management Products" ? "pt-16 md:pt-20" : ""
+      className={`${
+        title === "GDL Asset Management Products"
+          ? "pt-16 md:pt-24 xl:pt-36"
+          : ""
       }`}
     >
       <h1 className="title text-center mb-[.75rem]">{title}</h1>
