@@ -36,7 +36,10 @@ const About = ({
       <section className="overflow-hidden py-16 md:py-24 xl:py-36">
         <CoreValues vision={visionContent} mission={missionContent} />
       </section>
-      <section className="container lg:px-6 md:w-5/6 lg:w-4/6 mx-auto w-full">
+      <section
+        id="about-gdl-group"
+        className="container px-4 lg:px-6 md:w-5/6 lg:w-4/6 mx-auto w-full"
+      >
         <h2 className="title mb-10 text-center">About GDL Group</h2>
         <p className="mb-4">
           Growth and Development Limited (GDL) serves as the holding company for
