@@ -60,8 +60,7 @@ const About = ({
           leadership provides invaluable oversight and guidance to the
           subsidiary businesses, ensuring that each entity within the GDL Group
           adheres to the highest standards of operational excellence, risk
-          management, and corporate governance. Meet our Board ( input the
-          pictures and profile of the previous Board)
+          management, and corporate governance.
         </p>
       </section>
       <section

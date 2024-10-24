@@ -48,7 +48,7 @@ export const getServerSideProps = async context => {
     };
   }
 
-  let title = id
+  const title = id
     .trim()
     .replace(/(?<!-)-(?!-)/g, " ")
     .replace(/-{3}/g, " - ");
