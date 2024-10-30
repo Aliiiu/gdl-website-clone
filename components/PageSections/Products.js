@@ -1,6 +1,4 @@
-import Image from "next/image";
-import React, { useEffect, useState } from "react";
-// import styled from "styled-components";
+import React, { useState } from "react";
 import Link from "next/link";
 import { AppButton } from "../Widgets/Button/Button";
 import { RightProductSection } from "./pagesec.style";

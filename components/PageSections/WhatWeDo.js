@@ -6,7 +6,7 @@ const WhatWeDo = () => {
     <div className="flex flex-col-reverse items-center lg:gap-[50px] md:flex-row">
       <div className="flex-1 w-full lg:w-1/2">
         <div className="relative w-full h-[400px] lg:h-[500px] xl:h-[600px]">
-          <Image src={"/Images/society-nigeria.png"} alt="" layout="fill" />
+          <Image src={"/Images/society-nigeria.png"} alt="" fill sizes="100%" />
         </div>
       </div>
       <div className="flex-1 flex flex-col justify-center">

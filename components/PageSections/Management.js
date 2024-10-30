@@ -26,7 +26,13 @@ const Management = ({ data, notClickable }) => {
           <div key={item.id} className="">
             {item.image_url ? (
               <div className="relative rounded-lg overflow-hidden mx-auto w-[191px] h-[256px]">
-                <Image unoptimized src={item.image_url} alt="" layout="fill" />
+                <Image
+                  unoptimized
+                  src={item.image_url}
+                  alt=""
+                  fill
+                  sizes="191px"
+                />
               </div>
             ) : (
               <div className="bg-[#484848] w-[191px] h-[256px] mx-auto rounded-lg flex justify-center items-center">
@@ -35,7 +41,8 @@ const Management = ({ data, notClickable }) => {
                 </h2>
               </div>
             )}
-            <h5
+            <button
+              type="button"
               onClick={() =>
                 !notClickable &&
                 handleRedirection({
@@ -48,7 +55,7 @@ const Management = ({ data, notClickable }) => {
               }`}
             >
               {item.staff_name}
-            </h5>
+            </button>
           </div>
         ))}
       </div>

@@ -39,9 +39,9 @@ const Boards = ({ data, notClickable }) => {
                   unoptimized
                   src={item.image_url}
                   alt=""
-                  layout="fill"
-                  objectFit="cover"
-                  objectPosition={"top"}
+                  fill
+                  className="object-cover object-top"
+                  sizes="160px"
                 />
               </div>
             ) : (
@@ -51,7 +51,8 @@ const Boards = ({ data, notClickable }) => {
                 </h2>
               </div>
             )}
-            <h5
+            <button
+              type="button"
               onClick={() =>
                 !notClickable &&
                 handleRedirection({
@@ -64,7 +65,7 @@ const Boards = ({ data, notClickable }) => {
               }`}
             >
               {item?.director_name || item?.staff_name}
-            </h5>
+            </button>
           </div>
         ))}
       </div>

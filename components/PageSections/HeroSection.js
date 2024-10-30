@@ -37,7 +37,12 @@ const HeroSection = ({ hero }) => {
         </div>
       </div>
       <div className="max-w-[100%] hidden w-[450px] h-[500px] lg:h-[620px] lg:w-[520px] lg:mr-[4rem] md:block absolute right-0 bottom-0 mb-[-5em] lg:mb-[-8rem] animate-fade-in">
-        <Image src={"/Images/bg.png"} layout="fill" alt="" />
+        <Image
+          src={"/Images/bg.png"}
+          fill
+          sizes="(max-width: 1024px) 450px, 520px"
+          alt=""
+        />
       </div>
     </section>
   );

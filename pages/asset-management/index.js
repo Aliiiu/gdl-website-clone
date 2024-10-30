@@ -70,9 +70,9 @@ const AssetManagement = () => {
                   <Image
                     src={item.img}
                     alt={item.title}
-                    layout="fill"
-                    objectFit="cover"
-                    objectPosition={"center"}
+                    fill
+                    sizes="100%"
+                    className="object-cover object-center"
                   />
                   <div
                     style={{

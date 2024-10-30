@@ -23,7 +23,8 @@ const BlogList = ({
               unoptimized
               src={featured_image_url}
               alt="img"
-              layout="fill"
+              fill
+              sizes="100%"
               className=" object-cover"
             />
           </div>

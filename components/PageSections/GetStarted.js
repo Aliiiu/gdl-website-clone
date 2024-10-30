@@ -28,7 +28,7 @@ const GetStarted = () => {
             >
               <div className="w-16 h-16 bg-[#A2A6A8] bg-opacity-10 p-3 flex justify-center items-center rounded-[50%] ">
                 <div className="relative w-12 h-12 flex-shrink-0 ">
-                  <Image src={item.avatar} alt={item.title} layout="fill" />
+                  <Image src={item.avatar} alt={item.title} fill sizes="48px" />
                 </div>
               </div>
               <div className="flex flex-col gap-1">

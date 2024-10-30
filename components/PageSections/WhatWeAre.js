@@ -20,7 +20,12 @@ const WhatWeAre = () => {
         </div>
         <div className="flex-1">
           <div className="relative w-full h-[250px] lg:w-[450px] lg:h-[326px] mx-auto bg-orange-100 rounded-lg overflow-hidden">
-            <Image src={"/Images/team.png"} alt="" layout="fill" />
+            <Image
+              src={"/Images/team.png"}
+              alt=""
+              fill
+              sizes="(max-width: 1024px) 100%, 450px"
+            />
           </div>
         </div>
       </div>

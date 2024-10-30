@@ -1,11 +1,8 @@
-import Image from "next/image";
 import React from "react";
 import { AppButton } from "../Widgets/Button/Button";
 import { SectionWrapper } from "./product.style";
-import { useRouter } from "next/router";
 
 const Faq = () => {
-  const router = useRouter();
   return (
     <SectionWrapper className="grid gap-[60px] md:grid-cols-2 ">
       <div className="py-12 flex-1">
@@ -20,7 +17,7 @@ const Faq = () => {
           className="text-white bg-black px-5 py-4"
         />
       </div>
-      <div className="rounded-lg faq-card h-[370px] overflow-hidden flex-1"></div>
+      <div className="rounded-lg faq-card h-[370px] overflow-hidden flex-1" />
     </SectionWrapper>
   );
 };

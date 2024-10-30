@@ -12,7 +12,7 @@ const ResearchFeatures = () => {
             feature.key % 2 === 0 ? "md:flex-row-reverse" : "md:flex-row"
           }`}
         >
-          <div className={`md:flex flex-1 hidden justify-center`}>
+          <div className={"md:flex flex-1 hidden justify-center"}>
             <Image
               src={feature.img}
               alt=""
