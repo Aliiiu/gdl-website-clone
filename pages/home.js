@@ -6,7 +6,6 @@ import BlogLayout from "../components/Layout/BlogLayout";
 import TestimonyLayout from "../components/Layout/TestimonyLayout";
 import HeroSection from "../components/PageSections/HeroSection";
 import BannerSection from "../components/PageSections/BannerSection";
-import { Link as ScrollLink } from "react-scroll";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import Image from "next/image";
 import Link from "next/link";
@@ -28,6 +27,7 @@ const HomePage = ({ hero, stat, products, testimonial, blogPost }) => {
     if (count >= stat.businesses) clearInterval(count);
   };
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   useEffect(() => {
     window.addEventListener("load", startCounter());
 

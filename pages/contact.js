@@ -11,37 +11,34 @@ import MethodType from "../constant/methodType";
 
 const ContactDetails = ({ name, details }) => (
   <div className="relative mt-[1rem] mb-[2rem]">
-    <label className="leading-[1.75rem] text-opacity-100 text-[rgba(255,115,137,var(--tw-text-opacity))] text-[1.25rem] font-[700]">
+    <span className="leading-[1.75rem] text-opacity-100 text-[rgba(255,115,137,var(--tw-text-opacity))] text-[1.25rem] font-[700]">
       {name}
-    </label>
+    </span>
     <div className="text-[1.125rem] leading-[1.75rem] text-opacity-100 text-[rgba(255,115,137,var(--tw-text-opacity))]">
       {details || (
         <div className="flex flex-col">
           <Link
             href="https://www.google.com/maps/place/1+Afolabi+Lesi+St,+Ilupeju,+Lagos/@6.5579637,3.364944,20z/data=!4m13!1m7!3m6!1s0x103b8d8e6cec0a79:0x9067273ce8922c66!2s1+Afolabi+Lesi+St,+Ilupeju,+Lagos!3b1!8m2!3d6.5578744!4d3.3649306!3m4!1s0x103b8d8e6cec0a79:0x9067273ce8922c66!8m2!3d6.5578744!4d3.3649306"
             target="_blank"
+            className="hover:text-white/80"
           >
-            <a className="hover:text-white/80" target="_blank">
-              Lagos Office : No 1, Afolabi Lesi Street, Ilupeju, Lagos
-            </a>
+            Lagos Office : No 1, Afolabi Lesi Street, Ilupeju, Lagos
           </Link>
           <Link
             href="https://www.google.com/maps/place/1+Afolabi+Lesi+St,+Ilupeju,+Lagos/@6.5579637,3.364944,20z/data=!4m13!1m7!3m6!1s0x103b8d8e6cec0a79:0x9067273ce8922c66!2s1+Afolabi+Lesi+St,+Ilupeju,+Lagos!3b1!8m2!3d6.5578744!4d3.3649306!3m4!1s0x103b8d8e6cec0a79:0x9067273ce8922c66!8m2!3d6.5578744!4d3.3649306"
             target="_blank"
+            className="hover:text-white/80"
           >
-            <a className="hover:text-white/80" target="_blank">
-              Abuja Office : St James House (2nd floor), Plot 1109/No. 167
-              Cadastral Zone A08 Ademola Adetokunbo Crescent, Wuse ll, Abuja-
-              Nigeria
-            </a>
+            Abuja Office : St James House (2nd floor), Plot 1109/No. 167
+            Cadastral Zone A08 Ademola Adetokunbo Crescent, Wuse ll, Abuja-
+            Nigeria
           </Link>
           <Link
             href="https://www.google.com/maps/place/1+Afolabi+Lesi+St,+Ilupeju,+Lagos/@6.5579637,3.364944,20z/data=!4m13!1m7!3m6!1s0x103b8d8e6cec0a79:0x9067273ce8922c66!2s1+Afolabi+Lesi+St,+Ilupeju,+Lagos!3b1!8m2!3d6.5578744!4d3.3649306!3m4!1s0x103b8d8e6cec0a79:0x9067273ce8922c66!8m2!3d6.5578744!4d3.3649306"
             target="_blank"
+            className="hover:text-white/80"
           >
-            <a className="hover:text-white/80" target="_blank">
-              Ibadan Office : No 103, MKO Abiola Way, Ibadan
-            </a>
+            Ibadan Office : No 103, MKO Abiola Way, Ibadan
           </Link>
         </div>
       )}
@@ -51,24 +48,27 @@ const ContactDetails = ({ name, details }) => (
 
 const PhoneDetails = () => (
   <>
-    <Link href="tel:2347054435000">
-      <a className="text-opacity-100 text-[rgba(255,214,220,var(--tw-text-opacity))]">
-        +2347054435000
-      </a>
+    <Link
+      href="tel:2347054435000"
+      className="text-opacity-100 text-[rgba(255,214,220,var(--tw-text-opacity))]"
+    >
+      +2347054435000
     </Link>
-    <Link href="tel:2347054435000">
-      <a className="text-opacity-100 text-[rgba(255,214,220,var(--tw-text-opacity))]">
-        <span>, </span>+2347054435000
-      </a>
+    <Link
+      href="tel:2347054435000"
+      className="text-opacity-100 text-[rgba(255,214,220,var(--tw-text-opacity))]"
+    >
+      <span>, </span>+2347054435000
     </Link>
   </>
 );
 
 const EmailDetail = () => (
-  <Link href="mailto:customerservice@gdl.com.ng">
-    <a className="text-opacity-100 text-[rgba(255,214,220,var(--tw-text-opacity))]">
-      customerservice@gdl.com.ng
-    </a>
+  <Link
+    href="mailto:customerservice@gdl.com.ng"
+    className="text-opacity-100 text-[rgba(255,214,220,var(--tw-text-opacity))]"
+  >
+    customerservice@gdl.com.ng
   </Link>
 );
 
@@ -83,11 +83,13 @@ const ContactPage = () => {
     method: MethodType.GET,
   });
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   useEffect(() => {
     makeRequest();
     fetchForm();
   }, []);
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   useEffect(() => {}, [formData]);
 
   const onSubmit = () => {

@@ -9,11 +9,8 @@ import {
 import Image from "next/image";
 import Img from "../../assets/Images/two-employees.jpg";
 import Link from "next/link";
-import { useEffect } from "react";
 import { makeRequest } from "../../apiCalls/requestHandler";
 import Head from "next/head";
-import { useRequest } from "../../hooks/useRequest";
-import MethodType from "../../constant/methodType";
 import { formatDate } from "../../utils/helper";
 
 const CareerTopContent = ({ content }) => (
@@ -136,6 +133,7 @@ const CareerPage = ({
       <div className="bg-white py-12 md:py-24">
         <div className="container px-4 xl:px-28 mx-auto flex items-center">
           <div className="happy-img relative w-full md:w-5/12">
+            {/* biome-ignore lint/a11y/useMediaCaption: <explanation> */}
             <video
               className="mx-auto rounded-lg shadow-2xl lg:h-[580px]"
               src={require("../../assets/Images/work-environment.mp4")}

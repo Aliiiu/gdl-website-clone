@@ -1,8 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Faq from "../../components/PageSections/Faq";
 import CustomHeader from "../../components/Widgets/CustomHeader/Header";
-import Image from "next/image";
-import features from "../../constant/features";
 import ResearchHeader from "../../components/PageSections/ResearchHeader";
 import ResearchFeatures from "../../components/PageSections/ResearchFeatures";
 import { BsArrowRight } from "react-icons/bs";
@@ -12,7 +10,7 @@ import Head from "next/head";
 import { useRequest } from "../../hooks/useRequest";
 import MethodType from "../../constant/methodType";
 
-const Research = ({ researchContent, genContent }) => {
+const Research = () => {
   const { makeRequest, data } = useRequest({
     url: "/pages/resources/rp/research/papers/section",
     method: MethodType.GET,
@@ -46,7 +44,10 @@ const Research = ({ researchContent, genContent }) => {
               happenings in the world of business.
             </p>
             <Link href={"/research/papers"}>
-              <button className="capitalize px-4 bg-white text-sm border rounded-lg py-3 flex items-center gap-2">
+              <button
+                type="button"
+                className="capitalize px-4 bg-white text-sm border rounded-lg py-3 flex items-center gap-2"
+              >
                 View More <BsArrowRight className="text-[1F1A17]" />
               </button>
             </Link>
