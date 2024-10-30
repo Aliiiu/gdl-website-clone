@@ -34,10 +34,11 @@ const JoinTheClub = () => {
                 icon={<AiOutlineArrowRight className="font-thin text-sm" />}
               />
               <div className="mt-6">
-                <Link href="">
-                  <a className="text-black dark:text-white font-medium">
-                    Already Have an Account? Login
-                  </a>
+                <Link
+                  href=""
+                  className="text-black dark:text-white font-medium"
+                >
+                  Already Have an Account? Login
                 </Link>
               </div>
             </div>
@@ -75,7 +76,7 @@ const JoinTheClub = () => {
                       placeholder="Your Name"
                       className="bg-transparent border-0 outline-none py-3 w-full"
                     />
-                    <div className="text-red-500 text-sm"></div>
+                    <div className="text-red-500 text-sm" />
                   </div>
                   <div className="border-b border-[#9A2333] border-opacity-50 mb-5">
                     <input
@@ -83,7 +84,7 @@ const JoinTheClub = () => {
                       placeholder="Your Email Address"
                       className="bg-transparent py-3 outline-none w-full"
                     />
-                    <div className="text-red-500 text-sm"></div>
+                    <div className="text-red-500 text-sm" />
                   </div>
                   <div className="border-b border-[#9A2333] border-opacity-50 mb-5 outline-none">
                     <input
@@ -91,7 +92,7 @@ const JoinTheClub = () => {
                       placeholder="Your Phone (Optional)"
                       className="bg-transparent py-3 outline-none w-full"
                     />
-                    <div className="text-red-500 text-sm"></div>
+                    <div className="text-red-500 text-sm" />
                   </div>
                 </form>
               </span>
