@@ -15,7 +15,7 @@ const ResearchHeader = () => {
         <div className="flex-1">
           <h2 className="font-bold text-5xl">Research</h2>
           <h4 className="flex font-semibold text-lg items-center">
-            <div className="w-4 h-[2px] bg-[#33302C] inline-block mr-2"></div>
+            <div className="w-4 h-[2px] bg-[#33302C] inline-block mr-2" />
             Stay Informed, Beat the Odds.
           </h4>
           <p className="text-xl mt-8 max-w-md mb-3">
@@ -29,7 +29,10 @@ const ResearchHeader = () => {
             offset={-70}
             duration={1000}
           >
-            <button className="capitalize flex text-blue-400 items-center gap-2">
+            <button
+              type="button"
+              className="capitalize flex text-blue-400 items-center gap-2"
+            >
               See research papers <BsArrowRight className="text-blue-400" />
             </button>
           </Link>
