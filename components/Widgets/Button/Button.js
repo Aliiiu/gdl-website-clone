@@ -5,19 +5,18 @@ import { Button } from "./button.style";
 export const AppButton = ({ onPress, loading, ...props }) => {
   if (props.href) {
     return (
-      <Link href={props.href}>
-        <a
-          className={`rounded-lg cursor-pointer transition ease-in-out duration-700 ${
-            props.className || "bg-[#992333] px-4 py-3 text-white"
-          } w-fit flex items-center ${
-            props.justify || "justify-between"
-          } font-light`}
-        >
-          <span className={`${props.textSize || "md:text-sm text-sm"}`}>
-            {loading !== true ? props.name : <Loader loading={loading} />}
-          </span>
-          {props.icon && <div className="ml-2">{props.icon}</div>}
-        </a>
+      <Link
+        href={props.href}
+        className={`rounded-lg cursor-pointer transition ease-in-out duration-700 ${
+          props.className || "bg-[#992333] px-4 py-3 text-white"
+        } w-fit flex items-center ${
+          props.justify || "justify-between"
+        } font-light`}
+      >
+        <span className={`${props.textSize || "md:text-sm text-sm"}`}>
+          {loading !== true ? props.name : <Loader loading={loading} />}
+        </span>
+        {props.icon && <div className="ml-2">{props.icon}</div>}
       </Link>
     );
   }
