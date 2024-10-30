@@ -25,12 +25,12 @@ const HeroSection = ({ hero }) => {
             you.`}
         </p>
         <div className="flex flex-col md:flex-row justify-center md:justify-start items-center mt-6">
-          <a
+          <Link
             href={hero.call_to_action_link}
             target="_blank"
             rel="noreferrer"
             className="py-3 px-[1.5rem] rounded-lg cursor-pointer text-white md:mr-6 mb-4 md:mb-0 bg-[#992333]"
-          >{`${hero.call_to_action_title} →`}</a>
+          >{`${hero.call_to_action_title} →`}</Link>
           <Link href="/products">
             <h5 className="font-light z-10 cursor-pointer">Learn More</h5>
           </Link>
