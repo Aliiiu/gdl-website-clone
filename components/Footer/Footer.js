@@ -8,22 +8,18 @@ import {
 } from "../../utils/helper";
 
 const Socials = ({ url, icon }) => (
-  <Link href={url}>
-    <a
-      href={url}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="mr-4 dark:text-white"
-    >
-      {icon}
-    </a>
+  <Link
+    href={url}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="mr-4 dark:text-white"
+  >
+    {icon}
   </Link>
 );
 const Companylink = ({ url, name }) => (
-  <Link href={url} title={name}>
-    <a href={url} className="leading-[32px] block text-sm">
-      {name}
-    </a>
+  <Link href={url} title={name} className="leading-[32px] block text-sm">
+    {name}
   </Link>
 );
 
@@ -62,25 +58,19 @@ const Footer = () => {
               </h3>
             </div>
             <div className="flex justify-start gap-1 items-center my-2 text-sm text-opacity-70">
-              <Link href="tel:2347054435000">
-                <a href="tel:2347054435000" className="hover:underline">
-                  +2347054435000,
-                </a>
+              <Link href="tel:2347054435000" className="hover:underline">
+                +2347054435000,
               </Link>
-              <Link href="tel:2347054435000">
-                <a href="tel:2347064144373" className="hover:underline">
-                  +2347064144373
-                </a>
+              <Link href="tel:2347064144373" className="hover:underline">
+                +2347064144373
               </Link>
             </div>
             <div className="flex justify-start items-center my-2 text-sm text-opacity-70">
-              <Link href="mailto:customerservice@gdl.com.ng">
-                <a
-                  href="mailto:customerservice@gdl.com.ng"
-                  className=" text-second hover:underline"
-                >
-                  customerservice@gdl.com.ng
-                </a>
+              <Link
+                href="mailto:customerservice@gdl.com.ng"
+                className=" text-second hover:underline"
+              >
+                customerservice@gdl.com.ng
               </Link>
             </div>
             <hr className="border-white border-opacity-10 mb-4 mt-6" />
@@ -143,11 +133,11 @@ const Footer = () => {
             Copyright © {new Date().getFullYear()} GDL. All Rights Reserved.
           </div>
           <div className="flex items-center justify-end">
-            <Link href="/terms-of-use">
-              <a className="mr-3">Terms of Use</a>
+            <Link href="/terms-of-use" className="mr-3">
+              Terms of Use
             </Link>
-            <Link href="/privacy-policy">
-              <a className="ml-3 cursor-pointer">Privacy Policy</a>
+            <Link href="/privacy-policy" className="ml-3 cursor-pointer">
+              Privacy Policy
             </Link>
           </div>
         </div>
