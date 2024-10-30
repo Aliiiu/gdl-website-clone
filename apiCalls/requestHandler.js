@@ -21,9 +21,7 @@ export const makeRequest = async (
   if (response.ok) {
     const data = await response.json();
     return { data };
-  } else {
-    const { response_description } = await response.json();
-    // alert(response_description);
-    throw new Error(response_description);
   }
+  const { response_description } = await response.json();
+  throw new Error(response_description);
 };
