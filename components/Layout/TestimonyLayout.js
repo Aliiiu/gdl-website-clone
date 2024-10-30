@@ -3,9 +3,6 @@ import Carousel, { consts } from "react-elastic-carousel";
 import Link from "next/link";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { MainImage } from "./layout.style";
-import BackImg from "../../assets/Images/testimonial-one.jpg";
-import Testimony2 from "../../assets/Images/testimonial-two.jpg";
-import Testimony3 from "../../assets/Images/testimonial3.jpeg";
 
 const CarouselContent = ({ image_url, name, porfolio, testimonial }) => (
   <div
@@ -47,18 +44,19 @@ const CarouselContent = ({ image_url, name, porfolio, testimonial }) => (
 const TestimonyLayout = ({ testimonial }) => {
   const carouselArrow = ({ type, onClick }) => {
     const pointer =
-      type == consts.PREV ? (
+      type === consts.PREV ? (
         <IoChevronBackOutline />
       ) : (
         <IoChevronForwardOutline />
       );
     return (
-      <a
+      <button
+        type="button"
         className="relative flex justify-center items-center bg-opacity-[1] bg-[rgba(255,214,220,var(--tw-bg-opacity))] w-11 h-10 rounded-full cursor-pointer hover:shadow-md my-auto transition ease-in-out duration-500"
         onClick={onClick}
       >
         {pointer}
-      </a>
+      </button>
     );
   };
 
@@ -69,6 +67,7 @@ const TestimonyLayout = ({ testimonial }) => {
           {pages.map(page => {
             const isActivePage = activePage === page;
             return (
+              // biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
               <div
                 key={page}
                 onClick={() => onClick(page)}
@@ -80,11 +79,12 @@ const TestimonyLayout = ({ testimonial }) => {
           })}
         </div>
         <div className="text-center mt-12">
-          <Link href="/testimonials">
-            <a className="font-medium text-opacity-100 flex items-center text-[rgba(153,35,51,var(--tw-text-opacity))]">
-              More Testimonials
-              <AiOutlineArrowRight className="ml-1" />
-            </a>
+          <Link
+            href="/testimonials"
+            className="font-medium text-opacity-100 flex items-center text-[rgba(153,35,51,var(--tw-text-opacity))]"
+          >
+            More Testimonials
+            <AiOutlineArrowRight className="ml-1" />
           </Link>
         </div>
       </div>
