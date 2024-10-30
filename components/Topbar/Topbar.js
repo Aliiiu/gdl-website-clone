@@ -48,6 +48,23 @@ const Topbar = props => {
   });
   const [value, setValue] = useState(0);
 
+  const checkScroll = () => {
+    const header = document.querySelector("header");
+
+    if (window.innerWidth <= 768) {
+      header.style.backgroundColor = "#fff";
+    }
+    if (window.scrollY > 30 || open) {
+      header?.classList.add("bg-white");
+      header?.classList.add("dark:bg-gray-900");
+      header?.classList.add("shadow-md");
+    } else {
+      header?.classList.remove("bg-white");
+      header?.classList.remove("dark:bg-gray-900");
+      header?.classList.remove("shadow-md");
+    }
+  };
+
   useEffect(() => {
     const body = document.querySelector("body");
     if (open) {
@@ -55,23 +72,6 @@ const Topbar = props => {
     } else {
       body.classList.remove("overflow-hidden");
     }
-
-    const checkScroll = () => {
-      const header = document.querySelector("header");
-
-      if (window.innerWidth <= 768) {
-        header.style.backgroundColor = "#fff";
-      }
-      if (window.scrollY > 30 || open) {
-        header?.classList.add("bg-white");
-        header?.classList.add("dark:bg-gray-900");
-        header?.classList.add("shadow-md");
-      } else {
-        header?.classList.remove("bg-white");
-        header?.classList.remove("dark:bg-gray-900");
-        header?.classList.remove("shadow-md");
-      }
-    };
     checkScroll();
   }, [open]);
 

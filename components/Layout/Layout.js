@@ -4,7 +4,7 @@ import Footer from "../Footer/Footer";
 import JoinTheClub from "../PageSections/JoinTheClub";
 import { useRouter } from "next/router";
 
-const Layout = ({ children, ...props }) => {
+const Layout = ({ children }) => {
   const route = useRouter();
 
   const { hideLayout } = route.query;
