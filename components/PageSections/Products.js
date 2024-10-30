@@ -22,14 +22,13 @@ export const RightProduct = ({ content }) => (
         </p>
       </div>
       <div className="mt-8">
-        <Link href={content.call_to_action_link}>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-opacity-[1] text-[rgba(153,35,51,var(--tw-text-opacity))] font-medium"
-          >
-            Get Started →
-          </a>
+        <Link
+          href={content.call_to_action_link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-opacity-[1] text-[rgba(153,35,51,var(--tw-text-opacity))] font-medium"
+        >
+          Get Started →
         </Link>
       </div>
     </RightProductSection>
