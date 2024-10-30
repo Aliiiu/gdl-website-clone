@@ -15,7 +15,6 @@ const TopbarDropdown = ({ theme, open, ...props }) => (
         className="inline-flex items-center lg:p-2 lg:px-0 p-0 text-sm text-black rounded-lg focus:outline-none focus:ring-0 focus:ring-gray-200 dark:text-white dark:focus:ring-gray-600"
         aria-controls="navbar-sticky"
         aria-expanded="false"
-        // onClick={() => setOpen(!open)}
       >
         <span className="sr-only">Open main menu</span>
         {!open ? <MenuIcon theme={theme} /> : <MenuClose theme={theme} />}
@@ -36,14 +35,12 @@ const TopbarDropdown = ({ theme, open, ...props }) => (
         </Menu.Items>
       </Transition>
     </div>
-    <Link href="/">
-      <a className="flex mx-4 justify-center font-title-font">
-        <img
-          src="https://flowbite.com/docs/images/logo.svg"
-          class="h-7 sm:h-9 block"
-          alt="Flowbite Logo"
-        />
-      </a>
+    <Link href="/" className="flex mx-4 justify-center font-title-font">
+      <img
+        src="https://flowbite.com/docs/images/logo.svg"
+        class="h-7 sm:h-9 block"
+        alt="Flowbite Logo"
+      />
     </Link>
   </Menu>
 );
