@@ -38,10 +38,11 @@ const BlogList = ({
                 {formatDate(createdAt) || ""}
               </span>
             </div>
-            <Link href={`/blog/${url}`}>
-              <a className="text-2xl md:text-3xl inline-block line-clamp-1 font-bold text-[#992333]">
-                {title}
-              </a>
+            <Link
+              href={`/blog/${url}`}
+              className="text-2xl md:text-3xl inline-block line-clamp-1 font-bold text-[#992333]"
+            >
+              {title}
             </Link>
             <article className="md:text-[1.125rem] 2xl:mt-4 text-[16px] line-clamp-4 md:leading-[1.75rem] dark:text-white leading-[24px] subject w-full font-[300]">
               {excerpt}
