@@ -16,6 +16,7 @@
     "@material-ui/icons": "^4.11.2",
     "@mui/material": "^5.0.4",
     "@tailwindcss/line-clamp": "^0.4.4",
+    "@types/react-scroll": "^1.8.10",
     "axios": "^1.2.1",
     "dayjs": "^1.11.7",
     "html-react-parser": "^3.0.14",

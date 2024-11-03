@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
-import { AppButton } from "../../../../components/Widgets/Button/Button";
-import CloudinaryImage from "../../../../components/Widgets/CloudinaryImage";
-import AppModal from "../../../../components/Widgets/Modal/Modal";
+import { AppButton } from "../../../../../components/Widgets/Button/Button";
+import CloudinaryImage from "../../../../../components/Widgets/CloudinaryImage";
+import AppModal from "../../../../../components/Widgets/Modal/Modal";
 import parse from "html-react-parser";
 
 const ProductsList = ({ product }: { product: any }) => {

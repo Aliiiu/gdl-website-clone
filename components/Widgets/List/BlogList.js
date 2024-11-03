@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { IoBookOutline } from "react-icons/io5";
 import { formatDate } from "../../../utils/helper";
-import { useRouter } from "next/router";
 
 const BlogList = ({
   category,
