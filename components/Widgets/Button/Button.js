@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import Loader from "../Loader/Loader";
 import { Button } from "./button.style";

@@ -1,7 +1,7 @@
 import React from "react";
 import { AiOutlineArrowRight } from "react-icons/ai";
-import { Link as ScrollLink } from "react-scroll";
 import { getStatisticsData } from "../actions";
+import CustomScrollLink from "../../../components/scroll-link";
 
 const BannerSection = async () => {
 	const stat = await getStatisticsData();
@@ -20,11 +20,11 @@ const BannerSection = async () => {
 							<span>+</span>
 						</h2>
 						<h4 className="-mt-1 text-[#FF7389]">Customers</h4>
-						<ScrollLink to="testimonial" smooth={true}>
+						<CustomScrollLink to="testimonial">
 							<h5 className="text-sm cursor-pointer hover:underline mt-3 flex items-center gap-x-1 text-opacity-[1] text-[rgba(255,214,220,var(--tw-text-opacity))]">
 								See Testimonials <AiOutlineArrowRight />
 							</h5>
-						</ScrollLink>
+						</CustomScrollLink>
 					</div>
 				</div>
 				<div className="w-full md:w-1/4 flex flex-col items-center justify-center min-h-[9em]">
@@ -34,11 +34,11 @@ const BannerSection = async () => {
 							<span>+</span>
 						</h2>
 						<span className="-mt-1 text-[#FF7389]">Business</span>
-						<ScrollLink to="testimonial" smooth={true}>
+						<CustomScrollLink to="testimonial">
 							<h5 className="text-sm cursor-pointer hover:underline mt-3 flex items-center gap-x-1 text-opacity-[1] text-[rgba(255,214,220,var(--tw-text-opacity))]">
 								See Testimonials <AiOutlineArrowRight />
 							</h5>
-						</ScrollLink>
+						</CustomScrollLink>
 					</div>
 				</div>
 			</div>

@@ -41,7 +41,8 @@
     "redux-persist": "^6.0.0",
     "redux-thunk": "^2.4.1",
     "remark-gfm": "^4.0.0",
-    "styled-components": "^5"
+    "styled-components": "^5",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@types/node": "22.8.4",

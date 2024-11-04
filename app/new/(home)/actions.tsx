@@ -1,11 +1,12 @@
 import { makeRequest } from "../../../apiCalls/requestHandler";
+import type { HeroResponse, Products } from "./types";
 
-export const getHeroData = async () => {
+export const getHeroData = async (): Promise<HeroResponse> => {
 	const heroData = await makeRequest("/pages/home/hero");
 	return heroData?.data?.data;
 };
 
-export const getProductData = async () => {
+export const getProductData = async (): Promise<Products> => {
 	const productData = await makeRequest("/pages/products/s");
 	return productData?.data?.data.reverse();
 };

@@ -5,18 +5,30 @@ import { AppButton } from "../../../../../components/Widgets/Button/Button";
 import CloudinaryImage from "../../../../../components/Widgets/CloudinaryImage";
 import AppModal from "../../../../../components/Widgets/Modal/Modal";
 import parse from "html-react-parser";
+import type { Products } from "../../types";
+import { z } from "zod";
 
-const ProductsList = ({ product }: { product: any }) => {
+const ModalContentSchema = z.object({
+	header: z.string(),
+	content: z.string(),
+	desc: z.string().optional(),
+	icon: z.string(),
+	img: z.string().url(),
+});
+
+type ModalContent = z.infer<typeof ModalContentSchema>;
+
+const ProductsList = ({ product }: { product: Products }) => {
 	const [open, setOpen] = useState(false);
-	const [content, setContent] = useState();
+	const [content, setContent] = useState<ModalContent>({} as ModalContent);
 
-	const handleRedirection = (item: any) => () => {
+	const handleRedirection = (item: ModalContent) => () => {
 		setContent(item);
 		setOpen(true);
 	};
 	return (
 		<div className="mt-10 md:mt-20 grid md:grid-cols-2 lg:grid-cols-3 gap-3">
-			{product.map((item: any) => {
+			{product.map((item) => {
 				const arr = item?.product_image_url?.split("/");
 				return (
 					<div
@@ -47,11 +59,11 @@ const ProductsList = ({ product }: { product: any }) => {
 							<AppButton
 								name="Learn more"
 								onPress={handleRedirection({
-									header: item?.product_name,
-									content: item?.product_description,
-									desc: item?.product_snippet,
-									icon: item?.product_icon_url,
-									img: item?.product_image_url,
+									header: item.product_name,
+									content: item.product_description,
+									desc: item.product_snippet,
+									icon: item.product_icon_url,
+									img: item.product_image_url,
 								})}
 								loading={false} // Update Later
 								className="mt-4 uppercase card-btn bg-white text-black"
@@ -71,7 +83,7 @@ const ProductsList = ({ product }: { product: any }) => {
 
 export default ProductsList;
 
-const ModalContent = ({ content }: { content: any }) => {
+const ModalContent = ({ content }: { content: ModalContent }) => {
 	return (
 		<div className="relative overflow-hidden min-h-[320px] rounded-lg max-w-[90vw] bg-white">
 			<section className="max-w-[1200px] max-h-[90vh] overflow-auto pb-0 flex">
