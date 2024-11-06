@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { AppButton } from "../../../../components/Widgets/Button/Button";
 
