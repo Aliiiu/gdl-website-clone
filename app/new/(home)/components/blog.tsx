@@ -3,8 +3,11 @@ import Link from "next/link";
 import React from "react";
 import { IoBookOutline } from "react-icons/io5";
 import { formatDate } from "../../../../utils/helper";
+import { getBlogData } from "../actions";
+import type { Blogs } from "../types";
 
-export default function Blog() {
+export default async function Blog() {
+	const blogPost = await getBlogData();
 	return (
 		<section className="pt-12 md:pt-24" id="blog">
 			<div className="px-[1.5rem] mx-auto max-w-[1200px]">
@@ -17,7 +20,7 @@ export default function Blog() {
 					</p>
 				</div>
 				<section className="mt-16 md:px-[1.5rem] mx-auto max-w-[56rem]">
-					<BlogList {...blogPost} />
+					<BlogList {...blogPost[0]} />
 				</section>
 				<div className="mt-16 mb-5 md:mb-10 text-center">
 					<Link
@@ -39,7 +42,7 @@ const BlogList = ({
 	featured_image_url,
 	excerpt,
 	createdAt,
-}) => {
+}: Blogs) => {
 	const url = encodeURIComponent(title?.replace(/ /g, "-").toLowerCase());
 
 	return (
