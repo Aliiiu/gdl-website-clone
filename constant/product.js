@@ -19,18 +19,18 @@ export const financeAndLeasing = [
   {
     title: "Financial Advisory",
     hint: "Get Good Advice, Invest Better.",
-    img: "/Images/african-bis.jpg",
+    img: "/Images/african-bis.webp",
   },
   {
     title: "GDL Long Term Note",
     hint: "Play the long game",
-    img: "/Images/flat.jpg",
+    img: "/Images/flat.webp",
   },
-  {
-    title: "GDL Dollar Note",
-    hint: " Earn Top Dollar",
-    img: "/Images/dollar.jpg",
-  },
+  // {
+  //   title: "GDL Dollar Note",
+  //   hint: " Earn Top Dollar",
+  //   img: "/Images/dollar.jpg",
+  // },
   {
     title: "GDL Value Note",
     hint: "Get Better Value",
@@ -70,17 +70,17 @@ export const product = [
   {
     title: "Financial Advisory",
     hint: "Get Good Advice, Invest Better.",
-    img: "/Images/african-bis.jpg",
+    img: "/Images/african-bis.webp",
   },
   {
     title: "GDL Long Term Note",
     hint: "Play the Long Game",
-    img: "/Images/flat.jpg",
+    img: "/Images/flat.webp",
   },
   {
     title: "GDL Dollar Note",
     hint: "Earn Top Dollar",
-    img: "/Images/dollar.jpg",
+    img: "/Images/dollar.webp",
   },
   {
     title: "Finance",

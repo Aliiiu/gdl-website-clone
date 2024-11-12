@@ -60,11 +60,11 @@ const FinanceAndLeasing = () => {
               We have various products which have been specifically designed for
               you. These product are{" "}
               <strong className="font-semibold">
-                regulated by Securities & Exchange Commission (SEC)
+                regulated by Central Bank of Nigeria (CBN)
               </strong>
             </p>
           </div>
-          <div className="mt-10 md:mt-24 grid md:grid-cols-2 gap-6 max-w-[800px] mx-auto">
+          <div className="mt-10 md:mt-24 grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[1000px] mx-auto">
             {financeAndLeasing.map(item => {
               return (
                 <div
