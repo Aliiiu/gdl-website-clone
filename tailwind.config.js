@@ -22,6 +22,9 @@ module.exports = {
       backgroundColor: {
         gdlGrey: "#FAFBFB",
       },
+      backgroundImage: {
+        "get-started-image": "url('/Images/get-started.jpg')",
+      },
       animation: {
         "fade-in": "fadeIn 1s ease-in-out",
         "slide-up": "slideUp 1s ease-in-out",

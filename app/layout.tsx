@@ -1,9 +1,9 @@
-import { Neonderthaw } from "next/font/google";
+import { Raleway } from "next/font/google";
 import "./globals.css";
 
-const neonderthaw = Neonderthaw({
+const raleway = Raleway({
 	subsets: ["latin"],
-	weight: ["400"],
+	weight: ["300", "400", "500", "600", "700"],
 	display: "swap",
 	fallback: ["Gilroy", "sans-serif"],
 });
@@ -15,7 +15,7 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body className={`${neonderthaw.className} antialiased`}>{children}</body>
+			<body className={`${raleway.className} antialiased`}>{children}</body>
 		</html>
 	);
 }
