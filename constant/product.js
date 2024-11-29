@@ -26,11 +26,11 @@ export const financeAndLeasing = [
     hint: "Play the long game",
     img: "/Images/flat.webp",
   },
-  // {
-  //   title: "GDL Dollar Note",
-  //   hint: " Earn Top Dollar",
-  //   img: "/Images/dollar.jpg",
-  // },
+  {
+    title: "GDL Housemoni",
+    hint: "Secure your own home in 3.5 years",
+    img: "/Images/h-community.webp",
+  },
   {
     title: "GDL Value Note",
     hint: "Get Better Value",

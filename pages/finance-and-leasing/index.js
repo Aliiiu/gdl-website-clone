@@ -64,7 +64,7 @@ const FinanceAndLeasing = () => {
               </strong>
             </p>
           </div>
-          <div className="mt-10 md:mt-24 grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[1000px] mx-auto">
+          <div className="mt-10 md:mt-24 grid md:grid-cols-2 gap-6 max-w-[800px] mx-auto">
             {financeAndLeasing.map(item => {
               return (
                 <div
