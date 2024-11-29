@@ -8,7 +8,6 @@ import HeroSection from "../components/PageSections/HeroSection";
 import BannerSection from "../components/PageSections/BannerSection";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import Image from "next/image";
-import Link from "next/link";
 
 const HomePage = ({ hero, stat, products, testimonial, blogPost }) => {
   let [counter, setCounter] = useState(0);
@@ -54,7 +53,7 @@ const HomePage = ({ hero, stat, products, testimonial, blogPost }) => {
                   Turn from tenant to homeowner in 3½ years with constant,
                   affordable monthly payments.
                 </p>
-                <Link
+                <a
                   href={"https://housemoni.ng/"}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -62,7 +61,7 @@ const HomePage = ({ hero, stat, products, testimonial, blogPost }) => {
                   <span className="bg-white w-fit text-xs md:text-base rounded-lg px-3 py-1 md:px-5 md:py-2.5 text-[#992333] font-thin flex items-center gap-x-1 cursor-pointer">
                     Start your home ownership journey <AiOutlineArrowRight />
                   </span>
-                </Link>
+                </a>
               </div>
             </div>
           </div>

@@ -20,7 +20,9 @@ const App = ({
       <HomePage
         hero={heroContent[0]}
         stat={statContent[0]}
-        products={prodContent.filter(item => item?.publish_product === true)}
+        products={prodContent
+          .filter(item => item?.publish_product === true)
+          .reverse()}
         testimonial={testimonialContent}
         media={mediaContent}
         blog={blogContent}
