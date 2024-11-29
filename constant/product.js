@@ -17,6 +17,11 @@ export const assetMgmt = [
 ];
 export const financeAndLeasing = [
   {
+    title: "GDL Housemoni",
+    hint: "Secure your own home in 3.5 years",
+    img: "/Images/h-community.webp",
+  },
+  {
     title: "Financial Advisory",
     hint: "Get Good Advice, Invest Better.",
     img: "/Images/african-bis.webp",
@@ -25,11 +30,6 @@ export const financeAndLeasing = [
     title: "GDL Long Term Note",
     hint: "Play the long game",
     img: "/Images/flat.webp",
-  },
-  {
-    title: "GDL Housemoni",
-    hint: "Secure your own home in 3.5 years",
-    img: "/Images/h-community.webp",
   },
   {
     title: "GDL Value Note",
