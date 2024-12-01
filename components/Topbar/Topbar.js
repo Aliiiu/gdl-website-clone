@@ -12,16 +12,20 @@ import { IoChevronForward } from "react-icons/io5";
 import { homeLinks } from "../../utils/helper";
 
 const NavLink = ({ url, name, className, ...props }) => (
-  <li onClick={props.onClick}>
-    <a className={`${className}`}>
+  <button type="button" onClick={props.onClick}>
+    <span className={`${className}`}>
       {name} <IoChevronForward className="text-[#ABA9A7]" />
-    </a>
-  </li>
+    </span>
+  </button>
 );
 
 const HomeLink = ({ url, name, icon, subname, ...props }) => (
   <Link href={`${url}`}>
-    <a className="sub-menu" onClick={() => props.setOpen(false)}>
+    <button
+      type="button"
+      className="sub-menu"
+      onClick={() => props.setOpen(false)}
+    >
       <div>
         <div className="icon">{icon}</div>
       </div>
@@ -29,7 +33,7 @@ const HomeLink = ({ url, name, icon, subname, ...props }) => (
         <h3 className="font-semibold">{name}</h3>
         <p className="text-xs md:block hidden">{subname}</p>
       </div>
-    </a>
+    </button>
   </Link>
 );
 
@@ -93,7 +97,9 @@ const Topbar = props => {
 
   return (
     <header
-      className={`z-30 sticky top-0 right-0 left-0 border-gray-200 w-full dark:border-gray-600 transition ease-in-out duration-500`}
+      className={
+        "z-30 sticky top-0 right-0 left-0 border-gray-200 w-full dark:border-gray-600 transition ease-in-out duration-500"
+      }
     >
       <Transition
         show={open}
@@ -118,9 +124,9 @@ const Topbar = props => {
             <ul className="left-nav mt-[1rem] h-full border-r-[1px] border-opacity-[0.1] border-[rgba(194,207,214,var(--tw-border-opacity))]">
               {Object.keys(urlstate).map((content, index) => (
                 <NavLink
-                  key={index}
+                  key={crypto.randomUUID()}
                   name={content}
-                  className={`${index == value ? "selected " : ""} capitalize`}
+                  className={`${index === value ? "selected " : ""} capitalize`}
                   onClick={() => setValue(index)}
                 />
               ))}
@@ -157,12 +163,16 @@ const Topbar = props => {
                     )}
                   </button>
                   <Link href="/">
-                    <a className="flex items-center flex-col justify-center font-title-font">
+                    <button
+                      type="button"
+                      className="flex cursor-pointer items-center flex-col justify-center font-title-font"
+                    >
                       <img
                         className="h-10"
+                        alt="GDL Logo"
                         src="https://res.cloudinary.com/gdlapp/image/upload/v1625500547/image/gdllogo.svg.svg"
                       />
-                    </a>
+                    </button>
                   </Link>
                 </div>
                 <div
@@ -183,25 +193,24 @@ const Topbar = props => {
                 </div>
               </div>
               <div className="hidden lg:flex gap-x-6 justify-end items-center">
-                <Link href="https://app.gdl.com.ng/auth/login">
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-black dark:text-white font-light"
-                  >
-                    Login
-                  </a>
-                </Link>
-                <Link href="https://app.gdl.com.ng/auth/signup">
-                  <a target="_blank" rel="noopener noreferrer">
-                    <AppButton
-                      name="Create an Account"
-                      icon={
-                        <AiOutlineArrowRight className="font-thin text-sm" />
-                      }
-                    />
-                  </a>
-                </Link>
+                <a
+                  href="https://app.gdl.com.ng/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-black dark:text-white font-light"
+                >
+                  Login
+                </a>
+                <a
+                  href="https://app.gdl.com.ng/signup"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <AppButton
+                    name="Create an Account"
+                    icon={<AiOutlineArrowRight className="font-thin text-sm" />}
+                  />
+                </a>
               </div>
               <button
                 data-collapse-toggle="navbar-sticky"
