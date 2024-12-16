@@ -33,7 +33,7 @@ const ProductsList = ({ product }: { product: Products }) => {
 				return (
 					<div
 						key={item.product_name}
-						className="card flex flex-col relative justify-end"
+						className="shadow-md rounded-lg h-96 overflow-hidden flex flex-col relative justify-end"
 					>
 						<CloudinaryImage
 							src={arr?.[arr?.length - 1]}
