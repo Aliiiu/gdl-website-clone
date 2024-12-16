@@ -4,8 +4,8 @@ export default function GetStarted() {
 	return (
 		<section id="get-started" className="lg:w-4/6 mx-auto pt-20 -mb-20 w-full">
 			<div className="flex justify-center">
-				<div className="flex flex-col md:flex-row max-w-4xl mx-auto overflow-hidden rounded-lg bg-get-started-image bg-no-repeat bg-cover bg-center">
-					<div className=" md:w-[50%] p-6 xl:p-12 getstarted-bg">
+				<div className="flex flex-col md:flex-row max-w-4xl mx-auto overflow-hidden rounded-lg shadow-2xl bg-get-started-image bg-no-repeat bg-cover bg-center">
+					<div className=" md:w-[50%] p-6 xl:p-12 bg-primary/50">
 						<div className="flex flex-col p-12 xl:p-12 text-white h-full justify-center z-40 ">
 							<h2 className="text-4xl lg:w-16 font-bold leading-tight">
 								Get Started

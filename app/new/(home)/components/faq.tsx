@@ -26,7 +26,7 @@ const Faq = () => {
 						className="text-white bg-black px-5 py-4"
 					/>
 				</div>
-				<div className="rounded-lg bg-[url('Images/blog.jpeg')] h-[370px] overflow-hidden flex-1" />
+				<div className="rounded-lg bg-blog-image h-[370px] overflow-hidden flex-1" />
 			</div>
 		</section>
 	);

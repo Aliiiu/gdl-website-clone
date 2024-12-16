@@ -4,6 +4,7 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
     "./constant/**/*.{js,ts,jsx,tsx}",
+    "./app/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     fontFamily: {
@@ -24,6 +25,7 @@ module.exports = {
       },
       backgroundImage: {
         "get-started-image": "url('/Images/get-started.jpg')",
+        "blog-image": "url('/Images/blog.jpeg')",
       },
       animation: {
         "fade-in": "fadeIn 1s ease-in-out",

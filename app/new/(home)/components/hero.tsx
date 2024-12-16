@@ -2,7 +2,7 @@ import Link from "next/link";
 import { getHeroData } from "../actions";
 import Image from "next/image";
 
-export default async function Hero() {
+async function Hero() {
 	const hero = await getHeroData();
 	return (
 		<section className="flex flex-col items-start justify-center relative container px-4 xl:px-28 mx-auto md:min-h-[500px] min-h-[460px]">
@@ -46,3 +46,5 @@ export default async function Hero() {
 		</section>
 	);
 }
+
+export default Hero;
