@@ -2,6 +2,10 @@
   "name": "landing-app",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=10.0.0"
+  },
   "scripts": {
     "dev": "next dev --port 8000",
     "build": "next build",
@@ -17,7 +21,6 @@
     "@mui/material": "^5.0.4",
     "@tailwindcss/line-clamp": "^0.4.4",
     "axios": "^1.2.1",
-    "crypto-browserify": "^3.12.1",
     "dayjs": "^1.11.7",
     "html-react-parser": "^3.0.14",
     "next": "12.3.1",
