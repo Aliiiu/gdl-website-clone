@@ -30,11 +30,11 @@ const Boards = ({ data, notClickable }) => {
     <div>
       <h2 className="title mb-4 text-center">Board Of Directors</h2>
       <p className="text-center">Meet the people behind the wheel</p>
-      <div className="grid mt-[50px] xl:mt-[100px] sm:grid-cols-2 lg:grid-cols-3 gap-y-[100px]">
+      <div className="grid mt-[50px] xl:mt-[100px] sm:grid-cols-2 lg:grid-cols-3 gap-y-[100px] ">
         {data.map(item => (
-          <div key={item.id} className="">
+          <div key={item.id} className="flex flex-col item-center">
             {item.image_url ? (
-              <div className="relative rounded-[50%] overflow-hidden mx-auto w-[160px] h-[160px]">
+              <div className="relative rounded-[50%] bg-[#484848] overflow-hidden mx-auto w-[160px] h-[160px]">
                 <Image
                   unoptimized
                   src={item.image_url}

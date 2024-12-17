@@ -1,6 +1,3 @@
-// const response = await fetch("https://test-site.gdlapi.com.ng/pages/home/hero");
-// const data = await response.json();
-
 const baseURL = "https://site.housemoni.net"; // suppose to come from the env file
 
 export const makeRequest = async (

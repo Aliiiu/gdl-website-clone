@@ -12,22 +12,28 @@ import { IoChevronForward } from "react-icons/io5";
 import { homeLinks } from "../../utils/helper";
 
 const NavLink = ({ url, name, className, ...props }) => (
-  <li>
-    <button type="button" onClick={props.onClick} className={`${className}`}>
+  <button type="button" onClick={props.onClick}>
+    <span className={`${className}`}>
       {name} <IoChevronForward className="text-[#ABA9A7]" />
-    </button>
-  </li>
+    </span>
+  </button>
 );
 
 const HomeLink = ({ url, name, icon, subname, ...props }) => (
-  <Link href={`${url}`} onClick={() => props.setOpen(false)}>
-    <div>
-      <div className="icon">{icon}</div>
-    </div>
-    <div className="ml-4">
-      <h3 className="font-semibold">{name}</h3>
-      <p className="text-xs md:block hidden">{subname}</p>
-    </div>
+  <Link href={`${url}`}>
+    <button
+      type="button"
+      className="sub-menu"
+      onClick={() => props.setOpen(false)}
+    >
+      <div>
+        <div className="icon">{icon}</div>
+      </div>
+      <div className="ml-4">
+        <h3 className="font-semibold">{name}</h3>
+        <p className="text-xs md:block hidden">{subname}</p>
+      </div>
+    </button>
   </Link>
 );
 
@@ -156,15 +162,17 @@ const Topbar = props => {
                       <MenuClose theme={theme} />
                     )}
                   </button>
-                  <Link
-                    href="/"
-                    className="flex items-center flex-col justify-center font-title-font"
-                  >
-                    <img
-                      className="h-10"
-                      src="https://res.cloudinary.com/gdlapp/image/upload/v1625500547/image/gdllogo.svg.svg"
-                      alt="gdl logo"
-                    />
+                  <Link href="/">
+                    <button
+                      type="button"
+                      className="flex cursor-pointer items-center flex-col justify-center font-title-font"
+                    >
+                      <img
+                        className="h-10"
+                        alt="GDL Logo"
+                        src="https://res.cloudinary.com/gdlapp/image/upload/v1625500547/image/gdllogo.svg.svg"
+                      />
+                    </button>
                   </Link>
                 </div>
                 <div
@@ -185,16 +193,16 @@ const Topbar = props => {
                 </div>
               </div>
               <div className="hidden lg:flex gap-x-6 justify-end items-center">
-                <Link
-                  href="https://app.gdl.com.ng/auth/login"
+                <a
+                  href="https://app.gdl.com.ng/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-black dark:text-white font-light"
                 >
                   Login
-                </Link>
-                <Link
-                  href="https://app.gdl.com.ng/auth/signup"
+                </a>
+                <a
+                  href="https://app.gdl.com.ng/signup"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -202,7 +210,7 @@ const Topbar = props => {
                     name="Create an Account"
                     icon={<AiOutlineArrowRight className="font-thin text-sm" />}
                   />
-                </Link>
+                </a>
               </div>
               <button
                 data-collapse-toggle="navbar-sticky"

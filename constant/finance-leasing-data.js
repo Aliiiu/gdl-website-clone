@@ -21,7 +21,7 @@ export const financeBOD = [
   },
   {
     id: 5,
-    image_url: "/Images/Victoria.webp",
+    image_url: "/Images/victoria.jpg",
     staff_initials: "VA",
     staff_name: "Victoria Abiola Ajayi - Non-Executive (Independent Director)",
   },

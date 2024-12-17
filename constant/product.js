@@ -17,19 +17,19 @@ export const assetMgmt = [
 ];
 export const financeAndLeasing = [
   {
+    title: "GDL Housemoni",
+    hint: "Secure your own home in 3.5 years",
+    img: "/Images/h-community.webp",
+  },
+  {
     title: "Financial Advisory",
     hint: "Get Good Advice, Invest Better.",
-    img: "/Images/african-bis.jpg",
+    img: "/Images/african-bis.webp",
   },
   {
     title: "GDL Long Term Note",
     hint: "Play the long game",
-    img: "/Images/flat.jpg",
-  },
-  {
-    title: "GDL Dollar Note",
-    hint: " Earn Top Dollar",
-    img: "/Images/dollar.jpg",
+    img: "/Images/flat.webp",
   },
   {
     title: "GDL Value Note",
@@ -70,17 +70,17 @@ export const product = [
   {
     title: "Financial Advisory",
     hint: "Get Good Advice, Invest Better.",
-    img: "/Images/african-bis.jpg",
+    img: "/Images/african-bis.webp",
   },
   {
     title: "GDL Long Term Note",
     hint: "Play the Long Game",
-    img: "/Images/flat.jpg",
+    img: "/Images/flat.webp",
   },
   {
     title: "GDL Dollar Note",
     hint: "Earn Top Dollar",
-    img: "/Images/dollar.jpg",
+    img: "/Images/dollar.webp",
   },
   {
     title: "Finance",

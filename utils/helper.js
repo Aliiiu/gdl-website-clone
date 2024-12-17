@@ -389,7 +389,7 @@ export const data = {
   ],
   "dollar-note": [
     {
-      img: "/Images/dollar.jpg",
+      img: "/Images/dollar.webp",
       title: "Dollar Note",
       description: (
         <div>
@@ -452,7 +452,7 @@ export const data = {
   ],
   "long-term-note": [
     {
-      img: "/Images/flat.jpg",
+      img: "/Images/flat.webp",
       title: "Long Term Note",
       description: (
         <div>
@@ -485,7 +485,7 @@ export const data = {
   ],
   "financial-advisory": [
     {
-      img: "/Images/african-bis.jpg",
+      img: "/Images/african-bis.webp",
       title: "Financial Advisory",
       description: (
         <div>

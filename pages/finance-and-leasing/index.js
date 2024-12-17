@@ -60,7 +60,7 @@ const FinanceAndLeasing = () => {
               We have various products which have been specifically designed for
               you. These product are{" "}
               <strong className="font-semibold">
-                regulated by Securities & Exchange Commission (SEC)
+                regulated by Central Bank of Nigeria (CBN)
               </strong>
             </p>
           </div>
