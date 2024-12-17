@@ -1,70 +1,24 @@
-import Image from "next/image";
+import ProductLists from "@/app/components/product-list";
 import React from "react";
 
 const Products = () => {
 	return (
-		<section className="py-16 md:py-24 xl:py-36">
-			<div className="container px-4 xl:px-28 mx-auto">
-				<div id="products" className="text-center md:text-center">
-					<h1 className="text-4xl sm:text-5xl font-bold mb-[.75rem]">
-						Products
-					</h1>
-					<p className="text-lg w-full md:w-4/5 xl:w-3/5 leading-[1.75rem] text-opacity-[0.9] text-[rgba(31,26,23,var(--tw-text-opacity))] dark:text-white mx-auto">
+		<section className="py-16 md:py-24 xl:py-36 container px-4 xl:px-28 mx-auto">
+			<ProductLists
+				title={"Products"}
+				description={
+					<>
 						We have various products which have been specifically designed for
-						you. These product are{" "}
+						you. These products are{" "}
 						<strong className="font-semibold">
-							regulated by Securities & Exchange Commission (SEC)
+							regulated by Central Bank of Nigeria (CBN)
 						</strong>
-					</p>
-				</div>
-				<div className="mt-10 md:mt-24 grid md:grid-cols-2 gap-6 max-w-[800px] mx-auto">
-					{financeAndLeasing.map((item) => {
-						return (
-							<div
-								key={item.title}
-								className="shadow-md rounded-lg h-96 overflow-hidden flex flex-col relative justify-end"
-							>
-								<Image
-									src={item.img}
-									alt={item.title}
-									fill
-									sizes="100%"
-									className="object-cover object-center"
-								/>
-								<div
-									style={{
-										background:
-											"linear-gradient(180deg,transparent,rgba(153,35,51,.25),rgba(153,35,51,.85))",
-									}}
-									className="flex p-6 h-full justify-end z-10 text-white flex-col items-start"
-								>
-									<h2 className="text-xl font-bold lg:text-2xl">
-										{item.title}
-									</h2>
-									<p className="text-lg break-words text-white">
-										{item.hint}
-
-										{/* {item.product_image_url} */}
-									</p>
-									{/* <AppButton
-											name="Learn more"
-											onPress={() => router.push("/products")}
-											className="mt-4 uppercase card-btn bg-white text-black"
-										/> */}
-								</div>
-							</div>
-						);
-					})}
-				</div>
-
-				<div className="flex mt-10 md:mt-20 justify-center items-center">
-					{/* <AppButton
-							name="Explore More"
-							onPress={() => router.push("/products")}
-							className="bg-[#9A2333] py-[1rem] rounded-[0.5rem] px-[1.5rem] text-[1.5rem] text-white"
-						/> */}
-				</div>
-			</div>
+					</>
+				}
+				className="md:grid-cols-2 gap-6 max-w-[800px] mx-auto"
+				productData={financeAndLeasing}
+				showExploreMoreBtn
+			/>
 		</section>
 	);
 };
@@ -73,23 +27,23 @@ export default Products;
 
 const financeAndLeasing = [
 	{
-		title: "Financial Advisory",
-		hint: "Get Good Advice, Invest Better.",
-		img: "/Images/african-bis.jpg",
+		product_name: "Financial Advisory",
+		product_snippet: "Get Good Advice, Invest Better.",
+		img: "/Images/african-bis.webp",
 	},
 	{
-		title: "GDL Long Term Note",
-		hint: "Play the long game",
-		img: "/Images/flat.jpg",
+		product_name: "GDL Long Term Note",
+		product_snippet: "Play the long game",
+		img: "/Images/flat.webp",
 	},
 	{
-		title: "GDL Dollar Note",
-		hint: " Earn Top Dollar",
+		product_name: "GDL Dollar Note",
+		product_snippet: " Earn Top Dollar",
 		img: "/Images/dollar.jpg",
 	},
 	{
-		title: "GDL Value Note",
-		hint: "Get Better Value",
+		product_name: "GDL Value Note",
+		product_snippet: "Get Better Value",
 		img: "/Images/high-yield-note.jpeg",
 	},
 ];
