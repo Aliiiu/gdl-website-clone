@@ -1,13 +1,16 @@
 import { AppButton } from "@/components/Widgets/Button/Button";
 import CloudinaryImage from "@/components/Widgets/CloudinaryImage";
 import type { Product, ProductRedirectionParams } from "../types/product";
+import Link from "next/link";
+import Image from "next/image";
 
 interface ProductListsProps {
 	productData: Product[];
-	handleRedirection: (params: ProductRedirectionParams) => () => void;
+	handleRedirection?: (params: ProductRedirectionParams) => () => void;
 	title: string;
 	description: string | JSX.Element;
 	className?: string;
+	showExploreMoreBtn?: boolean;
 }
 
 const ProductLists = ({
@@ -16,6 +19,7 @@ const ProductLists = ({
 	description,
 	handleRedirection,
 	className,
+	showExploreMoreBtn,
 }: ProductListsProps) => {
 	return (
 		<div>
@@ -33,13 +37,23 @@ const ProductLists = ({
 							key={item.product_name}
 							className="shadow-md rounded-lg h-96 overflow-hidden flex flex-col relative justify-end"
 						>
-							<CloudinaryImage
-								src={arr?.[arr?.length - 1]}
-								alt={item.product_name}
-								layout="fill"
-								objectFit="cover"
-								objectPosition={"center"}
-							/>
+							{item.img ? (
+								<Image
+									src={item.img}
+									alt={item.product_name}
+									fill
+									sizes="100%"
+									className="object-cover object-center"
+								/>
+							) : (
+								<CloudinaryImage
+									src={arr?.[arr?.length - 1]}
+									alt={item.product_name}
+									layout="fill"
+									objectFit="cover"
+									objectPosition={"center"}
+								/>
+							)}
 							<div
 								style={{
 									background:
@@ -53,23 +67,42 @@ const ProductLists = ({
 								<p className="text-lg break-words text-white">
 									{item.product_snippet}
 								</p>
-								<AppButton
-									loading={false}
-									name="Learn more"
-									onPress={handleRedirection({
-										header: item?.product_name,
-										content: item?.product_description,
-										desc: item?.product_snippet,
-										icon: item?.product_icon_url,
-										img: item?.product_image_url,
-									})}
-									className="mt-4 uppercase card-btn bg-white text-black"
-								/>
+								{handleRedirection ? (
+									<AppButton
+										loading={false}
+										name="Learn more"
+										onPress={handleRedirection({
+											header: item?.product_name,
+											content: item?.product_description ?? "",
+											desc: item?.product_snippet,
+											icon: item?.product_icon_url ?? "",
+											img: item?.product_image_url ?? "",
+										})}
+										className="mt-4 uppercase card-btn bg-white text-black"
+									/>
+								) : (
+									<Link
+										href={"/products"}
+										className="mt-4 uppercase font-light rounded-lg py-3 px-6 text-sm bg-white text-black"
+									>
+										Learn More
+									</Link>
+								)}
 							</div>
 						</div>
 					);
 				})}
 			</div>
+			{showExploreMoreBtn && (
+				<div className="flex mt-10 md:mt-20 justify-center items-center">
+					<Link
+						href={"/products"}
+						className="bg-[#9A2333] text-sm font-light py-[1rem] rounded-[0.5rem] px-[1.5rem] uppercase text-white"
+					>
+						Explore More
+					</Link>
+				</div>
+			)}
 		</div>
 	);
 };

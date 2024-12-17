@@ -1,9 +1,10 @@
 export interface Product {
   product_name: string;
   product_snippet: string;
-  product_description: string;
-  product_image_url: string;
-  product_icon_url: string;
+  product_description?: string;
+  product_image_url?: string;
+  product_icon_url?: string;
+  img?: string;
 }
 
 export interface ProductRedirectionParams {
