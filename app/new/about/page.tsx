@@ -7,6 +7,11 @@ import Management from "./_components/management";
 import MissionVision from "./_components/mission-vision";
 import WhatWeAre from "./_components/what-we-are";
 import WhatWeDo from "./_components/what-we-do";
+import { generatePageMetadata } from "@/app/utils/metadata";
+
+export const generateMetadata = () => {
+	return generatePageMetadata({ title: "About" });
+};
 
 export default function Page() {
 	return (

@@ -33,9 +33,9 @@ export type Staff = {
 	image_url: string;
 	staff_name?: string;
 	director_name?: string;
-	staff_initials?: string;
-	porfolio: string;
-	profile: string;
-	createdAt: string;
-	updatedAt: string;
+	staff_initials?: string | undefined;
+	porfolio?: string;
+	profile?: string;
+	createdAt?: string;
+	updatedAt?: string;
 };
