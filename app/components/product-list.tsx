@@ -25,11 +25,7 @@ const ProductLists = ({
 			<p className="text-lg w-full md:w-1/2 lg:w-3/5 leading-[1.75rem] text-center text-opacity-[0.9] text-[rgba(31,26,23,var(--tw-text-opacity))] dark:text-white mx-auto">
 				{description}
 			</p>
-			<div
-				className={`mt-5 sm:mt-10 lg:mt-16 grid md:grid-cols-2 gap-6 ${
-					className
-				}`}
-			>
+			<div className={`mt-5 sm:mt-10 lg:mt-16 grid ${className}`}>
 				{productData.map((item) => {
 					const arr = item?.product_image_url?.split("/");
 					return (
