@@ -18,7 +18,7 @@ const CoreValues = ({ vision, mission }) => {
           </div>
           <div className="text-white h-[45%] card-content p-6">
             <h2 className="font-bold uppercase text-center text-lg mb-3">
-              {vision.title || `Our Vision`}
+              {vision.title || "Our Vision"}
             </h2>
             <p className="text-white text-center">
               {vision.description ||
@@ -33,7 +33,7 @@ const CoreValues = ({ vision, mission }) => {
           </div>
           <div className="text-white card-content p-6">
             <h2 className="font-bold uppercase text-center text-lg mb-3">
-              {mission.title || `Our mission`}
+              {mission.title || "Our mission"}
             </h2>
             <p className="text-white text-center">
               {mission.description ||
