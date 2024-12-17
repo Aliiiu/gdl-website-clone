@@ -27,3 +27,15 @@ export type MissionVisionResponse = {
 	vision: VisionResponse;
 	mission: MissionResponse;
 };
+
+export type Staff = {
+	id: number;
+	image_url: string;
+	staff_name?: string;
+	director_name?: string;
+	staff_initials?: string;
+	porfolio: string;
+	profile: string;
+	createdAt: string;
+	updatedAt: string;
+};

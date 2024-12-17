@@ -1,6 +1,6 @@
+import Faq from "@/app/components/faq";
 import BannerSection from "./components/banner";
 import Blog from "./components/blog";
-import Faq from "./components/faq";
 import GetStarted from "./components/get-started";
 import Hero from "./components/hero";
 import HousemoniBanner from "./components/housemoni-banner";

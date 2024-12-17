@@ -1,7 +1,7 @@
 "use client";
 
+import { AppButton } from "@/components/Widgets/Button/Button";
 import React from "react";
-import { AppButton } from "../../../../components/Widgets/Button/Button";
 
 const Faq = () => {
 	return (

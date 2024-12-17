@@ -4,6 +4,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .title {
+    @apply text-[28px] font-bold lg:text-[36px] xl:text-[48px];
+  }
+}
+
 html {
   word-spacing: 1px;
   -moz-osx-font-smoothing: grayscale;
