@@ -5,7 +5,7 @@ import BackImg from "../../../assets/Images/blogBackground.jpeg";
 const CustomHeader = props => (
   <PageHeader
     {...props}
-    className={`flex bg-opacity-10 justify-center items-center`}
+    className={"flex bg-opacity-10 justify-center items-center"}
     style={{
       backgroundImage: props.hasBackImg
         ? `url(${props.imgUrl?.src || BackImg.src})`
@@ -39,7 +39,9 @@ const CustomHeader = props => (
               {props.name || "Testimonials"}
             </h1>
             <p
-              className={`section-hint text-[rgba(31,26,23,var(--tw-text-opacity))] text-opacity-[0.9]`}
+              className={
+                "section-hint text-[rgba(31,26,23,var(--tw-text-opacity))] text-opacity-[0.9]"
+              }
             >
               {props.sub || "Our Customers can speak for us"}
             </p>
