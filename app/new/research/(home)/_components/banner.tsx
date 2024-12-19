@@ -11,7 +11,7 @@ const ResearchBanner = () => {
 						Our research team gives powerful insights into all the important
 						happenings in the world of business.
 					</p>
-					<Link href={"/research/papers"}>
+					<Link href={"research/papers"}>
 						<button
 							type="button"
 							className="capitalize px-4 bg-white text-sm border rounded-lg py-3 flex items-center gap-2"

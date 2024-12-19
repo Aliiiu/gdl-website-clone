@@ -3,12 +3,13 @@ import CloudinaryImage from "@/components/Widgets/CloudinaryImage";
 import type { Product, ProductRedirectionParams } from "../types/product";
 import Link from "next/link";
 import Image from "next/image";
+import type { ReactNode } from "react";
 
 interface ProductListsProps {
 	productData: Product[];
 	handleRedirection?: (params: ProductRedirectionParams) => () => void;
 	title: string;
-	description: string | JSX.Element;
+	description: string | ReactNode;
 	className?: string;
 	showExploreMoreBtn?: boolean;
 }

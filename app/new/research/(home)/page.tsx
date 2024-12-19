@@ -10,11 +10,11 @@ export const generateMetadata = () =>
 
 export default function Page() {
 	return (
-		<div>
+		<main>
 			<CustomHeader content={<ResearchHeader />} />
 			<ResearchFeatures />
 			<ResearchBanner />
 			<Faq />
-		</div>
+		</main>
 	);
 }
