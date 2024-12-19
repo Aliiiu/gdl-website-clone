@@ -54,7 +54,7 @@ const CustomHeader = ({
 								</div>
 							)}
 							<h1
-								className={`section-header ${
+								className={`font-bold text-4xl md:text-5xl ${
 									noIcon && "mb-[0.75rem] leading-[1.1]"
 								}`}
 							>
@@ -62,7 +62,7 @@ const CustomHeader = ({
 							</h1>
 							<p
 								className={
-									"section-hint text-[rgba(31,26,23,var(--tw-text-opacity))] text-opacity-[0.9]"
+									"text-lg text-[rgba(31,26,23,var(--tw-text-opacity))] text-opacity-[0.9]"
 								}
 							>
 								{sub}
