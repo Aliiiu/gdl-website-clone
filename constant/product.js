@@ -24,12 +24,12 @@ export const financeAndLeasing = [
   {
     title: "Financial Advisory",
     hint: "Get Good Advice, Invest Better.",
-    img: "/Images/african-bis.webp",
+    img: "/Images/african.webp",
   },
   {
     title: "GDL Long Term Note",
     hint: "Play the long game",
-    img: "/Images/flat.webp",
+    img: "/Images/fiat.webp",
   },
   {
     title: "GDL Value Note",
