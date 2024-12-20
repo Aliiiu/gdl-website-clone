@@ -12,26 +12,33 @@ import { IoChevronForward } from "react-icons/io5";
 import { homeLinks } from "../../utils/helper";
 
 const NavLink = ({ url, name, className, ...props }) => (
-  <button type="button" onClick={props.onClick}>
-    <span className={`${className}`}>
-      {name} <IoChevronForward className="text-[#ABA9A7]" />
-    </span>
-  </button>
+  <li>
+    <button
+      type="button"
+      onClick={props.onClick}
+      className={`w-full text-base leading-6 font-light flex cursor-pointer items-center justify-between gap-2 border-b border-[#C2CFD6]/20 py-3 px-4 [&.selected]:font-medium [&.selected]:bg-[#f9f9f9] ${className}`}
+    >
+      <span className="text-left">{name}</span>{" "}
+      <IoChevronForward className="text-[#ABA9A7] flex-shrink-0" />
+    </button>
+  </li>
 );
 
 const HomeLink = ({ url, name, icon, subname, ...props }) => (
   <Link href={`${url}`}>
     <button
       type="button"
-      className="sub-menu"
+      className="mt-2 md:mt-3 mb-3 md:mb-6 w-full md:w-1/2 px-2 flex cursor-pointer items-center justify-start"
       onClick={() => props.setOpen(false)}
     >
       <div>
-        <div className="icon">{icon}</div>
+        <div className="h-8 w-8 md:h-12 md:w-12 md:text-2xl text-base leading-8 md:leading-6 flex items-center justify-center rounded-full bg-[#FFD6DC]/50 md:bg-[#FFD6DC] text-[#992333] transition-all duration-300 ease-in-out">
+          {icon}
+        </div>
       </div>
-      <div className="ml-4">
-        <h3 className="font-semibold">{name}</h3>
-        <p className="text-xs md:block hidden">{subname}</p>
+      <div className="ml-4 flex flex-col items-start">
+        <h3 className="font-semibold text-sm md:text-base">{name}</h3>
+        <p className="text-xs md:block hidden text-left">{subname}</p>
       </div>
     </button>
   </Link>
@@ -110,8 +117,8 @@ const Topbar = props => {
         leaveFrom="transform opacity-100"
         leaveTo="transform opacity-0"
       >
-        <OverlayDiv
-          className="top-0 left-0 mt-[60px] right-0 bottom-0 fixed Overlay h-[100vh] overflow-y-scroll"
+        <div
+          className="top-0 left-0 mt-[60px] right-0 bottom-0 fixed Overlay h-[100vh] overflow-y-scroll bg-primary/80"
           data-v-0ab2563a=""
           onClick={() => setOpen(!open)}
         />
@@ -120,8 +127,8 @@ const Topbar = props => {
             open ? "animate-slide-down" : "animate-slide-up"
           }`}
         >
-          <NavDiv className="flex bg-white dark:bg-gray-800 w-full rounded-lg">
-            <ul className="left-nav mt-[1rem] h-full border-r-[1px] border-opacity-[0.1] border-[rgba(194,207,214,var(--tw-border-opacity))]">
+          <div className="flex bg-white dark:bg-gray-800 w-full rounded-lg">
+            <ul className="w-2/5 md:1/4 mt-[1rem] h-full border-r-[1px] border-opacity-[0.1] border-[rgba(194,207,214,var(--tw-border-opacity))]">
               {Object.keys(urlstate).map((content, index) => (
                 <NavLink
                   key={crypto.randomUUID()}
@@ -131,14 +138,14 @@ const Topbar = props => {
                 />
               ))}
             </ul>
-            <div className="right-nav transition-all duration-[.3s]">
+            <div className="w-3/5 md:w-3/4 overflow-y-auto rounded-tr-lg rounded-br-lg px-6 py-4 min-h-[320px] max-h-[80vh] bg-[#f9f9f9] transition-all duration-[.3s]">
               <div className="flex flex-wrap md:-mx-2 -mx-4 transition">
                 {homeLinks[value]?.map(content => (
                   <HomeLink key={content.name} {...content} setOpen={setOpen} />
                 ))}
               </div>
             </div>
-          </NavDiv>
+          </div>
         </nav>
       </Transition>
       <TopContainer className={"container bg-white px-4 xl:px-28 mx-auto"}>
