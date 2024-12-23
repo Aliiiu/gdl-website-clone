@@ -41,7 +41,7 @@ const CustomHeader = ({
 		: `container px-4 xl:px-28 ${floatLeft ? "w-full" : ""}`;
 	return (
 		<header
-			className={`flex bg-opacity-10 justify-center items-center min-h-[360px] md:min-h-[420px] -mt-14 ${bg}`}
+			className={`flex bg-opacity-10 justify-center items-center min-h-[360px] md:min-h-[420px] -mt-14`}
 			style={{ ...backgroundStyle, backgroundColor: bg }}
 		>
 			<div className={containerClassName}>
