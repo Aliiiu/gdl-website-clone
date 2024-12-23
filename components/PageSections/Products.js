@@ -124,7 +124,8 @@ const Products = ({ nobutton, product }) => {
                   item?.product_name !== "GDL Stockbroking" &&
                   item?.product_name !== "Value Note" &&
                   item?.product_name !== "Finance" &&
-                  item?.product_name !== "GDL Income Fund"
+                  item?.product_name !== "GDL Income Fund" &&
+                  item?.product_name !== "GDL Dollar Note"
               )
               .reverse()}
           />

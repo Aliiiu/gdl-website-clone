@@ -169,13 +169,12 @@ export const homeLinks = [
       icon: <FaHandHoldingUsd />,
       url: "/products",
     },
-
-    {
-      name: "GDL Dollar Note",
-      subname: "Earn Top Dollar",
-      icon: <RiMoneyDollarCircleLine />,
-      url: "/products",
-    },
+    // {
+    //   name: "GDL Dollar Note",
+    //   subname: "Earn Top Dollar",
+    //   icon: <RiMoneyDollarCircleLine />,
+    //   url: "/products",
+    // },
     {
       name: "GDL Money Market Fund",
       subname: "Your savings redefined",

@@ -77,11 +77,11 @@ export const product = [
     hint: "Play the Long Game",
     img: "/Images/flat.webp",
   },
-  {
-    title: "GDL Dollar Note",
-    hint: "Earn Top Dollar",
-    img: "/Images/dollar.webp",
-  },
+  // {
+  //   title: "GDL Dollar Note",
+  //   hint: "Earn Top Dollar",
+  //   img: "/Images/dollar.webp",
+  // },
   {
     title: "Finance",
     hint: "Don’t do it alone, Get A Loan.",
