@@ -16,7 +16,7 @@ export default function Page() {
       <CareerBanner />
       <WhatWeOffer />
       <JobOpenings />
-      {/* <Faq /> */}
+      <Faq />
     </main>
   );
 }

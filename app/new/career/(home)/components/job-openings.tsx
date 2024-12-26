@@ -12,7 +12,7 @@ const JobOpenings = async () => {
   const jobOpening = await getJobOpeningData();
   const jobContent = await getJobOpeningContent();
   return (
-    <div className="py-12 md:py-24 md:bg-opacity-10 md:bg-white bg-[rgba(162,166,168,var(--tw-bg-opacity))] bg-opacity-100">
+    <section className="py-12 md:py-24 bg-white">
       <div className="container px-4 xl:px-28 mx-auto">
         <h1 className="leading-[1.1] text-[3rem] mb-[0.75rem] font-[700]">
           Job Openings
@@ -36,7 +36,7 @@ const JobOpenings = async () => {
           )}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
