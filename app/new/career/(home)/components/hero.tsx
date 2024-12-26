@@ -6,7 +6,7 @@ import { getCareerHeroData } from "../actions";
 const Hero = async () => {
   const heroData = await getCareerHeroData();
   return (
-    <section className="bg-opacity-20 bg-[rgba(194,207,214,var(--tw-bg-opacity))]">
+    <section>
       <CustomHeader
         bg="#FEECEF"
         content={<CareerTopContent content={heroData} />}
