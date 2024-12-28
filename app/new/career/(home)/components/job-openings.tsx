@@ -49,7 +49,7 @@ const JobContent = ({
   location,
   lasts_till,
 }: JobOpening) => (
-  <Link href={`/career/${id}/apply`} className="flex-1">
+  <Link href={`career/${id}/apply`} className="flex-1">
     <div className="cursor-pointer relative w-full max-w-[300px] rounded-[0.5rem] border-[1px] border-[rgba(162,166,168,var(--tw-border-opacity))] border-opacity-20 bg-opacity-100 bg-[rgba(255,255,255,var(--tw-bg-opacity))] p-[1.5rem] shadow">
       <h1 className="font-bold text-xl">{position || "Job Title"}</h1>
       <div className="mb-1 py-1 px-2 inline-flex rounded text-sm bg-opacity-100 bg-[rgba(255,236,239,var(--tw-bg-opacity))] text-opacity-100 text-[rgba(153,35,51,var(--tw-text-opacity))]">

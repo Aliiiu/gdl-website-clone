@@ -36,6 +36,11 @@ export async function getJobOpeningData(): Promise<JobOpening[]> {
   return jobOpening.data.data.filter((job: JobOpening) => job.published);
 }
 
+export async function getJobDetails(id: number): Promise<JobOpening> {
+  const jobOpening = await makeRequest(`/jobs/${id}`);
+  return jobOpening.data.data;
+}
+
 export async function getJobOpeningContent() {
   const jobOpeningContent = await makeRequest("/pages/careers/job/openings");
   return jobOpeningContent.data.data.shift();
