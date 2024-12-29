@@ -4,7 +4,7 @@ import ContactInfo from "./component/contact-info";
 import { generatePageMetadata } from "@/app/utils/metadata";
 
 export const generateMetadata = () => {
-  return generatePageMetadata({ title: "Career" });
+  return generatePageMetadata({ title: "Contact Us" });
 };
 
 export default function Page() {
