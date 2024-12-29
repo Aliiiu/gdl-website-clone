@@ -1,13 +1,10 @@
 import CustomHeader from "@/app/components/custom-page-hero";
 import { generatePageMetadata } from "@/app/utils/metadata";
 import { IoBriefcaseOutline, IoLocationOutline } from "react-icons/io5";
-import {
-  getJobDetails,
-  getJobOpeningData,
-  JobOpening,
-} from "../../(home)/actions";
+import { getJobDetails, type JobOpening } from "../../(home)/actions";
 import Faq from "@/app/components/faq";
 import ApplyForJob from "./components/apply-job";
+import Link from "next/link";
 
 interface PageProps {
   params: Promise<{
@@ -38,9 +35,12 @@ const HeaderComponent = ({ ...positionData }: JobOpening) => (
       </div>
     </div>
     <div className="md:ml-8">
-      <a className="cursor-pointer hidden md:inline-block mb-2 text-sm text-opacity-100 text-[rgba(153,35,51,var(--tw-text-opacity))]">
+      <Link
+        href={"/career"}
+        className="cursor-pointer hidden md:inline-block mb-2 text-sm text-opacity-100 text-[rgba(153,35,51,var(--tw-text-opacity))]"
+      >
         ← Back
-      </a>
+      </Link>
       <h1 className="text-2xl md:text-5xl font-bold text-center md:text-left">
         {positionData?.position || "Position Name"}
       </h1>
