@@ -1,11 +1,8 @@
 import CustomHeader from "../../components/Widgets/CustomHeader/Header";
 import Faq from "../../components/PageSections/Faq";
 import { TopContent } from "../../components/Widgets/CustomHeader/HeaderContent";
-import { useEffect } from "react";
 import { makeRequest } from "../../apiCalls/requestHandler";
 import Head from "next/head";
-import MethodType from "../../constant/methodType";
-import { useRequest } from "../../hooks/useRequest";
 import { HeaderTabBar } from "../faq";
 import BlogList from "../../components/Widgets/List/BlogList";
 import { useState } from "react";
