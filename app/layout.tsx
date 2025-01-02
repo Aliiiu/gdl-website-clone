@@ -1,6 +1,7 @@
 import { Raleway } from "next/font/google";
 import "./globals.css";
 import { ClientProvider } from "./components/client-provider";
+import { generatePageMetadata } from "./utils/metadata";
 
 const raleway = Raleway({
   subsets: ["latin"],
@@ -8,6 +9,10 @@ const raleway = Raleway({
   display: "swap",
   fallback: ["Gilroy", "sans-serif"],
 });
+
+export const generateMetadata = () => {
+  return generatePageMetadata();
+};
 
 export default function RootLayout({
   children,
