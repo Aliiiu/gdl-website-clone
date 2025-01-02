@@ -110,9 +110,5 @@ export const MainImage = styled.div`
     --tw-border-opacity: 1;
     border-color: rgba(255, 214, 220, var(--tw-border-opacity));
     --tw-bg-opacity: 1;
-    /* background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
-    background-repeat: no-repeat;
-    background-position: 50%;
-    background-size: cover; */
   }
 `;
