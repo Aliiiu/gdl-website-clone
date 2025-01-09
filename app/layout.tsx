@@ -3,6 +3,7 @@ import "./globals.css";
 import { ClientProvider } from "./components/client-provider";
 import { generatePageMetadata } from "./utils/metadata";
 import Footer from "./components/footer";
+import Topbar from "./components/topbar";
 
 const raleway = Raleway({
   subsets: ["latin"],
@@ -24,6 +25,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${raleway.className} antialiased`}>
         <ClientProvider>
+          <Topbar />
           {children}
           <Footer />
         </ClientProvider>
