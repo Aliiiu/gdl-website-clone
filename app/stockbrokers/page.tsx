@@ -10,11 +10,11 @@ export const generateMetadata = () => {
 
 export default function Page() {
   return (
-    <div>
+    <main>
       <Hero />
       <ManagementTeamSection />
       <BoardTeamSection />
       <Products />
-    </div>
+    </main>
   );
 }

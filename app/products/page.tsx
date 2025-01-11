@@ -13,12 +13,12 @@ export const generateMetadata = () => {
 export default async function Page() {
   const product = await getGDLProductData();
   return (
-    <div>
+    <main className="mt-10 md:mt-20">
       <FinanceAndLeasingProductSection product={product} />
       <AssetManagmentProductSection product={product} />
       <StockBrokerProductSection product={product} />
       <RightProduct />
       <Faq />
-    </div>
+    </main>
   );
 }
