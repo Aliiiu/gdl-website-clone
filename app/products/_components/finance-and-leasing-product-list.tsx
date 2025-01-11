@@ -22,7 +22,7 @@ const FinanceAndLeasingProductSection = ({
           </>
         }
         inPageDetails={true}
-        className="md:grid-cols-2 gap-6 lg:grid-cols-3 max-w-[1200px] mx-auto"
+        className="md:grid-cols-2 gap-6 lg:grid-cols-2 max-w-[800px] mx-auto"
         productData={product.filter(
           item =>
             item?.product_name !== "GDL Canary Fund" &&
@@ -30,7 +30,8 @@ const FinanceAndLeasingProductSection = ({
             item?.product_name !== "GDL Stockbroking" &&
             item?.product_name !== "Value Note" &&
             item?.product_name !== "Finance" &&
-            item?.product_name !== "GDL Income Fund"
+            item?.product_name !== "GDL Income Fund" &&
+            item?.product_name !== "GDL Dollar Note"
         )}
       />
     </section>
