@@ -1,25 +1,16 @@
 "use client";
 
-import ProductLists from "@/components/product-list";
-import type { Product, ProductRedirectionParams } from "@/types/product";
-import React, { useState } from "react";
+import ProductListWrapper from "@/components/product-list-wrapper";
+import type { Products } from "@/types/product";
 
 const FinanceAndLeasingProductSection = ({
   product,
 }: {
-  product: Product[];
+  product: Products;
 }) => {
-  const [open, setOpen] = useState(false);
-  const [content, setContent] = useState<ProductRedirectionParams>();
-
-  const handleRedirection = (item: ProductRedirectionParams) => () => {
-    setContent(item);
-    setOpen(true);
-  };
-
   return (
     <section className="container px-4 xl:px-28 mx-auto ">
-      <ProductLists
+      <ProductListWrapper
         title={"GDL Finance & Leasing Products"}
         description={
           <>
@@ -30,7 +21,7 @@ const FinanceAndLeasingProductSection = ({
             </strong>
           </>
         }
-        handleRedirection={handleRedirection}
+        inPageDetails={true}
         className="md:grid-cols-2 gap-6 lg:grid-cols-3 max-w-[1200px] mx-auto"
         productData={product.filter(
           item =>

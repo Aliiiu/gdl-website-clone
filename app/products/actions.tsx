@@ -1,7 +1,7 @@
 import { makeRequest } from "@/apiCalls/requestHandler";
-import type { Product } from "@/types/product";
+import type { Products } from "@/types/product";
 
-export const getGDLProductData = async (): Promise<Product[]> => {
+export const getGDLProductData = async (): Promise<Products> => {
   const productResponse = await makeRequest("/pages/products/s");
   return productResponse.data.data.reverse();
 };
