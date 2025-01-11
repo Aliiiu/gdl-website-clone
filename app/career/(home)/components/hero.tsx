@@ -28,7 +28,7 @@ const CareerTopContent = ({
       {content?.description}
     </p>
     <div className="mt-10">
-      <Link href={"#research-papers"}>
+      <Link href={"#job-opening"}>
         <button
           type="button"
           className="capitalize font-light bg-brand rounded-lg px-4 py-2 text-white"

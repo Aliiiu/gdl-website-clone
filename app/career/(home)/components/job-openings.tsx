@@ -5,14 +5,14 @@ import { IoLocationOutline, IoWarning } from "react-icons/io5";
 import {
   getJobOpeningContent,
   getJobOpeningData,
-  JobOpening,
+  type JobOpening,
 } from "../actions";
 
 const JobOpenings = async () => {
   const jobOpening = await getJobOpeningData();
   const jobContent = await getJobOpeningContent();
   return (
-    <section className="py-12 md:py-24 bg-white">
+    <section id="job-opening" className="py-12 md:py-24 bg-white">
       <div className="container px-4 xl:px-28 mx-auto">
         <h1 className="leading-[1.1] text-[3rem] mb-[0.75rem] font-[700]">
           Job Openings
