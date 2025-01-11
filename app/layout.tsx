@@ -1,9 +1,9 @@
 import { Raleway } from "next/font/google";
 import "./globals.css";
-import { ClientProvider } from "./components/client-provider";
-import { generatePageMetadata } from "./utils/metadata";
-import Footer from "./components/footer";
-import Topbar from "./components/topbar";
+import { generatePageMetadata } from "@/utils/metadata";
+import { ClientProvider } from "@/components/client-provider";
+import Topbar from "@/components/topbar";
+import Footer from "@/components/footer";
 
 const raleway = Raleway({
   subsets: ["latin"],
@@ -18,16 +18,20 @@ export const generateMetadata = () => {
 
 export default function RootLayout({
   children,
+  searchParams,
 }: {
   children: React.ReactNode;
+  searchParams: { [key: string]: string | string[] | undefined };
 }) {
+  const hideLayout = searchParams?.hidelayout === "true";
+
   return (
     <html lang="en">
       <body className={`${raleway.className} antialiased`}>
         <ClientProvider>
-          <Topbar />
+          {!hideLayout && <Topbar />}
           {children}
-          <Footer />
+          {!hideLayout && <Footer />}
         </ClientProvider>
       </body>
     </html>
