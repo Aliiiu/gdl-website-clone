@@ -7,6 +7,7 @@ import { z } from "zod";
 import Image from "next/image";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const ModalContentSchema = z.object({
   header: z.string(),
@@ -18,7 +19,13 @@ const ModalContentSchema = z.object({
 
 type ModalContent = z.infer<typeof ModalContentSchema>;
 
-const ProductsList = ({ product }: { product: Products }) => {
+const ProductsList = ({
+  product,
+  inPageDetails,
+}: {
+  product: Products;
+  inPageDetails?: boolean;
+}) => {
   const [open, setOpen] = useState(false);
   const [content, setContent] = useState<ModalContent>({} as ModalContent);
 
@@ -52,27 +59,35 @@ const ProductsList = ({ product }: { product: Products }) => {
               </h2>
               <p className="text-lg break-words text-white">
                 {item.product_snippet}
-                {/* {item.product_image_url} */}
               </p>
-              <Dialog>
-                <DialogTrigger>
-                  <Button
-                    variant={"secondary"}
-                    onClick={handleRedirection({
-                      header: item.product_name,
-                      content: item.product_description,
-                      desc: item.product_snippet,
-                      icon: item.product_icon_url,
-                      img: item.product_image_url,
-                    })}
-                  >
-                    Learn More
-                  </Button>
-                </DialogTrigger>
-                <DialogContent>
-                  <ModalContent content={content} />
-                </DialogContent>
-              </Dialog>
+              {inPageDetails ? (
+                <Dialog>
+                  <DialogTrigger>
+                    <Button
+                      variant={"secondary"}
+                      onClick={handleRedirection({
+                        header: item.product_name,
+                        content: item.product_description,
+                        desc: item.product_snippet,
+                        icon: item.product_icon_url,
+                        img: item.product_image_url,
+                      })}
+                    >
+                      Learn More
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent>
+                    <ModalContent content={content} />
+                  </DialogContent>
+                </Dialog>
+              ) : (
+                <Link
+                  href={"/products"}
+                  className="mt-4 uppercase font-light rounded-lg py-3 px-6 text-sm bg-white text-black"
+                >
+                  Learn More
+                </Link>
+              )}
             </div>
           </div>
         );

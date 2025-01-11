@@ -1,6 +1,6 @@
 "use client";
 
-import ProductLists from "@/app/components/product-list";
+import ProductLists from "@/components/product-list";
 import type { Product, ProductRedirectionParams } from "@/types/product";
 import React, { useState } from "react";
 
