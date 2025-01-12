@@ -15,7 +15,7 @@ const Products = async () => {
           </p>
         </div>
         <ProductsList
-          product={product}
+          product={product.reverse()}
           className="md:grid-cols-2 lg:grid-cols-3 gap-3"
         />
         <div className="flex mt-10 md:mt-20 justify-center items-center">

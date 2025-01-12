@@ -36,7 +36,7 @@ const ProductsList = ({
     setOpen(true);
   };
   return (
-    <div className={`mt-5 sm:mt-10 md:mt-20 grid ${className}`}>
+    <div className={`mt-10 md:mt-20 grid ${className}`}>
       {product.map(item => {
         return (
           <div
