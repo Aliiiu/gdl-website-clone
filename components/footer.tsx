@@ -182,9 +182,6 @@ const FooterSection = () => {
 							<Link href="tel:2347054435000" className="hover:underline">
 								+2347054435000,
 							</Link>
-							<Link href="tel:2347064144373" className="hover:underline">
-								+2347064144373
-							</Link>
 						</div>
 						<div className="flex justify-start items-center my-2 text-sm text-opacity-70">
 							<Link
