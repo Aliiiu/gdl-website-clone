@@ -4,6 +4,7 @@ import { generatePageMetadata } from "@/utils/metadata";
 import { ClientProvider } from "@/components/client-provider";
 import Topbar from "@/components/topbar";
 import Footer from "@/components/footer";
+import GoogleAnalytics from "@/components/global/google-analytics";
 
 const raleway = Raleway({
   subsets: ["latin"],
@@ -27,6 +28,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
+      <GoogleAnalytics />
       <body className={`${raleway.className} antialiased`}>
         <ClientProvider>
           {!hideLayout && <Topbar />}
