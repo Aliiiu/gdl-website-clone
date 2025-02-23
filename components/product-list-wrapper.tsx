@@ -37,7 +37,7 @@ const ProductListWrapper = ({
         <div className="flex mt-10 md:mt-20 justify-center items-center">
           <Link
             href={"/products"}
-            className="bg-[#9A2333] text-sm font-light py-[1rem] rounded-[0.5rem] px-[1.5rem] uppercase text-white"
+            className="bg-[#9A2333] text-sm py-[1rem] rounded-[0.5rem] px-[1.5rem] uppercase text-white"
           >
             Explore More
           </Link>
