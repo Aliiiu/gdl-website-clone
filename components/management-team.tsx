@@ -13,14 +13,6 @@ const ManagementTeam = ({
   data: Staff[];
   notClickable?: boolean;
 }) => {
-  const [open, setOpen] = useState(false);
-  const [content, setContent] = useState<{ header: string; content: string }>();
-
-  const handleRedirection = (item: { header: string; content: string }) => {
-    setContent(item);
-    setOpen(true);
-  };
-
   return (
     <div>
       <h2 className="title mb-4 text-center">Management Team</h2>
