@@ -21,15 +21,9 @@ const stockbrokersManagement = [
     staff_name: "Esther Ndife – DMD",
   },
   {
-    id: 4,
+    id: 3,
     image_url: "/Images/Stephen-new.webp",
     staff_initials: "SF",
     staff_name: "Stephen Fidelis – Chief Financial Officer",
-  },
-  {
-    id: 3,
-    image_url: "",
-    staff_initials: "OA",
-    staff_name: "Olufunmilola Adebowale – Chief Research Officer",
   },
 ];
