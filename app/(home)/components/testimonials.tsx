@@ -110,9 +110,7 @@ const CarouselSlide = ({
     <div className="ml-0 md:ml-16">
       <div className="text-center md:text-left">
         <div className="mb-8">
-          <h2 className="text-2xl font-medium">
-            <span>{name}</span>
-          </h2>
+          <h2 className="text-2xl font-medium">{name}</h2>
           <h5 className="text-opacity-[0.8] text-[rgba(31,26,23,var(--tw-text-opacity))] text-lg">
             {porfolio}
           </h5>
