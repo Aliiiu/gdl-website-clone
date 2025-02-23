@@ -15,7 +15,7 @@ const Products = () => {
             </strong>
           </>
         }
-        className="md:grid-cols-3 gap-6 max-w-[1200px] mx-auto"
+        className="md:grid-cols-2 gap-6 max-w-[800px] mx-auto"
         productData={financeAndLeasing}
         showExploreMoreBtn
       />
@@ -26,6 +26,12 @@ const Products = () => {
 export default Products;
 
 const financeAndLeasing = [
+  {
+    id: 3,
+    product_name: "GDL Housemoni",
+    product_snippet: "Secure your own home in 3.5 years",
+    product_image_url: "/Images/h-community.webp",
+  },
   {
     id: 1,
     product_name: "Financial Advisory",
@@ -38,12 +44,6 @@ const financeAndLeasing = [
     product_snippet: "Play the long game",
     product_image_url: "/Images/flat.webp",
   },
-  // {
-  // 	id: 3,
-  //   product_name: "GDL Dollar Note",
-  //   product_snippet: " Earn Top Dollar",
-  //   product_image_url: "/Images/dollar.jpg",
-  // },
   {
     id: 4,
     product_name: "GDL Value Note",
