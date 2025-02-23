@@ -19,9 +19,12 @@ const Products = async () => {
           className="md:grid-cols-2 lg:grid-cols-3 gap-3"
         />
         <div className="flex mt-10 md:mt-20 justify-center items-center">
-          <span className="bg-[#9A2333] px-4 py-3 md:py-[1rem] rounded-[0.5rem] md:px-[1.5rem] uppercase text-white">
-            <Link href={"/products"}>Explore More</Link>
-          </span>
+          <Link
+            href={"/products"}
+            className="bg-[#9A2333] px-4 py-3 md:py-[1rem] rounded-[0.5rem] md:px-[1.5rem] uppercase text-white"
+          >
+            Explore More
+          </Link>
         </div>
       </div>
     </section>

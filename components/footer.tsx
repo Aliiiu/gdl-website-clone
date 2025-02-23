@@ -44,7 +44,7 @@ const JoinTheClub = () => {
               </p>
               <div className="mt-10">
                 <Link
-                  href={"/"}
+                  href={"https://app.gdl.ng/signup"}
                   target="_blank"
                   rel="noreferrer"
                   className="bg-[#9A2333] text-white px-[1.5rem] py-3 flex items-center gap-2 w-fit rounded-lg"
@@ -53,11 +53,12 @@ const JoinTheClub = () => {
                   <AiOutlineArrowRight className="font-thin text-sm" />
                 </Link>
                 <div className="mt-6">
+                  Already Have an Account?
                   <Link
-                    href=""
-                    className="text-black dark:text-white font-medium"
+                    href="https://app.gdl.ng"
+                    className="text-brand hover:underline dark:text-white font-medium pl-1"
                   >
-                    Already Have an Account? Login
+                    Login
                   </Link>
                 </div>
               </div>
