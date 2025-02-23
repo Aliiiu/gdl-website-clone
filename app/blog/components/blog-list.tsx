@@ -131,7 +131,7 @@ const BlogListItem = ({
   const url = encodeURIComponent(title?.replace(/ /g, "-").toLowerCase());
 
   return (
-    <div className="flex flex-wrap md:flex-nowrap rounded-lg bg-gdlGrey dark:bg-gray-900 hover:shadow-md mt-6 mb-12 shadow-none transition-all duration-[.3s]">
+    <div className="flex flex-wrap md:flex-nowrap rounded-lg bg-gdlGrey dark:bg-gray-900 hover:shadow-md mt-6 mb-12 shadow-none transition-all duration-300">
       <section className="w-full md:w-2/5">
         <div className="flex w-full h-full rounded-tr-[0] rounded-bl-[.5rem] relative overflow-hidden rounded-tl-[.5rem]">
           <Image
