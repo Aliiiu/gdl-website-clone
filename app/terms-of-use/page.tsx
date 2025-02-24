@@ -6,11 +6,12 @@ export const generateMetadata = () => {
   return generatePageMetadata({ title: "Terms of Use" });
 };
 
-export default function Page({
-  searchParams,
-}: {
-  searchParams: { hideLayout?: boolean };
-}) {
+export default async function Page(
+  props: {
+    searchParams: Promise<{ hideLayout?: boolean }>;
+  }
+) {
+  const searchParams = await props.searchParams;
   const { hideLayout } = searchParams;
   return (
     <main>

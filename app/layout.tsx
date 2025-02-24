@@ -17,13 +17,18 @@ export const generateMetadata = () => {
   return generatePageMetadata();
 };
 
-export default function RootLayout({
-  children,
-  searchParams,
-}: {
-  children: React.ReactNode;
-  searchParams: { [key: string]: string | string[] | undefined };
-}) {
+export default async function RootLayout(
+  props: {
+    children: React.ReactNode;
+    searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+  }
+) {
+  const searchParams = await props.searchParams;
+
+  const {
+    children
+  } = props;
+
   const hideLayout = searchParams?.hidelayout === "true";
 
   return (
