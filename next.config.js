@@ -1,9 +1,14 @@
 /** @type {import('next').NextConfig} */
+const withVideos = require("next-videos");
+
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
   images: {
     remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+      },
       {
         protocol: "http",
         hostname: "res.cloudinary.com",
@@ -12,7 +17,4 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
-const withVideos = require("next-videos");
-
-module.exports = withVideos();
+module.exports = withVideos(nextConfig);
