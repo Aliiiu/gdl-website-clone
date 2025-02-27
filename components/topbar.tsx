@@ -118,7 +118,7 @@ const Topbar = () => {
                   />
                 ))}
               </ul>
-              <div className="w-3/5 md:w-3/4 overflow-y-auto rounded-tr-lg rounded-br-lg px-6 py-4 min-h-[320px] max-h-[80vh] bg-[#f9f9f9] transition-all duration-[.3s]">
+              <div className="w-3/5 md:w-3/4 overflow-y-auto rounded-tr-lg rounded-br-lg px-6 py-4 min-h-[320px] max-h-[80vh] bg-[#f9f9f9] transition-all duration-300">
                 <div className="flex flex-wrap md:-mx-2 -mx-4 transition">
                   {homeLinks[value]?.map(content => (
                     <HomeLink

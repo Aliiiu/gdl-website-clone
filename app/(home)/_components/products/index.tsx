@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getProductData } from "../../actions";
+import { getProductData } from "../../_actions";
 import ProductsList from "@/components/product-list";
 
 const Products = async () => {
