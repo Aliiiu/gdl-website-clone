@@ -3,11 +3,8 @@ import {
   IoLogoInstagram,
   IoLogoLinkedin,
   IoLogoTwitter,
-  IoLogoMedium,
-  IoLogoWhatsapp,
   IoCubeOutline,
   IoHomeOutline,
-  IoStarOutline,
   IoRocketOutline,
   IoHeartHalfOutline,
   IoBulbOutline,
@@ -27,7 +24,7 @@ import { FaHandHoldingUsd, FaMoneyBill } from "react-icons/fa";
 import { FaMoneyBillTransfer } from "react-icons/fa6";
 import dayjs from "dayjs";
 import { AiOutlineStock } from "react-icons/ai";
-import { RiFundsBoxFill, RiMoneyDollarCircleLine } from "react-icons/ri";
+import { RiFundsBoxFill } from "react-icons/ri";
 import { GiMoneyStack, GiTakeMyMoney } from "react-icons/gi";
 export const isValidDate = date => {
   return Boolean(new Date(date).toString() !== "Invalid Date");
@@ -37,6 +34,14 @@ export const formatDate = (date, format = "MMM DD, YYYY") => {
   if (date && isValidDate(date)) return dayjs(date).format(format);
   return date;
 };
+
+export function encodeSlug(text) {
+  return encodeURIComponent(text).replace(/%20/g, "-"); // Replace spaces with hyphens
+}
+
+export function decodeSlug(slug) {
+  return decodeURIComponent(slug.replace(/-/g, "%20")); // Convert back to text
+}
 
 export const footerLinkData = [
   {
