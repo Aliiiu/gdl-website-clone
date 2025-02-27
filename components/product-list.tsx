@@ -138,14 +138,14 @@ const ModalContent = ({ content }: { content: ModalContent }) => {
             {parse(content?.content)}
           </article>
           <div className="flex justify-center sm:justify-start mt-16">
-            <a
+            <Link
               href="https://clientportal.gdl.com.ng/ords/f?p=2801:300:7060232055540"
               className="py-[.8rem] px-[1.5rem] rounded-lg text-white md:mr-6 mb-4 md:mb-0 bg-[#992333]"
               target="_blank"
               rel="noreferrer"
             >
               {"Invest Now →"}
-            </a>
+            </Link>
           </div>
         </div>
       </section>

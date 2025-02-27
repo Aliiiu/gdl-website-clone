@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { IoDocumentText } from "react-icons/io5";
 
 const TermsContent = () => {
@@ -402,12 +403,12 @@ const TermsContent = () => {
               If you suspect or become aware of any unauthorized activity or
               access to your username, password, or electronic access device,
               you must contact us immediately at{" "}
-              <a
+              <Link
                 href="mailto:info@gdl.ng.com."
                 className="text-[#992333] hover:underline"
               >
                 info@gdl.ng.com.
-              </a>
+              </Link>
             </li>
           </ol>
         </section>
@@ -805,12 +806,12 @@ const TermsContent = () => {
           <p>
             If you have any questions about this Terms and Conditions, please
             contact us at{" "}
-            <a
+            <Link
               href="mailto:info@gdl.com.ng"
               className="text-[#992333] hover:underline"
             >
               info@gdl.com.ng
-            </a>
+            </Link>
           </p>
         </section>
       </div>

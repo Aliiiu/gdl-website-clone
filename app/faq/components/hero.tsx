@@ -18,9 +18,9 @@ const TopContent = async () => {
             className="h-full w-full rounded-[0.5rem] px-[1rem] outline-none"
             placeholder={`Search ${name}`}
           />
-          <a className="absolute top-0 right-0 bottom-0 mr-4 flex items-center justify-center text-[1.25rem] leading-[1.75rem] text-[rgba(31,26,23,var(--tw-text-opacity))] text-opacity-[0.5]">
+          <span className="absolute top-0 right-0 bottom-0 mr-4 flex items-center justify-center text-[1.25rem] leading-[1.75rem] text-[rgba(31,26,23,var(--tw-text-opacity))] text-opacity-[0.5]">
             <IoSearchOutline />
-          </a>
+          </span>
         </div>
       </div>
     </div>
