@@ -181,14 +181,14 @@ const Topbar = () => {
                 </div>
               </div>
               <div className="hidden lg:flex gap-x-6 justify-end items-center">
-                <a
+                <Link
                   href="https://app.gdl.com.ng/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-black dark:text-white font-light"
                 >
                   Login
-                </a>
+                </Link>
                 <Link
                   href="https://app.gdl.com.ng/signup"
                   target="_blank"

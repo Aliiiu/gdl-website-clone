@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 import type { BlogCategory, BlogPost } from "../actions";
 import { IoBookOutline, IoWarning } from "react-icons/io5";
 import Link from "next/link";
-import { formatDate } from "@/utils/helper";
+import { encodeSlug, formatDate } from "@/utils/helper";
 import Image from "next/image";
 import { useInView } from "react-intersection-observer";
 import { useInfiniteQuery } from "@tanstack/react-query";
@@ -128,7 +128,7 @@ const BlogListItem = ({
   excerpt,
   createdAt,
 }: BlogPost) => {
-  const url = encodeURIComponent(title?.replace(/ /g, "-").toLowerCase());
+  const url = encodeSlug(title);
 
   return (
     <div className="flex flex-wrap md:flex-nowrap rounded-lg bg-gdlGrey dark:bg-gray-900 hover:shadow-md mt-6 mb-12 shadow-none transition-all duration-300">

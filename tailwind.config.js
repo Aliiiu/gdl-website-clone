@@ -66,6 +66,8 @@ module.exports = {
       backgroundImage: {
         "get-started-image": "url('/Images/get-started.jpg')",
         "blog-image": "url('/Images/blog.jpeg')",
+        "canary-image": "url('/Images/gdl-canary.png')",
+        "canary-image-mobile": "url('/Images/gdl-canary-mobile.png')",
       },
       animation: {
         "fade-in": "fadeIn 1s ease-in-out",

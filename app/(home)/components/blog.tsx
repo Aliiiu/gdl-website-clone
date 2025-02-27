@@ -4,7 +4,7 @@ import React from "react";
 import { IoBookOutline } from "react-icons/io5";
 import { getBlogData } from "../actions";
 import type { Blogs } from "../types";
-import { formatDate } from "@/utils/helper";
+import { encodeSlug, formatDate } from "@/utils/helper";
 
 export default async function Blog() {
   const blogPost = await getBlogData();
@@ -43,11 +43,11 @@ const BlogList = ({
   excerpt,
   createdAt,
 }: Blogs) => {
-  const url = encodeURIComponent(title?.replace(/ /g, "-").toLowerCase());
+  const url = encodeSlug(title);
 
   return (
     <div>
-      <div className="flex flex-wrap md:flex-nowrap rounded-lg bg-gdlGrey dark:bg-gray-900 hover:shadow-md mt-6 mb-12 shadow-none transition-all duration-300">
+      <div className="flex flex-col md:flex-row rounded-lg bg-gdlGrey border dark:bg-gray-900 hover:shadow-md mt-6 mb-12 shadow-none transition-all duration-300">
         <section className="w-full md:w-2/5">
           <div className="flex w-full h-full rounded-tr-[0] rounded-bl-[.5rem] relative overflow-hidden rounded-tl-[.5rem]">
             <Image
@@ -69,6 +69,16 @@ const BlogList = ({
               <span className="opacity-50 font-normal uppercase">
                 {formatDate(createdAt) || ""}
               </span>
+            </div>
+            <div className="flex md:hidden w-full h-[250px] mb-2 relative overflow-hidden">
+              <Image
+                unoptimized
+                src={featured_image_url}
+                alt="img"
+                fill
+                sizes="100%"
+                className="rounded-md object-cover"
+              />
             </div>
             <Link
               href={`/blog/${url}`}
