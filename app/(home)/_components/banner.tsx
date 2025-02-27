@@ -1,5 +1,5 @@
 import React from "react";
-import { getStatisticsData } from "../actions";
+import { getStatisticsData } from "../_actions";
 import { StatCounter } from "./stats-counter";
 
 const BannerSection = async () => {

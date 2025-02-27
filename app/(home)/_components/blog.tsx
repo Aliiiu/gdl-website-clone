@@ -2,8 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { IoBookOutline } from "react-icons/io5";
-import { getBlogData } from "../actions";
-import type { Blogs } from "../types";
+import { getBlogData } from "../_actions";
+import type { Blogs } from "../_types";
 import { encodeSlug, formatDate } from "@/utils/helper";
 
 export default async function Blog() {
