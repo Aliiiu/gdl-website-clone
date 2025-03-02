@@ -8,15 +8,15 @@ const HousemoniBanner = () => {
     <section className="relative py-5 bg-gradient-to-r from-custom-brand-dark to-custom-brand-light mt-[60px]">
       <div className="flex justify-between items-center container px-4 xl:px-28 mx-auto text-white">
         <div className="flex flex-grow flex-col items-start">
-          <div className="flex gap-4 md:gap-10 items-center justify-between w-full lg:w-fit">
-            <div className="relative w-[250px] h-[60px] md:h-[100px]">
+          <div className="flex flex-col md:flex-row items-start gap-4 md:gap-10 md:items-center justify-between w-full lg:w-fit">
+            <div className="relative w-[150px] md:w-[250px] h-[60px] md:h-[100px]">
               <Image src={"/svgs/whiteLogo.svg"} fill alt="logo" />
             </div>
             <div className="flex flex-col items-left">
-              <h3 className="md:text-xl font-bold">
+              <h3 className="text-lg md:text-xl font-bold">
                 Own a home with GDL HouseMoni
               </h3>
-              <p className="text-white max-w-[340px] text-sm md:text-base mb-2 md:my-2">
+              <p className="text-white max-w-[340px] text-base mb-2 md:my-2">
                 Turn from tenant to homeowner in 3½ years with constant,
                 affordable monthly payments.
               </p>
@@ -25,7 +25,7 @@ const HousemoniBanner = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <span className="bg-white w-fit text-xs md:text-base rounded-lg px-3 py-1 md:px-5 md:py-2.5 text-[#992333] font-thin flex items-center gap-x-1 cursor-pointer">
+                <span className="bg-white w-fit text-sm md:text-base rounded-lg px-4 py-2 md:px-5 md:py-2.5 text-brand font-thin flex items-center gap-x-1 cursor-pointer">
                   Start your home ownership journey <AiOutlineArrowRight />
                 </span>
               </Link>
