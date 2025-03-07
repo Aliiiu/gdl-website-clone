@@ -27,7 +27,7 @@ export const generatePageMetadata = ({
 			siteName: "gdl",
 			images: [
 				{
-					url: "https://gdl.ng/images/og-image.png",
+					url: "/og-image.png",
 					width: 1200,
 					height: 630,
 					alt: "GDL",
@@ -39,7 +39,7 @@ export const generatePageMetadata = ({
 			title: pageTitle,
 			description: baseDescription,
 			creator: "@gdl",
-			images: ["https://gdl.ng/images/og-image.png"],
+			images: ["https://gdl.com.ng/og-image.png"],
 		},
 	};
 };
