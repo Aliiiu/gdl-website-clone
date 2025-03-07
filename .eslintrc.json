@@ -1,3 +1,12 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "settings": {
+    // Configure the rule to recognize both app/ and pages/ directories
+    "next/core-web-vitals": {
+      "rootDir": ["./"] // provide the path to your Next.js app
+    },
+    "next": {
+      "rootDir": ["./"] // provide the path to your Next.js app
+    }
+  }
 }

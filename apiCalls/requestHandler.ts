@@ -5,14 +5,12 @@ type RequestMethod = "GET" | "POST" | "PUT" | "DELETE" | "PATCH";
 export const makeRequest = async <T>(
 	url: string,
 	data: Record<string, any> | null = null,
-	token: string | null = null,
 	method_type: RequestMethod | null = null,
 ) => {
 	const response = await fetch(`${baseURL}${url}`, {
 		headers: {
 			Accept: "application/json",
 			"Content-Type": "application/json",
-			...(token && { Authorization: `Bearer ${token}` }),
 		},
 		method: method_type ?? (data == null ? "GET" : "POST"),
 		body: data == null ? null : JSON.stringify(data),
@@ -24,5 +22,6 @@ export const makeRequest = async <T>(
 	}
 
 	const { response_description } = await response.json();
+
 	throw new Error(response_description);
 };
