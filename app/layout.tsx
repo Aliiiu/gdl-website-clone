@@ -30,12 +30,6 @@ export default async function RootLayout(props: {
   return (
     <html lang="en">
       <GoogleAnalytics />
-      <head>
-        <meta property="og:image" content="<generated>" />
-        <meta property="og:image:type" content="<generated>" />
-        <meta property="og:image:width" content="<generated>" />
-        <meta property="og:image:height" content="<generated>" />
-      </head>
       <body className={`${raleway.className} antialiased`}>
         <ClientProvider>
           {!hideLayout && <Topbar />}
