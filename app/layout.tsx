@@ -13,7 +13,7 @@ const raleway = Raleway({
   fallback: ["Gilroy", "sans-serif"],
 });
 
-export const generateMetadata = () => {
+export const generateMetadata = async () => {
   return generatePageMetadata();
 };
 
