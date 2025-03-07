@@ -5,8 +5,7 @@ type MetadataProps = {
 export const generatePageMetadata = ({ title }: MetadataProps = {}) => {
 	const defaultTitle = "GDL | Build Wealth Comfortably";
 	const template = "%s | GDL";
-	const baseDescription =
-		"A leading diversified financial institution creating wealth and transforming society";
+	const baseDescription = "";
 
 	const pageTitle = title ? template.replace("%s", title) : defaultTitle;
 
@@ -18,14 +17,6 @@ export const generatePageMetadata = ({ title }: MetadataProps = {}) => {
 			description: baseDescription,
 			type: "website",
 			siteName: "gdl",
-			images: [
-				{
-					url: "/og-image-default.png",
-					width: 900,
-					height: 430,
-					alt: baseDescription,
-				},
-			],
 		},
 		twitter: {
 			card: "summary_large_image",
