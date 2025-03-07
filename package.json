@@ -26,7 +26,7 @@
     "embla-carousel-react": "^8.5.1",
     "html-react-parser": "^3.0.14",
     "lucide-react": "^0.469.0",
-    "next": "15.1.7",
+    "next": "^15.2.1",
     "next-themes": "^0.2.1",
     "next-videos": "^1.4.1",
     "nextjs-progressbar": "^0.0.16",
