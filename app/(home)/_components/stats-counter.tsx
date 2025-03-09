@@ -1,8 +1,6 @@
 "use client";
 
 import CountUp from "react-countup";
-import { AiOutlineArrowRight } from "react-icons/ai";
-import CustomScrollLink from "@/components/scroll-link";
 
 interface StatCounterProps {
   value: number;
@@ -18,11 +16,6 @@ export const StatCounter = ({ value, label }: StatCounterProps) => {
           <span>+</span>
         </h2>
         <span className="-mt-1 text-[#FF7389]">{label}</span>
-        <CustomScrollLink to="testimonial">
-          <h5 className="text-sm cursor-pointer hover:underline mt-3 flex items-center gap-x-1 text-opacity-[1] text-[rgba(255,214,220,var(--tw-text-opacity))]">
-            See Testimonials <AiOutlineArrowRight />
-          </h5>
-        </CustomScrollLink>
       </div>
     </div>
   );

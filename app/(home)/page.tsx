@@ -16,10 +16,10 @@ export default async function Page() {
       <Hero />
       <HousemoniBanner />
       <Products />
-      <BannerSection />
+      <CanaryBanner />
       <GetStarted />
       <TestimonyLayout testimonial={testimonialData} />
-      <CanaryBanner />
+      <BannerSection />
       <Blog />
       <Faq />
     </div>
