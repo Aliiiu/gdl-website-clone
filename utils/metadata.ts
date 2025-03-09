@@ -20,6 +20,7 @@ export const generatePageMetadata = ({
 			template: template,
 		},
 		description: baseDescription,
+		metadataBase: new URL("https://gdl.com.ng"),
 		openGraph: {
 			title: pageTitle,
 			description: baseDescription,
