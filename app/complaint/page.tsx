@@ -16,9 +16,6 @@ export const metadata = generatePageMetadata({ title: "Contact-Us" });
 const ComplaintPage = () => {
   return (
     <div>
-      <Head>
-        <title>Contact-Us | GDL</title>
-      </Head>
       <CustomHeader
         name="Give Your Complaint"
         bg="#FFFFFF"
@@ -44,12 +41,7 @@ const ComplaintPage = () => {
           </div>
         </div>
       </section>
-      <section
-        id="faq"
-        className="lg:px-6 lg:w-4/6 mx-auto py-16 md:py-36 w-full"
-      >
-        <Faq />
-      </section>
+      <Faq />
     </div>
   );
 };
