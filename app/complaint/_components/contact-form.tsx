@@ -49,24 +49,6 @@ export default function ContactForm() {
   // Using nuqs to manage the request_type query parameter
   const [requestType] = useQueryState("request_type");
 
-  // Fetch contact page data
-  const { data: contactData } = useQuery({
-    queryKey: ["contactData"],
-    queryFn: async () => {
-      const response = await makeRequest("/pages/contact");
-      return response.data.data;
-    },
-  });
-
-  // Fetch contact form data
-  const { data: formData } = useQuery({
-    queryKey: ["contactFormData"],
-    queryFn: async () => {
-      const response = await makeRequest("/pages/contact/form");
-      return response.data.data;
-    },
-  });
-
   // Mutation for submitting the complaint
   const submitMutation = useMutation({
     mutationFn: async (data: FormData) => {
