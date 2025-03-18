@@ -1,6 +1,7 @@
-import { useMutation, useQuery } from "@tanstack/react-query";
+"use client";
+
+import { useMutation } from "@tanstack/react-query";
 import { useQueryState } from "nuqs";
-import { useForm } from "react-hook-form";
 import { makeRequest } from "@/apiCalls/requestHandler";
 import { toast } from "sonner";
 import {
@@ -15,13 +16,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-
-// interface FormData {
-//     name: string;
-//     email: string;
-//     message: string;
-//     request_type?: string | null;
-//   }
+import { useForm } from "react-hook-form";
 
 const formSchema = z.object({
   name: z.string().min(2, {
