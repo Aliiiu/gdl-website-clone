@@ -1,6 +1,3 @@
-"use client";
-
-import Head from "next/head";
 import {
   ContactDetails,
   EmailDetails,
@@ -10,15 +7,13 @@ import { generatePageMetadata } from "@/utils/metadata";
 import CustomHeader from "@/components/custom-page-hero";
 import Faq from "@/components/faq";
 import ContactForm from "./_components/contact-form";
+import { Suspense } from "react";
 
 export const metadata = generatePageMetadata({ title: "Contact-Us" });
 
 const ComplaintPage = () => {
   return (
     <div>
-      <Head>
-        <title>Contact-Us | GDL</title>
-      </Head>
       <CustomHeader
         name="Give Your Complaint"
         bg="#FFFFFF"
@@ -40,16 +35,13 @@ const ComplaintPage = () => {
               Avail us with the following information and we will get back to
               you in the least possible time.
             </p>
-            <ContactForm />
+            <Suspense fallback={<div>Loading form...</div>}>
+              <ContactForm />
+            </Suspense>
           </div>
         </div>
       </section>
-      <section
-        id="faq"
-        className="lg:px-6 lg:w-4/6 mx-auto py-16 md:py-36 w-full"
-      >
-        <Faq />
-      </section>
+      <Faq />
     </div>
   );
 };
