@@ -126,7 +126,7 @@ export default function ContactForm() {
         />
         <button
           type="submit"
-          className="bg-brand py-2 px-4 rounded-lg text-white w-fit"
+          className="bg-brand py-2 px-4 mt-5 rounded-lg text-white w-fit"
         >
           Contact Us
         </button>
